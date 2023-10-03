@@ -1,9 +1,9 @@
-# Your Project's Title...
-Your project's description...
+# Astra Zeneca Bevespi
+AEM Sites with Edge Delivery site implementing https://www.bevespi.com/
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+- Preview: https://main--bevespi--hlxsites.hlx.page/
+- Live: https://main--bevespi--hlxsites.hlx.live/
 
 ## Installation
 
