@@ -1,0 +1,29 @@
+ul.paginationitems {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+ul.paginationitems > li {
+    float: left;
+    margin-right: 10px;
+    text-decoration: none;
+    width: 16px;
+}
+
+
+ul.paginationitems > li.active-page {
+    font-weight: bold;
+}
+
+ul.paginationitems > li:not(.active-page) {
+    cursor: pointer;
+}
+
+div.search-form {
+    display: flex;
+    align-items: center;
+}
+
+input#search {
+    margin: 0;
+}
