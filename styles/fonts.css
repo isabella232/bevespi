@@ -17,15 +17,15 @@
   }
 
 @font-face {
-    font-family: gotham-black;
+    font-family: gotham;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 900;
     font-display: swap;
     src: url('../fonts/gotham-black.woff') format('woff');
 }
 
 @font-face {
-    font-family: gotham-book;
+    font-family: gotham;
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -33,9 +33,9 @@
 }
 
 @font-face {
-    font-family: gotham-medium;
+    font-family: gotham;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-display: swap;
     src: url('../fonts/gotham-medium.woff2') format('woff2');
 }
