@@ -1,9 +1,11 @@
 header .nav-top {
   height: 32px;
+
   /* use var */
   font-size: 9px;
   overflow: hidden;
   padding: 0 12px;
+
   /* use var */
   background-color: #ededed;
 }
@@ -32,6 +34,7 @@ header .nav-top ul li:nth-of-type(n+2)::before {
 
 header .nav-middle {
   height: 123px;
+
   /* use var */
   font-size: 8px;
   overflow: hidden;
@@ -78,12 +81,15 @@ header .nav-middle .columns > div div:nth-of-type(3) {
   width: 100px;
   border-radius: 0 0 12px 12px;
   height: 12px;
+
   /* use var */
   border-left: 2px solid #17265F;
   border-bottom: 2px solid #17265F;
   border-right: 2px solid #17265F;
+
   /* use var */
   font-size: 12px;
+
   /* use var */
   font-family: gotham-book, 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
   text-transform: uppercase;
@@ -99,12 +105,14 @@ header .nav-middle .columns > div div:nth-of-type(3) {
 @media (min-width: 900px) {  
   header .nav-top {
     height: 40px;
+
     /* use var */
     font-size: 12px;
   }
   
   header .nav-middle {
     height: 132px;
+    
     /* use var */
     font-size: 10px;
   }
@@ -159,10 +167,12 @@ header .nav-middle .columns > div div:nth-of-type(3) {
     flex-basis: 169px;
     border-radius: 20px 20px 0 0;
     height: 12px;
+
     /* use var */
     border-top: 2px solid #17265F;
     border-bottom: none;
     align-self: flex-end;
+
     /* use var */
     font-size: 22px;
     margin-left: auto;
