@@ -19,7 +19,7 @@
 @font-face {
     font-family: gotham;
     font-style: normal;
-    font-weight: 900;
+    font-weight: bold;
     font-display: swap;
     src: url('../fonts/gotham-black.woff') format('woff');
 }
