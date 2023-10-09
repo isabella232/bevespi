@@ -7,15 +7,17 @@ function updateURL(query, page = 0) {
   // eslint-disable-next-line no-restricted-globals
   const { state } = history;
   const { title } = document;
-  const url = `${window.location.origin + window.location.pathname}?q=${encodeURI(query)}&p=${page}`;
+  const url = new URL(window.location.origin + window.location.pathname);
+  url.searchParams.set('q', query);
+  url.searchParams.set('p', page.toString());
   // eslint-disable-next-line no-restricted-globals
-  history.pushState(state, title, url);
+  history.pushState(state, title, url.toString());
 }
 
 function search(indexJson, query, container, paginationArrows, page) {
-  updateURL(query);
+  updateURL(query.trim(), page);
   // eslint-disable-next-line no-use-before-define
-  searchIndex(indexJson, query, container, paginationArrows, page);
+  searchIndex(indexJson, query.trim(), container, paginationArrows, page);
 }
 
 function searchIndex(indexJson, query, container, paginationArrows, page) {
@@ -192,15 +194,13 @@ export default async function decorate(block) {
   searchResultsContainer.classList.add('search-results', 'section');
   searchSection.append(searchResultsContainer);
 
-  const searchInputValue = searchInput.value.trim();
   searchButton.addEventListener('click', () => {
-    search(indexJson, searchInputValue, searchResultsContainer, paginationArrowsSrc, page);
+    search(indexJson, searchInput.value, searchResultsContainer, paginationArrowsSrc, page);
   });
   searchInput.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
-      search(indexJson, searchInputValue, searchResultsContainer, paginationArrowsSrc, page);
+      search(indexJson, searchInput.value, searchResultsContainer, paginationArrowsSrc, page);
     }
   });
-
   searchIndex(indexJson, query, searchResultsContainer, paginationArrowsSrc, page);
 }
