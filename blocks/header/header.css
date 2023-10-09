@@ -23,10 +23,6 @@ header .nav-top li {
   padding-right: 9px;
 }
 
-header .nav-top li:first-of-type {
-  padding-left: 0;
-}
-
 header .nav-top li:nth-of-type(n+2)::before {
   content: "\2022";
   position: relative;
@@ -156,6 +152,10 @@ header .expanded .nav-bottom {
   width: 100vw;
   height: 100vh;
   z-index: 2;
+}
+
+header .nav-top li:first-of-type {
+  padding-left: 0;
 }
 
 header .nav-middle .columns > div {
