@@ -246,6 +246,12 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
     height: 132px;
     font-size: var(--body-font-size-xxs);
   }
+  
+  header nav > div > div {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   header .nav-middle .columns > div {
     display: flex;
@@ -276,6 +282,15 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
     margin: 0;
   }
 
+  header .nav-bottom a {
+    font-size: var(--body-font-size-l);
+  }
+
+  header .nav-bottom ul li a {
+    padding-right: 30px;
+    width: 70%;
+  }
+
   header .nav-middle .columns > div div:nth-of-type(2) p a:hover {
     font-weight: unset;
     color: unset;
@@ -284,12 +299,6 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
   header .nav-middle img {
     width: 100%;
     height: auto;
-  }
-  
-  header nav > div > div {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   header .nav-middle .columns > div div:nth-of-type(3) {
@@ -325,10 +334,6 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
     height: unset;
   }
 
-  header .nav-bottom a {
-    font-size: var(--body-font-size-l);
-  }
-
   header .nav-bottom img {
     transform: translateY(0);
     transform: translateX(10px);
@@ -355,11 +360,6 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
 
   header .nav-bottom ul li:nth-of-type(3n) {
     border: none;
-  }
-
-  header .nav-bottom ul li a {
-    padding-right: 30px;
-    width: 70%;
   }
 
   header .nav-middle .columns > div div:nth-of-type(2) ul {
