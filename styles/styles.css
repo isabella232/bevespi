@@ -100,7 +100,7 @@ body {
   font-size: var(--body-font-size-m);
   margin: 0;
   font-family: var(--body-font-family);
-  line-height: 1.6;
+  line-height: 1.1;
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
@@ -181,7 +181,7 @@ a:hover {
 a.button:any-link, button {
   font-family: var(--body-font-family);
   font-weight: 400;
-  background-color: #e81b75 !important;
+  background-color: #e81b75;
   border: 1px solid ghostwhite;
   border-radius: 15px;
   padding: 15px 20px;
