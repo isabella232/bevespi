@@ -35,7 +35,7 @@ export default async function decorate(block) {
     nav.querySelector('.nav-top').append(search);
 
     const explore = nav.querySelector('.nav-middle .columns > div > div:nth-of-type(3)');
-    explore.innerHTML = `<span class='explore'>Explore</span><span class='close'>Close</span>`;
+    explore.innerHTML = "<span class='explore'>Explore</span><span class='close'>Close</span>";
     explore.addEventListener('click', () => { nav.classList.toggle('expanded'); });
 
     decorateIcons(nav);
