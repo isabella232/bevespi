@@ -24,6 +24,20 @@ export default async function decorate(block) {
       if (section) section.classList.add(`nav-${c}`);
     });
 
+    const search = document.createElement('div');
+    search.classList.add('search');
+    search.innerHTML = `
+    <form class="search" id="frmSearch" action="/search-results.html" method="get" onsubmit="return checkBeforeSubmit()">
+    <label for="search">Search</label>
+    <input id="search" class="" name="q" placeholder="SEARCH" maxlength="50"> 
+    <button type="submit" id="searchform">Go</button>
+    </form>`;
+    nav.querySelector('.nav-top').append(search);
+
+    const explore = nav.querySelector('.nav-middle .columns > div > div:nth-of-type(3)');
+    explore.innerHTML = `<span class='explore'>Explore</span><span class='close'>Close</span>`;
+    explore.addEventListener('click', () => { nav.classList.toggle('expanded'); });
+
     decorateIcons(nav);
     const navWrapper = document.createElement('div');
     navWrapper.className = 'nav-wrapper';
