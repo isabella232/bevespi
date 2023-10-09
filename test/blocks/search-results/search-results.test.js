@@ -286,8 +286,6 @@ describe('Search-results block', () => {
     const { x, y } = getCenterOf(button);
     await sendMouse({ type: 'click', position: [x, y] });
 
-    console.log(document.body.innerHTML);
-
     assertShowingResultsFor('copd');
     const results = document.querySelectorAll('div.result > a');
     expect(results).to.have.lengthOf(1);

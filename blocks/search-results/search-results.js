@@ -18,10 +18,10 @@ function updateURL(query, page = 0, pageSize = 10, curLocation = window.location
 function search(indexJson, query, page, container, paginationArrows, curLocation, pageSize) {
   updateURL(query.trim(), page, pageSize, curLocation);
   // eslint-disable-next-line no-use-before-define
-  searchIndex(indexJson, query.trim(), page, container, paginationArrows, pageSize);
+  searchIndex(indexJson, query.trim(), page, container, paginationArrows, curLocation, pageSize);
 }
 
-function searchIndex(indexJson, query, page, container, paginationArrows, pageSize) {
+function searchIndex(indexJson, query, page, container, paginationArrows, curLocation, pageSize) {
   container.querySelector('.results-container')?.remove();
   container.querySelector('.title-container')?.remove();
   container.querySelector('.paginationitems')?.remove();
@@ -98,7 +98,7 @@ function searchIndex(indexJson, query, page, container, paginationArrows, pageSi
       [arrowImage.src] = paginationArrows;
       firstPageArrow.append(arrowImage);
       firstPageArrow.addEventListener('click', () => {
-        search(indexJson, query, 0, container, paginationArrows);
+        search(indexJson, query, 0, container, paginationArrows, curLocation, pageSize);
       });
     }
     paginationItems.append(firstPageArrow);
@@ -113,7 +113,7 @@ function searchIndex(indexJson, query, page, container, paginationArrows, pageSi
       } else {
         const pageNumber = currentPage;
         span.addEventListener('click', () => {
-          search(indexJson, query, pageNumber, container, paginationArrows);
+          search(indexJson, query, pageNumber, container, paginationArrows, curLocation, pageSize);
         });
       }
       li.append(span);
@@ -130,7 +130,7 @@ function searchIndex(indexJson, query, page, container, paginationArrows, pageSi
       [, arrowImage.src] = paginationArrows;
       lastPageArrow.append(arrowImage);
       lastPageArrow.addEventListener('click', () => {
-        search(indexJson, query, pages - 1, container, paginationArrows);
+        search(indexJson, query, pages - 1, container, paginationArrows, curLocation, pageSize);
       });
     }
     paginationItems.append(lastPageArrow);
@@ -173,7 +173,8 @@ export default async function decorate(block, curLocation = window.location) {
   const queryParams = new URLSearchParams(curLocation.search);
   const query = queryParams.get('q')?.trim();
   const page = Number(queryParams.get('p'));
-  const pageSize = Number(queryParams.get('s'));
+  const s = queryParams.get('s');
+  const pageSize = s ? Number(s) : 10;
   const buttonContent = block.querySelector('div.search-results > div > div');
   buttonContent.closest('div').remove();
   const paginationArrows = block.querySelectorAll('div.search-results > div > div > picture > img');
@@ -217,5 +218,14 @@ export default async function decorate(block, curLocation = window.location) {
       );
     }
   });
-  searchIndex(indexJson, query, page, searchResultsContainer, paginationArrowsSrc, pageSize);
+
+  searchIndex(
+    indexJson,
+    query,
+    page,
+    searchResultsContainer,
+    paginationArrowsSrc,
+    curLocation,
+    pageSize,
+  );
 }
