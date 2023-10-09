@@ -58,7 +58,7 @@ header .nav-top .search input:focus {
 header .nav-top .search button {
   height: 40px;
   width: 40px;
-  background: url('/images/icon_grey-arr-right.png') no-repeat center;
+  background: url('/icons/icon_grey-arr-right.png') no-repeat center;
   background-size: 17px 17px;
   background-color: var(--background-grey-3);
   color: transparent;
@@ -113,7 +113,7 @@ header .nav-bottom li::after {
   content: "";
   width: 18px;
   height: 16px;
-  background-image: url('/images/icon_pink-arrow-right-md.png');
+  background-image: url('/icons/icon_pink-arrow-right-md.png');
   background-size: 16px 16px;
   background-repeat: no-repeat;
   display: block;
@@ -182,7 +182,7 @@ header .nav-middle .columns > div div:nth-of-type(2) p {
 header .nav-middle .columns > div div:nth-of-type(2) p a::after {
   content: "";
   display: inline-block;
-  background-image:url('/images/icon_orange-small-arrow-right.png');
+  background-image:url('/icons/icon_orange-small-arrow-right.png');
   background-size: 5px 7px;
   background-repeat: no-repeat;
   width: 5px;
@@ -204,7 +204,7 @@ header .nav-middle .columns > div div:nth-of-type(3) {
   text-transform: uppercase;
   text-align: right;
   margin-left: auto;
-  background-image: url('/images/icon-explore-hamburger.png');
+  background-image: url('/icons/icon-explore-hamburger.png');
   background-position: 16px 5px;
   background-repeat: no-repeat;
   background-size: 25px 21px;
@@ -214,7 +214,7 @@ header .nav-middle .columns > div div:nth-of-type(3) {
 
 header .expanded .nav-middle .columns > div div:nth-of-type(3) {
   z-index: 3;
-  background-image: url('/images/icon_close-x.png');
+  background-image: url('/icons/icon_close-x.png');
   background-size: 15px 15px;
   background-position: 47px 7px;
 }
@@ -328,7 +328,7 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
   }
 
   header .expanded .nav-middle .columns > div div:nth-of-type(3) {
-    background-image: url('/images/blue-close-icon.png');
+    background-image: url('/icons/blue-close-icon.png');
   }
 
   header .expanded .nav-middle .columns > div div:nth-of-type(3) .close {
