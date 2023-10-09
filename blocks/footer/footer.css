@@ -21,6 +21,7 @@ footer .footer > div > div {
 }
 
 footer .footer > div > div > ul {
+    flex-wrap: wrap;
     justify-content: left;
     align-items: center;
     display: grid;
@@ -43,13 +44,14 @@ footer .footer > div > div > p:last-child img {
 }
 
 footer .footer > div ul > li {
+    flex: 1;
+    box-sizing: border-box;
     justify-content: left;
     align-items: center;
     display: flex;
     flex-direction: row;
     column-gap: 0.313rem;
     font-size: 0.75rem;
-    height: 100%;
     white-space: nowrap;
 }
 
@@ -57,7 +59,7 @@ footer .footer > div ul > li {
     footer .footer > div > div > ul {
         display: flex;
         column-gap: 1.25rem;
-        row-gap: 0.875rem;
+        row-gap: 0.375rem;
         justify-content: center;
         grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
     }
