@@ -21,18 +21,21 @@ export default async function decorate(block) {
     const classes = ['top', 'middle', 'bottom'];
     classes.forEach((c, i) => {
       const section = nav.children[i];
-      if (section) section.classList.add(`nav-${c}`);
+      if (section) {
+        section.classList.add(`nav-${c}`);
+        section.innerHTML = `<div>${section.innerHTML}</div>`;
+      }
     });
 
     const search = document.createElement('div');
     search.classList.add('search');
     search.innerHTML = `
-    <form class="search" id="frmSearch" action="/search-results.html" method="get" onsubmit="return checkBeforeSubmit()">
+    <form action="/search-results" method="get">
     <label for="search">Search</label>
-    <input id="search" class="" name="q" placeholder="SEARCH" maxlength="50"> 
-    <button type="submit" id="searchform">Go</button>
+    <input id="search" name="q" placeholder="SEARCH" maxlength="50"> 
+    <button type="submit">Go</button>
     </form>`;
-    nav.querySelector('.nav-top').append(search);
+    nav.querySelector('.nav-top > div').append(search);
 
     const explore = nav.querySelector('.nav-middle .columns > div > div:nth-of-type(3)');
     explore.innerHTML = "<span class='explore'>Explore</span><span class='close'>Close</span>";
