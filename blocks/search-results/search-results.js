@@ -3,24 +3,25 @@ async function fetchData(path) {
   return response.json();
 }
 
-function updateURL(query, page = 0) {
+function updateURL(query, page = 0, pageSize = 10, curLocation = window.location) {
   // eslint-disable-next-line no-restricted-globals
   const { state } = history;
   const { title } = document;
-  const url = new URL(window.location.origin + window.location.pathname);
+  const url = new URL(curLocation.origin + curLocation.pathname);
   url.searchParams.set('q', query);
   url.searchParams.set('p', page.toString());
+  url.searchParams.set('s', pageSize.toString());
   // eslint-disable-next-line no-restricted-globals
   history.pushState(state, title, url.toString());
 }
 
-function search(indexJson, query, container, paginationArrows, page) {
-  updateURL(query.trim(), page);
+function search(indexJson, query, page, container, paginationArrows, curLocation, pageSize) {
+  updateURL(query.trim(), page, pageSize, curLocation);
   // eslint-disable-next-line no-use-before-define
-  searchIndex(indexJson, query.trim(), container, paginationArrows, page);
+  searchIndex(indexJson, query.trim(), page, container, paginationArrows, pageSize);
 }
 
-function searchIndex(indexJson, query, container, paginationArrows, page) {
+function searchIndex(indexJson, query, page, container, paginationArrows, pageSize) {
   container.querySelector('.results-container')?.remove();
   container.querySelector('.title-container')?.remove();
   container.querySelector('.paginationitems')?.remove();
@@ -29,14 +30,13 @@ function searchIndex(indexJson, query, container, paginationArrows, page) {
   container.append(titleContainer);
   titleContainer.classList.add('title-container');
 
-  function buildUserFeedbackContainer(content) {
+  function buildUserFeedbackContainer(...content) {
     titleContainer.classList.add('user-feedback-message');
     const h2 = document.createElement('h2');
     titleContainer.append(h2);
     h2.append(...content);
     return h2;
   }
-
   if (query) {
     const showingSerResult = document.createElement('span');
     showingSerResult.classList.add('showingSerResult');
@@ -47,11 +47,11 @@ function searchIndex(indexJson, query, container, paginationArrows, page) {
     searchQuery.textContent = query;
     titleContainer.append(searchQuery);
   } else {
-    buildUserFeedbackContainer([
+    buildUserFeedbackContainer(
       'You did not enter any search terms.',
       document.createElement('br'),
       'Please enter a search term and try again.',
-    ]);
+    );
     return;
   }
 
@@ -59,7 +59,6 @@ function searchIndex(indexJson, query, container, paginationArrows, page) {
   resultsContainer.classList.add('results-container');
   container.append(resultsContainer);
 
-  const pageSize = 2; // TODO: 10
   let count = 0;
 
   function highlightTerms(text, terms) {
@@ -85,8 +84,7 @@ function searchIndex(indexJson, query, container, paginationArrows, page) {
   });
   const pages = Math.ceil(count / pageSize);
   if (count === 0) {
-    const userFeedbackContainer = buildUserFeedbackContainer();
-    userFeedbackContainer.append('We\'re sorry, but no results matched your search term.');
+    buildUserFeedbackContainer('We\'re sorry, but no results matched your search term.');
   } else if (pages > 1) {
     const paginationItems = document.createElement('ul');
     paginationItems.classList.add('paginationitems');
@@ -100,7 +98,7 @@ function searchIndex(indexJson, query, container, paginationArrows, page) {
       [arrowImage.src] = paginationArrows;
       firstPageArrow.append(arrowImage);
       firstPageArrow.addEventListener('click', () => {
-        search(indexJson, query, container, paginationArrows, 0);
+        search(indexJson, query, 0, container, paginationArrows);
       });
     }
     paginationItems.append(firstPageArrow);
@@ -115,7 +113,7 @@ function searchIndex(indexJson, query, container, paginationArrows, page) {
       } else {
         const pageNumber = currentPage;
         span.addEventListener('click', () => {
-          search(indexJson, query, container, paginationArrows, pageNumber);
+          search(indexJson, query, pageNumber, container, paginationArrows);
         });
       }
       li.append(span);
@@ -132,7 +130,7 @@ function searchIndex(indexJson, query, container, paginationArrows, page) {
       [, arrowImage.src] = paginationArrows;
       lastPageArrow.append(arrowImage);
       lastPageArrow.addEventListener('click', () => {
-        search(indexJson, query, container, paginationArrows, pages - 1);
+        search(indexJson, query, pages - 1, container, paginationArrows);
       });
     }
     paginationItems.append(lastPageArrow);
@@ -156,7 +154,7 @@ function buildSearchButton(buttonContent) {
   const buttonSpan = document.createElement('span');
   searchButton.append(buttonSpan);
   buttonSpan.append(buttonContent.textContent.trim());
-  buttonSpan.append(buttonContent.children[0]);
+  buttonSpan.append(buttonContent.querySelector('picture'));
   buttonContent.textContent = '';
   searchButton.type = 'button';
   return searchButton;
@@ -169,12 +167,13 @@ function buildSearchSection(block) {
   return searchSection;
 }
 
-export default async function decorate(block) {
+export default async function decorate(block, curLocation = window.location) {
   const indexJson = await fetchData('/query-index');
 
-  const queryParams = new URLSearchParams(window.location.search);
+  const queryParams = new URLSearchParams(curLocation.search);
   const query = queryParams.get('q')?.trim();
   const page = Number(queryParams.get('p'));
+  const pageSize = Number(queryParams.get('s'));
   const buttonContent = block.querySelector('div.search-results > div > div');
   buttonContent.closest('div').remove();
   const paginationArrows = block.querySelectorAll('div.search-results > div > div > picture > img');
@@ -195,12 +194,28 @@ export default async function decorate(block) {
   searchSection.append(searchResultsContainer);
 
   searchButton.addEventListener('click', () => {
-    search(indexJson, searchInput.value, searchResultsContainer, paginationArrowsSrc, page);
+    search(
+      indexJson,
+      searchInput.value,
+      page,
+      searchResultsContainer,
+      paginationArrowsSrc,
+      curLocation,
+      pageSize,
+    );
   });
   searchInput.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
-      search(indexJson, searchInput.value, searchResultsContainer, paginationArrowsSrc, page);
+      search(
+        indexJson,
+        searchInput.value,
+        page,
+        searchResultsContainer,
+        paginationArrowsSrc,
+        curLocation,
+        pageSize,
+      );
     }
   });
-  searchIndex(indexJson, query, searchResultsContainer, paginationArrowsSrc, page);
+  searchIndex(indexJson, query, page, searchResultsContainer, paginationArrowsSrc, pageSize);
 }
