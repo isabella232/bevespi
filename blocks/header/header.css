@@ -132,7 +132,7 @@ header .nav-bottom li a {
 
 header .nav-bottom li a:hover {
   /* missing gotham bold font */ 
-  font-family: gotham-bold;
+  font-family: var(--heading-font-family);
   text-decoration: none;
 }
 
