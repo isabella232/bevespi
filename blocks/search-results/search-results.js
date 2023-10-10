@@ -24,11 +24,6 @@ class SearchResults {
     history.pushState(state, title, url.toString());
   }
 
-  search(query, page) {
-    this.updateURL(query.trim(), page);
-    this.searchIndex(query.trim(), page);
-  }
-
   static #buildUserFeedbackContainer(titleContainer, ...content) {
     titleContainer.classList.add('user-feedback-message');
     const h2 = document.createElement('h2');
@@ -42,7 +37,7 @@ class SearchResults {
     return text.replace(new RegExp(pattern, 'gi'), (match) => `<strong>${match}</strong>`);
   }
 
-  searchIndex(query, page) {
+  searchIndex(query, requestedPage) {
     this.container.querySelector('.results-container')?.remove();
     this.container.querySelector('.title-container')?.remove();
     this.container.querySelector('.paginationitems')?.remove();
@@ -74,25 +69,29 @@ class SearchResults {
     resultsContainer.classList.add('results-container');
     this.container.append(resultsContainer);
 
-    let count = 0;
+    const terms = query.trim().split(' ').filter((term) => term.length > 0);
 
-    this.indexJson.data.forEach((row) => {
-      const terms = query.trim().split(' ').filter((term) => term.length > 0);
-      if (terms.length > 0
-        && terms.every((term) => row.title.toLowerCase().includes(term.toLowerCase()))) {
-        count += 1;
-        if (count > (page - 1) * this.pageSize && count <= page * this.pageSize) {
-          const resultSection = document.createElement('div');
-          resultSection.classList.add('result');
-          const link = document.createElement('a');
-          link.href = row.path;
-          link.innerHTML = SearchResults.#highlightTerms(row.title, terms);
-          resultSection.append(link);
-          resultsContainer.append(resultSection);
-        }
+    const results = this.indexJson.data.filter((row) => terms.length > 0
+      && terms.every((term) => row.title.toLowerCase().includes(term.toLowerCase())));
+    const count = results.length;
+    const pages = Math.ceil(count / this.pageSize);
+    // if requestedPage is out-of-bounds, set page to 1
+    const page = (requestedPage < 1 || requestedPage > pages) ? 1 : requestedPage;
+    this.updateURL(query, page);
+
+    results.forEach((row, index) => {
+      const pos = index + 1;
+      if (pos > (page - 1) * this.pageSize && pos <= page * this.pageSize) {
+        const resultSection = document.createElement('div');
+        resultSection.classList.add('result');
+        const link = document.createElement('a');
+        link.href = row.path;
+        link.innerHTML = SearchResults.#highlightTerms(row.title, terms);
+        resultSection.append(link);
+        resultsContainer.append(resultSection);
       }
     });
-    const pages = Math.ceil(count / this.pageSize);
+
     if (count === 0) {
       SearchResults.#buildUserFeedbackContainer(titleContainer, 'We\'re sorry, but no results matched your search term.');
     } else if (pages > 1) {
@@ -109,8 +108,7 @@ class SearchResults {
         previousPageArrow.append(arrowImage);
         previousPageArrow.addEventListener('click', () => {
           const activePage = Number(document.querySelector('li.active-page').textContent);
-          const prevPage = activePage - 1;
-          this.search(query, prevPage);
+          this.searchIndex(query, activePage - 1);
         });
       }
       paginationItems.append(previousPageArrow);
@@ -125,7 +123,7 @@ class SearchResults {
         } else {
           const pageNumber = currentPage;
           span.addEventListener('click', () => {
-            this.search(query, pageNumber);
+            this.searchIndex(query, pageNumber);
           });
         }
         li.append(span);
@@ -143,8 +141,7 @@ class SearchResults {
         nextPageArrow.append(arrowImage);
         nextPageArrow.addEventListener('click', () => {
           const activePage = Number(document.querySelector('li.active-page').textContent);
-          const nextPage = activePage + 1;
-          this.search(query, nextPage);
+          this.searchIndex(query, activePage + 1);
         });
       }
       paginationItems.append(nextPageArrow);
@@ -224,11 +221,11 @@ export default async function decorate(block, curLocation = window.location) {
   );
 
   searchButton.addEventListener('click', () => {
-    searchResults.search(searchInput.value, page);
+    searchResults.searchIndex(searchInput.value, page);
   });
   searchInput.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
-      searchResults.search(searchInput.value, page);
+      searchResults.searchIndex(searchInput.value, page);
     }
   });
 

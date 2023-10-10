@@ -336,6 +336,18 @@ describe('Search-results block', () => {
     assertResult(results[0], QUERY_INDEX.data[4]);
   });
 
+  it('shows first page if requested page is out-of-bound', async () => {
+    await loadSearchResultsBlock('bev', 5, 2);
+
+    const activePage = document.querySelector('ul.paginationitems > li.active-page');
+    expect(activePage).to.exist;
+    expect(activePage.textContent).to.equal('1');
+
+    assertShowingResultsFor('bev');
+    const results = document.querySelectorAll('div.result > a');
+    expect(results).to.have.lengthOf(2);
+  });
+
   // eslint-disable-next-line no-undef
   afterEach(async () => {
     await resetMouse();
