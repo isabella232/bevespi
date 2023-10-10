@@ -89,19 +89,21 @@ function searchIndex(indexJson, query, page, container, paginationArrows, curLoc
     const paginationItems = document.createElement('ul');
     paginationItems.classList.add('paginationitems');
     container.append(paginationItems);
-    const firstPageArrow = document.createElement('li');
-    firstPageArrow.classList.add('nav-arrow', 'first');
+    const previousPageArrow = document.createElement('li');
+    previousPageArrow.classList.add('nav-arrow', 'first');
     if (page === 0) {
-      firstPageArrow.classList.add('nav-disabled');
+      previousPageArrow.classList.add('nav-disabled');
     } else {
       const arrowImage = document.createElement('img');
       [arrowImage.src] = paginationArrows;
-      firstPageArrow.append(arrowImage);
-      firstPageArrow.addEventListener('click', () => {
-        search(indexJson, query, 0, container, paginationArrows, curLocation, pageSize);
+      previousPageArrow.append(arrowImage);
+      previousPageArrow.addEventListener('click', () => {
+        const activePage = Number(document.querySelector('li.active-page').textContent);
+        const prevPage = activePage - 2; // -1 for 0-based index, -1 for previous page
+        search(indexJson, query, prevPage, container, paginationArrows, curLocation, pageSize);
       });
     }
-    paginationItems.append(firstPageArrow);
+    paginationItems.append(previousPageArrow);
 
     let currentPage = 0;
     while (currentPage < count / pageSize) {
@@ -121,19 +123,21 @@ function searchIndex(indexJson, query, page, container, paginationArrows, curLoc
       currentPage += 1;
     }
 
-    const lastPageArrow = document.createElement('li');
-    lastPageArrow.classList.add('nav-arrow', 'last');
+    const nextPageArrow = document.createElement('li');
+    nextPageArrow.classList.add('nav-arrow', 'last');
     if (page === pages - 1) {
-      lastPageArrow.classList.add('nav-disabled');
+      nextPageArrow.classList.add('nav-disabled');
     } else {
       const arrowImage = document.createElement('img');
       [, arrowImage.src] = paginationArrows;
-      lastPageArrow.append(arrowImage);
-      lastPageArrow.addEventListener('click', () => {
-        search(indexJson, query, pages - 1, container, paginationArrows, curLocation, pageSize);
+      nextPageArrow.append(arrowImage);
+      nextPageArrow.addEventListener('click', () => {
+        const activePage = Number(document.querySelector('li.active-page').textContent);
+        const nextPage = activePage + 0; // -1 for 0-based index, +1 for next page
+        search(indexJson, query, nextPage, container, paginationArrows, curLocation, pageSize);
       });
     }
-    paginationItems.append(lastPageArrow);
+    paginationItems.append(nextPageArrow);
   }
 }
 

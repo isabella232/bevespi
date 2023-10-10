@@ -180,16 +180,15 @@ describe('Search-results block', () => {
     expect(pagination.children[3].firstChild.src).to.contain(['right.png']);
   });
 
-  it('shows single page of matching results', async () => {
-    const pageSize = 3;
+  it('shows matching results only up to the page size', async () => {
+    const pageSize = 2;
     await loadSearchResultsBlock('bev', 0, pageSize);
 
     const results = document.querySelectorAll('div.result > a');
-    expect(results).to.have.lengthOf(pageSize);
 
+    expect(results).to.have.lengthOf(pageSize);
     assertResult(results[0], QUERY_INDEX.data[0]);
     assertResult(results[1], QUERY_INDEX.data[1]);
-    assertResult(results[2], QUERY_INDEX.data[2]);
   });
 
   it('shows last page of matching results, with navigation', async () => {
@@ -197,8 +196,8 @@ describe('Search-results block', () => {
     await loadSearchResultsBlock('bev', 1, pageSize);
 
     const results = document.querySelectorAll('div.result > a');
-    expect(results).to.have.lengthOf(1);
 
+    expect(results).to.have.lengthOf(1);
     assertResult(results[0], QUERY_INDEX.data[3]);
 
     const pagination = document.querySelector('ul.paginationitems');
@@ -236,6 +235,51 @@ describe('Search-results block', () => {
     expect(pagination.children[3].firstChild.textContent).to.equal('3');
     expect(pagination.children[4].classList).to.contain(['nav-arrow', 'last']);
     expect(pagination.children[4].firstChild.src).to.contain(['right.png']);
+  });
+
+  it('clicking on the right arrow, displays the next page', async () => {
+    const pageSize = 2;
+    await loadSearchResultsBlock('c', 0, pageSize);
+
+    const initialPage = document.querySelector('ul.paginationitems > li.active-page');
+    expect(initialPage.textContent).to.equal('1');
+
+    const rightArrow = document.querySelector('ul.paginationitems > li.nav-arrow.last');
+    expect(rightArrow).to.exist;
+    const { x, y } = getCenterOf(rightArrow);
+    await sendMouse({ type: 'click', position: [x, y] });
+
+    const destinationPage = document.querySelector('ul.paginationitems > li.active-page');
+    expect(destinationPage.textContent).to.equal('2');
+  });
+
+  it('clicking on the left arrow, displays the previous page', async () => {
+    const pageSize = 2;
+    await loadSearchResultsBlock('c', 2, pageSize);
+
+    const initialPage = document.querySelector('ul.paginationitems > li.active-page');
+    expect(initialPage.textContent).to.equal('3');
+
+    const leftArrow = document.querySelector('ul.paginationitems > li.nav-arrow.first');
+    expect(leftArrow).to.exist;
+    const { x, y } = getCenterOf(leftArrow);
+    await sendMouse({ type: 'click', position: [x, y] });
+
+    const destinationPage = document.querySelector('ul.paginationitems > li.active-page');
+    expect(destinationPage.textContent).to.equal('2');
+  });
+
+  it('clicking on the page number of an inactive page, displays that page', async () => {
+    const pageSize = 2;
+    await loadSearchResultsBlock('c', 0, pageSize);
+
+    const page2 = document.querySelector('ul.paginationitems > li:nth-child(3) > span');
+    expect(page2.textContent).to.equal('2');
+    const { x, y } = getCenterOf(page2);
+    await sendMouse({ type: 'click', position: [x, y] });
+
+    const destinationPage = document.querySelector('ul.paginationitems > li.active-page');
+    expect(destinationPage.textContent).to.equal('2');
   });
 
   it('shows a search form', async () => {
