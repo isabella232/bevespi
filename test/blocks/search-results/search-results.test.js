@@ -45,7 +45,7 @@ const QUERY_INDEX = {
   ],
 };
 
-async function loadSearchResultsBlock(query, page = 0, pageSize = 10) {
+async function loadSearchResultsBlock(query, page = 1, pageSize = 10) {
   const fetchStub = sinon.stub(window, 'fetch');
   fetchStub.onCall(0).returns(jsonOk(QUERY_INDEX));
 
@@ -166,7 +166,7 @@ describe('Search-results block', () => {
   });
 
   it('should show pagination controls if more than 1 page of results', async () => {
-    await loadSearchResultsBlock('bev', 0, 2);
+    await loadSearchResultsBlock('bev', 1, 2);
 
     const pagination = document.querySelector('ul.paginationitems');
     expect(pagination).to.exist;
@@ -182,7 +182,7 @@ describe('Search-results block', () => {
 
   it('shows matching results only up to the page size', async () => {
     const pageSize = 2;
-    await loadSearchResultsBlock('bev', 0, pageSize);
+    await loadSearchResultsBlock('bev', 1, pageSize);
 
     const results = document.querySelectorAll('div.result > a');
 
@@ -193,7 +193,7 @@ describe('Search-results block', () => {
 
   it('shows last page of matching results, with navigation', async () => {
     const pageSize = 3;
-    await loadSearchResultsBlock('bev', 1, pageSize);
+    await loadSearchResultsBlock('bev', 2, pageSize);
 
     const results = document.querySelectorAll('div.result > a');
 
@@ -214,7 +214,7 @@ describe('Search-results block', () => {
 
   it('shows middle page of matching results, with navigation', async () => {
     const pageSize = 2;
-    await loadSearchResultsBlock('c', 1, pageSize);
+    await loadSearchResultsBlock('c', 2, pageSize);
 
     const results = document.querySelectorAll('div.result > a');
     expect(results).to.have.lengthOf(pageSize);
@@ -239,7 +239,7 @@ describe('Search-results block', () => {
 
   it('clicking on the right arrow, displays the next page', async () => {
     const pageSize = 2;
-    await loadSearchResultsBlock('c', 0, pageSize);
+    await loadSearchResultsBlock('c', 1, pageSize);
 
     const initialPage = document.querySelector('ul.paginationitems > li.active-page');
     expect(initialPage.textContent).to.equal('1');
@@ -255,7 +255,7 @@ describe('Search-results block', () => {
 
   it('clicking on the left arrow, displays the previous page', async () => {
     const pageSize = 2;
-    await loadSearchResultsBlock('c', 2, pageSize);
+    await loadSearchResultsBlock('c', 3, pageSize);
 
     const initialPage = document.querySelector('ul.paginationitems > li.active-page');
     expect(initialPage.textContent).to.equal('3');
@@ -271,7 +271,7 @@ describe('Search-results block', () => {
 
   it('clicking on the page number of an inactive page, displays that page', async () => {
     const pageSize = 2;
-    await loadSearchResultsBlock('c', 0, pageSize);
+    await loadSearchResultsBlock('c', 1, pageSize);
 
     const page2 = document.querySelector('ul.paginationitems > li:nth-child(3) > span');
     expect(page2.textContent).to.equal('2');

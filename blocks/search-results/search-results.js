@@ -3,7 +3,7 @@ async function fetchData(path) {
   return response.json();
 }
 
-function updateURL(query, page = 0, pageSize = 10, curLocation = window.location) {
+function updateURL(query, page = 1, pageSize = 10, curLocation = window.location) {
   // eslint-disable-next-line no-restricted-globals
   const { state } = history;
   const { title } = document;
@@ -71,7 +71,7 @@ function searchIndex(indexJson, query, page, container, paginationArrows, curLoc
     if (terms.length > 0
       && terms.every((term) => row.title.toLowerCase().includes(term.toLowerCase()))) {
       count += 1;
-      if (count > page * pageSize && count <= (page + 1) * pageSize) {
+      if (count > (page - 1) * pageSize && count <= page * pageSize) {
         const resultSection = document.createElement('div');
         resultSection.classList.add('result');
         const link = document.createElement('a');
@@ -91,7 +91,7 @@ function searchIndex(indexJson, query, page, container, paginationArrows, curLoc
     container.append(paginationItems);
     const previousPageArrow = document.createElement('li');
     previousPageArrow.classList.add('nav-arrow', 'first');
-    if (page === 0) {
+    if (page === 1) {
       previousPageArrow.classList.add('nav-disabled');
     } else {
       const arrowImage = document.createElement('img');
@@ -99,17 +99,17 @@ function searchIndex(indexJson, query, page, container, paginationArrows, curLoc
       previousPageArrow.append(arrowImage);
       previousPageArrow.addEventListener('click', () => {
         const activePage = Number(document.querySelector('li.active-page').textContent);
-        const prevPage = activePage - 2; // -1 for 0-based index, -1 for previous page
+        const prevPage = activePage - 1;
         search(indexJson, query, prevPage, container, paginationArrows, curLocation, pageSize);
       });
     }
     paginationItems.append(previousPageArrow);
 
-    let currentPage = 0;
-    while (currentPage < count / pageSize) {
+    let currentPage = 1;
+    while (currentPage <= pages) {
       const li = document.createElement('li');
       const span = document.createElement('span');
-      span.textContent = (currentPage + 1).toString();
+      span.textContent = currentPage.toString();
       if (currentPage === page) {
         li.classList.add('active-page');
       } else {
@@ -125,7 +125,7 @@ function searchIndex(indexJson, query, page, container, paginationArrows, curLoc
 
     const nextPageArrow = document.createElement('li');
     nextPageArrow.classList.add('nav-arrow', 'last');
-    if (page === pages - 1) {
+    if (page === pages) {
       nextPageArrow.classList.add('nav-disabled');
     } else {
       const arrowImage = document.createElement('img');
@@ -133,7 +133,7 @@ function searchIndex(indexJson, query, page, container, paginationArrows, curLoc
       nextPageArrow.append(arrowImage);
       nextPageArrow.addEventListener('click', () => {
         const activePage = Number(document.querySelector('li.active-page').textContent);
-        const nextPage = activePage + 0; // -1 for 0-based index, +1 for next page
+        const nextPage = activePage + 1;
         search(indexJson, query, nextPage, container, paginationArrows, curLocation, pageSize);
       });
     }
@@ -171,14 +171,21 @@ function buildSearchSection(block) {
   return searchSection;
 }
 
+function parseIntOrDefault(value, defaultValue) {
+  const parsedValue = parseInt(value, 10);
+  if (Number.isNaN(parsedValue)) {
+    return defaultValue;
+  }
+  return parsedValue;
+}
+
 export default async function decorate(block, curLocation = window.location) {
   const indexJson = await fetchData('/query-index');
 
   const queryParams = new URLSearchParams(curLocation.search);
   const query = queryParams.get('q')?.trim();
-  const page = Number(queryParams.get('p'));
-  const s = queryParams.get('s');
-  const pageSize = s ? Number(s) : 10;
+  const page = parseIntOrDefault(queryParams.get('p'), 1);
+  const pageSize = parseIntOrDefault(queryParams.get('s'), 10);
   const buttonContent = block.querySelector('div.search-results > div > div');
   buttonContent.closest('div').remove();
   const paginationArrows = block.querySelectorAll('div.search-results > div > div > picture > img');
