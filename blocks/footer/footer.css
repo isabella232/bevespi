@@ -79,4 +79,9 @@ footer .footer > div ul > li {
         font-size: 0.75rem;
         font-weight: 400;
     }
+
+    footer .footer > div > div > p:last-child img {
+        width: 8.813rem;
+        height: 2.157rem;
+    }
 }
