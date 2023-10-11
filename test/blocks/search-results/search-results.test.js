@@ -146,16 +146,28 @@ describe('Search-results block', () => {
     assertResult(results[3], QUERY_INDEX.data[3]);
   });
 
+  it('should search in description field as well', async () => {
+    await loadSearchResultsBlock('risk');
+
+    assertShowingResultsFor('risk');
+
+    const results = document.querySelectorAll('div.result-item');
+    expect(results).to.have.lengthOf(1);
+
+    assertResult(results[0], QUERY_INDEX.data[3]);
+  });
+
   it('supports multiple search terms, by ANDing them', async () => {
     await loadSearchResultsBlock('aero inhal');
 
     assertShowingResultsFor('aero inhal');
 
     const results = document.querySelectorAll('div.result-item');
-    expect(results).to.have.lengthOf(2);
+    expect(results).to.have.lengthOf(3);
 
     assertResult(results[0], QUERY_INDEX.data[0]);
-    assertResult(results[1], QUERY_INDEX.data[2]);
+    assertResult(results[1], QUERY_INDEX.data[1]);
+    assertResult(results[2], QUERY_INDEX.data[2]);
   });
 
   it('highlights full words containing the search terms', async () => {
@@ -322,8 +334,9 @@ describe('Search-results block', () => {
 
     assertShowingResultsFor('copd');
     const results = document.querySelectorAll('div.result-item');
-    expect(results).to.have.lengthOf(1);
-    assertResult(results[0], QUERY_INDEX.data[4]);
+    expect(results).to.have.lengthOf(2);
+    assertResult(results[0], QUERY_INDEX.data[0]);
+    assertResult(results[1], QUERY_INDEX.data[4]);
   });
 
   it('should execute search from input field, clicking on the Search button', async () => {
@@ -339,8 +352,9 @@ describe('Search-results block', () => {
 
     assertShowingResultsFor('copd');
     const results = document.querySelectorAll('div.result-item');
-    expect(results).to.have.lengthOf(1);
-    assertResult(results[0], QUERY_INDEX.data[4]);
+    expect(results).to.have.lengthOf(2);
+    assertResult(results[0], QUERY_INDEX.data[0]);
+    assertResult(results[1], QUERY_INDEX.data[4]);
   });
 
   it('shows first page if requested page is out-of-bound', async () => {

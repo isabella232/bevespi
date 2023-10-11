@@ -68,10 +68,14 @@ class SearchResults {
     resultsContainer.classList.add('results-container');
     this.container.append(resultsContainer);
 
-    const terms = query.trim().split(' ').filter((term) => term.length > 0);
+    const terms = query.trim().split(' ')
+      .filter((term) => term.length > 0)
+      .map((term) => term.toLowerCase());
 
     const results = this.indexJson.data.filter((row) => terms.length > 0
-      && terms.every((term) => row.title.toLowerCase().includes(term.toLowerCase())));
+      && terms.every((term) => row.title.toLowerCase().includes(term)
+        || row.description?.toLowerCase()?.includes(term)));
+
     const count = results.length;
     const pages = Math.ceil(count / this.pageSize);
     // if requestedPage is out-of-bounds, set page to 1
