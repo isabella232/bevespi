@@ -82,11 +82,21 @@ class SearchResults {
       const pos = index + 1;
       if (pos > (page - 1) * this.pageSize && pos <= page * this.pageSize) {
         const resultSection = document.createElement('div');
-        resultSection.classList.add('result');
+        resultSection.classList.add('result-item');
+        const linkParagraph = document.createElement('p');
+        linkParagraph.classList.add('search-result-pagename');
+        resultSection.append(linkParagraph);
         const link = document.createElement('a');
         link.href = row.path;
+        link.title = row.title;
         link.innerHTML = SearchResults.#highlightTerms(row.title, terms);
-        resultSection.append(link);
+        linkParagraph.append(link);
+        if (row.description) {
+          const descriptionParagraph = document.createElement('p');
+          descriptionParagraph.classList.add('search-result-abstract');
+          descriptionParagraph.innerHTML = SearchResults.#highlightTerms(row.description, terms);
+          resultSection.append(descriptionParagraph);
+        }
         resultsContainer.append(resultSection);
       }
     });

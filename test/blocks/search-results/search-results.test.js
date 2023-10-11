@@ -25,22 +25,27 @@ const QUERY_INDEX = {
     {
       path: '/',
       title: 'BEVESPI AEROSPHERE® (glycopyrrolate/formoterol fumarate) Inhalation Aerosol',
+      description: 'BEVESPI AEROSPHERE is a twice-daily long term treatment for adults with COPD.',
     },
     {
       path: 'copd-treatment',
       title: 'How BEVESPI AEROSPHERE® (glycopyrrolate/formoterol fumarate) Can Help',
+      description: 'BEVESPI AEROSPHERE is a combination of two medicines in one inhaler that works in different ways to help open airways.',
     },
     {
       path: 'how-to-use-bevespi-inhaler',
       title: 'How to Use Your Inhaler - BEVESPI AEROSPHERE® (glycopyrrolate/formoterol fumarate) Inhalation Aerosol',
+      description: 'Watch video instructions to learn how to use your BEVESPI AEROSPHERE inhaler.',
     },
     {
       path: 'bevespi-side-effects',
       title: 'BEVESPI AEROSPHERE® (glycopyrrolate/formoterol fumarate) Safety & Side Effects',
+      description: 'Find side effects, safety, and risk information related to BEVESPI AEROSPHERE. Ask your health care provider if you have any questions.',
     },
     {
       path: 'copd-management-resources',
       title: 'COPD Resources and Support | Breathing Room',
+      description: 'Breathing Room is a dedicated place designed to help you simplify, streamline, and manage your breathing day to day.',
     },
   ],
 };
@@ -86,8 +91,12 @@ function assertShowingResultsFor(query) {
 
 function assertResult(actual, expected) {
   expect(actual).to.exist;
-  expect(actual.getAttribute('href')).to.equal(expected.path);
-  expect(actual.textContent).to.equal(expected.title);
+  const link = actual.querySelector('p.search-result-pagename > a');
+  expect(link.getAttribute('href')).to.equal(expected.path);
+  expect(link.getAttribute('title')).to.equal(expected.title);
+  expect(link.textContent).to.equal(expected.title);
+  const abstract = actual.querySelector('p.search-result-abstract');
+  expect(abstract.textContent).to.equal(expected.description);
 }
 
 function assertHighlighted(actual, ...highlightedWords) {
@@ -128,7 +137,7 @@ describe('Search-results block', () => {
 
     assertShowingResultsFor('bevespi');
 
-    const results = document.querySelectorAll('div.result > a');
+    const results = document.querySelectorAll('div.result-item');
     expect(results).to.have.lengthOf(4);
 
     assertResult(results[0], QUERY_INDEX.data[0]);
@@ -142,7 +151,7 @@ describe('Search-results block', () => {
 
     assertShowingResultsFor('aero inhal');
 
-    const results = document.querySelectorAll('div.result > a');
+    const results = document.querySelectorAll('div.result-item');
     expect(results).to.have.lengthOf(2);
 
     assertResult(results[0], QUERY_INDEX.data[0]);
@@ -152,7 +161,7 @@ describe('Search-results block', () => {
   it('highlights full words containing the search terms', async () => {
     await loadSearchResultsBlock('aero inhal');
 
-    const results = document.querySelectorAll('div.result > a');
+    const results = document.querySelectorAll('div.result-item');
 
     assertHighlighted(results[0], 'AEROSPHERE', 'Inhalation', 'Aerosol');
   });
@@ -184,7 +193,7 @@ describe('Search-results block', () => {
     const pageSize = 2;
     await loadSearchResultsBlock('bev', 1, pageSize);
 
-    const results = document.querySelectorAll('div.result > a');
+    const results = document.querySelectorAll('div.result-item');
 
     expect(results).to.have.lengthOf(pageSize);
     assertResult(results[0], QUERY_INDEX.data[0]);
@@ -195,7 +204,7 @@ describe('Search-results block', () => {
     const pageSize = 3;
     await loadSearchResultsBlock('bev', 2, pageSize);
 
-    const results = document.querySelectorAll('div.result > a');
+    const results = document.querySelectorAll('div.result-item');
 
     expect(results).to.have.lengthOf(1);
     assertResult(results[0], QUERY_INDEX.data[3]);
@@ -216,7 +225,7 @@ describe('Search-results block', () => {
     const pageSize = 2;
     await loadSearchResultsBlock('c', 2, pageSize);
 
-    const results = document.querySelectorAll('div.result > a');
+    const results = document.querySelectorAll('div.result-item');
     expect(results).to.have.lengthOf(pageSize);
 
     assertResult(results[0], QUERY_INDEX.data[2]);
@@ -312,7 +321,7 @@ describe('Search-results block', () => {
     await sendKeys({ press: 'Enter' });
 
     assertShowingResultsFor('copd');
-    const results = document.querySelectorAll('div.result > a');
+    const results = document.querySelectorAll('div.result-item');
     expect(results).to.have.lengthOf(1);
     assertResult(results[0], QUERY_INDEX.data[4]);
   });
@@ -329,7 +338,7 @@ describe('Search-results block', () => {
     await sendMouse({ type: 'click', position: [x, y] });
 
     assertShowingResultsFor('copd');
-    const results = document.querySelectorAll('div.result > a');
+    const results = document.querySelectorAll('div.result-item');
     expect(results).to.have.lengthOf(1);
     assertResult(results[0], QUERY_INDEX.data[4]);
   });
@@ -342,7 +351,7 @@ describe('Search-results block', () => {
     expect(activePage.textContent).to.equal('1');
 
     assertShowingResultsFor('bev');
-    const results = document.querySelectorAll('div.result > a');
+    const results = document.querySelectorAll('div.result-item');
     expect(results).to.have.lengthOf(2);
   });
 
