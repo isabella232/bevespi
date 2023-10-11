@@ -1,29 +1,48 @@
-ul.paginationitems {
-    list-style: none;
-    padding-inline-start: 0;
+main .search {
+    margin-left: 80px;
 }
 
-ul.paginationitems > li {
+main .search-results {
+    padding: 0;
+    margin-bottom: 80px;
+}
+
+main .title-container {
+    margin-left: 0;
+}
+
+main .results-container {
+    margin-left: 0;
+}
+
+main .paginationitems {
+    list-style: none;
+    padding-inline-start: 0;
+    margin: 32px 0;
+}
+
+main .paginationitems > li {
     float: left;
     margin-right: 10px;
     text-decoration: none;
     width: 16px;
 }
 
-
-ul.paginationitems > li.active-page {
+main .paginationitems > li.active-page {
     font-weight: bold;
 }
 
-ul.paginationitems > li:not(.active-page) {
+main .paginationitems > li:not(.active-page) {
     cursor: pointer;
 }
 
-div.search-form {
+main .search-form {
     display: flex;
     align-items: center;
+    margin-top: 64px;
+    margin-bottom: 20px;
 }
 
-input#search {
+main input#search {
     margin: 0;
 }
