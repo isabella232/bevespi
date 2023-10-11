@@ -79,6 +79,10 @@ main .hero > div:nth-of-type(n+2) {
   display: flex;
 }
 
+main .hero:not(.home) > div:nth-of-type(n+2) {
+  max-width: 1200px;
+}
+
 main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
   flex-basis: 136px;
   margin-left: auto;
@@ -101,7 +105,7 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
   main .hero {
     min-height: 13.4375rem;
   }
-  
+
   main .hero.home {
     padding: 110px 0 40px;
   }
