@@ -25,6 +25,7 @@
   --text-color-grey-1: #585858;
   --color-blue-1: #273670;
   --color-blue-2: #17265F;
+  --button-arrow-orange: #ee8331;
 
   /* fonts */
   --body-font-family: gotham, gotham-fallback;
@@ -288,4 +289,45 @@ main .section {
 /* section metadata */
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+.section .columns .button-container a {
+  border: none;
+  background-color: transparent;
+  color: black !important;
+  position: relative;
+  justify-content: left;
+  align-items: center;
+  max-width: 14.875rem;
+}
+
+.section .columns .button-container a::before,
+.section .columns .button-container a::after {
+  display: none;
+}
+
+.section .columns .button-container a:hover::before {
+  width: 1.8125rem;
+  height: 0.3912em;
+  background-color: var(--button-arrow-orange);
+  position: absolute;
+  content: "";
+  top: 30%;
+  right: 0;
+  transform: rotate(45deg);
+  border-radius: 40px;
+  display: inline-block;
+} 
+
+.section .columns .button-container a:hover::after {
+  width: 1.8125rem;
+  height: 0.3912em;
+  background-color: var(--button-arrow-orange);
+  position: absolute;
+  content: "";
+  top: 57%;
+  right: 0;
+  transform: rotate(-45deg);
+  border-radius: 40px;
+  display: inline-block;
 }
