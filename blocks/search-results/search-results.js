@@ -4,10 +4,9 @@ async function fetchData(path) {
 }
 
 class SearchResults {
-  constructor(indexJson, container, paginationArrows, curLocation, pageSize) {
+  constructor(indexJson, container, curLocation, pageSize) {
     this.indexJson = indexJson;
     this.container = container;
-    this.paginationArrows = paginationArrows;
     this.curLocation = curLocation;
     this.pageSize = pageSize;
   }
@@ -104,7 +103,7 @@ class SearchResults {
         previousPageArrow.classList.add('nav-disabled');
       } else {
         const arrowImage = document.createElement('img');
-        [arrowImage.src] = this.paginationArrows;
+        arrowImage.src = '/icons/search-prev-button.png';
         previousPageArrow.append(arrowImage);
         previousPageArrow.addEventListener('click', () => {
           const activePage = Number(document.querySelector('li.active-page').textContent);
@@ -137,7 +136,7 @@ class SearchResults {
         nextPageArrow.classList.add('nav-disabled');
       } else {
         const arrowImage = document.createElement('img');
-        [, arrowImage.src] = this.paginationArrows;
+        arrowImage.src = '/icons/search-next-button.png';
         nextPageArrow.append(arrowImage);
         nextPageArrow.addEventListener('click', () => {
           const activePage = Number(document.querySelector('li.active-page').textContent);
@@ -149,25 +148,26 @@ class SearchResults {
   }
 }
 
-function buildSearchInputField(value, placeholder) {
+function buildSearchInputField(value) {
   const searchInput = document.createElement('input');
   searchInput.id = 'search';
   searchInput.name = 'q';
   searchInput.maxLength = 50;
-  searchInput.placeholder = placeholder;
+  searchInput.placeholder = 'SEARCH';
   if (value) {
     searchInput.value = value;
   }
   return searchInput;
 }
 
-function buildSearchButton(buttonContent) {
+function buildSearchButton() {
   const searchButton = document.createElement('button');
   const buttonSpan = document.createElement('span');
   searchButton.append(buttonSpan);
-  buttonSpan.append(buttonContent.textContent.trim());
-  buttonSpan.append(buttonContent.querySelector('picture'));
-  buttonContent.textContent = '';
+  buttonSpan.append('SEARCH');
+  const img = document.createElement('img');
+  img.src = '/icons/icon_pink-arrow-right-md.png';
+  buttonSpan.append(img);
   searchButton.type = 'button';
   return searchButton;
 }
@@ -194,28 +194,23 @@ export default async function decorate(block, curLocation = window.location) {
   const query = queryParams.get('q')?.trim();
   const page = parseIntOrDefault(queryParams.get('p'), 1);
   const pageSize = parseIntOrDefault(queryParams.get('s'), 10);
-  const buttonContent = block.querySelector('div.search-results > div > div');
-  buttonContent.closest('div').remove();
-  const paginationArrows = block.querySelectorAll('div.search-results > div > div > picture > img');
-  const paginationArrowsSrc = [...paginationArrows].map((arrow) => arrow.src);
-  paginationArrows.forEach((arrow) => arrow.closest('div').remove());
 
   const searchSection = buildSearchSection(block);
   const searchFormSection = document.createElement('div');
   searchFormSection.classList.add('search-form');
   searchSection.append(searchFormSection);
-  const searchInput = buildSearchInputField(query, buttonContent.textContent.trim());
+  const searchInput = buildSearchInputField(query);
   searchFormSection.append(searchInput);
-  const searchButton = buildSearchButton(buttonContent);
+  const searchButton = buildSearchButton();
   searchFormSection.append(searchButton);
 
   const searchResultsContainer = document.createElement('div');
   searchResultsContainer.classList.add('search-results', 'section');
   searchSection.append(searchResultsContainer);
+
   const searchResults = new SearchResults(
     indexJson,
     searchResultsContainer,
-    paginationArrowsSrc,
     curLocation,
     pageSize,
   );

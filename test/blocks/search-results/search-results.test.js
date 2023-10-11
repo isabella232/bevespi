@@ -177,7 +177,7 @@ describe('Search-results block', () => {
     expect(pagination.children[2].classList).to.not.contain(['active-page']);
     expect(pagination.children[2].firstChild.textContent).to.equal('2');
     expect(pagination.children[3].classList).to.contain(['nav-arrow', 'last']);
-    expect(pagination.children[3].firstChild.src).to.contain(['right.png']);
+    expect(pagination.children[3].firstChild.src).to.contain(['next-button.png']);
   });
 
   it('shows matching results only up to the page size', async () => {
@@ -204,7 +204,7 @@ describe('Search-results block', () => {
     expect(pagination).to.exist;
     expect(pagination.children).to.have.lengthOf(4);
     expect(pagination.children[0].classList).to.contain(['nav-arrow', 'first']);
-    expect(pagination.children[0].firstChild.src).to.contain(['left.png']);
+    expect(pagination.children[0].firstChild.src).to.contain(['prev-button.png']);
     expect(pagination.children[1].classList).to.not.contain(['active-page']);
     expect(pagination.children[1].firstChild.textContent).to.equal('1');
     expect(pagination.children[2].classList).to.contain(['active-page']);
@@ -226,7 +226,7 @@ describe('Search-results block', () => {
     expect(pagination).to.exist;
     expect(pagination.children).to.have.lengthOf(5);
     expect(pagination.children[0].classList).to.contain(['nav-arrow', 'first']);
-    expect(pagination.children[0].firstChild.src).to.contain(['left.png']);
+    expect(pagination.children[0].firstChild.src).to.contain(['prev-button.png']);
     expect(pagination.children[1].classList).to.not.contain(['active-page']);
     expect(pagination.children[1].firstChild.textContent).to.equal('1');
     expect(pagination.children[2].classList).to.contain(['active-page']);
@@ -234,7 +234,7 @@ describe('Search-results block', () => {
     expect(pagination.children[3].classList).to.not.contain(['active-page']);
     expect(pagination.children[3].firstChild.textContent).to.equal('3');
     expect(pagination.children[4].classList).to.contain(['nav-arrow', 'last']);
-    expect(pagination.children[4].firstChild.src).to.contain(['right.png']);
+    expect(pagination.children[4].firstChild.src).to.contain(['next-button.png']);
   });
 
   it('clicking on the right arrow, displays the next page', async () => {
@@ -291,17 +291,15 @@ describe('Search-results block', () => {
     expect(inputField).to.exist;
     expect(inputField.value).to.equal('bev');
     expect(inputField.name).to.equal('q');
-    expect(inputField.placeholder).to.equal('BUTTON');
+    expect(inputField.placeholder).to.equal('SEARCH');
 
     const submitButton = form.querySelector('button');
     expect(submitButton).to.exist;
     expect(submitButton.type).to.equal('button');
-    expect(submitButton.textContent.trim()).to.equal('BUTTON');
-    const buttonPicture = submitButton.querySelector('picture');
-    expect(buttonPicture).to.exist;
-    const buttonImage = buttonPicture.querySelector('img');
+    expect(submitButton.textContent.trim()).to.equal('SEARCH');
+    const buttonImage = submitButton.querySelector('img');
     expect(buttonImage).to.exist;
-    expect(buttonImage.src).to.contain('button.png');
+    expect(buttonImage.src).to.contain('arrow-right-md.png');
   });
 
   it('should execute search from input field, pressing Enter', async () => {
