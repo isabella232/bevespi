@@ -30,13 +30,15 @@ async function loadFonts() {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-// function buildAutoBlocks(main) {
-//   try {
-//   } catch (error) {
-//     // eslint-disable-next-line no-console
-//     console.error('Auto Blocking failed', error);
-//   }
-// }
+// eslint-disable-next-line no-unused-vars
+function buildAutoBlocks(main) {
+  // eslint-disable-next-line no-empty
+  try {
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Auto Blocking failed', error);
+  }
+}
 
 /**
  * Decorates the main element.
