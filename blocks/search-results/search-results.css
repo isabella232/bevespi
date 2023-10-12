@@ -32,10 +32,6 @@ main .search-results .search-result-abstract {
     margin-top: 0;
 }
 
-main .search-results li:focus {
-    outline-color: var(--color-pink);
-}
-
 main .paginationitems {
     list-style: none;
     padding-inline-start: 0;
@@ -47,6 +43,10 @@ main .paginationitems > li {
     margin-right: 16px;
     text-decoration: none;
     width: 16px;
+}
+
+main .search-results li:focus {
+    outline-color: var(--color-pink);
 }
 
 main .paginationitems > li.active-page {
