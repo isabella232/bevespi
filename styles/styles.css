@@ -25,6 +25,7 @@
   --text-color-grey-1: #585858;
   --color-blue-1: #273670;
   --color-blue-2: #17265F;
+  --color-pink: #e81b75;
 
   /* fonts */
   --body-font-family: gotham, gotham-fallback;
@@ -193,7 +194,7 @@ a:hover {
 a.button:any-link, button {
   font-family: var(--body-font-family);
   font-weight: 400;
-  background-color: #e81b75;
+  background-color: var(--color-pink);
   border: 1px solid ghostwhite;
   border-radius: 15px;
   padding: 15px 20px;
