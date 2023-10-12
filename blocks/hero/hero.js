@@ -1,4 +1,1 @@
-export default function decorate(block) {
-
-    
-}
+// nothing to do yet

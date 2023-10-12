@@ -1,6 +1,5 @@
 import {
   sampleRUM,
-  buildBlock,
   loadHeader,
   loadFooter,
   decorateButtons,
@@ -31,7 +30,9 @@ async function loadFonts() {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
+// eslint-disable-next-line no-unused-vars
 function buildAutoBlocks(main) {
+  // eslint-disable-next-line no-empty
   try {
   } catch (error) {
     // eslint-disable-next-line no-console
