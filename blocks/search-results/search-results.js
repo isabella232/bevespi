@@ -176,6 +176,7 @@ function buildSearchInputField(value) {
 
 function buildSearchButton() {
   const searchButton = document.createElement('button');
+  searchButton.id = 'search-button';
   const buttonSpan = document.createElement('span');
   searchButton.append(buttonSpan);
   buttonSpan.append('SEARCH');

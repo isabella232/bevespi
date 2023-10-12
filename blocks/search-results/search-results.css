@@ -1,18 +1,6 @@
-main .search {
-    margin-left: 80px;
-}
-
 main .search-results {
     padding: 0;
     margin-bottom: 80px;
-}
-
-main .title-container {
-    margin-left: 0;
-}
-
-main .results-container {
-    margin-left: 0;
 }
 
 main .paginationitems {
@@ -23,7 +11,7 @@ main .paginationitems {
 
 main .paginationitems > li {
     float: left;
-    margin-right: 10px;
+    margin-right: 1em;
     text-decoration: none;
     width: 16px;
 }
@@ -39,10 +27,38 @@ main .paginationitems > li:not(.active-page) {
 main .search-form {
     display: flex;
     align-items: center;
-    margin-top: 64px;
     margin-bottom: 20px;
+}
+
+main #search, main #search-button {
+    border: 2px solid #e81b75;
+    border-radius: 0;
+    height: 54px;
 }
 
 main input#search {
     margin: 0;
+    width: 72%;
+    padding-left: 18px;
+    outline: none;
+}
+
+main #search-button {
+    background: white none;
+    width: 190px
+}
+
+main #search-button:hover {
+    border-width: 3px;
+}
+
+main #search-button > span {
+    color: #e81b75;
+}
+
+main #search-button img {
+    width: 23px;
+    height: 23px;
+    vertical-align: middle;
+    margin-left: 21px;
 }
