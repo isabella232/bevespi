@@ -195,14 +195,14 @@ main pre {
     white-space: pre;
 }
 
-a:any-link {
+a:not(.button):any-link {
     display: inline-block;
     color: var(--link-color);
     text-decoration: none;
     font-weight: var(--link-font-weight);
 }
 
-a:hover {
+a:not(.button):hover {
     text-decoration: none;
     color: var(--link-hover-color);
     font-weight: var(--link-font-weight-hover);
@@ -210,6 +210,9 @@ a:hover {
 
 /* buttons */
 a.button:any-link, button {
+    text-decoration: none;
+    display: flex;
+    width: fit-content;
     color: var(--cta-color);
     border: 0.125rem solid var(--cta-color);
     background-color: var(--color-white);
@@ -227,7 +230,6 @@ a.button:any-link, button {
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus {
-    background-color: var(--link-hover-color);
     cursor: pointer;
 }
 
@@ -240,8 +242,6 @@ a.button.secondary, button.secondary {
     background-color: unset;
     border: 0.125rem solid var(--cta-color);
     color: var(--cta-color);
-    display: flex;
-    width: fit-content;
     justify-content: space-between;
     position: relative;
 }
