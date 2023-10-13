@@ -2,6 +2,8 @@
   --link-home-button-hover-color: #f03285;
   --column-grey-background-color: #f6f6f6;
   --column-white-background-color: #fff;
+  --button-arrow-orange: #ee8331;
+  --row-heading-color: #172660;
 }
 
 .columns > div {
@@ -54,6 +56,22 @@ main .section.columns-container .columns-wrapper .columns > div {
   flex-direction: column;
 }
 
+.row-wrapper > div {
+  max-width: 62.625rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5625rem;
+}
+
+.row-wrapper > div > div.columns-img-col {
+  order: 0;
+}
+
+.row-wrapper > div > div {
+  order: 1;
+}
+
 @media (min-width: 600px) {
   main .section.columns-container {
     padding: unset;
@@ -64,15 +82,13 @@ main .section.columns-container .columns-wrapper .columns > div {
     align-items: center;
   }
 
-  .row-wrapper > div {    
-    display: flex;
+  .row-wrapper > div {
     flex-direction: row;
-    width: 100%;
-    max-width: 75rem;
   }
 
   .row-wrapper > div > div {
     flex: 1;
+    order: unset;
   }
 
   main .section.columns-container .columns-wrapper .columns > div .row-wrapper > div.columns-img-col {
@@ -87,7 +103,7 @@ main .section.columns-container .columns-wrapper .columns > div::after {
   position: absolute;
   content: "";
   order: 2;
-  left: 49%;
+  left: 50%;
   bottom: -16px;
   z-index: 1;
 }
@@ -104,6 +120,14 @@ main .section.columns-container .columns-wrapper .columns > div:last-child::afte
   display: none;
 }
 
+main .section.columns-container .columns-wrapper .columns .footnote {
+  font-size: var(--body-font-size-xs)
+}
+
+.row-wrapper:not(:first-of-type) > div > div > p:nth-last-of-type(2) {
+  margin-bottom: 2.5rem;
+}
+
 @media (min-width: 900px) {
   .columns > div {
     align-items: center;
@@ -111,9 +135,8 @@ main .section.columns-container .columns-wrapper .columns > div:last-child::afte
     gap: 32px;
   }
 
-  .columns > div > div {
-    flex: 1;
-    order: unset;
+  main .section.columns-container .columns-wrapper .columns > div {
+    padding: 2.5rem 0.75rem 1.875rem;
   }
 }
 
@@ -125,6 +148,9 @@ main .section.columns-container .columns-wrapper .columns > div:last-child::afte
   justify-content: left;
   align-items: center;
   max-width: 14.875rem;
+  font-size: var(--heading-font-size-m);
+  font-weight: var(--font-weight-thin);
+  line-height: 1.1;
 }
 
 .section .columns .button-container a:hover {
@@ -137,7 +163,7 @@ main .section.columns-container .columns-wrapper .columns > div:last-child::afte
   background-color: var(--button-arrow-orange);
   position: absolute;
   content: "";
-  top: 30%;
+  top: 15%;
   right: 0;
   transform: rotate(45deg);
   border-radius: 40px;
@@ -150,7 +176,7 @@ main .section.columns-container .columns-wrapper .columns > div:last-child::afte
   background-color: var(--button-arrow-orange);
   position: absolute;
   content: "";
-  top: 57%;
+  top: 76%;
   right: 0;
   transform: rotate(-45deg);
   border-radius: 40px;
@@ -161,6 +187,15 @@ main .section.columns-container .columns-wrapper .columns > div:last-child::afte
   .section .columns img {
     max-height: unset;
     max-width: unset;
+  }
+  .section .columns .button-container a {
+    line-height: initial;
+  }
+  .section .columns .button-container a::before{
+    top: 25%;
+  }
+  .section .columns .button-container a::after {
+    top: 62%;
   }
 }
 
@@ -175,13 +210,11 @@ main .section.columns-container .columns-wrapper .columns > div:last-child::afte
 
 .section .columns h2 {
   font-size: var(--heading-font-size-xxl);
+  color: var(--row-heading-color);
+  line-height: 1.1;
 }
 
 @media (min-width: 600px) {
-  .section .columns h2 {
-    font-size: var();
-  }
-
   main .section.columns-container {
     padding: unset;
   }

@@ -63,6 +63,14 @@
     --link-font-weight: 500;
     --link-font-weight-hover: bold;
 
+    /* font weights */
+    --font-weight-thin: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 500;
+    --font-weight-bolder: 600;
+    --font-weight-boldest: 700;
+    --font-weight-heavy: 900;
+
 }
 
 /* fallback fonts for reduced layout shift */
@@ -71,7 +79,7 @@
 @font-face {
     font-family: gotham-fallback;
     font-style: normal;
-    font-weight: bold;
+    font-weight: var(--font-weight-boldest);
     src: local('Arial');
     ascent-override: 68.65%;
     descent-override: 17.16%;
@@ -83,7 +91,7 @@
 @font-face {
     font-family: gotham-fallback;
     font-style: normal;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     src: local('Arial');
     ascent-override: 70.47%;
     descent-override: 17.62%;
@@ -95,7 +103,7 @@
 @font-face {
     font-family: gotham-fallback;
     font-style: normal;
-    font-weight: 500;
+    font-weight: var(--font-weight-bold);
     src: local('Arial');
     ascent-override: 69.48%;
     descent-override: 17.37%;
@@ -137,7 +145,7 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
     font-family: var(--heading-font-family);
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     line-height: 1.25;
     margin-top: 1em;
     margin-bottom: .5em;
@@ -228,7 +236,7 @@ a.button:any-link, button {
     text-transform: uppercase;
     font-size: 0.75rem;
     line-height: 0.75rem;
-    font-weight: 500;
+    font-weight: var(--font-weight-bold);
     border-radius: 1.625rem;
     padding: 0 1.25rem;
     height: 1.875rem;

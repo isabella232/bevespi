@@ -12,9 +12,18 @@ function setContainerBackgroundImage(picture, col) {
     const rowWrapper = col.closest('.row-wrapper');
     if (rowWrapper) {
       rowWrapper.style = `background: url(${img.src}); background-size: cover;`;
-      picture.remove();
+      picture.parentElement.remove();
     }
   }
+}
+
+function markFootnotes(col) {
+  const italicNotes = col.querySelectorAll('em');
+  [...italicNotes].forEach((note) => {
+    if (note.textContent[0] === '*') {
+      note.classList.add('footnote');
+    }
+  });
 }
 
 export default function decorate(block) {
@@ -25,6 +34,7 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     addRowWrapper(row);
     [...row.children].forEach((col) => {
+      markFootnotes(col);
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('div');
