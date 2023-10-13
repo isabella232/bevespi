@@ -3,6 +3,17 @@ async function fetchData(path) {
   return response.json();
 }
 
+function addEventListeners(element, functionToCall) {
+  element.addEventListener('click', () => {
+    functionToCall();
+  });
+  element.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      functionToCall();
+    }
+  });
+}
+
 class SearchResults {
   constructor(indexJson, container, curLocation, pageSize) {
     this.indexJson = indexJson;
@@ -95,12 +106,15 @@ class SearchResults {
         link.title = row.title;
         link.innerHTML = SearchResults.#highlightTerms(row.title, terms);
         linkParagraph.append(link);
+
+        const descriptionParagraph = document.createElement('p');
+        descriptionParagraph.classList.add('search-result-abstract');
         if (row.description) {
-          const descriptionParagraph = document.createElement('p');
-          descriptionParagraph.classList.add('search-result-abstract');
           descriptionParagraph.innerHTML = SearchResults.#highlightTerms(row.description, terms);
-          resultSection.append(descriptionParagraph);
+        } else {
+          descriptionParagraph.innerHTML = 'No description available.';
         }
+        resultSection.append(descriptionParagraph);
         resultsContainer.append(resultSection);
       }
     });
@@ -116,10 +130,11 @@ class SearchResults {
       if (page === 1) {
         previousPageArrow.classList.add('nav-disabled');
       } else {
+        previousPageArrow.tabIndex = 0;
         const arrowImage = document.createElement('img');
         arrowImage.src = '/icons/search-prev-button.png';
         previousPageArrow.append(arrowImage);
-        previousPageArrow.addEventListener('click', () => {
+        addEventListeners(previousPageArrow, () => {
           const activePage = Number(document.querySelector('li.active-page').textContent);
           this.searchIndex(query, activePage - 1);
         });
@@ -134,8 +149,9 @@ class SearchResults {
         if (currentPage === page) {
           li.classList.add('active-page');
         } else {
+          li.tabIndex = 0;
           const pageNumber = currentPage;
-          span.addEventListener('click', () => {
+          addEventListeners(li, () => {
             this.searchIndex(query, pageNumber);
           });
         }
@@ -149,10 +165,11 @@ class SearchResults {
       if (page === pages) {
         nextPageArrow.classList.add('nav-disabled');
       } else {
+        nextPageArrow.tabIndex = 0;
         const arrowImage = document.createElement('img');
         arrowImage.src = '/icons/search-next-button.png';
         nextPageArrow.append(arrowImage);
-        nextPageArrow.addEventListener('click', () => {
+        addEventListeners(nextPageArrow, () => {
           const activePage = Number(document.querySelector('li.active-page').textContent);
           this.searchIndex(query, activePage + 1);
         });
@@ -176,6 +193,7 @@ function buildSearchInputField(value) {
 
 function buildSearchButton() {
   const searchButton = document.createElement('button');
+  searchButton.id = 'search-button';
   const buttonSpan = document.createElement('span');
   searchButton.append(buttonSpan);
   buttonSpan.append('SEARCH');
