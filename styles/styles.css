@@ -26,6 +26,8 @@
   --color-blue-1: #273670;
   --color-blue-2: #17265F;
   --button-arrow-orange: #ee8331;
+  --column-grey-background-color: #f6f6f6;
+  --column-white-background-color: #fff;
 
   /* fonts */
   --body-font-family: gotham, gotham-fallback;
@@ -273,10 +275,66 @@ main .section {
   padding: 64px 16px;
 }
 
+main .section.columns-container {
+  padding: 0;
+}
+
+main .section.columns-container .columns-wrapper .columns > div {
+  padding: 2.5rem 0.75rem 1.875rem;
+  position: relative;
+  flex-direction: column;
+}
+
+
 @media (min-width: 600px) {
+  main .section.columns-container .columns-wrapper .columns > div {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  main .section.columns-container .columns-wrapper .columns > div > div {
+    flex: 1
+  }
+
+  main .section.columns-container .columns-wrapper .columns > div > div.columns-img-col {
+    order: 1;
+  }
+}
+
+main .section.columns-container .columns-wrapper .columns > div::after {
+  width: 2rem;
+  height: 2rem;
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: 0;
+  content: "";
+  order: 2;
+  left: 45%;
+  bottom: -16px;
+  z-index: 1;
+}
+
+main .section.columns-container .columns-wrapper .columns > div:nth-child(odd)::after {
+  background-color: var(--column-white-background-color);
+}
+
+main .section.columns-container .columns-wrapper .columns > div:nth-child(even)::after {
+  background-color: var(--column-grey-background-color);
+}
+
+main .section.columns-container .columns-wrapper .columns > div:last-child:after {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  main .section.columns-container {
+    padding: unset;
+  }
+
   main .section {
     padding: 64px 32px;
   }
+
 }
 
 @media (min-width: 900px) {
@@ -301,12 +359,7 @@ main .section.highlight {
   max-width: 14.875rem;
 }
 
-.section .columns .button-container a::before,
-.section .columns .button-container a::after {
-  display: none;
-}
-
-.section .columns .button-container a:hover::before {
+.section .columns .button-container a::before {
   width: 1.8125rem;
   height: 0.3912em;
   background-color: var(--button-arrow-orange);
@@ -319,7 +372,7 @@ main .section.highlight {
   display: inline-block;
 } 
 
-.section .columns .button-container a:hover::after {
+.section .columns .button-container a::after {
   width: 1.8125rem;
   height: 0.3912em;
   background-color: var(--button-arrow-orange);
@@ -330,4 +383,33 @@ main .section.highlight {
   transform: rotate(-45deg);
   border-radius: 40px;
   display: inline-block;
+}
+
+.section .columns > div:nth-child(even) {
+  background-color: var(--column-grey-background-color);
+}
+
+.section .columns > div:nth-child(odd) {
+  background-color: var(--column-white-background-color);
+}
+
+.section .columns img {
+  max-height: 10.6875rem;
+  width: auto;
+  max-width: 15rem;
+}
+
+.section .columns picture {
+  display: flex;
+  justify-content: center;
+}
+
+.section .columns h2 {
+  font-size: var(--heading-font-size-xxl);
+}
+
+@media (min-width: 600px) {
+  .section .columns h2 {
+    font-size: var();
+  }
 }
