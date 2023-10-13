@@ -10,17 +10,45 @@ main .hero-container {
   
 main .hero {
   position: relative;
-  padding: 32px;
-  min-height: 71px;
+  padding: 1.875rem 0;
+  min-height: 4.4375rem;
+}
+
+main .hero.home {
+  color: var(--background-color);
+  padding: 4.375rem 0;
 }
 
 main .hero h1 {
-  width: 70%;
-  padding: 0 15px;
   color: var(--link-color);
+  font-size: var(--heading-font-size-xxl);
 }
 
-main .hero picture {
+main .hero.home h1 {
+  font-size: var(--heading-font-size-xxl-home);
+  color: var(--background-color);
+}
+
+main .hero.home h2 {
+  font-size: var(--body-font-size-xxxs);
+}
+
+main .hero.home p {
+  font-size: var(--body-font-size-xxs);
+}
+
+main .hero.home h1,
+main .hero.home h2,
+main .hero.home p {
+  margin-top: 0;
+  margin-bottom: 0.375rem;
+}
+
+main .hero.home p:first-of-type {
+  font-size: var(--body-font-size-s);
+}
+
+main .hero > div:first-of-type picture {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -31,24 +59,99 @@ main .hero picture {
   box-sizing: border-box;
 }
 
+main .hero > div:first-of-type p > picture {
+  display: none;
+}
+
+main .hero > div:first-of-type p:last-of-type > picture {
+  display: block;
+}
+
 main .hero img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-main .hero > div > div:nth-of-type(2) {
-  max-width: 1200px;
+main .hero > div:nth-of-type(n+2) {
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+}
+
+main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
+  flex-basis: 8.5rem;
+  margin-left: auto;
+  transform: translateY(-1.5625rem);
+}
+
+main .hero > div:nth-of-type(n+2) div:nth-of-type(n+3) {
+  display: none;
+}
+
+main .hero > div:nth-of-type(n+2) >div:first-of-type:last-of-type {
+  max-width: 67%;
+}
+
+main .hero > div:nth-of-type(n+2) div:nth-of-type(1):not(:last-of-type) {
+  flex-basis: 42%;
+}
+
+main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > picture {
+  display: none;
 }
 
 @media (min-width: 900px) {
   main .hero {
-    min-height: 215px;
+    min-height: 13.4375rem;
   }
 
-  main .hero h1 {
-    width: 35%;
+  main .hero.home {
+    padding: 6.5rem 0.9375rem 2.5rem 0;
+  }
+
+  main .hero.home h1 {
+    padding-right: 3.75rem;
+  }
+
+  main .hero div:last-of-type:first-of-type h1 {
+    width: 42%;
+  }
+
+  main .hero.home h2 {
+    font-size: var(--body-font-size-m);
+  }
+  
+  main .hero.home p {
+    font-size: var(--body-font-size-m);
+  }
+
+  main .hero.home p:first-of-type {
+    font-size: var(--body-font-size-xxxl);
+  }
+  
+  main .hero > div:first-of-type p:last-of-type > picture {
+    display: none;
+  }
+
+  main .hero > div:first-of-type p:first-of-type > picture {
+    display: block;
+  }
+
+  main .hero:not(.home) > div:nth-of-type(n+2) {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
+    flex-basis: 21.25rem;
+    transform: translateY(0.9375rem);
+  }
+
+  main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > picture {
+    display: block;
+    padding-left: 3.125rem;
   }
 }
