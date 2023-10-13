@@ -90,6 +90,13 @@ header .nav-bottom {
   font-family: var(--heading-font-family);
 }
 
+header .nav-bottom li a {
+  padding-left: 3.125rem;
+  width: 100%;
+  cursor: pointer;
+  z-index: 4;
+}
+
 header .nav-bottom a:any-link {
   color: var(--background-color);
   font-size: var(--body-font-size-s);
@@ -119,13 +126,6 @@ header .nav-bottom li::after {
   display: block;
   margin-left: auto;
   transform: translate(-1rem, -0.125rem);
-}
-
-header .nav-bottom li a {
-  padding-left: 3.125rem;
-  width: 100%;
-  cursor: pointer;
-  z-index: 4;
 }
 
 header .nav-bottom li a em {
@@ -303,14 +303,14 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
     margin: 0;
   }
 
-  header .nav-bottom a:any-link {
-    font-size: var(--body-font-size-l);
-  }
-
   header .nav-bottom ul li a {
     padding-right: 1.25rem;
     width: 70%;
     transform: translateX(-0.625rem);
+  }
+
+  header .nav-bottom a:any-link {
+    font-size: var(--body-font-size-l);
   }
 
   header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(-n+2) {
@@ -396,7 +396,7 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
     transform: translate(-2rem, -0.125rem);
   }
   
-  header .nav-bottom li:nth-of-type(n+4):after {
+  header .nav-bottom li:nth-of-type(n+4)::after {
     transform: translate(-3rem, -0.125rem);
   }
 
