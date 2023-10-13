@@ -14,18 +14,6 @@
     import { sampleRUM } from '/scripts/aem.js';
 
     window.addEventListener('load', () => {
-      if (document.referrer) {
-        const { origin, pathname } = new URL(document.referrer);
-        if (origin === window.location.origin) {
-          const backBtn = document.createElement('a');
-          backBtn.classList.add('button', 'error-button-back');
-          backBtn.href = pathname;
-          backBtn.textContent = 'Go back';
-          backBtn.title = 'Go back';
-          const btnContainer = document.querySelector('.button-container');
-          btnContainer.append(backBtn);
-        }
-      }
       sampleRUM('404', { source: document.referrer, target: window.location.href });
     });
   </script>
@@ -56,8 +44,9 @@
         <text x="0" y="17">404</text>
       </svg>
       <h2 class="error-message">Page Not Found</h2>
+      <p>The page you are looking for does not exist. We are sorry for the inconvenience.</p>
       <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Go home</a>
+        <a href="/" class="button secondary error-button-home">Back to Home Page</a>
       </p>
     </div>
   </main>
