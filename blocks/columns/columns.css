@@ -1,3 +1,9 @@
+:root {
+  --link-home-button-hover-color: #f03285;
+  --column-grey-background-color: #f6f6f6;
+  --column-white-background-color: #fff;
+}
+
 .columns > div {
   display: flex;
   flex-direction: column;
