@@ -24,7 +24,7 @@ main .search-results .search-result-pagename a:hover {
 }
 
 main .search-results .search-result-pagename a:focus {
-    outline-color: var(--color-pink);
+    outline-color: var(--cta-color);
 }
 
 main .search-results .search-result-abstract {
@@ -46,7 +46,7 @@ main .paginationitems > li {
 }
 
 main .search-results li:focus {
-    outline-color: var(--color-pink);
+    outline-color: var(--cta-color);
 }
 
 main .paginationitems > li.active-page {
@@ -64,9 +64,10 @@ main .search-form {
 }
 
 main #search, main #search-button {
-    border: 2px solid var(--color-pink);
+    border: 2px solid var(--cta-color);
     border-radius: 0;
     height: 54px;
+    margin-top: 0;
 }
 
 main input#search {
@@ -82,21 +83,18 @@ main #search-button {
     width: 190px
 }
 
-main #search-button span {
-    font-size: 16px;
-}
-
 main #search-button:hover, main #search-button:focus {
     border-width: 3px;
 }
 
 main #search-button:focus {
     border-width: 3px;
-    outline-color: var(--color-pink);
+    outline-color: var(--cta-color);
 }
 
 main #search-button > span {
-    color: var(--color-pink);
+    color: var(--cta-color);
+    font-size: 16px;
 }
 
 main #search-button img {
