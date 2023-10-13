@@ -90,7 +90,7 @@ header .nav-bottom {
   font-family: var(--heading-font-family);
 }
 
-header .nav-bottom a {
+header .nav-bottom a:any-link {
   color: var(--background-color);
   font-size: var(--body-font-size-s);
   font-weight: 400;
@@ -118,7 +118,7 @@ header .nav-bottom li::after {
   background-repeat: no-repeat;
   display: block;
   margin-left: auto;
-  transform: translateX(-0.9375rem);
+  transform: translate(-1rem, -0.125rem);
 }
 
 header .nav-bottom li a {
@@ -138,9 +138,17 @@ header .nav-bottom li a:hover {
   font-weight: bold;
 }
 
+header .nav-bottom br {
+  content: " ";
+}
+
+header .nav-bottom br::after {
+  content: " ";
+}
+
 header .nav-bottom img {
-  width: 1.9375rem;
-  height: 2.125rem;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   transform: translateY(-0.375rem);
 }
@@ -148,7 +156,7 @@ header .nav-bottom img {
 header .expanded .nav-bottom {
   display: block;
   background-color: var(--background-blue-1);
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -291,7 +299,7 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
     margin: 0;
   }
 
-  header .nav-bottom a {
+  header .nav-bottom a:any-link {
     font-size: var(--body-font-size-l);
   }
 
@@ -344,6 +352,10 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
     height: unset;
   }
 
+  header .nav-bottom br {
+    content: unset;
+  }
+
   header .nav-bottom img {
     transform: translateY(0);
   }
@@ -359,12 +371,21 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
   }
 
   header .nav-bottom ul li {
-    width: 19.25rem;
+    width: 19.55rem;
     height: 2.375rem;
+  }
+
+  header .nav-bottom ul li:nth-of-type(n+4) {
+    width: 17.55rem;
   }
 
   header .nav-bottom li::after {
     align-self: flex-end;
+    transform: translate(-2rem, -0.125rem);
+  }
+  
+  header .nav-bottom li:nth-of-type(n+4):after {
+    transform: translate(-3rem, -0.125rem);
   }
 
   header .nav-bottom ul li:nth-of-type(3n) {
