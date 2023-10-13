@@ -8,7 +8,7 @@ function addRowWrapper(row) {
 
 function setContainerBackgroundImage(picture, col) {
   const img = picture.querySelector('img');
-  if(img) {
+  if (img) {
     const rowWrapper = col.closest('.row-wrapper');
     if (rowWrapper) {
       rowWrapper.style = `background: url(${img.src}); background-size: cover;`;
@@ -31,7 +31,7 @@ export default function decorate(block) {
         if (picWrapper && picWrapper.children.length === 1) {
           // picture is only content in column
           picWrapper.classList.add('columns-img-col');
-        } else if(pic.parentElement.tagName === 'P') {
+        } else if (pic.parentElement.tagName === 'P') {
           setContainerBackgroundImage(pic, col);
         }
       }
