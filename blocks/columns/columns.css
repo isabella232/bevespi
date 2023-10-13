@@ -19,6 +19,72 @@
   display: block;
 }
 
+main .section .columns-wrapper {
+  max-width: unset;
+  margin: unset;
+}
+
+main .section.columns-container {
+  padding: 0;
+}
+
+main .section.columns-container .columns-wrapper .columns > div {
+  padding: 2.5rem 0.75rem 1.875rem;
+  position: relative;
+  flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  main .section.columns-container {
+    padding: unset;
+  }
+
+  main .section.columns-container .columns-wrapper .columns > div .row-wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .row-wrapper > div {    
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 75rem;
+  }
+
+  .row-wrapper > div > div {
+    flex: 1;
+  }
+
+  main .section.columns-container .columns-wrapper .columns > div .row-wrapper > div.columns-img-col {
+    order: 1;
+  }
+}
+
+main .section.columns-container .columns-wrapper .columns > div::after {
+  width: 2rem;
+  height: 2rem;
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: 0;
+  content: "";
+  order: 2;
+  left: 49%;
+  bottom: -16px;
+  z-index: 1;
+}
+
+main .section.columns-container .columns-wrapper .columns > div:nth-child(odd)::after {
+  background-color: var(--column-white-background-color);
+}
+
+main .section.columns-container .columns-wrapper .columns > div:nth-child(even)::after {
+  background-color: var(--column-grey-background-color);
+}
+
+main .section.columns-container .columns-wrapper .columns > div:last-child:after {
+  display: none;
+}
+
 @media (min-width: 900px) {
   .columns > div {
     align-items: center;
@@ -29,5 +95,89 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+.section .columns .button-container a {
+  border: none;
+  background-color: transparent;
+  color: black !important;
+  position: relative;
+  justify-content: left;
+  align-items: center;
+  max-width: 14.875rem;
+}
+
+.section .columns .button-container a:hover {
+  color: var(--link-home-button-hover-color) !important;
+}
+
+.section .columns .button-container a::before {
+  width: 1.8125rem;
+  height: 0.212em;
+  background-color: var(--button-arrow-orange);
+  position: absolute;
+  content: "";
+  top: 30%;
+  right: 0;
+  transform: rotate(45deg);
+  border-radius: 40px;
+  display: inline-block;
+} 
+
+.section .columns .button-container a::after {
+  width: 1.8125rem;
+  height: 0.212em;
+  background-color: var(--button-arrow-orange);
+  position: absolute;
+  content: "";
+  top: 57%;
+  right: 0;
+  transform: rotate(-45deg);
+  border-radius: 40px;
+  display: inline-block;
+}
+
+.section .columns > div:nth-child(even) {
+  background-color: var(--column-grey-background-color);
+}
+
+.section .columns > div:nth-child(odd) {
+  background-color: var(--column-white-background-color);
+}
+
+.section .columns img {
+  max-height: 10.6875rem;
+  width: auto;
+  max-width: 15rem;
+}
+
+@media (min-width: 900px) {
+  .section .columns img {
+    max-height: unset;
+    max-width: unset;
+  }
+}
+
+.section .columns picture {
+  display: flex;
+  justify-content: center;
+}
+
+.section .columns .columns-img-col {
+  align-self: center;
+}
+
+.section .columns h2 {
+  font-size: var(--heading-font-size-xxl);
+}
+
+@media (min-width: 600px) {
+  .section .columns h2 {
+    font-size: var();
+  }
+
+  main .section.columns-container {
+    padding: unset;
   }
 }
