@@ -7,7 +7,7 @@ footer {
 
 footer .footer {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--page-max-width);
     padding: 0.75rem;
 }
 
