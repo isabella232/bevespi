@@ -187,6 +187,10 @@ header .nav-middle .columns > div div:nth-of-type(2) p {
   bottom: 2.5rem;
 }
 
+header .nav-middle .columns > div div:nth-of-type(2) p:nth-of-type(-n+2) {
+  display: none;
+}
+
 header .nav-middle .columns > div div:nth-of-type(2) p a::after {
   content: "";
   display: inline-block;
@@ -307,6 +311,14 @@ header .expanded .nav-middle .columns > div div:nth-of-type(3) .explore {
     padding-right: 1.25rem;
     width: 70%;
     transform: translateX(-0.625rem);
+  }
+
+  header .nav-middle .columns > div div:nth-of-type(2) p:nth-of-type(-n+2) {
+    display: unset;
+  }
+
+  header .nav-middle .columns > div div:nth-of-type(2) p:nth-of-type(n+3) {
+    display: none;
   }
 
   header .nav-middle .columns > div div:nth-of-type(2) p a:hover {
