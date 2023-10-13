@@ -1,5 +1,4 @@
-
-const addRowWrapper = function(row) {
+function addRowWrapper(row) {
   const rowWrapper = document.createElement('div');
   rowWrapper.classList.add('row-wrapper');
   const rowContainer = row;
@@ -7,7 +6,7 @@ const addRowWrapper = function(row) {
   rowWrapper.appendChild(rowContainer);
 }
 
-const setContainerBackgroundImage = function(picture, col) {
+function setContainerBackgroundImage(picture, col) {
   const img = picture.querySelector('img');
   if(img) {
     const rowWrapper = col.closest('.row-wrapper');
