@@ -29,7 +29,9 @@ class SearchResults {
     const url = new URL(this.curLocation.origin + this.curLocation.pathname);
     url.searchParams.set('q', query.trim());
     url.searchParams.set('p', page.toString());
-    url.searchParams.set('s', this.pageSize.toString());
+    if (this.pageSize !== 10) {
+      url.searchParams.set('s', this.pageSize.toString());
+    }
     // eslint-disable-next-line no-restricted-globals
     history.pushState(state, title, url.toString());
   }
@@ -47,7 +49,7 @@ class SearchResults {
     return text.replace(new RegExp(pattern, 'gi'), (match) => `<strong>${match}</strong>`);
   }
 
-  searchIndex(query, requestedPage) {
+  searchIndex(queryString, requestedPage) {
     this.container.querySelector('.results-container')?.remove();
     this.container.querySelector('.title-container')?.remove();
     this.container.querySelector('.paginationitems')?.remove();
@@ -56,7 +58,8 @@ class SearchResults {
     this.container.append(titleContainer);
     titleContainer.classList.add('title-container');
 
-    if (query) {
+    const query = queryString.trim();
+    if (query.length >= 3) {
       const showingSerResult = document.createElement('span');
       showingSerResult.classList.add('showingSerResult');
       showingSerResult.textContent = 'Showing results for: ';
@@ -79,13 +82,14 @@ class SearchResults {
     resultsContainer.classList.add('results-container');
     this.container.append(resultsContainer);
 
-    const terms = query.trim().split(' ')
+    const terms = query.split(' ')
       .filter((term) => term.length > 0)
       .map((term) => term.toLowerCase());
 
     const results = this.indexJson.data.filter((row) => terms.length > 0
       && terms.every((term) => row.title.toLowerCase().includes(term)
-        || row.description?.toLowerCase()?.includes(term)));
+        || row.description?.toLowerCase()?.includes(term)
+        || row.content?.toLowerCase()?.includes(term)));
 
     const count = results.length;
     const pages = Math.ceil(count / this.pageSize);
