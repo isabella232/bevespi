@@ -26,26 +26,44 @@ const QUERY_INDEX = {
       path: '/',
       title: 'BEVESPI AEROSPHERE® (glycopyrrolate/formoterol fumarate) Inhalation Aerosol',
       description: 'BEVESPI AEROSPHERE is a twice-daily long term treatment for adults with COPD.',
+      content: 'BEVESPI AEROSPHERE is a combination of two COPD medicines. When used long-term—two '
+        + 'puffs, twice a day—BEVESPI AEROSPHERE works two ways to help open airways and keep them '
+        + 'open. Open airways can help open your world for better breathing.',
     },
     {
       path: 'copd-treatment',
       title: 'How BEVESPI AEROSPHERE® (glycopyrrolate/formoterol fumarate) Can Help',
-      description: 'BEVESPI AEROSPHERE is a combination of two medicines in one inhaler that works in different ways to help open airways.',
+      description: 'BEVESPI AEROSPHERE is a combination of two medicines in one inhaler that works '
+        + 'in different ways to help open airways.',
+      content: 'TWO MEDICINES, ONE INHALER\nBEVESPI AEROSPHERE contains two medicines, the LAMA '
+        + 'glycopyrrolate and the LABA formoterol fumarate, that work in different ways to help '
+        + 'relax the muscles around your airways. ',
     },
     {
       path: 'how-to-use-bevespi-inhaler',
-      title: 'How to Use Your Inhaler - BEVESPI AEROSPHERE® (glycopyrrolate/formoterol fumarate) Inhalation Aerosol',
+      title: 'How to Use Your Inhaler - BEVESPI AEROSPHERE® (glycopyrrolate/formoterol fumarate) '
+        + 'Inhalation Aerosol',
       description: 'Watch video instructions to learn how to use your BEVESPI AEROSPHERE inhaler.',
+      content: 'COPD is a chronic condition that requires your attention every day.\n\n'
+        + 'That’s why you should take BEVESPI AEROSPHERE exactly as prescribed by your doctor. '
+        + 'It’s important that you don’t miss a dose or take more doses than prescribed.',
     },
     {
       path: 'bevespi-side-effects',
       title: 'BEVESPI AEROSPHERE® (glycopyrrolate/formoterol fumarate) Safety & Side Effects',
-      description: 'Find side effects, safety, and risk information related to BEVESPI AEROSPHERE. Ask your health care provider if you have any questions.',
+      description: 'Find side effects, safety, and risk information related to BEVESPI AEROSPHERE. '
+        + 'Ask your health care provider if you have any questions.',
+      content: 'Please read this safety information carefully and ask your health care provider if '
+        + 'you have any questions.\n\nBelow you’ll find information about safety, risks, and side '
+        + 'effects related to BEVESPI AEROSPHERE.',
     },
     {
       path: 'copd-management-resources',
       title: 'COPD Resources and Support | Breathing Room',
-      description: 'Breathing Room is a dedicated place designed to help you simplify, streamline, and manage your breathing day to day.',
+      description: 'Breathing Room is a dedicated place designed to help you simplify, streamline, '
+        + 'and manage your breathing day to day.',
+      content: 'Good care means more than just a prescription.\n\nBreathing Room is a dedicated '
+        + 'place designed to help you simplify, streamline, and manage your breathing day-to-day.',
     },
   ],
 };
@@ -117,6 +135,13 @@ describe('Search-results block', () => {
 
   it('shows a feedback message when no search term is entered', async () => {
     await loadSearchResultsBlock('');
+    const feedback = document.querySelector('div.user-feedback-message > h2');
+    expect(feedback).to.exist;
+    expect(feedback.textContent).to.equal('You did not enter any search terms.Please enter a search term and try again.');
+  });
+
+  it('shows a feedback message when too short search term is entered', async () => {
+    await loadSearchResultsBlock('xx');
     const feedback = document.querySelector('div.user-feedback-message > h2');
     expect(feedback).to.exist;
     expect(feedback.textContent).to.equal('You did not enter any search terms.Please enter a search term and try again.');
@@ -235,7 +260,7 @@ describe('Search-results block', () => {
 
   it('shows middle page of matching results, with navigation', async () => {
     const pageSize = 2;
-    await loadSearchResultsBlock('c', 2, pageSize);
+    await loadSearchResultsBlock('you', 2, pageSize);
 
     const results = document.querySelectorAll('div.result-item');
     expect(results).to.have.lengthOf(pageSize);
@@ -260,7 +285,7 @@ describe('Search-results block', () => {
 
   it('clicking on the right arrow, displays the next page', async () => {
     const pageSize = 2;
-    await loadSearchResultsBlock('c', 1, pageSize);
+    await loadSearchResultsBlock('you', 1, pageSize);
 
     const initialPage = document.querySelector('ul.paginationitems > li.active-page');
     expect(initialPage.textContent).to.equal('1');
@@ -276,7 +301,7 @@ describe('Search-results block', () => {
 
   it('clicking on the left arrow, displays the previous page', async () => {
     const pageSize = 2;
-    await loadSearchResultsBlock('c', 3, pageSize);
+    await loadSearchResultsBlock('you', 3, pageSize);
 
     const initialPage = document.querySelector('ul.paginationitems > li.active-page');
     expect(initialPage.textContent).to.equal('3');
@@ -292,7 +317,7 @@ describe('Search-results block', () => {
 
   it('clicking on the page number of an inactive page, displays that page', async () => {
     const pageSize = 2;
-    await loadSearchResultsBlock('c', 1, pageSize);
+    await loadSearchResultsBlock('you', 1, pageSize);
 
     const page2 = document.querySelector('ul.paginationitems > li:nth-child(3) > span');
     expect(page2.textContent).to.equal('2');
@@ -334,9 +359,10 @@ describe('Search-results block', () => {
 
     assertShowingResultsFor('copd');
     const results = document.querySelectorAll('div.result-item');
-    expect(results).to.have.lengthOf(2);
+    expect(results).to.have.lengthOf(3);
     assertResult(results[0], QUERY_INDEX.data[0]);
-    assertResult(results[1], QUERY_INDEX.data[4]);
+    assertResult(results[1], QUERY_INDEX.data[2]);
+    assertResult(results[2], QUERY_INDEX.data[4]);
   });
 
   it('should execute search from input field, clicking on the Search button', async () => {
@@ -352,9 +378,10 @@ describe('Search-results block', () => {
 
     assertShowingResultsFor('copd');
     const results = document.querySelectorAll('div.result-item');
-    expect(results).to.have.lengthOf(2);
+    expect(results).to.have.lengthOf(3);
     assertResult(results[0], QUERY_INDEX.data[0]);
-    assertResult(results[1], QUERY_INDEX.data[4]);
+    assertResult(results[1], QUERY_INDEX.data[2]);
+    assertResult(results[2], QUERY_INDEX.data[4]);
   });
 
   it('shows first page if requested page is out-of-bound', async () => {
