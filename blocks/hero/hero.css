@@ -102,7 +102,7 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
   display: none;
 }
 
-@media (min-width: 56.25rem) {
+@media (min-width: 900px) {
   main .hero {
     min-height: 13.4375rem;
   }
