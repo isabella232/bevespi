@@ -82,6 +82,10 @@ main #search-button {
     width: 190px
 }
 
+main #search-button span {
+    font-size: 16px;
+}
+
 main #search-button:hover, main #search-button:focus {
     border-width: 3px;
 }
