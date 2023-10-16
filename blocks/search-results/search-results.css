@@ -1,18 +1,35 @@
-main .search {
-    margin-left: 80px;
-}
-
 main .search-results {
     padding: 0;
     margin-bottom: 80px;
+    font: var(--body-font-size-m) var(--body-font-family);
 }
 
-main .title-container {
-    margin-left: 0;
+main .search-results strong {
+    font-weight: 500;
 }
 
-main .results-container {
-    margin-left: 0;
+main .search-results .search-result-pagename {
+    margin-bottom: 10px;
+}
+
+main .search-results .search-result-pagename a {
+    font-size: var(--body-font-size-l);
+    font-weight: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+main .search-results .search-result-pagename a:hover {
+    font-weight: inherit;
+}
+
+main .search-results .search-result-pagename a:focus {
+    outline-color: var(--cta-color);
+}
+
+main .search-results .search-result-abstract {
+    margin-bottom: 25px;
+    margin-top: 0;
 }
 
 main .paginationitems {
@@ -23,13 +40,17 @@ main .paginationitems {
 
 main .paginationitems > li {
     float: left;
-    margin-right: 10px;
+    margin-right: 16px;
     text-decoration: none;
     width: 16px;
 }
 
+main .search-results li:focus {
+    outline-color: var(--cta-color);
+}
+
 main .paginationitems > li.active-page {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 main .paginationitems > li:not(.active-page) {
@@ -39,10 +60,46 @@ main .paginationitems > li:not(.active-page) {
 main .search-form {
     display: flex;
     align-items: center;
-    margin-top: 64px;
     margin-bottom: 20px;
 }
 
+main #search, main #search-button {
+    border: 2px solid var(--cta-color);
+    border-radius: 0;
+    height: 54px;
+    margin-top: 0;
+}
+
 main input#search {
+    border-right: none;
     margin: 0;
+    width: 72%;
+    padding-left: 18px;
+    outline: none;
+}
+
+main #search-button {
+    background: white none;
+    width: 190px
+}
+
+main #search-button:hover, main #search-button:focus {
+    border-width: 3px;
+}
+
+main #search-button:focus {
+    border-width: 3px;
+    outline-color: var(--cta-color);
+}
+
+main #search-button > span {
+    color: var(--cta-color);
+    font-size: 16px;
+}
+
+main #search-button img {
+    width: 23px;
+    height: 23px;
+    vertical-align: middle;
+    margin-left: 21px;
 }

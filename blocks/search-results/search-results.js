@@ -3,6 +3,17 @@ async function fetchData(path) {
   return response.json();
 }
 
+function addEventListeners(element, functionToCall) {
+  element.addEventListener('click', () => {
+    functionToCall();
+  });
+  element.addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+      functionToCall();
+    }
+  });
+}
+
 class SearchResults {
   constructor(indexJson, container, curLocation, pageSize) {
     this.indexJson = indexJson;
@@ -18,7 +29,9 @@ class SearchResults {
     const url = new URL(this.curLocation.origin + this.curLocation.pathname);
     url.searchParams.set('q', query.trim());
     url.searchParams.set('p', page.toString());
-    url.searchParams.set('s', this.pageSize.toString());
+    if (this.pageSize !== 10) {
+      url.searchParams.set('s', this.pageSize.toString());
+    }
     // eslint-disable-next-line no-restricted-globals
     history.pushState(state, title, url.toString());
   }
@@ -36,7 +49,7 @@ class SearchResults {
     return text.replace(new RegExp(pattern, 'gi'), (match) => `<strong>${match}</strong>`);
   }
 
-  searchIndex(query, requestedPage) {
+  searchIndex(queryString, requestedPage) {
     this.container.querySelector('.results-container')?.remove();
     this.container.querySelector('.title-container')?.remove();
     this.container.querySelector('.paginationitems')?.remove();
@@ -45,7 +58,8 @@ class SearchResults {
     this.container.append(titleContainer);
     titleContainer.classList.add('title-container');
 
-    if (query) {
+    const query = queryString.trim();
+    if (query.length >= 3) {
       const showingSerResult = document.createElement('span');
       showingSerResult.classList.add('showingSerResult');
       showingSerResult.textContent = 'Showing results for: ';
@@ -68,13 +82,14 @@ class SearchResults {
     resultsContainer.classList.add('results-container');
     this.container.append(resultsContainer);
 
-    const terms = query.trim().split(' ')
+    const terms = query.split(' ')
       .filter((term) => term.length > 0)
       .map((term) => term.toLowerCase());
 
     const results = this.indexJson.data.filter((row) => terms.length > 0
       && terms.every((term) => row.title.toLowerCase().includes(term)
-        || row.description?.toLowerCase()?.includes(term)));
+        || row.description?.toLowerCase()?.includes(term)
+        || row.content?.toLowerCase()?.includes(term)));
 
     const count = results.length;
     const pages = Math.ceil(count / this.pageSize);
@@ -95,12 +110,15 @@ class SearchResults {
         link.title = row.title;
         link.innerHTML = SearchResults.#highlightTerms(row.title, terms);
         linkParagraph.append(link);
+
+        const descriptionParagraph = document.createElement('p');
+        descriptionParagraph.classList.add('search-result-abstract');
         if (row.description) {
-          const descriptionParagraph = document.createElement('p');
-          descriptionParagraph.classList.add('search-result-abstract');
           descriptionParagraph.innerHTML = SearchResults.#highlightTerms(row.description, terms);
-          resultSection.append(descriptionParagraph);
+        } else {
+          descriptionParagraph.innerHTML = 'No description available.';
         }
+        resultSection.append(descriptionParagraph);
         resultsContainer.append(resultSection);
       }
     });
@@ -116,10 +134,11 @@ class SearchResults {
       if (page === 1) {
         previousPageArrow.classList.add('nav-disabled');
       } else {
+        previousPageArrow.tabIndex = 0;
         const arrowImage = document.createElement('img');
         arrowImage.src = '/icons/search-prev-button.png';
         previousPageArrow.append(arrowImage);
-        previousPageArrow.addEventListener('click', () => {
+        addEventListeners(previousPageArrow, () => {
           const activePage = Number(document.querySelector('li.active-page').textContent);
           this.searchIndex(query, activePage - 1);
         });
@@ -134,8 +153,9 @@ class SearchResults {
         if (currentPage === page) {
           li.classList.add('active-page');
         } else {
+          li.tabIndex = 0;
           const pageNumber = currentPage;
-          span.addEventListener('click', () => {
+          addEventListeners(li, () => {
             this.searchIndex(query, pageNumber);
           });
         }
@@ -149,10 +169,11 @@ class SearchResults {
       if (page === pages) {
         nextPageArrow.classList.add('nav-disabled');
       } else {
+        nextPageArrow.tabIndex = 0;
         const arrowImage = document.createElement('img');
         arrowImage.src = '/icons/search-next-button.png';
         nextPageArrow.append(arrowImage);
-        nextPageArrow.addEventListener('click', () => {
+        addEventListeners(nextPageArrow, () => {
           const activePage = Number(document.querySelector('li.active-page').textContent);
           this.searchIndex(query, activePage + 1);
         });
@@ -176,6 +197,7 @@ function buildSearchInputField(value) {
 
 function buildSearchButton() {
   const searchButton = document.createElement('button');
+  searchButton.id = 'search-button';
   const buttonSpan = document.createElement('span');
   searchButton.append(buttonSpan);
   buttonSpan.append('SEARCH');
