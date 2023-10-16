@@ -29,6 +29,7 @@
     --cta-color: #e81b75;
 
     /* fonts */
+    /* --body-font-family: gotham-fallback; */
     --body-font-family: gotham, gotham-fallback;
     --heading-font-family: var(--body-font-family);
     --fixed-font-family: var(--body-font-family);
@@ -87,7 +88,7 @@
     ascent-override: 70.47%;
     descent-override: 17.62%;
     line-gap-override: 17.62%;
-    size-adjust: 113.52%;
+    size-adjust: 112%;
 }
 
 /* medium */
