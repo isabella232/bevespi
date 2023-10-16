@@ -116,8 +116,9 @@
 }
 
 html {
-    /* sets root font size to 10px to simplify calculations */
-    /* and improve readability */
+    /* sets root font size to 10px to simplify calculations
+       and improve readability */
+
     font-size: 62.5%;
 }
 
