@@ -7,9 +7,14 @@
   --tile-height: 172px;
 }
 
+.tiles.block > div {
+  position: relative;
+}
+
 .tiles.block > div > .cover {
   position: relative;
   height: var(--tile-height);
+  width: 100%;
 }
 
 .tiles.block > div > .cover h3 {
@@ -38,6 +43,15 @@
 
 .tiles.block .modal {
   display: none;
+}
+
+.tiles.block .cover[aria-expanded] + .modal {
+  display: block;
+  position: absolute;
+  background: #dedede;
+  top: 0;
+  left: 0;
+  width: calc(2 * var(--tile-height));
 }
 
 @media (min-width: 600px) {

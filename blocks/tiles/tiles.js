@@ -19,5 +19,9 @@ export default function decorate(block) {
       modalContent.classList.add('modal');
       cover.classList.add('cover', 'with-modal');
     }
+
+    cover.addEventListener('click', (e) => {
+      cover.toggleAttribute('aria-expanded');
+    });
   });
 }
