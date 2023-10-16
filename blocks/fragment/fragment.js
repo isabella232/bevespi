@@ -52,9 +52,9 @@ function scrollToInformationBlock() {
   );
 
   if (informationBlockElement.length > 0) {
-    const offsetPosition = informationBlockElement[0].getBoundingClientRect().top +
-     window.scrollY +
-     1;
+    const offsetPosition = informationBlockElement[0].getBoundingClientRect().top
+     + window.scrollY
+     + 1;
 
     window.scrollTo({
       top: offsetPosition,
@@ -73,9 +73,7 @@ function renderStickyFragmentInformationBlock(block) {
   stickyInformationBlockHeaderContainer.classList.add(
     'sticky-fragment-header-container',
   );
-  stickyInformationBlockHeader.appendChild(
-    stickyInformationBlockHeaderContainer
-  );
+  stickyInformationBlockHeader.appendChild(stickyInformationBlockHeaderContainer);
   stickyInformationBlock.appendChild(stickyInformationBlockHeader);
   const stickyInformationBlockContent = document.createElement('div');
   stickyInformationBlockContent.classList.add('sticky-framgent-content');
@@ -83,26 +81,22 @@ function renderStickyFragmentInformationBlock(block) {
 
   const informationBlockHeader = block.querySelector('h2');
   if (informationBlockHeader) {
-    stickyInformationBlockHeaderContainer.appendChild(
-      informationBlockHeader.cloneNode(informationBlockHeader)
-    );
+    const copyOfInfoBlockHeader = informationBlockHeader.cloneNode(informationBlockHeader);
+    stickyInformationBlockHeaderContainer.appendChild(copyOfInfoBlockHeader);
     const informationBlockScrollButton = document.createElement('div');
     informationBlockScrollButton.classList.add('sticky-fragment-scroll-button');
     informationBlockScrollButton.addEventListener(
       'click',
       scrollToInformationBlock,
     );
-    stickyInformationBlockHeaderContainer.appendChild(
-      informationBlockScrollButton
-    );
+    stickyInformationBlockHeaderContainer.appendChild(informationBlockScrollButton);
   }
 
   const informationBlockFirstListItem = block.querySelector('li');
   if (informationBlockFirstListItem) {
     const listContainer = document.createElement('ul');
-    listContainer.appendChild(
-      informationBlockFirstListItem.cloneNode(informationBlockFirstListItem)
-    );
+    const content = informationBlockFirstListItem.cloneNode(informationBlockFirstListItem);
+    listContainer.appendChild(content);
     stickyInformationBlockContent.appendChild(listContainer);
   }
 
