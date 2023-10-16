@@ -16,11 +16,11 @@
 }
 
 .row-wrapper > div {
-  max-width: 62.625rem;
+  max-width: 100.2rem;
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 1.5625rem;
+  gap: 2.5rem;
 }
 
 .columns > div > div {
@@ -32,9 +32,9 @@
 }
 
 .section .columns img {
-  max-height: 10.6875rem;
+  max-height: 17.1rem;
   width: auto;
-  max-width: 15rem;
+  max-width: 24rem;
 }
 
 .columns > div > .columns-img-col img {
@@ -63,7 +63,7 @@ main .section.columns-container {
 }
 
 main .section.columns-container .columns-wrapper .columns > div {
-  padding: 2.5rem 0.75rem 1.875rem;
+  padding: 4rem 1.2rem 3rem;
   position: relative;
   flex-direction: column;
 }
@@ -97,14 +97,14 @@ main .section.columns-container .columns-wrapper .columns > div {
 }
 
 main .section.columns-container .columns-wrapper .columns > div::after {
-  width: 2rem;
-  height: 2rem;
+  width: 3.2rem;
+  height: 3.2rem;
   transform: rotate(45deg);
   position: absolute;
   content: "";
   order: 2;
   left: 50%;
-  bottom: -16px;
+  bottom: -1.6rem;
   z-index: 1;
 }
 
@@ -125,18 +125,18 @@ main .section.columns-container .columns-wrapper .columns .footnote {
 }
 
 .row-wrapper:not(:first-of-type) > div > div > p:nth-last-of-type(2) {
-  margin-bottom: 2.5rem;
+  margin-bottom: 4rem;
 }
 
 @media (min-width: 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 32px;
+    gap: 3.2rem;
   }
 
   main .section.columns-container .columns-wrapper .columns > div {
-    padding: 2.5rem 0.75rem 1.875rem;
+    padding: 4rem 1.2rem 3rem;
   }
 }
 
@@ -147,7 +147,7 @@ main .section.columns-container .columns-wrapper .columns .footnote {
   position: relative;
   justify-content: left;
   align-items: center;
-  max-width: 14.875rem;
+  max-width: 23.8rem;
   font-size: var(--heading-font-size-m);
   font-weight: var(--font-weight-thin);
   line-height: 1.1;
@@ -158,28 +158,28 @@ main .section.columns-container .columns-wrapper .columns .footnote {
 }
 
 .section .columns .button-container a::before {
-  width: 1.8125rem;
-  height: 0.212em;
+  width: 2.9rem;
+  height: 0.212rem;
   background-color: var(--button-arrow-orange);
   position: absolute;
   content: "";
   top: 15%;
   right: 0;
   transform: rotate(45deg);
-  border-radius: 40px;
+  border-radius: 4rem;
   display: inline-block;
 } 
 
 .section .columns .button-container a::after {
-  width: 1.8125rem;
-  height: 0.212em;
+  width: 2.9rem;
+  height: 0.212rem;
   background-color: var(--button-arrow-orange);
   position: absolute;
   content: "";
   top: 76%;
   right: 0;
   transform: rotate(-45deg);
-  border-radius: 40px;
+  border-radius: 4rem;
   display: inline-block;
 }
 

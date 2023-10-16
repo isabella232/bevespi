@@ -14,7 +14,7 @@
 }
 
 .fragment-container > div {
-    max-width: 62.625rem;
+    max-width: 100.2rem;
 }
 
 .fragment-container > div a {
@@ -23,12 +23,12 @@
 }
 
 .fragment-container div p em + picture img {
-    max-width: 10px;
+    max-width: 1rem;
 }
 
 .sticky-fragment-block {
     position: fixed;
-    bottom: -2.5rem;
+    bottom: -4rem;
     left: 0;
     display: block;
     opacity: 0;
@@ -51,13 +51,13 @@
 }
 
 .sticky-fragment-block .sticky-fragment-header {
-    height: 3.1875rem;
+    height: 5.1rem;
     background-color: var(--sticky-fragment-header-color);
 }
 
 .sticky-fragment-block .sticky-fragment-header .sticky-fragment-header-container,
 .sticky-fragment-block .sticky-framgent-content ul {
-    max-width: 62.625rem;
+    max-width: 100.2rem;
     margin: auto;
 }
 
@@ -69,7 +69,7 @@
 }
 
 .sticky-fragment-block .sticky-framgent-content ul {
-    padding: 0.75rem 0.75rem 0.6875rem 1.25rem;
+    padding: 1.2rem 1.2rem 1.1rem 2rem;
     font-size: var(--body-font-size-xs);
 }
 
@@ -86,7 +86,7 @@
 
     .sticky-fragment-block .sticky-framgent-content ul {
         font-size: var(--body-font-size-xxxs);
-        padding: 0.75rem 0 0.6875rem 1.25rem;
+        padding: 12px 0 11px 20px;
     }
 }
 
@@ -94,15 +94,15 @@
     content: "";
     position: relative;
     background-color: var(--sticky-framgnet-scroll-button-color);
-    width: 1.9rem;
-    height: 1.9rem;
+    width: 30.4px;
+    height: 30.4px;
     border-radius: 50%;
 }
 
 .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::before {
     content: "";
-    width: 0.15rem;
-    height: 1rem;
+    width: 0.24rem;
+    height: 1.6rem;
     background-color: var(--sticky-fragment-header-color);
     position: absolute;
     top: 26%;
@@ -111,8 +111,8 @@
 
 .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::after {
     content: "";
-    width: 0.15rem;
-    height: 1rem;
+    width: 0.24rem;
+    height: 1.6rem;
     background-color: var(--sticky-fragment-header-color);
     position: absolute;
     top: 26%;
