@@ -9,7 +9,7 @@ import {
   decorateTemplateAndTheme,
   waitForLCP,
   loadBlocks,
-  loadCSS,
+  loadCSS, createOptimizedPicture,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -40,6 +40,16 @@ function buildAutoBlocks(main) {
   }
 }
 
+function addSectionBackgroundImages(main) {
+  main.querySelectorAll('.section[data-background]').forEach((section) => {
+    const imageUrl = section.getAttribute('data-background');
+
+    const image = createOptimizedPicture(imageUrl);
+    image.classList.add('section-background-img');
+    section.append(image);
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -51,6 +61,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   // buildAutoBlocks(main);
   decorateSections(main);
+  addSectionBackgroundImages(main);
   decorateBlocks(main);
 }
 

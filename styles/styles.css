@@ -352,7 +352,50 @@ main .section {
     }
 }
 
-/* section metadata */
+/* section metadata - highlight */
 main .section.highlight {
     background-color: var(--highlight-background-color);
+}
+
+/* section metadata - backgrounds */
+main .section[data-background] {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+main .section[data-background] > div {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@media (min-width: 600px) {
+    main .section[data-background] > div {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+main .section[data-background] picture.section-background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    z-index: -1;
+    overflow: hidden;
+}
+
+main .section[data-background] picture.section-background-img img {
+    width: 100%;
+}
+
+/* section metadata - text align and color */
+main .section.white-text {
+    color: white;
+}
+
+main .section.centered {
+    text-align: center;
 }
