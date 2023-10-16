@@ -6,6 +6,10 @@ header .nav-top {
   background-color: var(--background-grey-1);
 }
 
+header .nav-top.expanded {
+  height: 100%;
+}
+
 header .nav-top > div {
   display: flex;
 }
@@ -15,12 +19,14 @@ header .nav-top ul {
   list-style-type: none;
   flex-wrap: wrap;
   padding-left: 0;
-  margin-top: 6px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 header .nav-top li {
   padding-left: 9px;
   padding-right: 9px;
+  line-height: 16px;
 }
 
 header .nav-top li:nth-of-type(n+2)::before {
@@ -74,6 +80,19 @@ header .nav-middle {
   overflow: hidden;
   line-height: 11px;
   padding: 0 12px;
+  position: relative;
+}
+
+header .nav-middle .expand-top {
+  width: 23px;
+  height: 12px;
+  background-image: url('/icons/mobile-expand-top-nav.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 0;
 }
 
 header .nav-middle img {
@@ -260,12 +279,16 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
   }
 
   header .nav-top ul {
-    margin-top: 15px;
+    margin: 12px;
   }
   
   header .nav-middle {
     height: 132px;
     font-size: var(--body-font-size-xxs);
+  }
+  
+  header .nav-middle .expand-top {
+    display: none;
   }
   
   header nav > div > div {
