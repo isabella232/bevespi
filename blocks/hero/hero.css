@@ -54,7 +54,7 @@ main .hero.home .btn-scroll a {
   align-items: center;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--color-white)!important;
+  color: var(--color-white);
   font-size: 1rem;
 }
 
