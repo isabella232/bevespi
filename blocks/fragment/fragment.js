@@ -28,66 +28,87 @@ async function loadFragment(path) {
 }
 
 function onScroll() {
-    console.log('on information block scroll');
-    const importantSafetyInformationSections = document.getElementsByClassName('important-safety-information');
-    if (importantSafetyInformationSections.length > 0) {
-        const offset = importantSafetyInformationSections[0].offsetTop;
-        const stickySections = document.getElementsByClassName('sticky-fragment-block');
-        if (stickySections.length > 0) {
-            if (window.scrollY <= offset) {
-                stickySections[0].classList.add('fixed-section');
-            } else {
-                stickySections[0].classList.remove('fixed-section');
-            }
-        }
+  const importantSafetyInformationSections = document.getElementsByClassName(
+    'important-safety-information'
+  );
+  if (importantSafetyInformationSections.length > 0) {
+    const offset = importantSafetyInformationSections[0].offsetTop;
+    const stickySections = document.getElementsByClassName(
+      'sticky-fragment-block'
+    );
+    if (stickySections.length > 0) {
+      if (window.scrollY <= offset) {
+        stickySections[0].classList.add('fixed-section');
+      } else {
+        stickySections[0].classList.remove('fixed-section');
+      }
     }
+  }
 }
 
 function scrollToInformationBlock() {
-    const informationBlockElement = document.getElementsByClassName('important-safety-information');
-  
-    if (informationBlockElement.length > 0) {
-      const offsetPosition = informationBlockElement[0].getBoundingClientRect().top + window.scrollY + 1;
-  
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
+  const informationBlockElement = document.getElementsByClassName(
+    'important-safety-information'
+  );
+
+  if (informationBlockElement.length > 0) {
+    const offsetPosition =
+      informationBlockElement[0].getBoundingClientRect().top +
+      window.scrollY +
+      1;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  }
 }
 
 function renderStickyFragmentInformationBlock(block) {
-    const stickyInformationBlock = document.createElement('div');
-    stickyInformationBlock.classList.add('sticky-fragment-block');
-    stickyInformationBlock.classList.add('fixed-section');
-    const stickyInformationBlockHeader = document.createElement('div');
-    stickyInformationBlockHeader.classList.add('sticky-fragment-header');
-    const stickyInformationBlockHeaderContainer = document.createElement('div');
-    stickyInformationBlockHeaderContainer.classList.add('sticky-fragment-header-container');
-    stickyInformationBlockHeader.appendChild(stickyInformationBlockHeaderContainer);
-    stickyInformationBlock.appendChild(stickyInformationBlockHeader);
-    const stickyInformationBlockContent = document.createElement('div');
-    stickyInformationBlockContent.classList.add('sticky-framgent-content');
-    stickyInformationBlock.appendChild(stickyInformationBlockContent);
+  const stickyInformationBlock = document.createElement('div');
+  stickyInformationBlock.classList.add('sticky-fragment-block');
+  stickyInformationBlock.classList.add('fixed-section');
+  const stickyInformationBlockHeader = document.createElement('div');
+  stickyInformationBlockHeader.classList.add('sticky-fragment-header');
+  const stickyInformationBlockHeaderContainer = document.createElement('div');
+  stickyInformationBlockHeaderContainer.classList.add(
+    'sticky-fragment-header-container'
+  );
+  stickyInformationBlockHeader.appendChild(
+    stickyInformationBlockHeaderContainer
+  );
+  stickyInformationBlock.appendChild(stickyInformationBlockHeader);
+  const stickyInformationBlockContent = document.createElement('div');
+  stickyInformationBlockContent.classList.add('sticky-framgent-content');
+  stickyInformationBlock.appendChild(stickyInformationBlockContent);
 
-    const informationBlockHeader = block.querySelector('h2');
-    if (informationBlockHeader) {
-        stickyInformationBlockHeaderContainer.appendChild(informationBlockHeader.cloneNode(informationBlockHeader));
-        const informationBlockScrollButton = document.createElement('div');
-        informationBlockScrollButton.classList.add('sticky-fragment-scroll-button');
-        informationBlockScrollButton.addEventListener('click', scrollToInformationBlock);
-        stickyInformationBlockHeaderContainer.appendChild(informationBlockScrollButton);
-    }
+  const informationBlockHeader = block.querySelector('h2');
+  if (informationBlockHeader) {
+    stickyInformationBlockHeaderContainer.appendChild(
+      informationBlockHeader.cloneNode(informationBlockHeader)
+    );
+    const informationBlockScrollButton = document.createElement('div');
+    informationBlockScrollButton.classList.add('sticky-fragment-scroll-button');
+    informationBlockScrollButton.addEventListener(
+      'click',
+      scrollToInformationBlock
+    );
+    stickyInformationBlockHeaderContainer.appendChild(
+      informationBlockScrollButton
+    );
+  }
 
-    const informationBlockFirstListItem = block.querySelector('li');
-    if (informationBlockFirstListItem) {
-        const listContainer = document.createElement('ul');
-        listContainer.appendChild(informationBlockFirstListItem.cloneNode(informationBlockFirstListItem))
-        stickyInformationBlockContent.appendChild(listContainer);
-    }
+  const informationBlockFirstListItem = block.querySelector('li');
+  if (informationBlockFirstListItem) {
+    const listContainer = document.createElement('ul');
+    listContainer.appendChild(
+      informationBlockFirstListItem.cloneNode(informationBlockFirstListItem)
+    );
+    stickyInformationBlockContent.appendChild(listContainer);
+  }
 
-    block.appendChild(stickyInformationBlock);
-    document.addEventListener('scroll', onScroll);
+  block.appendChild(stickyInformationBlock);
+  document.addEventListener('scroll', onScroll);
 }
 
 export default async function decorate(block) {
@@ -104,7 +125,6 @@ export default async function decorate(block) {
       block
         .closest('.fragment-wrapper')
         .replaceWith(...fragmentSection.childNodes);
-
     }
   }
 }
