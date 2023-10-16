@@ -63,7 +63,6 @@ export default async function decorate(block) {
   });
 
   document.querySelectorAll('div[role="tabpanel"]').forEach((panel, i) => {
-    console.log(fragments);
     panel.append(fragments[i]);
   });
 }
