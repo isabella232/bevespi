@@ -322,18 +322,18 @@ main img {
     width: 100%;
 }
 
-main .section {
+main .section, .section .reset-spacing {
     padding: 64px 16px;
 }
 
 @media (min-width: 600px) {
-    main .section {
+    main .section, .section .reset-spacing {
         padding: 64px 32px;
     }
 }
 
 @media (min-width: 900px) {
-    .section > div {
+    .section > div, .section .reset-spacing {
         max-width: 1200px;
         margin: auto;
     }
@@ -356,6 +356,26 @@ main .section {
 main .section.highlight {
     background-color: var(--highlight-background-color);
 }
+
+/*!* utility classes to pad sections that have padding removed for background *!*/
+/*.section .section-element-padded {*/
+/*    padding-left: 16px;*/
+/*    padding-right: 16px;*/
+/*}*/
+
+/*@media (min-width: 600px) {*/
+/*    .section .section-element-padded {*/
+/*        padding-left: 32px;*/
+/*        padding-right: 32px;*/
+/*    }*/
+/*}*/
+
+/*@media (min-width: 900px) {*/
+/*    .section .section-element-padded {*/
+/*        max-width: 1200px;*/
+/*        margin: auto;*/
+/*    }*/
+/*}*/
 
 /* section metadata - backgrounds */
 main .section[data-background] {

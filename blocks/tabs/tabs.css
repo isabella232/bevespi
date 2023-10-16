@@ -1,0 +1,52 @@
+main .section[data-background] > div.tabs-wrapper {
+  padding: 0;
+  margin: 0;
+  max-width: unset;
+}
+
+.block.tabs .tab-controls-wrapper {
+  background: #624b7e;
+}
+
+.block.tabs .tab-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  box-sizing: border-box;
+}
+
+.block.tabs .tab-controls button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #624b7e;
+  text-transform: none;
+  border-right: 1px solid #493b67;
+  border-left: 1px solid #493b67;
+  flex-grow: 1;
+  text-align: center;
+  display: inline-block;
+  font-size: 1.6rem;
+}
+
+.block.tabs .tab-controls button[aria-selected="true"] {
+  background: #dedede;
+  color: #3b3463;
+}
+
+.block.tabs .tab-controls button:first-child {
+  border-left: 2px solid #493b67;
+}
+
+.block.tabs .tab-controls button:last-child {
+  border-right: 2px solid #493b67;
+}
+
+.block.tabs div[role="tabpanel"]:not([aria-selected="true"]) {
+  display: none;
+}
