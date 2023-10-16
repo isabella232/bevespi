@@ -29,12 +29,12 @@ async function loadFragment(path) {
 
 function onScroll() {
   const importantSafetyInformationSections = document.getElementsByClassName(
-    'important-safety-information'
+    'important-safety-information',
   );
   if (importantSafetyInformationSections.length > 0) {
     const offset = importantSafetyInformationSections[0].offsetTop;
     const stickySections = document.getElementsByClassName(
-      'sticky-fragment-block'
+      'sticky-fragment-block',
     );
     if (stickySections.length > 0) {
       if (window.scrollY <= offset) {
@@ -48,14 +48,11 @@ function onScroll() {
 
 function scrollToInformationBlock() {
   const informationBlockElement = document.getElementsByClassName(
-    'important-safety-information'
+    'important-safety-information',
   );
 
   if (informationBlockElement.length > 0) {
-    const offsetPosition =
-      informationBlockElement[0].getBoundingClientRect().top +
-      window.scrollY +
-      1;
+    const offsetPosition = informationBlockElement[0].getBoundingClientRect().top + window.scrollY + 1;
 
     window.scrollTo({
       top: offsetPosition,
@@ -72,7 +69,7 @@ function renderStickyFragmentInformationBlock(block) {
   stickyInformationBlockHeader.classList.add('sticky-fragment-header');
   const stickyInformationBlockHeaderContainer = document.createElement('div');
   stickyInformationBlockHeaderContainer.classList.add(
-    'sticky-fragment-header-container'
+    'sticky-fragment-header-container',
   );
   stickyInformationBlockHeader.appendChild(
     stickyInformationBlockHeaderContainer
@@ -91,7 +88,7 @@ function renderStickyFragmentInformationBlock(block) {
     informationBlockScrollButton.classList.add('sticky-fragment-scroll-button');
     informationBlockScrollButton.addEventListener(
       'click',
-      scrollToInformationBlock
+      scrollToInformationBlock,
     );
     stickyInformationBlockHeaderContainer.appendChild(
       informationBlockScrollButton
