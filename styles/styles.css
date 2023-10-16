@@ -388,7 +388,7 @@ main .section[data-background] picture.section-background-img {
     bottom: 0;
     right: 0;
     object-fit: cover;
-    z-index: -1;
+    z-index: -2;
     overflow: hidden;
 }
 

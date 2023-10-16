@@ -1,0 +1,49 @@
+.tiles.block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  box-sizing: border-box;
+
+  --tile-height: 172px;
+}
+
+.tiles.block > div > .cover {
+  position: relative;
+  height: var(--tile-height);
+}
+
+.tiles.block > div > .cover h3 {
+  margin: 0;
+  color: var(--color-blue-2);
+  font-weight: 500;
+  padding: 30px;
+  text-align: left;
+}
+
+.tiles.block picture {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.tiles.block picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.tiles.block .modal {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .tiles.block {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    --tile-height: 314px;
+  }
+}
