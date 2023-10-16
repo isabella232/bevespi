@@ -24,3 +24,10 @@ npm run lint
 1. Install the [AEM CLI](https://github.com/adobe/aem-cli): `npm install -g @adobe/aem-cli`
 1. Start AEM Proxy: `aem up` (opens your browser at `http://localhost:3000`)
 1. Open the `{repo}` directory in your favorite IDE and start coding :)
+
+## Notes about development
+ 
+### CSS/Styling
+
+1. The root font size (in html) is set to `10px` (`62.5%` of `16px`). According to the above, `1rem` = `10px` (`1.6rem` = `16px`): this makes sizes in `rem` - which are great for accommodating responsiveness and accessibility - human readable
+2. According to our analysis and mainstream recommendations, we decided to use `rem` only for font-size and correlated metrics (like line-height), while `px` for the remainder - like border width, element sizing/padding/margins - and in general where the requirement of having fixed dimensions and/or references is predominant
