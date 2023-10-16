@@ -52,7 +52,9 @@ function scrollToInformationBlock() {
   );
 
   if (informationBlockElement.length > 0) {
-    const offsetPosition = informationBlockElement[0].getBoundingClientRect().top + window.scrollY + 1;
+    const offsetPosition = informationBlockElement[0].getBoundingClientRect().top +
+     window.scrollY +
+     1;
 
     window.scrollTo({
       top: offsetPosition,
