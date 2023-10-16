@@ -86,10 +86,7 @@
 
     .sticky-fragment-block .sticky-framgent-content ul {
         font-size: var(--body-font-size-xxxs);
-    }
-
-    .sticky-fragment-block .sticky-framgent-content ul {
-        padding: 0.75rem 0rem 0.6875rem 1.25rem;
+        padding: 0.75rem 0 0.6875rem 1.25rem;
     }
 }
 
