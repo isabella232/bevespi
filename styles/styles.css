@@ -338,6 +338,11 @@ main .section, .section .reset-spacing {
         margin: auto;
     }
 
+    .section .reset-spacing {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     a.button:any-link, button {
         font-size: 2rem;
         line-height: 2rem;
@@ -356,26 +361,6 @@ main .section, .section .reset-spacing {
 main .section.highlight {
     background-color: var(--highlight-background-color);
 }
-
-/*!* utility classes to pad sections that have padding removed for background *!*/
-/*.section .section-element-padded {*/
-/*    padding-left: 16px;*/
-/*    padding-right: 16px;*/
-/*}*/
-
-/*@media (min-width: 600px) {*/
-/*    .section .section-element-padded {*/
-/*        padding-left: 32px;*/
-/*        padding-right: 32px;*/
-/*    }*/
-/*}*/
-
-/*@media (min-width: 900px) {*/
-/*    .section .section-element-padded {*/
-/*        max-width: 1200px;*/
-/*        margin: auto;*/
-/*    }*/
-/*}*/
 
 /* section metadata - backgrounds */
 main .section[data-background] {
@@ -409,6 +394,7 @@ main .section[data-background] picture.section-background-img {
 
 main .section[data-background] picture.section-background-img img {
     width: 100%;
+    height: 100%;
 }
 
 /* section metadata - text align and color */

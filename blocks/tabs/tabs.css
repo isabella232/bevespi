@@ -1,13 +1,4 @@
-main .section[data-background] > div.tabs-wrapper {
-  padding: 0;
-  margin: 0;
-  max-width: unset;
-}
-
-.block.tabs .tab-controls-wrapper {
-  background: #624b7e;
-}
-
+/* Tabs */
 .block.tabs .tab-controls {
   display: flex;
   justify-content: center;
@@ -18,33 +9,115 @@ main .section[data-background] > div.tabs-wrapper {
   box-sizing: border-box;
 }
 
+.block.tabs .dropdown-toggle {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background: #3c3463;
+  text-transform: none;
+  font-size: 1.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  gap: 20px;
+  padding: 10px 20px 10px 0;
+}
+
 .block.tabs .tab-controls button {
   padding: 0;
   margin: 0;
   border: none;
   border-radius: 0;
   color: white;
-  background: #624b7e;
   text-transform: none;
-  border-right: 1px solid #493b67;
-  border-left: 1px solid #493b67;
-  flex-grow: 1;
-  text-align: center;
+  width: 100%;
+  text-align: right;
   display: inline-block;
   font-size: 1.6rem;
+  background: #624b7e;
+  font-weight: normal;
+}
+
+/* Dropdown button */
+.block.tabs .tab-controls-wrapper .tab-controls {
+  display: none;
+}
+
+.block.tabs .tab-controls-wrapper[aria-expanded] .tab-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.block.tabs .tab-controls-wrapper[aria-expanded] .icon {
+  transform: rotate(180deg);
 }
 
 .block.tabs .tab-controls button[aria-selected="true"] {
-  background: #dedede;
-  color: #3b3463;
+  font-weight: 500;
 }
 
-.block.tabs .tab-controls button:first-child {
-  border-left: 2px solid #493b67;
+main .section[data-background] > div.tabs-wrapper {
+  padding: 0;
+  margin: 0;
+  max-width: unset;
 }
 
-.block.tabs .tab-controls button:last-child {
-  border-right: 2px solid #493b67;
+.block.tabs .tab-controls-wrapper {
+  background: #624b7e;
+}
+
+@media (min-width: 900px) {
+  .block.tabs .tab-controls-wrapper .tab-controls {
+    display: flex;
+  }
+
+  .block.tabs .dropdown-toggle {
+    display: none;
+  }
+
+  .block.tabs .tab-controls button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    color: white;
+    background: #624b7e;
+    text-transform: none;
+    border-right: 1px solid #493b67;
+    border-left: 1px solid #493b67;
+    flex-grow: 1;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.6rem;
+  }
+
+  .block.tabs .tab-controls button[aria-selected="true"], .block.tabs .tab-controls button:hover {
+    background: #dedede;
+    color: #3b3463;
+    position: relative;
+  }
+
+  .block.tabs .tab-controls button[aria-selected="true"]::after, .block.tabs .tab-controls button:hover::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #dedede;
+    padding-top: -55px;
+    position: absolute;
+    top: 50px;
+    left: 47%;
+  }
+
+  .block.tabs .tab-controls button:first-child {
+    border-left: 2px solid #493b67;
+  }
+
+  .block.tabs .tab-controls button:last-child {
+    border-right: 2px solid #493b67;
+  }
 }
 
 .block.tabs div[role="tabpanel"]:not([aria-selected="true"]) {

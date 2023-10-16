@@ -1,5 +1,5 @@
 import { decorateMain } from '../../scripts/scripts.js';
-import { loadBlocks } from '../../scripts/aem.js';
+import {decorateIcons, loadBlocks} from '../../scripts/aem.js';
 
 function deselectAllPanels(block) {
   block.querySelectorAll('button[role="tab"]').forEach((button) => {
@@ -38,7 +38,10 @@ export default async function decorate(block) {
   const fragments = await Promise.all(tabLinks.map((link) => loadFragment(link)));
 
   block.append(document.createRange().createContextualFragment(`
-    <div class='tab-controls-wrapper'>
+    <div class='tab-controls-wrapper' id="tab-controls-wrapper">
+      <button name="dropdown" aria-controls="tab-controls-wrapper" class='dropdown-toggle'>
+        Sections <span class="icon icon-menu-down"></span>
+      </button>
       <div class='tab-controls reset-spacing'>
         ${tabNames.map((tabName, i) => `
           <button role="tab" aria-selected=${i === 0 ? 'true' : 'false'} aria-controls="panel-${i}">
@@ -54,7 +57,7 @@ export default async function decorate(block) {
     </div>
   `));
 
-  block.querySelectorAll('button').forEach((button, i) => {
+  block.querySelectorAll('button[role="tab"]').forEach((button, i) => {
     button.addEventListener('click', () => {
       deselectAllPanels(block);
       button.setAttribute('aria-selected', 'true');
@@ -62,7 +65,15 @@ export default async function decorate(block) {
     });
   });
 
+  block.querySelector('button[name="dropdown"]').addEventListener('click', () => {
+    block.querySelector('button[name="dropdown"]')
+      .closest('.tab-controls-wrapper')
+      .toggleAttribute('aria-expanded');
+  });
+
   document.querySelectorAll('div[role="tabpanel"]').forEach((panel, i) => {
     panel.append(fragments[i]);
   });
+
+  decorateIcons(block);
 }
