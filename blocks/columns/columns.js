@@ -1,7 +1,6 @@
 function addRowWrapper(row) {
   const rowWrapper = document.createElement('div');
   rowWrapper.classList.add('row-wrapper');
-  const rowContainer = row;
   [...row.children].forEach((rowChildren) => {
     rowWrapper.appendChild(rowChildren);
   });
