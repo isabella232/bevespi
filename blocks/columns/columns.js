@@ -7,17 +7,6 @@ function addRowWrapper(row) {
   row.appendChild(rowWrapper);
 }
 
-function setContainerBackgroundImage(picture, col) {
-  const img = picture.querySelector('img');
-  if (img) {
-    const rowWrapper = col.closest('.row-wrapper');
-    if (rowWrapper) {
-      rowWrapper.style = `background: url(${img.src}); background-size: cover;`;
-      picture.parentElement.remove();
-    }
-  }
-}
-
 function markFootnotes(col) {
   const italicNotes = col.querySelectorAll('em');
   [...italicNotes].forEach((note) => {
@@ -43,8 +32,6 @@ export default function decorate(block) {
         if (picWrapper && picWrapper.children.length === 1) {
           // picture is only content in column
           picWrapper.classList.add('columns-img-col');
-        } else if (pic.parentElement.tagName === 'P') {
-          setContainerBackgroundImage(pic, col);
         }
       }
     });
