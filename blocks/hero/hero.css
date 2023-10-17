@@ -66,9 +66,13 @@ main .hero h1 {
   font-size: var(--heading-font-size-xxl);
 }
 
+main .hero.home h1,
+main .hero.home h2 {
+  color: var(--background-color);
+}
+
 main .hero.home h1 {
   font-size: var(--heading-font-size-xxl-home);
-  color: var(--background-color);
 }
 
 main .hero.home h2 {
