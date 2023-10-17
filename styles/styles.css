@@ -23,6 +23,7 @@
     --color-white: #fff;
     --background-color: var(--color-white);
     --text-color: #000;
+    --text-orange: #f58321;
     --text-color-grey-1: #585858;
     --color-blue-1: #273670;
     --color-blue-2: #17265F;
@@ -359,4 +360,15 @@ main .section {
 /* section metadata */
 main .section.highlight {
     background-color: var(--highlight-background-color);
+}
+
+main .section.isi {
+    /* position: fixed;
+    top: calc(100vh - 242px);
+    background-color: var(--background-color); */
+}
+
+main .section.isi h2 {
+    font-size: 1.8rem;
+    color: var(--text-orange);
 }
