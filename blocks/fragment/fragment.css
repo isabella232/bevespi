@@ -9,12 +9,32 @@
 
 .fragment-container h2 {
     color: var(--header-color);
-    font-size: var(--heading-font-size-l);
+    font-size: var(--heading-font-size-s);
     font-weight: var(--font-weight-bold);
+    margin: 0 0 12px;
+}
+
+.fragment-container ul {
+    padding-inline-start: 12px;
+    padding: 4px 0 11px 12px;
+}
+
+.fragment-container ul li,
+.fragment-container p {
+    font-size: var(--body-font-size-s-isi-fragment);
+}
+
+.fragment-container ul li {
+    margin: 8px 0;
 }
 
 .fragment-container > div {
-    max-width: 100.2rem;
+    max-width: 1002px;
+}
+
+main .section.fragment-container {
+    padding: 0 12px;
+    margin-top: 30px;
 }
 
 .fragment-container > div a {
@@ -23,12 +43,12 @@
 }
 
 .fragment-container div p em + picture img {
-    max-width: 1rem;
+    max-width: 10px;
 }
 
 .sticky-fragment-block {
     position: fixed;
-    bottom: -4rem;
+    bottom: -40px;
     left: 0;
     display: block;
     opacity: 0;
@@ -45,19 +65,27 @@
 }
 
 @media (min-width: 600px) {
+    .fragment-container h2 {
+        font-size: var(--heading-font-size-ml);
+    }
+    
+    .fragment-container ul li {
+        font-size: var(--body-font-size-xs);
+    }
+
     .sticky-fragment-block {
         bottom: 0;
     }
 }
 
 .sticky-fragment-block .sticky-fragment-header {
-    height: 5.1rem;
+    height: 51px;
     background-color: var(--sticky-fragment-header-color);
 }
 
 .sticky-fragment-block .sticky-fragment-header .sticky-fragment-header-container,
 .sticky-fragment-block .sticky-framgent-content ul {
-    max-width: 100.2rem;
+    max-width: 1002px;
     margin: auto;
 }
 
@@ -65,11 +93,11 @@
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 0.75rem;
+    padding: 0 7.5px;
 }
 
 .sticky-fragment-block .sticky-framgent-content ul {
-    padding: 1.2rem 1.2rem 1.1rem 2rem;
+    padding: 12px 12px 11px 20px;
     font-size: var(--body-font-size-xs);
 }
 
@@ -101,8 +129,8 @@
 
 .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::before {
     content: "";
-    width: 0.24rem;
-    height: 1.6rem;
+    width: 2.4px;
+    height: 16px;
     background-color: var(--sticky-fragment-header-color);
     position: absolute;
     top: 26%;
@@ -111,8 +139,8 @@
 
 .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::after {
     content: "";
-    width: 0.24rem;
-    height: 1.6rem;
+    width: 2.4px;
+    height: 16px;
     background-color: var(--sticky-fragment-header-color);
     position: absolute;
     top: 26%;

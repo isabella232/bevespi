@@ -37,7 +37,9 @@ function onScroll() {
       'sticky-fragment-block',
     );
     if (stickySections.length > 0) {
-      if (window.scrollY <= offset) {
+      const importantSafetyInformationSectionsHeight = stickySections[0].clientHeight;
+      const windowBottomPosition = window.scrollY + window.innerHeight - importantSafetyInformationSectionsHeight;
+      if (windowBottomPosition <= offset) {
         stickySections[0].classList.add('fixed-section');
       } else {
         stickySections[0].classList.remove('fixed-section');
@@ -114,7 +116,7 @@ export default async function decorate(block) {
       if (fragmentSection.classList.contains('important-safety-information')) {
         renderStickyFragmentInformationBlock(fragmentSection);
       }
-      
+
       block.closest('.section').classList.add(...fragmentSection.classList);
       block.closest('.fragment-wrapper').replaceWith(...fragmentSection.childNodes);
     }

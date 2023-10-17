@@ -16,11 +16,11 @@
 }
 
 .row-wrapper > div {
-  max-width: 100.2rem;
+  max-width: 1002px;
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 2.5rem;
+  gap: 25px;
 }
 
 .columns > div > div {
@@ -32,9 +32,9 @@
 }
 
 .section .columns img {
-  max-height: 17.1rem;
+  max-height: 171px;
   width: auto;
-  max-width: 24rem;
+  max-width: 240px;
 }
 
 .columns > div > .columns-img-col img {
@@ -63,7 +63,7 @@ main .section.columns-container {
 }
 
 main .section.columns-container .columns-wrapper .columns > div {
-  padding: 4rem 1.2rem 3rem;
+  padding: 40px 12px 30px;
   position: relative;
   flex-direction: column;
 }
@@ -97,14 +97,14 @@ main .section.columns-container .columns-wrapper .columns > div {
 }
 
 main .section.columns-container .columns-wrapper .columns > div::after {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 32px;
+  height: 32px;
   transform: rotate(45deg);
   position: absolute;
   content: "";
   order: 2;
   left: 50%;
-  bottom: -1.6rem;
+  bottom: -16px;
   z-index: 1;
 }
 
@@ -125,18 +125,18 @@ main .section.columns-container .columns-wrapper .columns .footnote {
 }
 
 .row-wrapper:not(:first-of-type) > div > div > p:nth-last-of-type(2) {
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 
 @media (min-width: 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 3.2rem;
+    gap: 32px;
   }
 
   main .section.columns-container .columns-wrapper .columns > div {
-    padding: 4rem 1.2rem 3rem;
+    padding: 40px 12px 30px;
   }
 }
 
@@ -147,7 +147,7 @@ main .section.columns-container .columns-wrapper .columns .footnote {
   position: relative;
   justify-content: left;
   align-items: center;
-  max-width: 23.8rem;
+  max-width: 238px;
   font-size: var(--heading-font-size-m);
   font-weight: var(--font-weight-thin);
   line-height: 1.1;
@@ -158,28 +158,28 @@ main .section.columns-container .columns-wrapper .columns .footnote {
 }
 
 .section .columns .button-container a::before {
-  width: 2.9rem;
-  height: 0.212rem;
+  width: 29px;
+  height: 2.12px;
   background-color: var(--button-arrow-orange);
   position: absolute;
   content: "";
   top: 15%;
   right: 0;
   transform: rotate(45deg);
-  border-radius: 4rem;
+  border-radius: 40px;
   display: inline-block;
 } 
 
 .section .columns .button-container a::after {
-  width: 2.9rem;
-  height: 0.212rem;
+  width: 29px;
+  height: 2.12px;
   background-color: var(--button-arrow-orange);
   position: absolute;
   content: "";
   top: 76%;
   right: 0;
   transform: rotate(-45deg);
-  border-radius: 4rem;
+  border-radius: 40px;
   display: inline-block;
 }
 
