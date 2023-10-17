@@ -1,0 +1,48 @@
+:root {
+    --accordion-row-border-color: #b3b7c9;
+    --accordion-row-title-color: #172660;
+}
+.accordion .accordion-row .accordion-row-content {
+    border: 2px solid var(--accordion-row-border-color);
+    padding: 10px 12px 0;
+}
+
+.accordion .accordion-row .accordion-row-content p:first-of-type {
+    margin: 0;
+}
+
+.accordion .accordion-row .accordion-row-content .accordion-row-header {
+    display: flex;
+    align-items: center;
+}
+
+.accordion .accordion-row .accordion-row-content .accordion-row-header img {
+    width: 88px;
+    margin-right: 20px;
+}
+
+.accordion .accordion-row .accordion-row-content .accordion-row-header h2 {
+    font-size: var(--heading-font-size-m);
+    color: var(--accordion-row-title-color);
+    font-weight: 500;
+    margin: 0;
+    padding-right: 40px;
+}
+
+.accordion .accordion-row .accordion-row-content p {
+    font-size: var(--body-font-size-s);
+}
+
+.accordion .accordion-row .accordion-row-content p.item-with-picture-before {
+    display: flex;
+    align-items: center;
+}
+
+.accordion .accordion-row .accordion-row-content p.item-with-picture-before div {
+    padding-left: 12px;
+}
+.accordion .accordion-row .accordion-row-content p.item-with-picture-before picture img {
+    width: 35px;
+    padding-right: 12px;
+    max-width: unset;
+}
