@@ -29,12 +29,11 @@
 }
 
 .fragment-container > div {
-    max-width: 1002px;
+    max-width: 1200px;
 }
 
 main .section.fragment-container {
     padding: 0 12px 40px;
-    margin-top: 30px;
 }
 
 .fragment-container > div a {
@@ -69,7 +68,8 @@ main .section.fragment-container {
         font-size: var(--heading-font-size-ml);
     }
     
-    .fragment-container ul li {
+    .fragment-container ul li,
+    .fragment-container p {
         font-size: var(--body-font-size-xs);
     }
 
@@ -85,7 +85,7 @@ main .section.fragment-container {
 
 .sticky-fragment-block .sticky-fragment-header .sticky-fragment-header-container,
 .sticky-fragment-block .sticky-framgent-content ul {
-    max-width: 1002px;
+    max-width: 1200px;
     margin: auto;
 }
 
