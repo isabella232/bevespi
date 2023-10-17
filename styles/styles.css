@@ -14,16 +14,18 @@
     /* colors */
     --link-color: #172660;
     --link-hover-color: #23527c;
+    --link-hover-color-2: #f03285;
     --overlay-background-color: #eee;
     --highlight-background-color: #ccc;
     --background-grey-1: #ededed;
     --background-grey-2: #dcdcdc;
     --background-grey-3: #bebebe;
+    --background-grey-4: #f6f6f6;
     --background-blue-1: #172660;
     --color-white: #fff;
     --background-color: var(--color-white);
-    --text-color: #000;
     --text-orange: #f58321;
+    --text-color: #282828;
     --text-color-grey-1: #585858;
     --color-blue-1: #273670;
     --color-blue-2: #17265F;
@@ -153,6 +155,7 @@ h4, h5, h6 {
     margin-top: 1em;
     margin-bottom: .5em;
     scroll-margin: calc(var(--nav-height) + 1em);
+    color: var(--link-color);
 }
 
 h1 {
@@ -202,6 +205,10 @@ code, samp {
 
 pre {
     overflow: scroll;
+}
+
+strong {
+    font-weight: 500;
 }
 
 main pre {
