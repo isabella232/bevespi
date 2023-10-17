@@ -365,9 +365,6 @@ main .section.highlight {
 main .section.isi {
     font-size: 1.5rem;
     line-height: 1;
-    /* position: fixed;
-    top: calc(100vh - 242px);
-    background-color: var(--background-color); */
 }
 
 main .section.isi h2 {
