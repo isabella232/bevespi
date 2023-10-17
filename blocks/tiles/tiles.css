@@ -3,32 +3,58 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--grid-gap);
   box-sizing: border-box;
+  text-align: left;
 
   --tile-height: 172px;
   --grid-gap: 5px;
+  --color-green: #91d8ca;
+  --color-gray: #dedede;
 }
 
-.tiles.block > div {
+.tiles.block > .tile {
   position: relative;
   cursor: pointer;
+  height: var(--tile-height);
+}
+
+.tiles.block > .tile.with-separator hr {
+  width: 60px;
+  border-width: 2px;
+  color: white;
+  margin: auto 0 0;
+}
+
+.tiles.block > .tile.background-green {
+  background: var(--color-green);
 }
 
 .tiles.block > div > .cover {
   position: relative;
-  height: var(--tile-height);
+  height: 100%;
   width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tiles.block > div.tile.tall {
+  height: calc(2 * var(--tile-height) + var(--grid-gap));
+  grid-row: auto / span 2;
 }
 
 .tiles.block > div > .cover h3 {
   margin: 0;
   color: var(--color-blue-2);
   font-weight: 500;
-  padding: 30px;
   text-align: left;
   font-size: 1.5rem;
 }
 
 .tiles.block img.bottom-icon {
+  width: 35px;
+  height: 35px;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -42,6 +68,14 @@
   top: 0;
   bottom: 0;
   z-index: -1;
+}
+
+.tiles.block .modal-bg-img.modal-img-left .modal picture {
+  right: unset;
+}
+
+.tiles.block .modal-bg-img.modal-img-right .modal picture {
+  left: unset;
 }
 
 .tiles.block picture img {
@@ -58,12 +92,23 @@
   box-sizing: border-box;
   color: var(--color-blue-2);
   cursor: initial;
+  position: absolute;
+  background: var(--color-gray);
+  top: 0;
+  left: 0;
+  width: 200%;
+  z-index: 10;
+}
+
+.tiles.block .tile.modal-bg-green .modal {
+  background: var(--color-green);
 }
 
 .tiles.block .modal h2 {
   font-size: 1.7rem;
   margin-bottom: 20px;
   padding-top: 12px;
+  padding-right: 30px;
   margin-top: 0;
   font-weight: 600;
 }
@@ -71,6 +116,22 @@
 .tiles.block .modal p {
   font-size: 1.4rem;
   line-height: 1.8rem;
+}
+
+.tiles.block > div > .cover p {
+  color: var(--color-blue-2);
+  text-align: left;
+  font-size: 1.2rem;
+  padding-right: 40px;
+  font-weight: 500;
+}
+
+.tiles.block > .tile.white-text .cover h3 {
+  color: white;
+}
+
+.tiles.block > .tile.white-text .cover p {
+  color: white;
 }
 
 .tiles.block .modal .button-container {
@@ -96,12 +157,6 @@
 
 .tiles.block .cover[aria-expanded] + .modal {
   display: block;
-  position: absolute;
-  background: #dedede;
-  top: 0;
-  left: 0;
-  width: 200%;
-  z-index: 10;
 }
 
 .tiles.block .tile:nth-child(2n + 2) .cover[aria-expanded] + .modal {
@@ -123,7 +178,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
   .tiles.block {
     grid-template-columns: 1fr 1fr 1fr;
 
@@ -145,7 +200,9 @@
   }
 
   .tiles.block > div > .cover h3 {
-    font-size: 3rem;
+    font-size: 2.9rem;
+    font-weight: 600;
+    line-height: 1em;
   }
 
   .tiles.block .modal h2 {
@@ -170,5 +227,77 @@
   .tiles.block .modal .button-container .button::after {
     height: 20px;
     width: 20px;
+  }
+
+  .tiles.block > div > .cover {
+    padding: 20px;
+  }
+
+  .tiles.block img.bottom-icon {
+    width: unset;
+    height: unset;
+  }
+
+  .tiles.block > div > .cover p {
+    font-size: 2.3rem;
+    font-weight: 500;
+    padding-right: unset;
+  }
+}
+
+/* Custom elements */
+.tiles.block > div.tile.four-common-triggers .cover  h3 {
+  color: white;
+  font-weight: 400;
+}
+
+.tiles.block > div.tile.four-common-triggers .cover  h3:first-of-type {
+  font-size: 7rem;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.tiles.block > div.tile.four-common-triggers .cover h3 strong {
+  color: var(--color-green);
+  display: inline-block;
+}
+
+.tiles.block > div.tile.six-tips-to-help .cover  h3:first-of-type {
+  font-size: 4.5rem;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.tiles.block > div.tile.six-tips-to-help .cover h3 strong {
+  color: var(--color-green);
+  display: inline-block;
+}
+
+.tiles.block > div.tile.five-ways-to-enjoy-time .cover {
+  justify-content: start;
+}
+
+.tiles.block > div.tile.five-ways-to-enjoy-time .cover  h3:first-of-type {
+  font-size: 6rem;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.tiles.block > div.tile.five-ways-to-enjoy-time .cover h3 strong {
+  color: var(--color-green);
+  display: inline-block;
+}
+
+@media (min-width: 900px) {
+  .tiles.block > div.tile.four-common-triggers .cover  h3:first-of-type {
+    font-size: 9rem;
+  }
+
+  .tiles.block > div.tile.six-tips-to-help .cover  h3:first-of-type {
+    font-size: 9rem;
+  }
+
+  .tiles.block > div.tile.five-ways-to-enjoy-time .cover  h3:first-of-type {
+    font-size: 9rem;
   }
 }

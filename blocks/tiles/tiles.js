@@ -1,13 +1,27 @@
+import { toClassName } from '../../scripts/aem.js';
+
 export default function decorate(block) {
   block.querySelectorAll(':scope > div').forEach((tile) => {
     tile.classList.add('tile');
 
     const cover = tile.querySelector(':scope > div:first-child');
     const modalContent = tile.querySelector(':scope > div:nth-child(2)');
-    const properties = tile.querySelector(':scope > div:nth-child(3)');
+    const propertiesElement = tile.querySelector(':scope > div:nth-child(3)');
+
+    const propertiesText = propertiesElement.innerText;
+    const properties = propertiesText?.trim().split(',').map((prop) => toClassName(prop)) ?? [];
+    if (propertiesText) {
+      tile.classList.add(...properties);
+    }
+    propertiesElement.remove();
 
     const picture = cover.querySelector('picture');
-    picture.closest('p').replaceWith(picture);
+    picture?.closest('p').replaceWith(picture);
+
+    if (tile.classList.contains('with-separator')) {
+      const h3 = tile.querySelector('h3:last-of-type');
+      h3.parentElement.insertBefore(document.createElement('hr'), h3.nextSibling);
+    }
 
     if (modalContent.classList.contains('button-container')) {
       // only has a button. Then the tile becomes a link
@@ -40,6 +54,11 @@ export default function decorate(block) {
       tile.append(document.createRange().createContextualFragment(`
         <img class="bottom-icon" src="/icons/icon-expand.png" />
       `));
+    }
+
+    if (tile.classList.contains('modal-bg-img')) {
+      const pictureCopy = picture.cloneNode(true);
+      modalContent.append(pictureCopy);
     }
   });
 }
