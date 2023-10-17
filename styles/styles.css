@@ -57,6 +57,9 @@
     /* nav height */
     --nav-height: 143px;
 
+    /* page max width */
+    --page-max-width: 1200px;
+
     /* specific font sizes */
     --link-font-size: 1.2rem;
     --link-font-weight: 500;
@@ -335,7 +338,7 @@ main .section {
 
 @media (min-width: 900px) {
     .section > div {
-        max-width: 1200px;
+        max-width: var(--page-max-width);
         margin: auto;
     }
 
