@@ -1,14 +1,16 @@
 .tiles.block {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5px;
+  gap: var(--grid-gap);
   box-sizing: border-box;
 
   --tile-height: 172px;
+  --grid-gap: 5px;
 }
 
 .tiles.block > div {
   position: relative;
+  cursor: pointer;
 }
 
 .tiles.block > div > .cover {
@@ -23,6 +25,14 @@
   font-weight: 500;
   padding: 30px;
   text-align: left;
+  font-size: 1.5rem;
+}
+
+.tiles.block img.bottom-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
 }
 
 .tiles.block picture {
@@ -43,6 +53,45 @@
 
 .tiles.block .modal {
   display: none;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+  color: var(--color-blue-2);
+  cursor: initial;
+}
+
+.tiles.block .modal h2 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  padding-top: 12px;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.tiles.block .modal p {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.tiles.block .modal .button-container {
+  display: flex;
+  justify-content: end;
+}
+
+.tiles.block .modal .button-container .button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: var(--color-blue-2);
+  font-size: 1.3rem;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.tiles.block .modal .button-container .button::after {
+  background-image: url('/icons/icon-next-purple.png');
 }
 
 .tiles.block .cover[aria-expanded] + .modal {
@@ -51,7 +100,27 @@
   background: #dedede;
   top: 0;
   left: 0;
-  width: calc(2 * var(--tile-height));
+  width: 200%;
+  z-index: 10;
+}
+
+.tiles.block .tile:nth-child(2n + 2) .cover[aria-expanded] + .modal {
+  right: 0;
+  left: unset;
+}
+
+.tiles.block button[name="close-modal"] {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {
@@ -59,5 +128,47 @@
     grid-template-columns: 1fr 1fr 1fr;
 
     --tile-height: 314px;
+  }
+
+  .tiles.block .cover[aria-expanded] + .modal {
+    width: calc(200% + var(--grid-gap));
+  }
+
+  .tiles.block .tile:nth-child(2n + 2) .cover[aria-expanded] + .modal {
+    right: unset;
+    left: 0;
+  }
+
+  .tiles.block .tile:nth-child(3n + 3) .cover[aria-expanded] + .modal {
+    right: 0;
+    left: unset;
+  }
+
+  .tiles.block > div > .cover h3 {
+    font-size: 3rem;
+  }
+
+  .tiles.block .modal h2 {
+    font-size: 2.3rem;
+    font-weight: 500;
+  }
+
+  .tiles.block .modal p {
+    font-size: 1.8rem;
+  }
+
+  .tiles.block .modal .button-container .button {
+    font-size: 1.8rem;
+  }
+
+
+  .tiles.block button[name="close-modal"] {
+    width: 34px;
+    height: 34px;
+  }
+
+  .tiles.block .modal .button-container .button::after {
+    height: 20px;
+    width: 20px;
   }
 }
