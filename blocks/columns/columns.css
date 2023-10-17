@@ -145,13 +145,10 @@
     gap: var(--columns-gap);
   }
 
-  /* .columns-row > div:first-of-type {
-    margin-left: 86px;
+  .columns-row .row-wrapper > div {
+    flex: 1;
+    order: unset;
   }
-
-  .columns-row > div:last-of-type {
-    margin-right: 86px;
-  } */
 
   .columns-row:first-of-type .row-wrapper > div {
     margin-top: 50px;
@@ -162,17 +159,12 @@
     max-height: 330px;
   }
 
-  .columns-row .row-wrapper > div {
-    flex: 1;
-    order: unset;
+  .columns-row .row-wrapper > div:not(.columns-img-col) {
+    flex: 2;
   }
 
   .columns-row:first-of-type .row-wrapper > div:last-of-type {
     flex: 1;
-  }
-
-  .columns-row .row-wrapper > div:not(.columns-img-col) {
-    flex: 2;
   }
 
   .home .columns .button-container {
