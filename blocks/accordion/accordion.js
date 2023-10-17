@@ -1,34 +1,30 @@
-// function createAccordionRow(row) {
-//     const accordionRow = document.createElement('div');
-//     const accordionHeader = document.createElement('div');
-//     accordionHeader.classList.add('accordion-header');
+function handleExpandableButtonClick(rows, event) {
+    const row = event.currentTarget.parentElement.parentElement;
+    
+    row.classList.toggle('expanded');
+    event.currentTarget.textContent = row.classList.contains('expanded') ? 'LESS' : '';
 
-//     const accordionContent = document.createElement('div');
-//     accordionContent.classList.add('accordion-content');
+    const currentRowIndex = parseInt(row.getAttribute('expandable-row-index'));
+    [...rows].forEach((row, index) => {
+        if (index === currentRowIndex) {
+            return;
+        }
 
-//     const picture = row.querySelector('picture');
-//     if (picture) {
-//         accordionHeader.appendChild(picture);
-//     }
-
-//     const rowTitle = row.querySelector('h2');
-//     if (rowTitle) {
-//         accordionHeader.appendChild(rowTitle);
-//     }
-
-//     accordionRow.appendChild(accordionHeader);
-//     accordionRow.appendChild(accordionContent);
-//     return accordionRow;
-// }
-
-function handleExpandableButtonClick(event) {
-    console.log(event);
+        if (row.classList.contains('expanded')) {
+            row.classList.remove('expanded');
+            const expandableButton = row.getElementsByClassName('expandable-button');
+            if (expandableButton.length > 0) {
+                expandableButton[0].textContent = '';
+            }
+        }
+    });
 }
 
-function addExpandableButton(row) {
+function addExpandableButton(row, rows) {
     const expandableButton = document.createElement('a');
     expandableButton.classList.add('expandable-button');
-    expandableButton.addEventListener('click', handleExpandableButtonClick);
+    expandableButton.addEventListener('click', handleExpandableButtonClick.bind(null, rows));
+    row.appendChild(expandableButton);
 }
 
 function wrapNextSiblingsInDiv(element) {
@@ -62,28 +58,37 @@ function createAccordionRowHeader(row) {
     rowHeader.classList.add('accordion-row-header');
     const picture = row.querySelector('picture');
     if (picture) {
-        rowHeader.appendChild(picture);
+        rowHeader.appendChild(picture.cloneNode(true));
+        picture.parentElement.remove();
     }
 
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('accordion-title-header-container');
     const title = row.querySelector('h2');
     if (title) {
-        rowHeader.appendChild(title);
+        titleContainer.appendChild(title);
     }
 
+    const firstParagraph = row.querySelector('p');;
+    if (firstParagraph) {
+        titleContainer.appendChild(firstParagraph.cloneNode(true));
+    }
+    rowHeader.appendChild(titleContainer);
     row.insertBefore(rowHeader, row.children[0]);
 }
 
 function createAccordion(block) {
-    [...block.children].forEach((row) => {
+    [...block.children].forEach((row, index) => {
         if (row.children.length === 0) {
             return;
         }
         row.classList.add('accordion-row');
+        row.setAttribute('expandable-row-index', index);
         const rowContent = row.children[0];
         rowContent.classList.add('accordion-row-content');
         createAccordionRowHeader(rowContent);
         markItemsWithPictureBefore(rowContent);
-        addExpandableButton(rowContent);
+        addExpandableButton(rowContent, block.children);
     });
 }
 
