@@ -58,6 +58,9 @@
     /* nav height */
     --nav-height: 143px;
 
+    /* page max width */
+    --page-max-width: 1200px;
+
     /* specific font sizes */
     --link-font-size: 1.2rem;
     --link-font-weight: 500;
@@ -96,7 +99,7 @@
     ascent-override: 70.47%;
     descent-override: 17.62%;
     line-gap-override: 17.62%;
-    size-adjust: 113.52%;
+    size-adjust: 106.1%;
 }
 
 /* medium */
@@ -108,7 +111,7 @@
     ascent-override: 69.48%;
     descent-override: 17.37%;
     line-gap-override: 17.37%;
-    size-adjust: 115.14%;
+    size-adjust: 105%;
 }
 
 @media (min-width: 900px) {
@@ -129,6 +132,7 @@ html {
        and improve readability */
 
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -343,7 +347,7 @@ main .section {
 
 @media (min-width: 900px) {
     .section > div {
-        max-width: 1200px;
+        max-width: var(--page-max-width);
         margin: auto;
     }
 

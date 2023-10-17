@@ -114,10 +114,9 @@ export default async function decorate(block) {
       if (fragmentSection.classList.contains('important-safety-information')) {
         renderStickyFragmentInformationBlock(fragmentSection);
       }
+      
       block.closest('.section').classList.add(...fragmentSection.classList);
-      block
-        .closest('.fragment-wrapper')
-        .replaceWith(...fragmentSection.childNodes);
+      block.closest('.fragment-wrapper').replaceWith(...fragmentSection.childNodes);
     }
   }
 }
