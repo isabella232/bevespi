@@ -16,7 +16,6 @@ main .hero {
 
 main .hero.home {
   height: 100%;
-  border: 1px solid white;
   color: var(--background-color);
   padding: 70px 0;
 }
@@ -204,6 +203,6 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
   }
 
   main .hero.home .btn-scroll a {
-    font-size: 1.6rem;
+    font-size: var(--body-font-size-m);
   }
 }
