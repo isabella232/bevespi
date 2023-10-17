@@ -24,6 +24,7 @@
     --background-blue-1: #172660;
     --color-white: #fff;
     --background-color: var(--color-white);
+    --text-orange: #f58321;
     --text-color: #282828;
     --text-color-grey-1: #585858;
     --color-blue-1: #273670;
@@ -366,4 +367,27 @@ main .section {
 /* section metadata */
 main .section.highlight {
     background-color: var(--highlight-background-color);
+}
+
+main .section.isi {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+main .section.isi h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-orange);
+}
+
+main .section.isi ul {
+    padding: 4px 0 11px 20px;
+}
+
+main .section.isi li {
+    margin: 8px 0;
+}
+
+main .section.isi strong {
+    font-weight: 500;
 }
