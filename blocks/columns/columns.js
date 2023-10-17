@@ -32,7 +32,7 @@ export default function decorate(block) {
 
   // setup image columns
   [...block.children].forEach((row) => {
-    addRowWrapper(row);
+    row.classList.add('columns-row');
     [...row.children].forEach((col) => {
       markFootnotes(col);
       const pic = col.querySelector('picture');
