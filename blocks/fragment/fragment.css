@@ -28,7 +28,7 @@
 }
 
 .fragment-container > div {
-    max-width: 1200px;
+    max-width: var(--page-max-width);
 }
 
 main .section.fragment-container {
@@ -84,7 +84,7 @@ main .section.fragment-container {
 
 .sticky-fragment-block .sticky-fragment-header .sticky-fragment-header-container,
 .sticky-fragment-block .sticky-framgent-content ul {
-    max-width: 1200px;
+    max-width: var(--page-max-width);
     margin: auto;
 }
 
