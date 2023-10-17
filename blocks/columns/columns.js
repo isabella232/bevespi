@@ -2,8 +2,10 @@ function addRowWrapper(row) {
   const rowWrapper = document.createElement('div');
   rowWrapper.classList.add('row-wrapper');
   const rowContainer = row;
-  row.replaceWith(rowWrapper);
-  rowWrapper.appendChild(rowContainer);
+  [...row.children].forEach((rowChildren) => {
+    rowWrapper.appendChild(rowChildren);
+  });
+  row.appendChild(rowWrapper);
 }
 
 function setContainerBackgroundImage(picture, col) {
@@ -33,6 +35,7 @@ export default function decorate(block) {
   // setup image columns
   [...block.children].forEach((row) => {
     row.classList.add('columns-row');
+    addRowWrapper(row);
     [...row.children].forEach((col) => {
       markFootnotes(col);
       const pic = col.querySelector('picture');
