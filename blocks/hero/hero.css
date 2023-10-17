@@ -20,7 +20,6 @@ main .hero.home {
 }
 
 main .hero h1 {
-  color: var(--link-color);
   font-size: var(--heading-font-size-xxl);
 }
 

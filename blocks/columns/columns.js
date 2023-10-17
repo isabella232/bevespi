@@ -4,6 +4,7 @@ export default function decorate(block) {
 
   // setup image columns
   [...block.children].forEach((row) => {
+    row.classList.add('columns-row');
     [...row.children].forEach((col) => {
       const pic = col.querySelector('picture');
       if (pic) {
