@@ -3,11 +3,11 @@
 main .hero-container > div {
   max-width: unset;
 }
-  
+
 main .hero-container {
   padding: 0;
 }
-  
+
 main .hero {
   position: relative;
   padding: 30px 0;
@@ -15,8 +15,51 @@ main .hero {
 }
 
 main .hero.home {
+  height: 100%;
   color: var(--background-color);
   padding: 70px 0;
+}
+
+main .hero.home::after {
+  content: "";
+  background: url('/icons/bg_hero-home-mobile-arrow.png');
+  position: absolute;
+  background-size: 44px 20px, cover;
+  width: 44px;
+  height: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20px;
+}
+
+main .hero img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+main .hero.home .btn-scroll {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+}
+
+main .hero.home .btn-scroll a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-white);
+  font-size: 1rem;
+}
+
+main .hero.home .btn-scroll img {
+  width: 20px;
+  height: 20px;
 }
 
 main .hero h1 {
@@ -65,12 +108,6 @@ main .hero > div:first-of-type p > picture {
 
 main .hero > div:first-of-type p:last-of-type > picture {
   display: block;
-}
-
-main .hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 
 main .hero > div:nth-of-type(n+2) {
@@ -122,7 +159,7 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
   main .hero.home h2 {
     font-size: var(--body-font-size-m);
   }
-  
+
   main .hero.home p {
     font-size: var(--body-font-size-m);
   }
@@ -130,7 +167,7 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
   main .hero.home p:first-of-type {
     font-size: var(--body-font-size-xxxl);
   }
-  
+
   main .hero > div:first-of-type p:last-of-type > picture {
     display: none;
   }
@@ -153,5 +190,19 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
   main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > picture {
     display: block;
     padding-left: 50px;
+  }
+
+  main .hero.home::after {
+    background: url('/icons/bg_hero-home-section-2-arrow.png');
+    background-size: 44px 20px, cover;
+  }
+
+  main .hero.home .btn-scroll img {
+    width: 32px;
+    height: 32px;
+  }
+
+  main .hero.home .btn-scroll a {
+    font-size: var(--body-font-size-m);
   }
 }
