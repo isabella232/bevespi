@@ -15,9 +15,11 @@
   height: var(--tile-height);
 }
 
-.tiles.block > .tile:not(:first-child) {
-  transform: translate(-150%, 150%);
-  transition: transform 400ms ease-in-out;
+@media (prefers-reduced-motion: no-preference) {
+  .tiles.block > .tile:not(:first-child) {
+    transform: translate(-150%, 150%);
+    transition: transform 400ms ease-in-out;
+  }
 }
 
 .animate-in .tiles.block > .tile {

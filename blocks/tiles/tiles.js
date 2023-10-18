@@ -56,6 +56,7 @@ export default function decorate(block) {
         if (e.pageX > document.body.clientWidth / 2) {
           cover.classList.add('open-right');
         }
+        e.target.scrollIntoView(true);
       });
       modalContent.querySelector('button[name="close-modal"]').addEventListener('click', () => {
         cover.toggleAttribute('aria-expanded');

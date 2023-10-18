@@ -53,7 +53,7 @@ export default async function decorate(block) {
     </div>
     <div class="tab-outlets">
       ${tabLinks.map((tabLink, i) => `
-        <div id="panel-${i}" role="tabpanel" active="${i === 0 ? 'true' : 'false'}"></div>
+        <div class="animate-in" id="panel-${i}" role="tabpanel" active="${i === 0 ? 'true' : 'false'}"></div>
       `).join('')}
     </div>
   `));

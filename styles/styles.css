@@ -442,7 +442,7 @@ main .section.centered {
     text-align: center;
 }
 
-main .section.green-accent em {
+main .section.green-accent .default-content-wrapper em {
     color: var(--color-green);
     font-style: normal;
     font-weight: 500;
@@ -478,9 +478,8 @@ main span.icon-separator hr {
 }
 
 @media (min-width: 600px) {
-    main .section.font-large {
+    main .section.font-large .default-content-wrapper {
         font-size: 2.1rem;
-
     }
 
     main .section.font-large .default-content-wrapper p {
