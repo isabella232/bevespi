@@ -483,7 +483,7 @@ main span.icon-separator hr {
 
     }
 
-    main .section.font-large p {
+    main .section.font-large .default-content-wrapper p {
         padding-left: 80px;
         padding-right: 80px;
     }

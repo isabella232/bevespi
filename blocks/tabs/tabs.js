@@ -5,8 +5,9 @@ function deselectAllPanels(block) {
   block.querySelectorAll('button[role="tab"]').forEach((button) => {
     button.setAttribute('aria-selected', 'false');
   });
-  block.querySelectorAll('div[role="tabpanel"]').forEach((button) => {
-    button.setAttribute('active', 'false');
+  block.querySelectorAll('div[role="tabpanel"]').forEach((panel) => {
+    panel.setAttribute('active', 'false');
+    panel.classList.remove('animate-in');
   });
 }
 
@@ -23,7 +24,7 @@ async function loadFragment(url) {
       main.innerHTML = await resp.text();
       decorateMain(main);
       await loadBlocks(main);
-      return main;
+      return main.querySelector('.section');
     }
   }
   return null;
@@ -61,7 +62,11 @@ export default async function decorate(block) {
     button.addEventListener('click', () => {
       deselectAllPanels(block);
       button.setAttribute('aria-selected', 'true');
-      block.querySelector(`div[role="tabpanel"][id="panel-${i}"]`).setAttribute('active', 'true');
+      const panel = block.querySelector(`div[role="tabpanel"][id="panel-${i}"]`);
+      panel.setAttribute('active', 'true');
+      setTimeout(() => {
+        panel.classList.add('animate-in');
+      }, 1);
     });
   });
 
