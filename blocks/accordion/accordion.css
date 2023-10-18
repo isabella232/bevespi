@@ -18,7 +18,6 @@
 .accordion .accordion-row .accordion-row-content .accordion-row-header {
     display: flex;
     align-items: center;
-    min-height: 100%;
     height: 60px;
     min-height: 60px;
 }
