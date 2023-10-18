@@ -1,5 +1,5 @@
 function handleExpandableButtonClick(rows, event) {
-  const selectedRow = event.currentTarget.parentElement.parentElement.parentElement;
+  const selectedRow = event.currentTarget.parentElement.parentElement;
 
   selectedRow.classList.toggle('expanded');
   const buttonLabel = event.currentTarget.querySelector('label');
@@ -24,7 +24,6 @@ function handleExpandableButtonClick(rows, event) {
 }
 
 function addExpandableButton(row, rows) {
-  const expandableButtonWrapper = document.createElement('div');
   const expandableButtonLabel = document.createElement('label');
   expandableButtonLabel.classList.add('expandable-button-label');
   expandableButtonLabel.textContent = 'MORE';
@@ -33,8 +32,7 @@ function addExpandableButton(row, rows) {
   expandableButton.classList.add('expandable-button');
   expandableButton.addEventListener('click', handleExpandableButtonClick.bind(null, rows));
   expandableButton.appendChild(expandableButtonLabel);
-  expandableButtonWrapper.appendChild(expandableButton);
-  row.appendChild(expandableButtonWrapper);
+  row.appendChild(expandableButton);
 }
 
 function wrapNextSiblingsInDiv(element) {

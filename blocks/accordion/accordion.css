@@ -86,8 +86,15 @@
     color: var(--expandable-button-color);
 }
 
+.accordion .accordion-row .accordion-row-content .expandable-button:hover,
+.accordion .accordion-row .accordion-row-content .expandable-button label:hover {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
 .accordion .accordion-row.expanded .accordion-row-content .expandable-button {
-    bottom: 15px;
+    bottom: 5px;
+    right: 15px;
     padding-right: 10px;
     color: var(--expandable-button-color);
 }
