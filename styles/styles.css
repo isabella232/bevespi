@@ -30,6 +30,8 @@
     --color-blue-1: #273670;
     --color-blue-2: #17265F;
     --cta-color: #e81b75;
+    --color-green: #91d8ca;
+    --color-gray: #dedede;
 
     /* fonts */
     --body-font-family: gotham, gotham-fallback;
@@ -419,8 +421,23 @@ main .section.white-text {
     color: white;
 }
 
+main .section.white-text h1 {
+    color: white;
+}
+
+main .section.small-heading h1 {
+    font-size: 1.9rem;
+    text-transform: uppercase;
+}
+
 main .section.centered {
     text-align: center;
+}
+
+main .section.green-accent em {
+    color: var(--color-green);
+    font-style: normal;
+    font-weight: 500;
 }
 
 main .section.isi {
@@ -444,4 +461,22 @@ main .section.isi li {
 
 main .section.isi strong {
     font-weight: 500;
+}
+
+/* Separator icon */
+main span.icon-separator hr {
+    width: 40px;
+    border-width: 2px;
+}
+
+@media (min-width: 600px) {
+    main .section.font-large {
+        font-size: 2.1rem;
+
+    }
+
+    main .section.font-large p {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
 }

@@ -50,9 +50,12 @@ export default function decorate(block) {
         <button name="close-modal"><img src="/icons/modal-close.png" alt="close icon"/></button>
       `));
 
-      cover.addEventListener('click', () => {
+      cover.addEventListener('click', (e) => {
         closeOtherModals(block);
         cover.toggleAttribute('aria-expanded');
+        if (e.pageX > document.body.clientWidth / 2) {
+          cover.classList.add('open-right');
+        }
       });
       modalContent.querySelector('button[name="close-modal"]').addEventListener('click', () => {
         cover.toggleAttribute('aria-expanded');

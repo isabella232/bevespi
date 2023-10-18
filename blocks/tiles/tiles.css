@@ -7,8 +7,6 @@
 
   --tile-height: 172px;
   --grid-gap: 5px;
-  --color-green: #91d8ca;
-  --color-gray: #dedede;
 }
 
 .tiles.block > .tile {
@@ -159,7 +157,7 @@
   display: block;
 }
 
-.tiles.block .tile:nth-child(2n + 2) .cover[aria-expanded] + .modal {
+.tiles.block .cover.open-right[aria-expanded] + .modal {
   right: 0;
   left: unset;
 }
@@ -187,16 +185,6 @@
 
   .tiles.block .cover[aria-expanded] + .modal {
     width: calc(200% + var(--grid-gap));
-  }
-
-  .tiles.block .tile:nth-child(2n + 2) .cover[aria-expanded] + .modal {
-    right: unset;
-    left: 0;
-  }
-
-  .tiles.block .tile:nth-child(3n + 3) .cover[aria-expanded] + .modal {
-    right: 0;
-    left: unset;
   }
 
   .tiles.block > div > .cover h3 {

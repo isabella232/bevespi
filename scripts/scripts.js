@@ -50,6 +50,13 @@ function addSectionBackgroundImages(main) {
   });
 }
 
+function decorateSeparatorIcon(main) {
+  main.querySelectorAll('span.icon-separator').forEach((icon) => {
+    icon.classList.remove('icon');
+    icon.append(document.createElement('hr'));
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -58,6 +65,7 @@ function addSectionBackgroundImages(main) {
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
+  decorateSeparatorIcon(main);
   decorateIcons(main);
   // buildAutoBlocks(main);
   decorateSections(main);
