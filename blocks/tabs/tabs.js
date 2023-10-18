@@ -6,7 +6,7 @@ function deselectAllPanels(block) {
     button.setAttribute('aria-selected', 'false');
   });
   block.querySelectorAll('div[role="tabpanel"]').forEach((button) => {
-    button.setAttribute('aria-selected', 'false');
+    button.setAttribute('active', 'false');
   });
 }
 
@@ -52,7 +52,7 @@ export default async function decorate(block) {
     </div>
     <div class="tab-outlets">
       ${tabLinks.map((tabLink, i) => `
-        <div id="panel-${i}" role="tabpanel" aria-selected="${i === 0 ? 'true' : 'false'}"></div>
+        <div id="panel-${i}" role="tabpanel" active="${i === 0 ? 'true' : 'false'}"></div>
       `).join('')}
     </div>
   `));

@@ -120,6 +120,6 @@ main .section[data-background] > div.tabs-wrapper {
   }
 }
 
-.block.tabs div[role="tabpanel"]:not([aria-selected="true"]) {
+.block.tabs div[role="tabpanel"]:not([active="true"]) {
   display: none;
 }
