@@ -1,104 +1,112 @@
 function handleExpandableButtonClick(rows, event) {
-    const row = event.currentTarget.parentElement.parentElement.parentElement;
-    
-    row.classList.toggle('expanded');
-    const buttonLabel = event.currentTarget.querySelector('label');
-    buttonLabel.textContent = row.classList.contains('expanded') ? 'LESS' : 'MORE';
+  const row = event.currentTarget.parentElement.parentElement.parentElement;
 
-    const currentRowIndex = parseInt(row.getAttribute('expandable-row-index'));
-    [...rows].forEach((row, index) => {
-        if (index === currentRowIndex) {
-            return;
-        }
+  row.classList.toggle('expanded');
+  const buttonLabel = event.currentTarget.querySelector('label');
+  buttonLabel.textContent = row.classList.contains('expanded')
+    ? 'LESS'
+    : 'MORE';
 
-        if (row.classList.contains('expanded')) {
-            row.classList.remove('expanded');
-            const expandableButton = row.getElementsByClassName('expandable-button > a > label');
-            if (expandableButton.length > 0) {
-                expandableButton[0].textContent = 'MORE';
-            }
-        }
-    });
+  const currentRowIndex = parseInt(row.getAttribute('expandable-row-index'));
+  [...rows].forEach((row, index) => {
+    if (index === currentRowIndex) {
+      return;
+    }
+
+    if (row.classList.contains('expanded')) {
+      row.classList.remove('expanded');
+      const expandableButton = row.getElementsByClassName('expandable-button > a > label');
+      if (expandableButton.length > 0) {
+        expandableButton[0].textContent = 'MORE';
+      }
+    }
+  });
 }
 
 function addExpandableButton(row, rows) {
-    const expandableButtonWrapper = document.createElement('div');
-    const expandableButtonLabel = document.createElement('label');
-    expandableButtonLabel.classList.add('expandable-button-label');
-    expandableButtonLabel.textContent = 'MORE';
-    const expandableButton = document.createElement('a');
-    expandableButton.classList.add('expandable-button');
-    expandableButton.addEventListener('click', handleExpandableButtonClick.bind(null, rows));
-    expandableButton.appendChild(expandableButtonLabel);
-    expandableButtonWrapper.appendChild(expandableButton);
-    row.appendChild(expandableButtonWrapper);
+  const expandableButtonWrapper = document.createElement('div');
+  const expandableButtonLabel = document.createElement('label');
+  expandableButtonLabel.classList.add('expandable-button-label');
+  expandableButtonLabel.textContent = 'MORE';
+  const expandableButton = document.createElement('a');
+  expandableButton.classList.add('expandable-button');
+  expandableButton.addEventListener(
+    'click',
+    handleExpandableButtonClick.bind(null, rows)
+  );
+  expandableButton.appendChild(expandableButtonLabel);
+  expandableButtonWrapper.appendChild(expandableButton);
+  row.appendChild(expandableButtonWrapper);
 }
 
 function wrapNextSiblingsInDiv(element) {
-    const wrapper = document.createElement('div');
-    let currentElement = element.nextSibling;
-    while (currentElement) {
-        const nextSibling = currentElement.nextSibling;
-        wrapper.appendChild(currentElement);
-        currentElement = nextSibling;
-    }
+  const wrapper = document.createElement('div');
+  let currentElement = element.nextSibling;
+  while (currentElement) {
+    const nextSibling = currentElement.nextSibling;
+    wrapper.appendChild(currentElement);
+    currentElement = nextSibling;
+  }
 
-    return wrapper;
+  return wrapper;
 }
 
 function markItemsWithPictureBefore(row) {
-    const pictures = row.querySelectorAll('picture');
-    if (pictures.length > 0) {
-        [...pictures].forEach((picture) => {
-            if (picture.parentElement.tagName === 'P'
-                && picture.textContent.length > 0) {
-                    picture.parentElement.classList.add('item-with-picture-before');
-                    const wrapper = wrapNextSiblingsInDiv(picture);
-                    picture.after(picture, wrapper);
-                }
-        });
-    }
+  const pictures = row.querySelectorAll('picture');
+  if (pictures.length > 0) {
+    [...pictures].forEach((picture) => {
+      if (picture.parentElement.tagName === 'P' &&
+        picture.textContent.length > 0
+      ) {
+        picture.parentElement.classList.add('item-with-picture-before');
+        const wrapper = wrapNextSiblingsInDiv(picture);
+        picture.after(picture, wrapper);
+      }
+    });
+  }
 }
 
 function createAccordionRowHeader(row) {
-    const rowHeader = document.createElement('div');
-    rowHeader.classList.add('accordion-row-header');
-    const picture = row.querySelector('picture');
-    if (picture) {
-        rowHeader.appendChild(picture.cloneNode(true));
-        picture.parentElement.remove();
-    }
+  const rowHeader = document.createElement('div');
+  rowHeader.classList.add('accordion-row-header');
+  const picture = row.querySelector('picture');
+  if (picture) {
+    rowHeader.appendChild(picture.cloneNode(true));
+    picture.parentElement.remove();
+  }
 
-    const titleContainer = document.createElement('div');
-    titleContainer.classList.add('accordion-title-header-container');
-    const title = row.querySelector('h2');
-    if (title) {
-        titleContainer.appendChild(title);
-    }
+  const titleContainer = document.createElement('div');
+  titleContainer.classList.add('accordion-title-header-container');
+  const title = row.querySelector('h2');
+  if (title) {
+    titleContainer.appendChild(title);
+  }
 
-    const firstParagraph = row.querySelector('p');;
-    if (firstParagraph) {
-        titleContainer.appendChild(firstParagraph.cloneNode(true));
-    }
-    rowHeader.appendChild(titleContainer);
-    row.insertBefore(rowHeader, row.children[0]);
+  const firstParagraph = row.querySelector('p');
+  if (firstParagraph) {
+    titleContainer.appendChild(firstParagraph.cloneNode(true));
+  }
+
+  rowHeader.appendChild(titleContainer);
+  row.insertBefore(rowHeader, row.children[0]);
 }
 
 function createAccordion(block) {
-    [...block.children].forEach((row, index) => {
-        if (row.children.length === 0) {
-            return;
-        }
-        row.classList.add('accordion-row');
-        row.setAttribute('expandable-row-index', index);
-        const rowContent = row.children[0];
-        rowContent.classList.add('accordion-row-content');
-        createAccordionRowHeader(rowContent);
-        markItemsWithPictureBefore(rowContent);
-        addExpandableButton(rowContent, block.children);
-    });
+  [...block.children].forEach((row, index) => {
+    if (row.children.length === 0) {
+      return;
+    }
+
+    row.classList.add('accordion-row');
+    row.setAttribute('expandable-row-index', index);
+    const rowContent = row.children[0];
+    rowContent.classList.add('accordion-row-content');
+    createAccordionRowHeader(rowContent);
+    markItemsWithPictureBefore(rowContent);
+    addExpandableButton(rowContent, block.children);
+  });
 }
 
 export default function decorate(block) {
-    createAccordion(block);
+  createAccordion(block);
 }
