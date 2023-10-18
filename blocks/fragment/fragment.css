@@ -6,28 +6,28 @@
     --sticky-framgnet-scroll-button-color: #fff;
 }
 
-.fragment-container h2 {
+main .section.fragment-container.important-saferty-information h2 {
     color: var(--header-color);
     font-size: var(--heading-font-size-s);
     font-weight: var(--font-weight-bold);
     margin: 0 0 12px;
 }
 
-.fragment-container ul {
+main .section.fragment-container.important-safety-information ul {
     padding-inline-start: 12px;
     padding: 4px 0 11px 12px;
 }
 
-.fragment-container ul li,
-.fragment-container p {
-    font-size: var(--body-font-size-s-isi-fragment);
-}
-
-.fragment-container ul li {
+main .section.fragment-container ul li {
     margin: 8px 0;
 }
 
-.fragment-container > div {
+main .section.fragment-container.important-safety-information ul li,
+main .section.fragment-container.important-safety-information p {
+    font-size: var(--body-font-size-s-isi-fragment);
+}
+
+main .section.fragment-container > div {
     max-width: var(--page-max-width);
 }
 
@@ -35,16 +35,16 @@ main .section.fragment-container {
     padding: 0 12px 40px;
 }
 
-.fragment-container > div a {
+main .section.fragment-container.important-safety-information > div a {
     color: var(--information-link-color) !important;
     text-decoration: underline !important;
 }
 
-.fragment-container div p em + picture img {
+main .section.fragment-container.important-safety-information div p em + picture img {
     max-width: 10px;
 }
 
-.sticky-fragment-block {
+main .section.fragment-container.important-safety-information .sticky-fragment-block {
     position: fixed;
     bottom: -69px;
     left: 0;
@@ -57,75 +57,75 @@ main .section.fragment-container {
     transition: opacity 0.3s ease-in-out;
 }
 
-.sticky-fragment-block.fixed-section {
+main .section.fragment-container.important-safety-information .sticky-fragment-block.fixed-section {
     opacity: 1;
     z-index: 1;
 }
 
 @media (min-width: 600px) {
-    .fragment-container h2 {
+    main .section.fragment-container.important-safety-information h2 {
         font-size: var(--heading-font-size-ml);
     }
     
-    .fragment-container ul li,
-    .fragment-container p {
+    main .section.fragment-container.important-safety-information ul li,
+    main .section.fragment-container.important-safety-information p {
         font-size: var(--body-font-size-xs);
     }
 
-    .sticky-fragment-block {
+    main .section.fragment-container.important-safety-information .sticky-fragment-block {
         bottom: 0;
     }
 }
 
-.sticky-fragment-block .sticky-fragment-header {
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header {
     height: 51px;
     background-color: var(--sticky-fragment-header-color);
 }
 
-.sticky-fragment-block .sticky-fragment-header .sticky-fragment-header-container,
-.sticky-fragment-block .sticky-framgent-content ul {
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-header-container,
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-framgent-content ul {
     max-width: var(--page-max-width);
     margin: auto;
 }
 
-.sticky-fragment-block .sticky-fragment-header .sticky-fragment-header-container {
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-header-container {
     display: flex;
     align-items: center;
     height: 100%;
     padding: 0 7.5px;
 }
 
-.sticky-fragment-block .sticky-framgent-content ul {
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-framgent-content ul {
     padding: 12px 12px 11px 20px;
     font-size: var(--body-font-size-xs);
 }
 
-.sticky-fragment-block .sticky-fragment-header h2 {
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header h2 {
     margin: 0;
     flex: 1;
     font-size: var(--heading-font-size-s);
 }
 
 @media (min-width: 600px) {
-    .sticky-fragment-block {
+    main .section.fragment-container.important-safety-information .sticky-fragment-block {
         bottom: 0;
     }
 
-    .sticky-fragment-block .sticky-fragment-header h2 {
+    main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header h2 {
         font-size: var(--body-font-size-l);
     }
 
-    .sticky-fragment-block .sticky-framgent-content ul li,
-    .sticky-fragment-block .sticky-framgent-content p {
+    main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-framgent-content ul li,
+    main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-framgent-content p {
         font-size: var(--body-font-size-m-isi-fragment);
     }
 
-    .sticky-fragment-block .sticky-framgent-content ul {
+    main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-framgent-content ul {
         padding: 12px 0 11px 20px;
     }
 }
 
-.sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button {
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button {
     content: "";
     position: relative;
     background-color: var(--sticky-framgnet-scroll-button-color);
@@ -134,7 +134,7 @@ main .section.fragment-container {
     border-radius: 50%;
 }
 
-.sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::before {
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::before {
     content: "";
     width: 2.4px;
     height: 16px;
@@ -144,7 +144,7 @@ main .section.fragment-container {
     left: 46%;
 }
 
-.sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::after {
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::after {
     content: "";
     width: 2.4px;
     height: 16px;
@@ -155,6 +155,6 @@ main .section.fragment-container {
     transform: rotate(90deg);
 }
 
-.sticky-fragment-block .sticky-framgent-content {
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-framgent-content {
     background-color: var(--sticky-fragment-content-color);
 }
