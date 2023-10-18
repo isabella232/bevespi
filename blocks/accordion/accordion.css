@@ -12,11 +12,15 @@
     border: 2px solid var(--accordion-row-border-color);
     padding: 10px 12px;
     position: relative;
+    min-height: 60px;
 }
 
 .accordion .accordion-row .accordion-row-content .accordion-row-header {
     display: flex;
     align-items: center;
+    min-height: 100%;
+    height: 60px;
+    min-height: 60px;
 }
 
 .accordion .accordion-row .accordion-row-content > p {
@@ -134,6 +138,10 @@
 
     .accordion .accordion-row.expanded .accordion-row-content > p:first-of-type {
         display: none;
+    }
+
+    .accordion .accordion-row .accordion-row-content .accordion-row-header {
+        height: unset;
     }
 
     .accordion .accordion-row.expanded .accordion-row-content .accordion-row-header .accordion-title-header-container p {
