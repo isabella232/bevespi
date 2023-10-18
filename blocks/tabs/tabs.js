@@ -61,7 +61,7 @@ export default async function decorate(block) {
     button.addEventListener('click', () => {
       deselectAllPanels(block);
       button.setAttribute('aria-selected', 'true');
-      block.querySelector(`div[role="tabpanel"][id="panel-${i}"]`).setAttribute('aria-selected', 'true');
+      block.querySelector(`div[role="tabpanel"][id="panel-${i}"]`).setAttribute('active', 'true');
     });
   });
 

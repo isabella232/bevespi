@@ -33,7 +33,7 @@ export default function decorate(block) {
       a.classList.remove('button');
 
       tile.append(document.createRange().createContextualFragment(`
-        <img class="bottom-icon" src="/icons/icon-redirect.png" />
+        <img class="bottom-icon" src="/icons/icon-redirect.png" alt="redirect icon" />
       `));
     } else {
       // there is a modal. The tile opens a modal.
@@ -41,7 +41,7 @@ export default function decorate(block) {
       cover.classList.add('cover', 'with-modal');
 
       modalContent.append(document.createRange().createContextualFragment(`
-        <button name="close-modal"><img src="/icons/modal-close.png" alt="close"/></button>
+        <button name="close-modal"><img src="/icons/modal-close.png" alt="close icon"/></button>
       `));
 
       cover.addEventListener('click', () => {
@@ -52,7 +52,7 @@ export default function decorate(block) {
       });
 
       tile.append(document.createRange().createContextualFragment(`
-        <img class="bottom-icon" src="/icons/icon-expand.png" />
+        <img class="bottom-icon" src="/icons/icon-expand.png" alt="expand icon" />
       `));
     }
 
