@@ -1,5 +1,11 @@
 import { toClassName } from '../../scripts/aem.js';
 
+function closeOtherModals(block) {
+  block.querySelectorAll('.cover.with-modal').forEach((cover) => {
+    cover.removeAttribute('aria-expanded');
+  });
+}
+
 export default function decorate(block) {
   block.querySelectorAll(':scope > div').forEach((tile) => {
     tile.classList.add('tile');
@@ -45,6 +51,7 @@ export default function decorate(block) {
       `));
 
       cover.addEventListener('click', () => {
+        closeOtherModals(block);
         cover.toggleAttribute('aria-expanded');
       });
       modalContent.querySelector('button[name="close-modal"]').addEventListener('click', () => {
