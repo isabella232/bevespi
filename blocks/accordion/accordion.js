@@ -28,7 +28,8 @@ function addExpandableButton(row, rows) {
   const expandableButtonLabel = document.createElement('label');
   expandableButtonLabel.classList.add('expandable-button-label');
   expandableButtonLabel.textContent = 'MORE';
-  const expandableButton = document.createElement('a');
+  const expandableButton = document.createElement('div');
+  expandableButton.type = 'button';
   expandableButton.classList.add('expandable-button');
   expandableButton.addEventListener('click', handleExpandableButtonClick.bind(null, rows));
   expandableButton.appendChild(expandableButtonLabel);
