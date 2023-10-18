@@ -36,6 +36,7 @@
 .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container {
     display: flex;
     flex-direction: column;
+    flex: 2;
 }
 
 .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container h2 {
@@ -53,6 +54,7 @@
 .accordion .accordion-row .accordion-row-header picture {
     min-width: 88px;
     min-height: 58px;
+    flex: 1;
 }
 
 .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container p {
@@ -142,6 +144,7 @@
         height: 71px;
         overflow: hidden;
         position: relative;
+        flex: unset;
     }
 
     .accordion .accordion-row .accordion-row-content .accordion-row-header img {
@@ -170,6 +173,7 @@
     .accordion .accordion-row .accordion-row-header picture {
         min-width: 153px;
         min-height: 87px;
+        flex: unset;
     }
 
     .accordion .accordion-row.expanded .accordion-row-content > p.item-with-picture-before picture img {
