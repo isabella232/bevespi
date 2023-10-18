@@ -69,7 +69,7 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     
     main .section.fragment-container.important-safety-information ul li,
     main .section.fragment-container.important-safety-information p {
-        font-size: var(--body-font-size-xs);
+        font-size: var(--body-font-size-m-isi-fragment);
     }
 
     main .section.fragment-container.important-safety-information .sticky-fragment-block {
