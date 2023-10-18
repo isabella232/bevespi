@@ -30,7 +30,7 @@ function addExpandableButton(row, rows) {
   expandableButtonLabel.textContent = 'MORE';
   const expandableButton = document.createElement('a');
   expandableButton.classList.add('expandable-button');
-  expandableButton.addEventListener('click',handleExpandableButtonClick.bind(null, rows));
+  expandableButton.addEventListener('click', handleExpandableButtonClick.bind(null, rows));
   expandableButton.appendChild(expandableButtonLabel);
   expandableButtonWrapper.appendChild(expandableButton);
   row.appendChild(expandableButtonWrapper);
@@ -40,7 +40,7 @@ function wrapNextSiblingsInDiv(element) {
   const wrapper = document.createElement('div');
   let currentElement = element.nextSibling;
   while (currentElement) {
-    const nextSibling = currentElement.nextSibling;
+    const { nextSibling } = currentElement;
     wrapper.appendChild(currentElement);
     currentElement = nextSibling;
   }
@@ -52,8 +52,8 @@ function markItemsWithPictureBefore(row) {
   const pictures = row.querySelectorAll('picture');
   if (pictures.length > 0) {
     [...pictures].forEach((picture) => {
-      if (picture.parentElement.tagName === 'P' &&
-        picture.textContent.length > 0
+      if (picture.parentElement.tagName === 'P'
+        && picture.textContent.length > 0
       ) {
         picture.parentElement.classList.add('item-with-picture-before');
         const wrapper = wrapNextSiblingsInDiv(picture);
