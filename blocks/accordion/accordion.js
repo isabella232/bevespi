@@ -1,8 +1,9 @@
 function handleExpandableButtonClick(rows, event) {
-    const row = event.currentTarget.parentElement.parentElement;
+    const row = event.currentTarget.parentElement.parentElement.parentElement;
     
     row.classList.toggle('expanded');
-    event.currentTarget.textContent = row.classList.contains('expanded') ? 'LESS' : '';
+    const buttonLabel = event.currentTarget.querySelector('label');
+    buttonLabel.textContent = row.classList.contains('expanded') ? 'LESS' : 'MORE';
 
     const currentRowIndex = parseInt(row.getAttribute('expandable-row-index'));
     [...rows].forEach((row, index) => {
@@ -12,19 +13,25 @@ function handleExpandableButtonClick(rows, event) {
 
         if (row.classList.contains('expanded')) {
             row.classList.remove('expanded');
-            const expandableButton = row.getElementsByClassName('expandable-button');
+            const expandableButton = row.getElementsByClassName('expandable-button > a > label');
             if (expandableButton.length > 0) {
-                expandableButton[0].textContent = '';
+                expandableButton[0].textContent = 'MORE';
             }
         }
     });
 }
 
 function addExpandableButton(row, rows) {
+    const expandableButtonWrapper = document.createElement('div');
+    const expandableButtonLabel = document.createElement('label');
+    expandableButtonLabel.classList.add('expandable-button-label');
+    expandableButtonLabel.textContent = 'MORE';
     const expandableButton = document.createElement('a');
     expandableButton.classList.add('expandable-button');
     expandableButton.addEventListener('click', handleExpandableButtonClick.bind(null, rows));
-    row.appendChild(expandableButton);
+    expandableButton.appendChild(expandableButtonLabel);
+    expandableButtonWrapper.appendChild(expandableButton);
+    row.appendChild(expandableButtonWrapper);
 }
 
 function wrapNextSiblingsInDiv(element) {
