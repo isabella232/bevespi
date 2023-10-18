@@ -76,4 +76,8 @@ export default async function decorate(block) {
   });
 
   decorateIcons(block);
+  // icons alt attribute fix
+  block.querySelectorAll('[data-icon-name]').forEach((icon) => {
+    icon.alt = `icon ${icon.getAttribute('data-icon-name')}`;
+  });
 }
