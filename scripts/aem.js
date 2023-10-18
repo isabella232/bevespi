@@ -404,7 +404,8 @@ function decorateIcon(span, prefix = '') {
     .substring(5);
   const img = document.createElement('img');
   img.dataset.iconName = iconName;
-  img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
+  const extension = iconName.endsWith('_png') ? 'png' : 'svg';
+  img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.${extension}`;
   img.loading = 'lazy';
   span.append(img);
 }
