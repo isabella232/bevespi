@@ -107,6 +107,11 @@ async function loadLazy(doc) {
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
 
+  // icons alt attribute fix - new boilerplate has low a11y (svgs are rendered as img without alt)
+  doc.querySelectorAll('[data-icon-name]').forEach((icon) => {
+    icon.alt = `icon ${icon.getAttribute('data-icon-name')}`;
+  });
+
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
   sampleRUM.observe(main.querySelectorAll('picture > img'));
