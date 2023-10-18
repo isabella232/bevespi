@@ -33,6 +33,7 @@
     --color-green: #91d8ca;
     --color-gray: #dedede;
 
+
     /* fonts */
     --body-font-family: gotham, gotham-fallback;
     --heading-font-family: var(--body-font-family);
@@ -44,7 +45,9 @@
     --body-font-size-xl: 2.0rem;
     --body-font-size-l: 1.8rem;
     --body-font-size-m: 1.6rem;
+    --body-font-size-m-isi-fragment: 1.5rem;
     --body-font-size-s: 1.4rem;
+    --body-font-size-s-isi-fragment: 1.3rem;
     --body-font-size-xs: 1.2rem;
     --body-font-size-xxs: 1rem;
     --body-font-size-xxxs: .9rem;
@@ -55,6 +58,7 @@
     --heading-font-size-xxl: 2.3rem;
     --heading-font-size-xl: 4.2rem;
     --heading-font-size-l: 2rem;
+    --heading-font-size-ml: 1.8rem;
     --heading-font-size-m: 1.5rem;
     --heading-font-size-s: 1.4rem;
     --heading-font-size-xs: 1.4rem;
@@ -70,6 +74,14 @@
     --link-font-weight: 500;
     --link-font-weight-hover: bold;
 
+    /* font weights */
+    --font-weight-thin: 300;
+    --font-weight-regular: 400;
+    --font-weight-bold: 500;
+    --font-weight-bolder: 600;
+    --font-weight-boldest: 700;
+    --font-weight-heavy: 900;
+
 }
 
 /* fallback fonts for reduced layout shift */
@@ -78,7 +90,7 @@
 @font-face {
     font-family: gotham-fallback;
     font-style: normal;
-    font-weight: bold;
+    font-weight: var(--font-weight-boldest);
     src: local('Arial');
     ascent-override: 68.65%;
     descent-override: 17.16%;
@@ -90,7 +102,7 @@
 @font-face {
     font-family: gotham-fallback;
     font-style: normal;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     src: local('Arial');
     ascent-override: 70.47%;
     descent-override: 17.62%;
@@ -102,7 +114,7 @@
 @font-face {
     font-family: gotham-fallback;
     font-style: normal;
-    font-weight: 500;
+    font-weight: var(--font-weight-bold);
     src: local('Arial');
     ascent-override: 69.48%;
     descent-override: 17.37%;
@@ -152,7 +164,7 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
     font-family: var(--heading-font-family);
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     line-height: 1.25;
     margin-top: 1em;
     margin-bottom: .5em;
@@ -248,7 +260,7 @@ a.button:any-link, button {
     text-transform: uppercase;
     font-size: 1.2rem;
     line-height: 1.2rem;
-    font-weight: 500;
+    font-weight: var(--font-weight-bold);
     border-radius: 26px;
     padding: 0 20px;
     height: 30px;
@@ -338,10 +350,6 @@ main img {
 
 main .section, .section .reset-spacing {
     padding: 64px 16px;
-}
-
-main .section .default-content-wrapper {
-    margin: 14px 14px 48px;
 }
 
 @media (min-width: 600px) {
