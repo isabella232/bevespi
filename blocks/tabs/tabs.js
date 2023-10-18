@@ -1,5 +1,5 @@
 import { decorateMain } from '../../scripts/scripts.js';
-import {decorateIcons, loadBlocks} from '../../scripts/aem.js';
+import { decorateIcons, loadBlocks } from '../../scripts/aem.js';
 
 function deselectAllPanels(block) {
   block.querySelectorAll('button[role="tab"]').forEach((button) => {
