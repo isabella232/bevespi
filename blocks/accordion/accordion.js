@@ -1,13 +1,13 @@
 function handleExpandableButtonClick(rows, event) {
-  const row = event.currentTarget.parentElement.parentElement.parentElement;
+  const selectedRow = event.currentTarget.parentElement.parentElement.parentElement;
 
-  row.classList.toggle('expanded');
+  selectedRow.classList.toggle('expanded');
   const buttonLabel = event.currentTarget.querySelector('label');
-  buttonLabel.textContent = row.classList.contains('expanded')
+  buttonLabel.textContent = selectedRow.classList.contains('expanded')
     ? 'LESS'
     : 'MORE';
 
-  const currentRowIndex = parseInt(row.getAttribute('expandable-row-index'));
+  const currentRowIndex = parseInt(selectedRow.getAttribute('expandable-row-index'), 10);
   [...rows].forEach((row, index) => {
     if (index === currentRowIndex) {
       return;
@@ -30,10 +30,7 @@ function addExpandableButton(row, rows) {
   expandableButtonLabel.textContent = 'MORE';
   const expandableButton = document.createElement('a');
   expandableButton.classList.add('expandable-button');
-  expandableButton.addEventListener(
-    'click',
-    handleExpandableButtonClick.bind(null, rows)
-  );
+  expandableButton.addEventListener('click',handleExpandableButtonClick.bind(null, rows));
   expandableButton.appendChild(expandableButtonLabel);
   expandableButtonWrapper.appendChild(expandableButton);
   row.appendChild(expandableButtonWrapper);
