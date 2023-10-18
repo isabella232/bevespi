@@ -44,7 +44,6 @@ main .hero.home .btn-scroll {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10000;
 }
 
 main .hero.home .btn-scroll a {
