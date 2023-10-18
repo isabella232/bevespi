@@ -354,6 +354,10 @@ main .section {
     main .section {
         padding: 64px 32px;
     }
+
+    main .section:nth-last-of-type(2) {
+        padding-bottom: 22px;
+    }
 }
 
 @media (min-width: 900px) {

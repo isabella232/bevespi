@@ -50,6 +50,10 @@
   align-self: start;
 }
 
+.columns-row > div.columns-img-col {
+  align-self: center;
+}
+
 .section.columns-container > div {
   max-width: 100%;
 }
