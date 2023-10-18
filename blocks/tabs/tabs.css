@@ -14,7 +14,7 @@
   border: none;
   border-radius: 0;
   color: white;
-  background: #3c3463;
+  background: var(--color-purple);
   text-transform: none;
   font-size: 1.6rem;
   width: 100%;
@@ -35,7 +35,7 @@
   text-align: right;
   display: inline-block;
   font-size: 1.6rem;
-  background: #624b7e;
+  background: var(--color-purple-light);
   font-weight: normal;
 }
 
@@ -64,7 +64,7 @@ main .section[data-background] > div.tabs-wrapper {
 }
 
 .block.tabs .tab-controls-wrapper {
-  background: #624b7e;
+  background: var(--color-purple-light);
 }
 
 @media (min-width: 900px) {
@@ -82,10 +82,10 @@ main .section[data-background] > div.tabs-wrapper {
     border: none;
     border-radius: 0;
     color: white;
-    background: #624b7e;
+    background: var(--color-purple-light);
     text-transform: none;
-    border-right: 1px solid #493b67;
-    border-left: 1px solid #493b67;
+    border-right: 1px solid var(--color-purple-med);
+    border-left: 1px solid var(--color-purple-med);
     flex-grow: 1;
     text-align: center;
     display: inline-block;
@@ -93,8 +93,8 @@ main .section[data-background] > div.tabs-wrapper {
   }
 
   .block.tabs .tab-controls button[aria-selected="true"], .block.tabs .tab-controls button:hover {
-    background: #dedede;
-    color: #3b3463;
+    background: var(--color-gray);
+    color: var(--color-purple);
     position: relative;
   }
 
@@ -112,11 +112,11 @@ main .section[data-background] > div.tabs-wrapper {
   }
 
   .block.tabs .tab-controls button:first-child {
-    border-left: 2px solid #493b67;
+    border-left: 2px solid var(--color-purple-med);
   }
 
   .block.tabs .tab-controls button:last-child {
-    border-right: 2px solid #493b67;
+    border-right: 2px solid var(--color-purple-med);
   }
 }
 
