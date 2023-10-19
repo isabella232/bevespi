@@ -408,7 +408,7 @@ function decorateIcon(span, prefix = '') {
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.${extension}`;
   img.loading = 'lazy';
   span.append(img);
-  if (extension != 'svg') {
+  if (extension !== 'svg') {
     const size = 100;
     const picture = createOptimizedPicture(img.src, iconName, false, [{ width: size }]);
     picture.querySelector('img').setAttribute('width', size);
