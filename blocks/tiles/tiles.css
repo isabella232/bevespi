@@ -209,6 +209,10 @@
     width: 45px;
     height: 45px;
   }
+
+  .tiles.block > div > .cover {
+    padding: 15px;
+  }
 }
 
 @media (min-width: 900px) {

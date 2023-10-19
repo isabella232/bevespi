@@ -57,6 +57,17 @@ function decorateSeparatorIcon(main) {
   });
 }
 
+function decorateAriaLabels(main) {
+  [...main.querySelectorAll('a')].forEach((anchor) => {
+    const ariaLabelResult = anchor.textContent.match(/(.+)\[aria-label=["”]([^"”]+)["”]\]/);
+    if (ariaLabelResult) {
+      anchor.setAttribute('aria-label', ariaLabelResult[2]);
+      anchor.textContent = ariaLabelResult[1].trim();
+      anchor.title = ariaLabelResult[1].trim();
+    }
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -65,6 +76,7 @@ function decorateSeparatorIcon(main) {
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
+  decorateAriaLabels(main);
   decorateSeparatorIcon(main);
   decorateIcons(main);
   // buildAutoBlocks(main);
