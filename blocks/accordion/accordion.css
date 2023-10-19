@@ -134,12 +134,12 @@
 }
 
 @media (min-width: 600px) {
-    .accordion .accordion-row.expanded .accordion-row-header p {
+    .accordion .accordion-row .accordion-row-content > p {
+        padding-left: 153px;
         padding-right: 70px;
     }
 
-    .accordion .accordion-row .accordion-row-content > p {
-        padding-left: 153px;
+    .accordion .accordion-row.expanded .accordion-row-header p {
         padding-right: 70px;
     }
 
@@ -153,6 +153,14 @@
 
     .accordion .accordion-row .accordion-row-content .accordion-row-header {
         height: unset;
+    }
+
+    .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container p {
+        display: block;
+        max-height: 35px;
+        overflow: hidden;
+        margin: 0;
+        padding: 10px 70px 0 0;
     }
 
     .accordion .accordion-row.expanded .accordion-row-content .accordion-row-header .accordion-title-header-container p {
@@ -173,14 +181,6 @@
 
     .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container h2 {
         font-size: var(--heading-font-size-ml);
-    }
-
-    .accordion .accordion-row .accordion-row-content .accordion-row-header .accordion-title-header-container p {
-        display: block;
-        max-height: 35px;
-        overflow: hidden;
-        margin: 0;
-        padding: 10px 70px 0 0;
     }
 
     .accordion .accordion-row:not(.expanded) .accordion-row-content .accordion-row-header .accordion-title-header-container p::after {
