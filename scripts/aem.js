@@ -408,6 +408,7 @@ function decorateIcon(span, prefix = '') {
   img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.${extension}`;
   img.loading = 'lazy';
   span.append(img);
+  if (extension != 'svg') img.replaceWith(createOptimizedPicture(img.src, iconName, false, [{ width: '250' }]));
 }
 
 /**
