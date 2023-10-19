@@ -17,6 +17,7 @@ main .section.fragment-container ul li {
 main .section.fragment-container.important-safety-information ul li,
 main .section.fragment-container.important-safety-information p {
     font-size: var(--body-font-size-s-isi-fragment);
+    margin-bottom: 18px;
 }
 
 main .section.fragment-container > div {
@@ -54,7 +55,7 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     z-index: 1;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
     main .section.fragment-container.important-safety-information h2 {
         font-size: var(--heading-font-size-ml);
     }
@@ -102,7 +103,7 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     font-size: var(--heading-font-size-s);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
     main .section.fragment-container.important-safety-information .sticky-fragment-block {
         bottom: 0;
     }

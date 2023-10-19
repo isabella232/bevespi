@@ -201,6 +201,10 @@ p, dl, ol, ul, pre, blockquote {
     margin-bottom: 1em;
 }
 
+p {
+    line-height: 1.1;
+}
+
 hr {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -393,9 +397,15 @@ main .section.isi {
 }
 
 main .section.isi h2 {
-    font-size: 1.8rem;
+    font-size: var(--heading-font-size-s);
     font-weight: 500;
     color: var(--text-orange);
+}
+
+@media (min-width: 900px) {
+    main .section.isi h2 {
+        font-size: var(--heading-font-size-ml);
+    }
 }
 
 main .section.isi ul {
