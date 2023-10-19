@@ -87,6 +87,10 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     padding: 0 7.5px;
 }
 
+main .section.isi .sticky-fragment-header-container h2 {
+    color: var(--text-orange-light);
+}
+
 main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-framgent-content ul {
     padding: 12px 12px 11px 20px;
     font-size: var(--body-font-size-xs);
