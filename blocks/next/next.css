@@ -1,0 +1,30 @@
+.section > div.next-wrapper {
+  max-width: unset;
+}
+
+.next.block {
+  --next-block-height: 64px;
+  --next-block-width: 308px;
+
+  position: relative;
+  height: var(--next-block-height);
+}
+
+.next.block > div {
+  background: url('../../images/next_bar.jpeg') no-repeat;
+  height: 100%;
+  width: var(--next-block-width);
+  position: absolute;
+  right: calc(var(--next-block-width) * -1);
+}
+
+.next.block.active > div {
+  right: 0;
+}
+
+@media (min-width: 900px) {
+  .next.block {
+    --next-block-height: 100px;
+    --next-block-width: 723px;
+  }
+}
