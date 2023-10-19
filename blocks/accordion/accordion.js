@@ -4,8 +4,8 @@ function handleExpandableButtonClick(rows, event) {
   selectedRow.classList.toggle('expanded');
   const buttonLabel = event.currentTarget.querySelector('label');
   const buttonText = selectedRow.classList.contains('expanded')
-  ? 'LESS'
-  : 'MORE';
+    ? 'LESS'
+    : 'MORE';
   buttonLabel.textContent = buttonText;
   buttonLabel.parentElement.setAttribute('aria-label', buttonText);
 
