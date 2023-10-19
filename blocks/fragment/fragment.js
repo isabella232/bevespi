@@ -89,6 +89,7 @@ function renderStickyFragmentInformationBlock(block) {
     stickyInformationBlockHeaderContainer.appendChild(copyOfInfoBlockHeader);
     const informationBlockScrollButton = document.createElement('a');
     informationBlockScrollButton.href = '#';
+    informationBlockScrollButton.setAttribute('aria-label', 'Scroll');
     informationBlockScrollButton.classList.add('sticky-fragment-scroll-button');
     informationBlockScrollButton.addEventListener(
       'click',
