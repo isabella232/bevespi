@@ -1,5 +1,5 @@
-import { decorateMain } from '../../scripts/scripts.js';
-import { decorateIcons, loadBlocks } from '../../scripts/aem.js';
+import { decorateIcons } from '../../scripts/aem.js';
+import { loadFragment as genericLoadFragment } from '../fragment/fragment.js';
 
 function deselectAllPanels(block) {
   block.querySelectorAll('button[role="tab"]').forEach((button) => {
@@ -16,18 +16,8 @@ async function loadFragment(url) {
   if (url && !url.startsWith('/')) {
     path = new URL(url).pathname;
   }
-
-  if (path && path.startsWith('/')) {
-    const resp = await fetch(`${path}.plain.html`);
-    if (resp.ok) {
-      const main = document.createElement('main');
-      main.innerHTML = await resp.text();
-      decorateMain(main);
-      await loadBlocks(main);
-      return main.querySelector('.section');
-    }
-  }
-  return null;
+  const main = await genericLoadFragment(path);
+  return main?.querySelector('.section');
 }
 
 export default async function decorate(block) {
