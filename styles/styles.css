@@ -23,6 +23,7 @@
     --background-grey-4: #f6f6f6;
     --background-blue-1: #172660;
     --color-white: #fff;
+    --color-grey-5: #ccc;
     --background-color: var(--color-white);
     --text-orange: #f58321;
     --text-color: #282828;
@@ -390,4 +391,29 @@ main .section.isi li {
 
 main .section.isi strong {
     font-weight: 500;
+}
+
+.copd-treatment .button-container {
+    border-top: 1px solid var(--color-grey-5);
+}
+
+.copd-treatment .button-container a {
+    border: unset;
+    background-color: unset;
+    font-size: var(--body-font-size-s);
+    padding: 0;
+    text-transform: unset;
+    margin-top: 6px;
+}
+
+.copd-treatment .button-container a::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('/icons/icon_pink-arrow-right-md.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    margin-left: auto;
+    transform: translate(10px, -2px);
 }
