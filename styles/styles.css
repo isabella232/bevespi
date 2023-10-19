@@ -485,12 +485,26 @@ main span.icon-separator hr {
     border-width: 2px;
 }
 
+main .section.image-float-left picture {
+    float: left;
+    margin-right: 20px;
+}
+
+main .section.background-gray {
+    background: #898989;
+}
+
+main .section.small-vertical-margins {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
 @media (min-width: 600px) {
     main .section.font-large .default-content-wrapper {
         font-size: 2.1rem;
     }
 
-    main .section.font-large .default-content-wrapper p {
+    main .section.centered.font-large .default-content-wrapper p {
         padding-left: 80px;
         padding-right: 80px;
     }

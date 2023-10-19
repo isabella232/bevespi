@@ -29,12 +29,6 @@ export default function decorate(block) {
       h3.parentElement.insertBefore(document.createElement('hr'), h3.nextSibling);
     }
 
-    // if (tile.classList.contains('six-tips-to-help')) {
-    //   const fragment = await fetch('/html-fragments/six-tips.html');
-    //   cover.innerHTML = await fragment.text();
-    //   // tile.classList.remove('six-tips-to-help');
-    // }
-
     if (modalContent.classList.contains('button-container')) {
       // only has a button. Then the tile becomes a link
       const a = modalContent.querySelector('a');
