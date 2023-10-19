@@ -189,6 +189,10 @@
 }
 
 @media (min-width: 600px) {
+  :root {
+    --tile-large-font-size: 2.3rem;
+  }
+
   .tiles.block {
     --tile-height: 250px;
   }
@@ -200,7 +204,7 @@
   }
 
   .tiles.block > div > .cover p {
-    font-size: 2.3rem;
+    font-size: var(--tile-large-font-size);
     font-weight: bold;
     padding-right: unset;
   }
@@ -216,6 +220,10 @@
 }
 
 @media (min-width: 900px) {
+  :root {
+    --tile-font-size: 1.8rem;
+  }
+
   .tiles.block {
     grid-template-columns: 1fr 1fr 1fr;
 
@@ -226,25 +234,18 @@
     width: calc(200% + var(--grid-gap));
   }
 
-  .tiles.block > div > .cover h3 {
-    font-size: 2.9rem;
-    font-weight: 600;
-    line-height: 1em;
-  }
-
   .tiles.block .modal h2 {
-    font-size: 2.3rem;
+    font-size: var(--tile-large-font-size);
     font-weight: 500;
   }
 
   .tiles.block .modal p {
-    font-size: 1.8rem;
+    font-size: var(--tile-font-size);
   }
 
   .tiles.block .modal .button-container .button {
-    font-size: 1.8rem;
+    font-size: var(--tile-font-size);
   }
-
 
   .tiles.block button[name="close-modal"] {
     width: 34px;
@@ -263,12 +264,6 @@
   .tiles.block img.bottom-icon {
     width: unset;
     height: unset;
-  }
-
-  .tiles.block > div > .cover p {
-    font-size: 2.3rem;
-    font-weight: bold;
-    padding-right: unset;
   }
 }
 

@@ -35,6 +35,7 @@
     --color-purple: #3c3463;
     --color-purple-light: #624b7e;
     --color-purple-med: #493b67;
+    --color-gray-message-background: #898989;
 
 
     /* fonts */
@@ -491,7 +492,7 @@ main .section.image-float-left picture {
 }
 
 main .section.background-gray {
-    background: #898989;
+    background: var(--color-gray-message-background);
 }
 
 main .section.small-vertical-margins {
