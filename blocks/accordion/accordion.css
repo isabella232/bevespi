@@ -5,12 +5,12 @@
 }
 
 .accordion .accordion-row {
-    margin-bottom: 13px;
+    margin-bottom: 10px;
 }
 
 .accordion .accordion-row .accordion-row-content {
     border: 2px solid var(--accordion-row-border-color);
-    padding: 10px 12px;
+    padding: 10px 12px 6px;
     position: relative;
     min-height: 60px;
 }
@@ -198,7 +198,7 @@
         padding-right: 10px;
         bottom: 10px;
         right: 20px;
-        font-weight: var(--font-weight-bolder);
+        font-weight: var(--font-weight-bold);
     }
 
     .accordion .accordion-row .accordion-row-content .expandable-button::before,
