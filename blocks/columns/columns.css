@@ -54,7 +54,7 @@
   align-self: center;
 }
 
-.section.columns-container > div {
+.section.columns-container > div.columns-wrapper {
   max-width: 100%;
 }
 
@@ -169,5 +169,6 @@
   
   .home .columns .button-container .icon img {
     width: 87px;
+    height: 87px;
   }
 }
