@@ -245,13 +245,13 @@
   }
 }
 
-/* Custom elements */
-.tiles.block > div.tile.four-common-triggers .cover  h3 {
+/* Numbered elements */
+.tiles.block > div.tile.numbered .cover  h3 {
   color: white;
   font-weight: 400;
 }
 
-.tiles.block > div.tile.four-common-triggers .cover  h3:first-of-type {
+.tiles.block > div.tile.numbered .cover  h3:first-of-type {
   font-size: 7rem;
   font-weight: 200;
   font-style: italic;
@@ -259,51 +259,17 @@
   font-family: var(--proximanova-font-family);
 }
 
-.tiles.block > div.tile.four-common-triggers .cover h3 strong {
-  color: var(--color-green);
-  display: inline-block;
+.tiles.block > div.tile.numbered .cover h3:last-of-type {
+  margin-bottom: auto;
 }
 
-.tiles.block > div.tile.six-tips-to-help .cover  h3:first-of-type {
-  font-size: 4.5rem;
-  font-weight: 200;
-  font-style: italic;
-  color: var(--color-green);
-  font-family: var(--proximanova-font-family);
-}
-
-.tiles.block > div.tile.six-tips-to-help .cover h3 strong {
-  color: var(--color-green);
-  display: inline-block;
-}
-
-.tiles.block > div.tile.five-ways-to-enjoy-time .cover {
-  justify-content: start;
-}
-
-.tiles.block > div.tile.five-ways-to-enjoy-time .cover  h3:first-of-type {
-  font-size: 6rem;
-  font-weight: 200;
-  font-style: italic;
-  color: var(--color-green);
-  font-family: var(--proximanova-font-family);
-}
-
-.tiles.block > div.tile.five-ways-to-enjoy-time .cover h3 strong {
+.tiles.block > div.tile.numbered .cover h3 strong {
   color: var(--color-green);
   display: inline-block;
 }
 
 @media (min-width: 900px) {
-  .tiles.block > div.tile.four-common-triggers .cover  h3:first-of-type {
-    font-size: 9rem;
-  }
-
-  .tiles.block > div.tile.six-tips-to-help .cover  h3:first-of-type {
-    font-size: 9rem;
-  }
-
-  .tiles.block > div.tile.five-ways-to-enjoy-time .cover  h3:first-of-type {
+  .tiles.block > div.tile.numbered .cover  h3:first-of-type {
     font-size: 9rem;
   }
 }
