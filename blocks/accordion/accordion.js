@@ -3,9 +3,11 @@ function handleExpandableButtonClick(rows, event) {
 
   selectedRow.classList.toggle('expanded');
   const buttonLabel = event.currentTarget.querySelector('label');
-  buttonLabel.textContent = selectedRow.classList.contains('expanded')
-    ? 'LESS'
-    : 'MORE';
+  const buttonText = selectedRow.classList.contains('expanded')
+  ? 'LESS'
+  : 'MORE';
+  buttonLabel.textContent = buttonText;
+  buttonLabel.parentElement.setAttribute('aria-label', buttonText);
 
   const currentRowIndex = parseInt(selectedRow.getAttribute('expandable-row-index'), 10);
   [...rows].forEach((row, index) => {
@@ -15,9 +17,10 @@ function handleExpandableButtonClick(rows, event) {
 
     if (row.classList.contains('expanded')) {
       row.classList.remove('expanded');
-      const expandableButton = row.getElementsByClassName('expandable-button > a > label');
-      if (expandableButton.length > 0) {
-        expandableButton[0].textContent = 'MORE';
+      const expandableButtonLabel = row.getElementsByClassName('expandable-button > a > label');
+      if (expandableButtonLabel.length > 0) {
+        expandableButtonLabel[0].textContent = 'MORE';
+        expandableButtonLabel[0].parentElement.setAttribute('aria-label', 'MORE');
       }
     }
   });
@@ -30,6 +33,7 @@ function addExpandableButton(row, rows) {
   const expandableButton = document.createElement('div');
   expandableButton.role = 'button';
   expandableButton.classList.add('expandable-button');
+  expandableButton.setAttribute('aria-label', 'MORE');
   expandableButton.addEventListener('click', handleExpandableButtonClick.bind(null, rows));
   expandableButton.appendChild(expandableButtonLabel);
   row.appendChild(expandableButton);
