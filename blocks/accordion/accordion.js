@@ -28,7 +28,6 @@ function handleExpandableButtonClick(rows, event) {
 
 function addExpandableButton(row, rows) {
   const expandableButtonLabel = document.createElement('label');
-  expandableButtonLabel.classList.add('expandable-button-label');
   expandableButtonLabel.textContent = 'MORE';
   const expandableButton = document.createElement('div');
   expandableButton.role = 'button';
@@ -56,8 +55,7 @@ function markItemsWithPictureBefore(row) {
   if (pictures.length > 0) {
     [...pictures].forEach((picture) => {
       if (picture.parentElement.tagName === 'P'
-        && picture.textContent.length > 0
-      ) {
+        && picture.textContent.length > 0) {
         picture.parentElement.classList.add('item-with-picture-before');
         const wrapper = wrapNextSiblingsInDiv(picture);
         picture.after(picture, wrapper);
