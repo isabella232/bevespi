@@ -132,7 +132,8 @@
   text-align: left;
   font-size: 1.2rem;
   padding-right: 40px;
-  font-weight: 500;
+  font-weight: normal;
+  font-family: var(--proximanova-font-family);
 }
 
 .tiles.block > .tile.white-text .cover h3 {
@@ -239,7 +240,7 @@
 
   .tiles.block > div > .cover p {
     font-size: 2.3rem;
-    font-weight: 500;
+    font-weight: bold;
     padding-right: unset;
   }
 }
@@ -254,6 +255,8 @@
   font-size: 7rem;
   font-weight: 200;
   font-style: italic;
+  color: var(--color-green);
+  font-family: var(--proximanova-font-family);
 }
 
 .tiles.block > div.tile.four-common-triggers .cover h3 strong {
@@ -265,6 +268,8 @@
   font-size: 4.5rem;
   font-weight: 200;
   font-style: italic;
+  color: var(--color-green);
+  font-family: var(--proximanova-font-family);
 }
 
 .tiles.block > div.tile.six-tips-to-help .cover h3 strong {
@@ -280,6 +285,8 @@
   font-size: 6rem;
   font-weight: 200;
   font-style: italic;
+  color: var(--color-green);
+  font-family: var(--proximanova-font-family);
 }
 
 .tiles.block > div.tile.five-ways-to-enjoy-time .cover h3 strong {

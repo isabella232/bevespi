@@ -39,6 +39,7 @@
 
     /* fonts */
     --body-font-family: gotham, gotham-fallback;
+    --proximanova-font-family: proxima-nova, serif;
     --heading-font-family: var(--body-font-family);
     --fixed-font-family: var(--body-font-family);
 
