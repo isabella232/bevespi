@@ -409,7 +409,7 @@ function decorateIcon(span, prefix = '') {
   img.loading = 'lazy';
   span.append(img);
   if (extension != 'svg') {
-    const size = 250;
+    const size = 100;
     const picture = createOptimizedPicture(img.src, iconName, false, [{ width: size }]);
     picture.querySelector('img').setAttribute('width', size);
     picture.querySelector('img').setAttribute('height', size);
