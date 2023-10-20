@@ -1,10 +1,11 @@
 export default async function decorate(block) {
-  // Create a new IntersectionObserver object
-  let observer = new IntersectionObserver(function (entries, observer) {
-    console.log('An intersection happened!');
-    console.log(entries);
-  });
+  const link = block.querySelector('a');
+  link.innerHTML = `<span class="next-large">NEXT:</span>
+    <span class="next-small">${link.textContent}</span>
+    <span class="next-icon"></span>`;
 
-  // Observe the #app element
+  let observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+  });
   observer.observe(block);
 }
