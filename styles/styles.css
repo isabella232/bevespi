@@ -421,8 +421,32 @@ main .section.isi strong {
     font-weight: 500;
 }
 
-.copd-treatment .button-container {
+.home .columns-row img {
+    max-width: 260px;
+    max-height: 200px;
+}
+
+@media (min-width: 900px) {
+    .home .columns-row img {
+        max-width: 330px;
+        max-height: 330px;
+    }
+}
+
+.copd-treatment .columns-row {
+    position: relative;
+    padding-bottom: 125px;
+}
+
+.copd-treatment .columns-row:last-of-type {
+    margin-bottom: -25px;
+}
+
+.copd-treatment .columns .button-container {
     border-top: 1px solid var(--color-grey-5);
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
 }
 
 .copd-treatment .button-container a {
@@ -431,7 +455,10 @@ main .section.isi strong {
     font-size: var(--body-font-size-s);
     padding: 0;
     text-transform: unset;
-    margin-top: 6px;
+}
+
+.copd-treatment .columns .button-container a {
+    margin-top: 30px;
 }
 
 .copd-treatment .button-container a::after {
@@ -444,4 +471,37 @@ main .section.isi strong {
     display: block;
     margin-left: auto;
     transform: translate(10px, -2px);
+}
+
+.copd-treatment .columns-80-20 {
+    color: var(--link-color);
+    font-size: var(--body-font-size-xl);
+}
+
+.copd-treatment .columns-60-40 .columns-img-col {
+    order: 3;
+}
+
+@media (min-width: 900px) {
+    .copd-treatment .columns-60-40 .columns-img-col {
+        order: unset;
+    }
+
+    .copd-treatment .columns-row {
+        position: unset;
+        padding-bottom: unset;
+    }
+
+    .copd-treatment .columns-row:last-of-type {
+        margin-bottom: unset;
+    }
+    
+    .copd-treatment .columns .button-container {
+        position: unset;
+        width: unset;
+    }
+
+    .copd-treatment .columns .button-container a {
+        margin-top: 6px;
+    }
 }
