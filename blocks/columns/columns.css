@@ -33,17 +33,17 @@
   flex-direction: row;
 }
 
-.columns.columns-80-20 img {
-  max-width: 77px;
-  max-height: 77px;
-  transform: translate(20px, 15px);
-}
-
 .columns-row img {
   height: auto;
   width: auto;
   max-width: 300px;
   max-height: 300px;
+}
+
+.columns.columns-80-20 img {
+  max-width: 77px;
+  max-height: 77px;
+  transform: translate(20px, 15px);
 }
 
 .columns-col {
