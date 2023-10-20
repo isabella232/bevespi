@@ -560,7 +560,7 @@ main .section.isi strong {
 }
 
 @media (min-width: 900px) {
-    .copd-resources main .default-content-wrapper {
+    .copd-resources main .section:not(.isi) .default-content-wrapper {
         width: 750px;
         margin: auto;
     }

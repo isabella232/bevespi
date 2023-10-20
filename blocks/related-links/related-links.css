@@ -1,0 +1,74 @@
+.related-links {
+  background: url('../../images/divider-d.png') no-repeat;
+  background-position: 50% 0%;
+  padding-top: 65px;
+  position: relative;
+}
+
+.related-links::before {
+  content: "RELATED LINKS";
+  font-size: 1.9rem;
+  color: var(--link-color);
+  font-weight: 500;
+  margin-bottom: 30px;
+  position: absolute;
+  top: 20px;
+}
+
+.related-links > div {
+  display: flex;
+}
+
+.related-links > div > div:first-of-type {
+  flex-basis: 45%;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.related-links > div > div:last-of-type {
+  flex-basis: 55%;
+}
+
+.related-links picture {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.related-links img {
+  max-width: unset;
+}
+
+main .related-links .button-container {
+  border: 0;
+}
+
+main .related-links .button-container a {
+  margin: 11px 0 0 32px;
+  padding: 0;
+}
+
+main .related-links .button-container a::after {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .related-links {
+    display: flex;
+  }
+
+  .related-links > div {
+    display: block;
+    flex-basis: 33%;
+  }
+
+  .related-links > div {
+    width: 100%;
+  }
+}
