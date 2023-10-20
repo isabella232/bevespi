@@ -446,6 +446,19 @@ main .section.isi strong {
     margin-bottom: -25px;
 }
 
+.copd-resources main .button-container {
+    border-top: 1px solid var(--highlight-background-color);
+    border-bottom: 1px solid var(--highlight-background-color);
+}
+
+.copd-resources main .button-container a {
+    border: 0;
+    font-size: var(--body-font-size-s);
+    text-transform: none;
+    padding: 30px 39px 30px 25px;
+    margin: 0 auto;
+}
+
 .copd-treatment .columns .button-container {
     border-top: 1px solid var(--color-grey-5);
     position: absolute;
@@ -534,19 +547,6 @@ main .section.isi strong {
 
 .copd-resources main .default-content-wrapper li {
     margin-bottom: 15px;
-}
-
-.copd-resources main .button-container {
-    border-top: 1px solid var(--highlight-background-color);
-    border-bottom: 1px solid var(--highlight-background-color);
-}
-
-.copd-resources main .button-container a {
-    border: 0;
-    font-size: var(--body-font-size-s);
-    text-transform: none;
-    padding: 30px 39px 30px 25px;
-    margin: 0 auto;
 }
 
 .copd-resources main .button-container a::after {
