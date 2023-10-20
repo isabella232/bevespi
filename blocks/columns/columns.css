@@ -59,6 +59,10 @@
   align-self: center;
 }
 
+.columns-80-20 .columns-col.columns-img-col {
+  align-self: unset;
+}
+
 .section.columns-container > div.columns-wrapper {
   max-width: 100%;
 }
