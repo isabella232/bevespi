@@ -67,8 +67,4 @@ main .related-links .button-container a::after {
     display: block;
     flex-basis: 33%;
   }
-
-  .related-links > div {
-    width: 100%;
-  }
 }

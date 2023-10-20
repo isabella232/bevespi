@@ -541,7 +541,7 @@ main .section.isi strong {
     border-bottom: 1px solid var(--highlight-background-color);
 }
 
-.copd-resources main .button-container a {
+.copd-resources main .default-content-wrapper .button-container a {
     border: 0;
     font-size: var(--body-font-size-s);
     text-transform: none;
@@ -549,7 +549,7 @@ main .section.isi strong {
     margin: 0 auto;
 }
 
-.copd-resources main .button-container a::after {
+.copd-resources main .default-content-wrapper .button-container a::after {
     content: "";
     display: inline-block;
     width: 20px;
