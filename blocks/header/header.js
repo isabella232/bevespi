@@ -43,8 +43,10 @@ export default async function decorate(block) {
     nav.querySelector('.nav-top > div').append(search);
 
     const explore = nav.querySelector('.nav-middle > div > div > div > div:nth-of-type(3)');
-    explore.innerHTML = "<span class='explore'>Explore</span><span class='close'>Close</span>";
-    explore.addEventListener('click', () => { nav.classList.toggle('expanded'); });
+    if (explore) {
+      explore.innerHTML = "<span class='explore'>Explore</span><span class='close'>Close</span>";
+      explore.addEventListener('click', () => { nav.classList.toggle('expanded'); });
+    }
 
     decorateIcons(nav);
     const navWrapper = document.createElement('div');
