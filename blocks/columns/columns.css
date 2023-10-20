@@ -24,7 +24,7 @@
 }
 
 .columns-row > div {
-  padding: 20px 0;
+  padding: 28px 0;
   display: flex;
   flex-direction: column;
 }

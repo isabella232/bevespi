@@ -438,6 +438,10 @@ main .section.isi strong {
     padding-bottom: 125px;
 }
 
+.copd-treatment .columns-80-20 .columns-row {
+    padding-bottom: unset;
+}
+
 .copd-treatment .columns-row:last-of-type {
     margin-bottom: -25px;
 }
