@@ -357,7 +357,7 @@ main .section {
     padding: 64px 16px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 900px) {
     main .section {
         padding: 64px 32px;
     }
@@ -507,5 +507,65 @@ main .section.isi strong {
 
     .copd-treatment .columns .button-container a {
         margin-top: 6px;
+    }
+}
+
+/* copd-resources theme */
+.copd-resources main .section.hero-container + .section {
+    padding-top: 32px;
+}
+
+.copd-resources main .default-content-wrapper {
+    line-height: 1.2em;
+    font-size: 1.4rem;
+}
+
+.copd-resources main .default-content-wrapper p {
+    line-height: 1.2em;
+}
+
+.copd-resources main .default-content-wrapper h2 {
+    font-size: 2rem;
+}
+
+.copd-resources main .default-content-wrapper strong {
+    font-weight: 400;
+}
+
+.copd-resources main .default-content-wrapper li {
+    margin-bottom: 15px;
+}
+
+.copd-resources main .button-container {
+    border-top: 1px solid var(--highlight-background-color);
+    border-bottom: 1px solid var(--highlight-background-color);
+}
+
+.copd-resources main .button-container a {
+    border: 0;
+    font-size: var(--body-font-size-s);
+    text-transform: none;
+    padding: 30px 39px 30px 25px;
+    margin: 0 auto;
+}
+
+.copd-resources main .button-container a::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("/icons/icon_pink-arrow-right-md.png") no-repeat;
+    background-size: contain;
+    margin-left: 30px;
+}
+
+@media (min-width: 900px) {
+    .copd-resources main .default-content-wrapper {
+        width: 750px;
+        margin: auto;
+    }
+
+    .copd-resources main .default-content-wrapper h2 {
+        font-size: 3.2rem;
     }
 }
