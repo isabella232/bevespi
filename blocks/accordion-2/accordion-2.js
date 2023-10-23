@@ -6,11 +6,11 @@ export default async function decorate(block) {
 
     const buttons = document.createElement('div');
     buttons.classList.add('buttons');
-    buttons.innerHTML = `<span class='button-more'>More +</span><span class='button-less'>Less -</span>`;
+    buttons.innerHTML = '<span class="button-more">More +</span><span class="button-less">Less -</span>';
     row.querySelector('div').append(buttons);
 
     [...row.querySelectorAll('.buttons > span')].forEach((button) => {
-      button.addEventListener('click', (e) => {
+      button.addEventListener('click', () => {
         [...block.querySelectorAll('.active')].forEach((active) => { active.classList.remove('active'); });
         if (button.classList.contains('button-more')) buttons.parentElement.classList.toggle('active');
       });
