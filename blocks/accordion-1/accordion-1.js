@@ -7,5 +7,5 @@ export default async function decorate(block) {
     const rowInner = document.createElement('div');
     [...row.children].forEach((child) => { rowInner.appendChild(child); });
     row.appendChild(rowInner);
-  })
+  });
 }
