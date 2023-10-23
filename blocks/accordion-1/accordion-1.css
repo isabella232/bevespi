@@ -7,16 +7,16 @@ main .section div.accordion-1-wrapper {
   max-width: unset;
 }
 
-.accordion-1 > div:nth-of-type(odd) {
-  background-color: var(--background-grey-4);
-}
-
 .accordion-1 > div > div {
   display: flex;
   gap: 10px;
   padding: 12px;
   max-width: var(--page-max-width);
   margin: auto;
+}
+
+.accordion-1 > div:nth-of-type(odd) {
+  background-color: var(--background-grey-4);
 }
 
 .accordion-1 > div > div > span {
