@@ -62,7 +62,6 @@ main .section div.accordion-2-wrapper {
 .accordion-2 > div > div {
   position: relative;
   height: 55px;
-  padding: 10px 0;
   max-width: var(--page-max-width);
   margin: 13px auto;
   border: 2px solid var(--color-grey-6);
@@ -96,6 +95,10 @@ main .section div.accordion-2-wrapper {
   grid-column: 1;
 }
 
+.accordion-2 p:nth-of-type(n+2) {
+  margin: 10px 50px 0 0;
+}
+
 .accordion-2 > div > div > .p-img + p {
   grid-column: 2;
   margin-top: 20px;
@@ -109,10 +112,6 @@ main .section div.accordion-2-wrapper {
   display: block;
 }
 
-.accordion-2 p:nth-of-type(n+2) {
-  margin: 10px 50px 0 0;
-}
-
 @media (min-width: 600px) {
   .accordion-2 {
     font-size: var(--body-font-size-m);
@@ -122,6 +121,7 @@ main .section div.accordion-2-wrapper {
   .accordion-2 .buttons {
     font-size: 1.6rem;
   }
+  
   .accordion-2 > div > div > p.p-img-first {
     width: 133px;
     height: 82px;
