@@ -39,6 +39,7 @@
 
     /* fonts */
     --body-font-family: gotham, gotham-fallback;
+    --body-font-family: gotham-fallback;
     --heading-font-family: var(--body-font-family);
     --fixed-font-family: var(--body-font-family);
 
@@ -122,7 +123,7 @@
     ascent-override: 69.48%;
     descent-override: 17.37%;
     line-gap-override: 17.37%;
-    size-adjust: 112%;
+    size-adjust: 109%;
 }
 
 @media (min-width: 900px) {
