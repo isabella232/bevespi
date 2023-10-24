@@ -68,6 +68,9 @@ async function loadEager(doc) {
     await waitForLCP(LCP_BLOCKS);
   }
 
+  const topImage = document.querySelector('main .section:nth-of-type(2) .default-content-wrapper img:first-of-type');
+  topImage?.setAttribute('loading', 'eager');
+
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
     if (window.innerWidth >= 900 || sessionStorage.getItem('fonts-loaded')) {
