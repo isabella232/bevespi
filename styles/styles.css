@@ -38,8 +38,8 @@
 
 
     /* fonts */
-    --body-font-family: gotham, gotham-fallback;
-    --heading-font-family: var(--body-font-family);
+    --body-font-family: gotham, gotham-fallback-body;
+    --heading-font-family: gotham, gotham-fallback-heading;
     --fixed-font-family: var(--body-font-family);
 
     /* body sizes */
@@ -113,16 +113,28 @@
     size-adjust: 106.1%;
 }
 
-/* medium */
+/* medium body */
 @font-face {
-    font-family: gotham-fallback;
+    font-family: gotham-fallback-body;
     font-style: normal;
     font-weight: var(--font-weight-bold);
     src: local('Arial');
     ascent-override: 69.48%;
     descent-override: 17.37%;
     line-gap-override: 17.37%;
-    size-adjust: 109%;
+    size-adjust: 110%;
+}
+
+/* medium heading */
+@font-face {
+    font-family: gotham-fallback-heading;
+    font-style: normal;
+    font-weight: var(--font-weight-bold);
+    src: local('Arial');
+    ascent-override: 69.48%;
+    descent-override: 17.37%;
+    line-gap-override: 17.37%;
+    size-adjust: 95%;
 }
 
 @media (min-width: 900px) {
