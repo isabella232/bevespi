@@ -48,6 +48,13 @@ export default async function decorate(block) {
       explore.addEventListener('click', () => { nav.classList.toggle('expanded'); });
     }
 
+    const brandImg = nav.querySelector('.nav-middle picture');
+    const brandImgLink = document.createElement('a');
+    brandImgLink.href = '/';
+    brandImgLink.title = 'Home';
+    brandImg.after(brandImgLink);
+    brandImgLink.appendChild(brandImg);
+
     decorateIcons(nav);
     const navWrapper = document.createElement('div');
     navWrapper.className = 'nav-wrapper';

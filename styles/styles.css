@@ -412,6 +412,15 @@ main .section.isi h2 {
     color: var(--text-orange);
 }
 
+
+main .section.center {
+    text-align: center;
+}
+
+main .section.center a.button:any-link {
+    margin: auto;
+}
+
 @media (min-width: 900px) {
     main .section.isi h2 {
         font-size: var(--heading-font-size-ml);
