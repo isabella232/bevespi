@@ -90,7 +90,8 @@
 }
 
 .columns.rows-grey-white > div.columns-row:nth-child(odd) {
-  background-image: url('../../images/bg-section-new.png');
+  /* background-image: url('../../images/bg-section-new.png'); */
+  background-color: var(--background-grey-4);
   background-size: cover;
 }
 
