@@ -39,7 +39,6 @@
 
     /* fonts */
     --body-font-family: gotham, gotham-fallback;
-    --body-font-family: gotham-fallback;
     --heading-font-family: var(--body-font-family);
     --fixed-font-family: var(--body-font-family);
 
