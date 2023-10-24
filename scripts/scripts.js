@@ -68,7 +68,10 @@ async function loadEager(doc) {
     await waitForLCP(LCP_BLOCKS);
   }
 
-  const topImage = document.querySelector('main .section:nth-of-type(2) .default-content-wrapper:first-of-type img:first-of-type');
+  const selector = `
+    main .section:nth-of-type(2) .default-content-wrapper:first-of-type img:first-of-type, 
+    main .section:nth-of-type(2) .columns:first-of-type img:first-of-type`;
+  const topImage = document.querySelector(selector);
   topImage?.setAttribute('loading', 'eager');
 
   try {
