@@ -63,13 +63,14 @@ main .section div.accordion-2-wrapper {
   position: relative;
   height: 55px;
   max-width: var(--page-max-width);
-  margin: 13px auto;
+  margin: 13px;
   border: 2px solid var(--color-grey-6);
   padding: 12px;
   display: grid;
   grid-template-columns: 100px auto;
   grid-auto-rows: auto;
   gap: 0 20px;
+  overflow: hidden;
 }
 
 .accordion-2 > div > div.active {
@@ -131,6 +132,7 @@ main .section div.accordion-2-wrapper {
   .accordion-2 > div > div {
     height: 85px;
     grid-template-columns: 145px 80px auto;
+    margin: 13px auto;
   }
 
   .accordion-2 > div > div > h2 {
