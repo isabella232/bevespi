@@ -1,6 +1,7 @@
 export default async function decorate(block) {
   [...block.children].forEach((row) => {
-    row.querySelector('picture')?.parentElement.classList.add('p-img-first');
+    if (row.querySelector('picture')) row.querySelector('picture').parentElement.classList.add('p-img-first');
+    else row.querySelector('div').innerHTML = `<p class='p-img-first'></p>${row.querySelector('div').innerHTML}`;
     row.querySelector('h2 + p')?.classList.add('p-first');
     [...row.querySelectorAll('picture')].forEach((picture) => { picture.parentElement.classList.add('p-img'); });
 

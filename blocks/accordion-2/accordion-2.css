@@ -70,6 +70,7 @@ main .section div.accordion-2-wrapper {
   grid-template-columns: 100px auto;
   grid-auto-rows: auto;
   gap: 0 20px;
+  overflow: hidden;
 }
 
 .accordion-2 > div > div.active {
