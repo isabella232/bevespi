@@ -285,10 +285,17 @@ button:disabled, button:disabled:hover {
 
 a.button.secondary, button.secondary {
     background-color: unset;
-    border: 2px solid var(--cta-color);
+    border: 0;
     color: var(--cta-color);
     justify-content: space-between;
     position: relative;
+    text-transform: unset;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a.button.secondary:any-link {
+    padding: 0;
 }
 
 a.button.secondary::after, button.secondary::after {
@@ -385,7 +392,7 @@ main .section {
     a.button.secondary::after, button.secondary::after {
         width: 24px;
         height: 28px;
-        margin-left: 20px;
+        margin-left: 10px;
     }
 }
 
