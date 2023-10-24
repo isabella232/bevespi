@@ -11,7 +11,7 @@ main .section div.highlight-2-wrapper {
   background-color: var(--link-color);
   color: var(--background-color);
   font-size: var(--body-font-size-s);
-  padding: 40px 0 18px 0;
+  padding: 40px 0 18px;
   margin-bottom: 70px;
 }
 
@@ -42,7 +42,7 @@ main .section div.highlight-2-wrapper {
 @media (min-width: 900px) {
   .highlight-2 {
     font-size: var(--body-font-size-m);
-    padding: 25px 0 5px 0;
+    padding: 25px 0 5px;
   }
 
   .highlight-2 ul {
