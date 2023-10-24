@@ -274,6 +274,10 @@ a.button:any-link, button {
     margin-top: 14px;
 }
 
+main .section.center a.button:any-link, button {
+    margin: auto;
+}
+
 a.button:hover, a.button:focus, button:hover, button:focus {
     cursor: pointer;
 }
@@ -407,10 +411,6 @@ main .section.isi h2 {
 
 main .section.center {
     text-align: center;
-}
-
-main .section.center a.button:any-link, button {
-    margin: auto;
 }
 
 @media (min-width: 900px) {
