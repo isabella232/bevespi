@@ -1,3 +1,8 @@
+.section.tiles-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .tiles.block {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -199,7 +204,7 @@
 
   .tiles.block > div > .cover h2 {
     font-size: 2.9rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1em;
   }
 
@@ -207,6 +212,7 @@
     font-size: var(--tile-large-font-size);
     font-weight: bold;
     padding-right: unset;
+    margin-bottom: 0;
   }
 
   .tiles.block img.bottom-icon {
@@ -258,7 +264,7 @@
   }
 
   .tiles.block > div > .cover {
-    padding: 20px;
+    padding: 40px 30px 30px 20px;
   }
 
   .tiles.block img.bottom-icon {

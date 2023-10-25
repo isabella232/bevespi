@@ -496,8 +496,8 @@ main .section.background-gray {
 }
 
 main .section.small-vertical-margins {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 @media (min-width: 600px) {
