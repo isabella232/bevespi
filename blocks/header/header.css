@@ -334,6 +334,7 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
 
   header .nav-middle > div > div > div div:nth-of-type(2) {
     flex-basis: 44%;
+    position: unset;
   }
 
   header .nav-middle > div > div > div div:nth-of-type(2) p {
