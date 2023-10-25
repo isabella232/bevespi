@@ -13,7 +13,7 @@
 .block.copd-causes > div {
     display: grid;
     grid-template-columns: 68px 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: auto;
 }
 
 .block.copd-causes > div > div:first-child {
@@ -32,17 +32,17 @@
 }
 
 .block.copd-causes > div > div:nth-child(2) h2 {
-    display: inline;
+    display: inline-block;
     font-size: 1.7rem;
     font-weight: 400;
 }
 
-.block.copd-causes > div > div:nth-child(2) em::before {
-    content: "|\00a0\00a0";
-}
-
 .block.copd-causes > div > div:nth-child(2) em {
     font-size: 1.4rem;
+}
+
+.block.copd-causes > div > div:nth-child(2) p {
+    display: inline;
 }
 
 .block.copd-causes > div > div:nth-child(3) {
@@ -91,6 +91,10 @@
         padding-top: 8px;
         padding-right: 10px;
         text-transform: uppercase;
+    }
+
+    .block.copd-causes > div > div:nth-child(2) :not(h2) {
+        display: none;
     }
 
     .block.copd-causes > div > div:nth-child(2) h2 {
