@@ -32,8 +32,17 @@
 }
 
 .block.copd-causes > div > div:nth-child(2) h2 {
+    display: inline;
     font-size: 1.7rem;
     font-weight: 400;
+}
+
+.block.copd-causes > div > div:nth-child(2) em::before {
+    content: "|\00a0\00a0";
+}
+
+.block.copd-causes > div > div:nth-child(2) em {
+    font-size: 1.4rem;
 }
 
 .block.copd-causes > div > div:nth-child(3) {
@@ -85,6 +94,7 @@
     }
 
     .block.copd-causes > div > div:nth-child(2) h2 {
+        display: block;
         font-weight: 400;
         font-size: 2.4rem;
         width: 195px;
