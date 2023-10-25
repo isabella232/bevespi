@@ -38,8 +38,8 @@
 
 
     /* fonts */
-    --body-font-family: gotham, gotham-fallback;
-    --heading-font-family: var(--body-font-family);
+    --body-font-family: gotham, gotham-fallback-body;
+    --heading-font-family: gotham, gotham-fallback-heading;
     --fixed-font-family: var(--body-font-family);
 
     /* body sizes */
@@ -87,6 +87,24 @@
 
 }
 
+/* most relevant fonts (others in fonts.css */
+
+@font-face {
+    font-family: gotham;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/gotham-book.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: gotham;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/gotham-medium.woff2') format('woff2');
+}
+
 /* fallback fonts for reduced layout shift */
 
 /* black */
@@ -113,16 +131,28 @@
     size-adjust: 106.1%;
 }
 
-/* medium */
+/* medium body */
 @font-face {
-    font-family: gotham-fallback;
+    font-family: gotham-fallback-body;
     font-style: normal;
     font-weight: var(--font-weight-bold);
     src: local('Arial');
     ascent-override: 69.48%;
     descent-override: 17.37%;
     line-gap-override: 17.37%;
-    size-adjust: 105%;
+    size-adjust: 110%;
+}
+
+/* medium heading */
+@font-face {
+    font-family: gotham-fallback-heading;
+    font-style: normal;
+    font-weight: var(--font-weight-bold);
+    src: local('Arial');
+    ascent-override: 69.48%;
+    descent-override: 17.37%;
+    line-gap-override: 17.37%;
+    size-adjust: 95%;
 }
 
 @media (min-width: 900px) {
@@ -347,8 +377,6 @@ main blockquote p::after {
 
 main img {
     max-width: 100%;
-    width: auto;
-    height: auto;
 }
 
 .icon {
