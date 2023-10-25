@@ -1,5 +1,5 @@
 const toSVGPoint = (svg, x, y) => {
-  let p = new DOMPoint(x, y);
+  const p = new DOMPoint(x, y);
   return p.matrixTransform(svg.getScreenCTM().inverse());
 };
 
@@ -28,8 +28,8 @@ export default async function buildSvgMask(container) {
       const x = e.clientX;
       const y = e.clientY;
       const r = Math.max(0, Math.min((x - b.left), (y - b.top), (b.right - x), (b.bottom - y), 90));
-      c.setAttributeNS(null,'cx', m.x);
-      c.setAttributeNS(null,'cy', m.y);
+      c.setAttributeNS(null, 'cx', m.x);
+      c.setAttributeNS(null, 'cy', m.y);
       c.setAttributeNS(null, 'r', r);
     });
 
