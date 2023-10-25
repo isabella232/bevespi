@@ -242,7 +242,7 @@ p, dl, ol, ul, pre, blockquote {
 }
 
 p {
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 hr {
@@ -297,7 +297,6 @@ a.button:any-link, button {
     width: fit-content;
     color: var(--cta-color);
     border: 2px solid var(--cta-color);
-    background-color: var(--color-white);
     align-items: center;
     vertical-align: center;
     font-family: var(--body-font-family);
@@ -496,8 +495,18 @@ main .section.small-heading h1 {
     text-transform: uppercase;
 }
 
-main .section.centered {
+main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
+}
+
+@media (min-width: 900px) {
+    main .section.centered {
+        text-align: center;
+    }
+
+    main .section.centered a.button:any-link {
+        margin: auto;
+    }
 }
 
 main .section.green-accent .default-content-wrapper em {
@@ -515,15 +524,6 @@ main .section.isi h2 {
     font-size: var(--heading-font-size-s);
     font-weight: 500;
     color: var(--text-orange);
-}
-
-
-main .section.center {
-    text-align: center;
-}
-
-main .section.center a.button:any-link {
-    margin: auto;
 }
 
 @media (min-width: 900px) {
@@ -677,16 +677,14 @@ main .section.small-vertical-margins {
     padding-top: 32px;
 }
 
-.copd-resources main .default-content-wrapper {
+.copd-resources main .default-content-wrapper,
+.getting-started main .default-content-wrapper {
     line-height: 1.2em;
     font-size: 1.4rem;
 }
 
-.copd-resources main .default-content-wrapper p {
-    line-height: 1.2em;
-}
-
-.copd-resources main .default-content-wrapper h2 {
+.copd-resources main .default-content-wrapper h2,
+.getting-started main .default-content-wrapper h2 {
     font-size: 2rem;
 }
 
@@ -718,3 +716,94 @@ main .section.small-vertical-margins {
         font-size: 3.2rem;
     }
 }
+
+.getting-started main .default-content-wrapper ul {
+    margin: 0;
+    padding: 10px;
+}
+
+.getting-started main .default-content-wrapper li {
+    padding-bottom: 10px;
+}
+
+.getting-started main .default-content-wrapper p {
+    margin: 0 0 10px 0;
+}
+
+.getting-started main .default-content-wrapper img {
+    transform: scale(0.6);
+}
+
+.getting-started main .default-content-wrapper p > strong:first-child:last-child {
+    font-size: 1.7rem;
+    color: var(--link-color);
+}
+
+.getting-started main .section.grey {
+    background-color: var(--background-grey-4);
+}
+
+.getting-started main .default-content-wrapper .button-container {
+    max-width: 180px;
+    margin: 25px auto 30px auto;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--color-grey-5);
+}
+
+.getting-started main .default-content-wrapper .button-container a {
+    margin: auto;
+    font-size: 1.3rem;
+}
+
+@media (min-width: 900px) {
+    .getting-started main .default-content-wrapper {
+        max-width: 830px;
+        margin: auto;
+    }
+
+    .getting-started main .default-content-wrapper h2 {
+        max-width: 650px;
+        margin: 50px auto;
+        font-size: 3.2rem;
+    }
+
+    .getting-started main .default-content-wrapper img {
+        transform: scale(1);
+    }
+
+    .getting-started main .section.inhaler {
+        position: relative;
+        padding-bottom: 120px;
+    }
+
+    .getting-started .section.section.inhaler::before,
+    .getting-started .section.section.inhaler::after {
+        display: block;
+        content: " ";
+        width: 200px;
+        height: 1px;
+        border-top: 1px solid var(--color-grey-5);
+        position: absolute;
+        left: calc(50% - 100px);
+    }
+
+    .getting-started .section.section.inhaler::before {
+        transform: translateY(-40px);
+    }
+
+    .getting-started .section.section.inhaler::after {
+        transform: translateY(130px);
+    }
+
+    .getting-started main .section.inhaler .default-content-wrapper {
+        max-width: 460px;
+        margin: auto;
+    }
+
+    .getting-started main .section.inhaler img:first-of-type {
+        position: absolute;
+        right: 311px;
+        top: 37px;
+    }
+}
+
