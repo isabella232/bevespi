@@ -1,0 +1,303 @@
+.section.tiles-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.tiles.block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--grid-gap);
+  box-sizing: border-box;
+  text-align: left;
+
+  --tile-height: 172px;
+  --grid-gap: 5px;
+}
+
+.tiles.block > .tile {
+  position: relative;
+  cursor: pointer;
+  height: var(--tile-height);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tiles.block > .tile:not(:first-child) {
+    transform: translate(-150%, 150%);
+    transition: transform 400ms ease-in-out;
+  }
+}
+
+.animate-in .tiles.block > .tile {
+  transform: unset;
+}
+
+.tiles.block > .tile.with-separator hr {
+  width: 60px;
+  border-width: 2px;
+  color: white;
+  margin: auto 0 0;
+}
+
+.tiles.block > .tile.background-green {
+  background: var(--color-green);
+}
+
+.tiles.block > div > .cover {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tiles.block > div.tile.tall {
+  height: calc(2 * var(--tile-height) + var(--grid-gap));
+  grid-row: auto / span 2;
+}
+
+.tiles.block img.bottom-icon {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.tiles.block picture {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.tiles.block .modal-bg-img.modal-img-left .modal picture {
+  right: unset;
+}
+
+.tiles.block .modal-bg-img.modal-img-right .modal picture {
+  left: unset;
+}
+
+.tiles.block picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.tiles.block .modal {
+  display: none;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+  color: var(--color-blue-2);
+  cursor: initial;
+  position: absolute;
+  background: var(--color-gray);
+  top: 0;
+  left: 0;
+  width: 200%;
+  z-index: 10;
+}
+
+.tiles.block .tile.modal-bg-green .modal {
+  background: var(--color-green);
+}
+
+.tiles.block .modal h2 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  padding-top: 12px;
+  padding-right: 30px;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.tiles.block .modal p {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+
+.tiles.block > div > .cover h2 {
+  margin: 0;
+  color: var(--color-blue-2);
+  font-weight: 500;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.tiles.block > div > .cover p {
+  color: var(--color-blue-2);
+  text-align: left;
+  font-size: 1.2rem;
+  padding-right: 40px;
+  font-weight: normal;
+  font-family: var(--proximanova-font-family);
+}
+
+.tiles.block > .tile.white-text .cover h2 {
+  color: white;
+}
+
+.tiles.block > .tile.white-text .cover p {
+  color: white;
+}
+
+.tiles.block .modal .button-container {
+  display: flex;
+  justify-content: end;
+}
+
+.tiles.block .modal .button-container .button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: var(--color-blue-2);
+  font-size: 1.3rem;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.tiles.block .modal .button-container .button::after {
+  background-image: url('/icons/icon-next-purple.png');
+}
+
+.tiles.block .cover[aria-expanded] + .modal {
+  display: block;
+}
+
+.tiles.block .cover.open-right[aria-expanded] + .modal {
+  right: 0;
+  left: unset;
+}
+
+.tiles.block button[name="close-modal"] {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --tile-large-font-size: 2.3rem;
+  }
+
+  .tiles.block {
+    --tile-height: 250px;
+  }
+
+  .tiles.block > div > .cover h2 {
+    font-size: 2.9rem;
+    font-weight: 500;
+    line-height: 1em;
+  }
+
+  .tiles.block > div > .cover p {
+    font-size: var(--tile-large-font-size);
+    font-weight: bold;
+    padding-right: unset;
+    margin-bottom: 0;
+  }
+
+  .tiles.block img.bottom-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .tiles.block > div > .cover {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --tile-font-size: 1.8rem;
+  }
+
+  .tiles.block {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    --tile-height: 314px;
+  }
+
+  .tiles.block .cover[aria-expanded] + .modal {
+    width: calc(200% + var(--grid-gap));
+  }
+
+  .tiles.block .modal h2 {
+    font-size: var(--tile-large-font-size);
+    font-weight: 500;
+  }
+
+  .tiles.block .modal p {
+    font-size: var(--tile-font-size);
+  }
+
+  .tiles.block .modal .button-container .button {
+    font-size: var(--tile-font-size);
+  }
+
+  .tiles.block button[name="close-modal"] {
+    width: 34px;
+    height: 34px;
+  }
+
+  .tiles.block .modal .button-container .button::after {
+    height: 20px;
+    width: 20px;
+  }
+
+  .tiles.block > div > .cover {
+    padding: 40px 30px 30px 20px;
+  }
+
+  .tiles.block img.bottom-icon {
+    width: unset;
+    height: unset;
+  }
+}
+
+/* Numbered elements */
+.tiles.block > div.tile.numbered .cover h2 {
+  color: white;
+  font-weight: 400;
+}
+
+.tiles.block > div.tile.numbered .cover h2:first-of-type {
+  font-size: 7rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--color-green);
+  font-family: var(--proximanova-font-family);
+}
+
+.tiles.block > div.tile.numbered .cover h2:last-of-type {
+  margin-bottom: auto;
+}
+
+.tiles.block > div.tile.numbered .cover h2 strong {
+  color: var(--color-green);
+  display: inline-block;
+}
+
+@media (min-width: 900px) {
+  .tiles.block > div.tile.numbered .cover h2:first-of-type {
+    font-size: 9rem;
+  }
+}

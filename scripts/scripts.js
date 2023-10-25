@@ -9,7 +9,7 @@ import {
   decorateTemplateAndTheme,
   waitForLCP,
   loadBlocks,
-  loadCSS,
+  loadCSS, createOptimizedPicture,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -40,6 +40,35 @@ function buildAutoBlocks(main) {
   }
 }
 
+function addSectionBackgroundImages(main) {
+  main.querySelectorAll('.section[data-background]').forEach((section) => {
+    const imageUrl = section.getAttribute('data-background');
+
+    const image = createOptimizedPicture(imageUrl);
+    image.classList.add('section-background-img');
+    section.append(image);
+    main.querySelector('.section:first-of-type .section-background-img img')?.setAttribute('loading', 'eager');
+  });
+}
+
+function decorateSeparatorIcon(main) {
+  main.querySelectorAll('span.icon-separator').forEach((icon) => {
+    icon.classList.remove('icon');
+    icon.append(document.createElement('hr'));
+  });
+}
+
+function decorateAriaLabels(main) {
+  [...main.querySelectorAll('a')].forEach((anchor) => {
+    const ariaLabelResult = anchor.textContent.match(/(.+)\[aria-label=["”]([^"”]+)["”]\]/);
+    if (ariaLabelResult) {
+      anchor.setAttribute('aria-label', ariaLabelResult[2]);
+      anchor.textContent = ariaLabelResult[1].trim();
+      anchor.title = ariaLabelResult[1].trim();
+    }
+  });
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -48,9 +77,12 @@ function buildAutoBlocks(main) {
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
+  decorateAriaLabels(main);
+  decorateSeparatorIcon(main);
   decorateIcons(main);
   // buildAutoBlocks(main);
   decorateSections(main);
+  addSectionBackgroundImages(main);
   decorateBlocks(main);
 }
 
@@ -95,6 +127,11 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+
+  // icons alt attribute fix - new boilerplate has low a11y (svgs are rendered as img without alt)
+  doc.querySelectorAll('[data-icon-name]').forEach((icon) => {
+    icon.alt = `icon ${icon.getAttribute('data-icon-name')}`;
+  });
 
   sampleRUM('lazy');
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'));
