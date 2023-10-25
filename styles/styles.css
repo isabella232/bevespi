@@ -373,6 +373,11 @@ main .section, .section .reset-spacing {
     padding: 64px 16px;
 }
 
+.home .columns-row img {
+    max-width: 260px;
+    max-height: 200px;
+  }
+
 @media (min-width: 900px) {
     main .section, .section .reset-spacing {
         padding: 64px 32px;
@@ -540,11 +545,6 @@ main .section.small-vertical-margins {
         padding-left: 80px;
         padding-right: 80px;
     }
-}
-
-.home .columns-row img {
-  max-width: 260px;
-  max-height: 200px;
 }
 
 @media (min-width: 900px) {
