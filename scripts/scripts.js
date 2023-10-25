@@ -46,8 +46,8 @@ function addSectionBackgroundImages(main) {
 
     const image = createOptimizedPicture(imageUrl);
     image.classList.add('section-background-img');
-    main.querySelector('.section:first-of-type .section-background-img img')?.setAttribute('loading', 'eager');
     section.append(image);
+    main.querySelector('.section:first-of-type .section-background-img img')?.setAttribute('loading', 'eager');
   });
 }
 
