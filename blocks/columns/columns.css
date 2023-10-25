@@ -209,3 +209,10 @@
     height: 87px;
   }
 }
+
+circle.transition {
+  transition: 
+    cx 0.5s ease-in-out,
+    cy 0.5s ease-in-out,
+    r 0.5s ease-in-out;
+}
