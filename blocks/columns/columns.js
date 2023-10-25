@@ -1,3 +1,5 @@
+import buildSvgMask from './svgMask.js';
+
 export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
@@ -20,4 +22,9 @@ export default function decorate(block) {
     });
     row.appendChild(rowInner);
   });
+
+  if (block.classList.contains('inhaler-x-ray')) {
+    const container = block.querySelector('div:nth-of-type(1) > div:nth-of-type(2)');
+    if (container) buildSvgMask(container);
+  }
 }
