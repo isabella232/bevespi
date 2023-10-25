@@ -661,7 +661,7 @@ main .section.small-vertical-margins {
     .copd-treatment .columns-row:last-of-type {
         margin-bottom: unset;
     }
-    
+
     .copd-treatment .columns .button-container {
         position: unset;
         width: unset;
@@ -708,13 +708,67 @@ main .section.small-vertical-margins {
     margin-left: 30px;
 }
 
+.section.copd-treatment-intro > .default-content-wrapper,
+.section.copd-treatment-goals > .default-content-wrapper,
+.section.copd-treatment-options > .default-content-wrapper{
+    font-size: 1.4rem;
+}
+
+.section.copd-treatment-goals {
+    margin: 0 16px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
 @media (min-width: 900px) {
+    .section.copd-treatment-intro > .default-content-wrapper,
+    .section.copd-treatment-goals > .default-content-wrapper,
+    .section.copd-treatment-options > .default-content-wrapper {
+        color: #282828;
+        width: fit-content;
+        margin: auto;
+        justify-content: center;
+        font-size: 1.6rem;
+    }
+
     .copd-resources main .section:not(.isi) .default-content-wrapper {
         width: 750px;
         margin: auto;
     }
 
+    .section.copd-treatment-intro h2 {
+        font-size: 32px;
+    }
+
     .copd-resources main .default-content-wrapper h2 {
         font-size: 3.2rem;
+    }
+
+    .section.copd-treatment-intro {
+        margin: auto;
+        max-width: 755px;
+        padding: 48px 32px;
+    }
+
+    .section.copd-treatment-goals,
+    .section.copd-treatment-options {
+        margin: auto;
+        max-width: 600px;
+        padding: 48px 32px;
+    }
+
+    .section.copd-treatment-options > .default-content-wrapper p {
+        max-width: 600px;
+    }
+
+    .section.copd-treatment-goals {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .section.copd-treatment-intro > .default-content-wrapper p,
+    .section.copd-treatment-goals > .default-content-wrapper p,
+    .section.copd-treatment-options > .default-content-wrapper p {
+        text-align: center;
     }
 }
