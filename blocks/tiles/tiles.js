@@ -23,6 +23,7 @@ export default function decorate(block) {
 
     const picture = cover.querySelector('picture');
     picture?.closest('p').replaceWith(picture);
+    picture?.querySelector('img')?.setAttribute('loading', 'eager');
 
     if (tile.classList.contains('with-separator')) {
       const h2 = tile.querySelector('h2:last-of-type');
