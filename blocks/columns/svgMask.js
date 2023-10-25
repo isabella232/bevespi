@@ -20,7 +20,7 @@ export default async function buildSvgMask(container) {
     svg.addEventListener('mousemove',(e) => {
       let m = oMousePosSVG(e);
       var rect = e.target.getBoundingClientRect();
-      var r = Math.min((e.clientX - rect.left), (e.clientY - rect.top), (rect.right - e.clientX), (rect.bottom - e.clientY), 90);
+      var r = Math.max(0, Math.min((e.clientX - rect.left), (e.clientY - rect.top), (rect.right - e.clientX), (rect.bottom - e.clientY), 90));
       c.setAttributeNS(null,"cx",m.x);
       c.setAttributeNS(null,"cy",m.y);
       c.setAttributeNS(null, "r", r);
