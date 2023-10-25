@@ -34,12 +34,19 @@
     --color-blue-1: #273670;
     --color-blue-2: #17265F;
     --cta-color: #e81b75;
+    --color-green: #91d8ca;
+    --color-gray: #dedede;
+    --color-purple: #3c3463;
+    --color-purple-light: #624b7e;
+    --color-purple-med: #493b67;
+    --color-gray-message-background: #383838;
     --sticky-fragment-header-color: #0f1d53;
 
 
     /* fonts */
     --body-font-family: gotham, gotham-fallback-body;
     --heading-font-family: gotham, gotham-fallback-heading;
+    --proximanova-font-family: proxima-nova, serif;
     --fixed-font-family: var(--body-font-family);
 
     /* body sizes */
@@ -390,12 +397,17 @@ main img {
     width: 100%;
 }
 
-main .section {
+main .section, .section .reset-spacing {
     padding: 64px 16px;
 }
 
+.home .columns-row img {
+    max-width: 260px;
+    max-height: 200px;
+  }
+
 @media (min-width: 900px) {
-    main .section {
+    main .section, .section .reset-spacing {
         padding: 64px 32px;
     }
 
@@ -405,9 +417,14 @@ main .section {
 }
 
 @media (min-width: 900px) {
-    .section > div {
+    .section > div, .section .reset-spacing {
         max-width: var(--page-max-width);
         margin: auto;
+    }
+
+    .section .reset-spacing {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     a.button:any-link, button {
@@ -424,9 +441,69 @@ main .section {
     }
 }
 
-/* section metadata */
+/* section metadata - highlight */
 main .section.highlight {
     background-color: var(--highlight-background-color);
+}
+
+/* section metadata - backgrounds */
+main .section[data-background] {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+main .section[data-background] > div {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@media (min-width: 600px) {
+    main .section[data-background] > div {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+main .section[data-background] picture.section-background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    z-index: -2;
+    overflow: hidden;
+}
+
+main .section[data-background] picture.section-background-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* section metadata - text align and color */
+main .section.white-text {
+    color: white;
+}
+
+main .section.white-text h1 {
+    color: white;
+}
+
+main .section.small-heading h1 {
+    font-size: 1.9rem;
+    text-transform: uppercase;
+}
+
+main .section.centered {
+    text-align: center;
+}
+
+main .section.green-accent .default-content-wrapper em {
+    color: var(--color-green);
+    font-style: normal;
+    font-weight: 500;
 }
 
 main .section.isi {
@@ -467,9 +544,35 @@ main .section.isi strong {
     font-weight: 500;
 }
 
-.home .columns-row img {
-    max-width: 260px;
-    max-height: 200px;
+/* Separator icon */
+main span.icon-separator hr {
+    width: 40px;
+    border-width: 2px;
+}
+
+main .section.image-float-left picture {
+    float: left;
+    margin-right: 20px;
+}
+
+main .section.background-gray {
+    background: var(--color-gray-message-background);
+}
+
+main .section.small-vertical-margins {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+@media (min-width: 600px) {
+    main .section.font-large .default-content-wrapper {
+        font-size: 2.1rem;
+    }
+
+    main .section.centered.font-large .default-content-wrapper p {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
 }
 
 @media (min-width: 900px) {
