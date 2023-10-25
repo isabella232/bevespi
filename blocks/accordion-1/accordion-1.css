@@ -1,0 +1,62 @@
+main .section.accordion-1-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+main .section div.accordion-1-wrapper {
+  max-width: unset;
+}
+
+.accordion-1 > div > div {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  max-width: var(--page-max-width);
+  margin: auto;
+}
+
+.accordion-1 > div:nth-of-type(odd) {
+  background-color: var(--background-grey-4);
+}
+
+.accordion-1 > div > div > span {
+  display: inline-block;
+  flex: 0 0 40px;
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: url('../../icons/icon_accrdn-arr-dwn.png') no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.accordion-1 > div.active > div > span {
+  background-image: url('../../icons/icon_accrdn-arr-up.png');
+}
+
+.accordion-1 h2 {
+  color: var(--text-orange);
+  font-size: 1.6rem;
+  margin: 14px 0;
+  font-weight: 500;
+}
+
+.accordion-1 > div:not(.active) > div > div > *:not(h2) {
+  display: none;
+}
+
+.accordion-1 .button-container a {
+  border: 0;
+  background: none;
+  text-transform: none;
+  padding: 0;
+}
+
+.accordion-1 .button-container a::after {
+  content: "";
+  width: 17px;
+  height: 17px;
+  background: url('../../icons/icon_pink-arrow-right-md.png') no-repeat;
+  background-size: cover;
+  margin-left: 10px;
+}
