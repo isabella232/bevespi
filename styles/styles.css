@@ -290,6 +290,11 @@ a:not(.button):hover {
     font-weight: var(--link-font-weight-hover);
 }
 
+.default-content-wrapper a:not(.button):any-link {
+    color: var(--text-pink);
+    font-weight: var(--link-font-weight);
+}
+
 /* buttons */
 a.button:any-link, button {
     text-decoration: none;
@@ -308,6 +313,17 @@ a.button:any-link, button {
     padding: 0 20px;
     height: 30px;
     margin-top: 14px;
+}
+
+a.button:any-link::after, button::after {
+    content: "";
+    width: 17px;
+    height: 17px;
+    background-size: cover;
+    background-image: url('../icons/icon_pink-arrow-right-md.png');
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    transform: translateY(-2px);
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus {
@@ -429,8 +445,8 @@ main .section, .section .reset-spacing {
     a.button:any-link, button {
         font-size: 2rem;
         line-height: 2rem;
-        padding: 0 35px;
-        height: 50px;
+        padding: 0 25px;
+        height: 35px;
     }
 
     a.button.secondary::after, button.secondary::after {
@@ -443,6 +459,14 @@ main .section, .section .reset-spacing {
 /* section metadata - highlight */
 main .section.highlight {
     background-color: var(--highlight-background-color);
+}
+
+main .section.width-400 > div {
+    max-width: 400px;
+}
+
+main .section.width-600 > div {
+    max-width: 600px;
 }
 
 /* section metadata - backgrounds */
@@ -804,6 +828,16 @@ main .section.small-vertical-margins {
         position: absolute;
         right: 311px;
         top: 37px;
+    }
+
+    .getting-started main .default-content-wrapper .button-container {
+        max-width: 250px;
+    }
+
+    .getting-started main div:not(.isi) .default-content-wrapper ul {
+        text-align: left;
+        max-width: 400px;
+        margin: auto;
     }
 }
 
