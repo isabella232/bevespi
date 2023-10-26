@@ -164,7 +164,7 @@
   }
 
   .columns.xs .columns-row > div {
-    max-width: calc(var(--page-max-width) * 0.75);
+    max-width: calc(var(--page-max-width) * 0.85);
   }
 
   .columns.columns-80-20 img {

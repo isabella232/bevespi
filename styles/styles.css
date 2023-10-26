@@ -78,7 +78,7 @@
     --nav-height: 143px;
 
     /* page max width */
-    --page-max-width: 1200px;
+    --page-max-width: 1002px;
 
     /* specific font sizes */
     --link-font-size: 1.2rem;
@@ -403,9 +403,8 @@ main .section, .section .reset-spacing {
 }
 
 .home .columns-row img {
-    max-width: 260px;
-    max-height: 200px;
-  }
+    transform: scale(0.67);
+}
 
 @media (min-width: 900px) {
     main .section, .section .reset-spacing {
@@ -414,6 +413,10 @@ main .section, .section .reset-spacing {
 
     main .section:nth-last-of-type(2) {
         padding-bottom: 22px;
+    }
+
+    .home .columns-row img {
+        transform: scale(1);
     }
 }
 
