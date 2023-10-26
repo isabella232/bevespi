@@ -732,8 +732,7 @@ main .section.small-vertical-margins {
     }
 
     .copd-causes-container .default-content-wrapper p,
-    .copd-causes-container .default-content-wrapper h2,
-    {
+    .copd-causes-container .default-content-wrapper h2 {
         text-align: center;
     }
 
