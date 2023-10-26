@@ -684,12 +684,6 @@ main .section.small-vertical-margins {
     padding-top: 32px;
 }
 
-.copd-resources main div:not(.isi) .default-content-wrapper,
-.getting-started main div:not(.isi) .default-content-wrapper {
-    line-height: 1.2em;
-    font-size: 1.4rem;
-}
-
 .copd-resources main div:not(.isi) .default-content-wrapper h2,
 .getting-started main div:not(.isi) .default-content-wrapper h2 {
     font-size: 2rem;
@@ -716,6 +710,12 @@ main .section.small-vertical-margins {
 .section.copd-treatment-intro > .default-content-wrapper,
 .section.copd-treatment-goals > .default-content-wrapper,
 .section.copd-treatment-options > .default-content-wrapper{
+    font-size: 1.4rem;
+}
+
+.copd-resources main div:not(.isi) .default-content-wrapper,
+.getting-started main div:not(.isi) .default-content-wrapper {
+    line-height: 1.2em;
     font-size: 1.4rem;
 }
 
