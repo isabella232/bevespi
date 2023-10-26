@@ -1,0 +1,43 @@
+.section.copd-treatment-options{
+    max-width: 830px;
+}
+
+.boxes-wrapper {
+    margin: auto;
+}
+
+.boxes.block {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 20px;
+}
+
+.boxes.block > div h2 {
+    margin-top: unset;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.boxes.block > div {
+    padding: 40px 40px 32px;
+    background: #f2f2f2;
+}
+
+.boxes.block > div p:last-child {
+    margin-bottom: 0;
+}
+
+.boxes.block > div a {
+    color: #e81b75;
+    text-decoration: none;
+    line-height: unset;
+    height: unset;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    border: unset;
+    text-transform: unset;
+    font-weight: 400;
+}
