@@ -833,6 +833,12 @@ main .section[data-background] picture.section-background-img img {
     color: var(--link-color);
 }
 
+@media (min-width: 900px) {
+    .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
+        font-size: 2rem;
+    }
+}
+
 main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
 }
