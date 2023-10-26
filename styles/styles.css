@@ -296,6 +296,50 @@ a:not(.button):hover {
 }
 
 /* buttons */
+.copd-resources main .button-container {
+    border-top: 1px solid var(--highlight-background-color);
+    border-bottom: 1px solid var(--highlight-background-color);
+}
+
+.copd-treatment .button-container a {
+    border: unset;
+    background-color: unset;
+    font-size: var(--body-font-size-s);
+    padding: 0;
+    text-transform: unset;
+}
+
+.copd-resources main .button-container a {
+    border: 0;
+    font-size: var(--body-font-size-s);
+    text-transform: none;
+    padding: 30px 39px 30px 25px;
+    margin: 0 auto;
+}
+
+.copd-treatment .columns .button-container {
+    border-top: 1px solid var(--color-grey-5);
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
+}
+
+.copd-treatment .columns .button-container a {
+    margin-top: 30px;
+}
+
+.copd-treatment .button-container a::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('/icons/icon_pink-arrow-right-md.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    margin-left: auto;
+    transform: translate(10px, -2px);
+}
+
 a.button:any-link, button {
     text-decoration: none;
     display: flex;
@@ -488,23 +532,6 @@ main .section[data-background] > div {
     }
 }
 
-main .section[data-background] picture.section-background-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    object-fit: cover;
-    z-index: -2;
-    overflow: hidden;
-}
-
-main .section[data-background] picture.section-background-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* section metadata - text align and color */
 main .section.white-text {
     color: white;
@@ -517,10 +544,6 @@ main .section.white-text h1 {
 main .section.small-heading h1 {
     font-size: 1.9rem;
     text-transform: uppercase;
-}
-
-main .section.centered p:has(picture:first-child:last-child) {
-    text-align: center;
 }
 
 @media (min-width: 900px) {
@@ -619,50 +642,6 @@ main .section.small-vertical-margins {
     margin-bottom: -25px;
 }
 
-.copd-resources main .button-container {
-    border-top: 1px solid var(--highlight-background-color);
-    border-bottom: 1px solid var(--highlight-background-color);
-}
-
-.copd-treatment .button-container a {
-    border: unset;
-    background-color: unset;
-    font-size: var(--body-font-size-s);
-    padding: 0;
-    text-transform: unset;
-}
-
-.copd-resources main .button-container a {
-    border: 0;
-    font-size: var(--body-font-size-s);
-    text-transform: none;
-    padding: 30px 39px 30px 25px;
-    margin: 0 auto;
-}
-
-.copd-treatment .columns .button-container {
-    border-top: 1px solid var(--color-grey-5);
-    position: absolute;
-    bottom: 45px;
-    width: 100%;
-}
-
-.copd-treatment .columns .button-container a {
-    margin-top: 30px;
-}
-
-.copd-treatment .button-container a::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-image: url('/icons/icon_pink-arrow-right-md.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    display: block;
-    margin-left: auto;
-    transform: translate(10px, -2px);
-}
-
 .copd-treatment .columns-80-20 {
     color: var(--link-color);
     font-size: var(--body-font-size-xl);
@@ -751,16 +730,37 @@ main .section.small-vertical-margins {
 }
 
 .getting-started main .default-content-wrapper p {
-    margin: 0 0 10px 0;
+    margin: 0 0 10px;
 }
 
 .getting-started main .default-content-wrapper img {
     transform: scale(0.6);
 }
 
+main .section[data-background] picture.section-background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    z-index: -2;
+    overflow: hidden;
+}
+
+main .section[data-background] picture.section-background-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .getting-started main .default-content-wrapper p > strong:first-child:last-child {
     font-size: 1.7rem;
     color: var(--link-color);
+}
+
+main .section.centered p:has(picture:first-child:last-child) {
+    text-align: center;
 }
 
 .getting-started main .section.grey {
@@ -769,7 +769,7 @@ main .section.small-vertical-margins {
 
 .getting-started main .default-content-wrapper .button-container {
     max-width: 180px;
-    margin: 25px auto 30px auto;
+    margin: 25px auto 30px;
     padding-bottom: 25px;
     border-bottom: 1px solid var(--color-grey-5);
 }
