@@ -198,6 +198,14 @@
     flex-basis: 60%;
   }
 
+  .columns-75-25 .columns-col.columns-img-col {
+    flex-basis: 25%;
+  }
+
+  .columns-75-25 .columns-col:not(.columns-img-col) {
+    flex-basis: 75%;
+  }
+
   .columns-80-20 .columns-col.columns-img-col {
     flex-basis: 20%;
   }
@@ -231,4 +239,13 @@ circle.transition {
 
 .section.hero-container + .section.columns-container div.columns-wrapper:first-of-type div.columns-row:first-of-type > div {
   padding-top: 35px;
+}
+
+.columns.centered {
+  text-align: center;
+}
+
+.columns.width-s {
+  max-width: 600px;
+  margin: auto;
 }

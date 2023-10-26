@@ -469,6 +469,13 @@ main .section.no-space-bottom + .section {
     padding-top: 0;
 }
 
+main .section.grey {
+    background-image: url('../images/bg_white-lines-tall-without-top_down-arrow.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
 .home .columns-row img {
     transform: scale(0.67);
 }
