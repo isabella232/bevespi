@@ -77,7 +77,7 @@
     --nav-height: 143px;
 
     /* page max width */
-    --page-max-width: 1200px;
+    --page-max-width: 1002px;
 
     /* specific font sizes */
     --link-font-size: 1.2rem;
@@ -399,6 +399,14 @@ main img {
 
 main .section, .section .reset-spacing {
     padding: 64px 16px;
+}
+
+main .section.no-space-bottom {
+    padding-bottom: 0;
+}
+
+main .section.no-space-bottom + .section {
+    padding-top: 0;
 }
 
 .home .columns-row img {
