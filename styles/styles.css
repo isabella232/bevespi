@@ -461,6 +461,14 @@ main .section, .section .reset-spacing {
     padding: 64px 16px;
 }
 
+main .section.no-space-bottom {
+    padding-bottom: 0;
+}
+
+main .section.no-space-bottom + .section {
+    padding-top: 0;
+}
+
 .home .columns-row img {
     transform: scale(0.67);
 }
@@ -689,6 +697,7 @@ main .section.small-vertical-margins {
     .copd-treatment .columns .button-container {
         position: unset;
         width: unset;
+        margin-top: 20px;
     }
 
     .copd-treatment .columns .button-container a {

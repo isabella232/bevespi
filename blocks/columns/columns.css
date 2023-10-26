@@ -34,8 +34,13 @@
 }
 
 .columns-row img {
-  max-width: 300px;
-  max-height: 300px;
+  transform: scale(0.8);
+}
+
+@media (min-width: 900px) {
+  .columns-row img {
+    transform: scale(1);
+  }
 }
 
 .columns.columns-80-20 img {
@@ -88,8 +93,15 @@
 }
 
 .columns.rows-grey-white > div.columns-row:nth-child(odd) {
-  background-image: url('../../images/bg-section-new.png');
+  background-image: url('../../images/how-section-3-bg-mobile.png');
   background-size: cover;
+}
+
+@media (min-width: 900px) {
+  .columns.rows-grey-white > div.columns-row:nth-child(odd) {
+    background-image: url('../../images/bg-section-new.png');
+    background-size: 100% 100%;
+  }
 }
 
 .columns.rows-white-grey > div.columns-row:nth-child(odd):not(:first-of-type) {
@@ -160,7 +172,7 @@
     flex-direction: row;
     max-width: var(--page-max-width);
     margin: auto;
-    padding: 60px 0;
+    padding: 70px 0 30px;
   }
 
   .columns.xs .columns-row > div {
@@ -215,4 +227,8 @@ circle.transition {
     cx 0.5s ease-in-out,
     cy 0.5s ease-in-out,
     r 0.5s ease-in-out;
+}
+
+.section.hero-container + .section.columns-container div.columns-wrapper:first-of-type div.columns-row:first-of-type > div {
+  padding-top: 35px;
 }
