@@ -47,6 +47,7 @@
     --body-font-family: gotham, gotham-fallback-body;
     --heading-font-family: gotham, gotham-fallback-heading;
     --proximanova-font-family: proxima-nova, serif;
+    --gotham-light-font-family: gotham-light;
     --fixed-font-family: var(--body-font-family);
 
     /* body sizes */
@@ -574,6 +575,12 @@ main .section.green-accent .default-content-wrapper em {
     color: var(--color-green);
     font-style: normal;
     font-weight: 500;
+}
+
+main .section.green-accent .default-content-wrapper em u {
+    font-family: var(--gotham-light-font-family);
+    color: var(--color-white);
+    text-decoration: none;
 }
 
 main .section.isi {
