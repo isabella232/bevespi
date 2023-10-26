@@ -505,12 +505,16 @@ main .section.highlight {
     background-color: var(--highlight-background-color);
 }
 
-main .section.width-400 > div {
+main .section.width-xs > div {
     max-width: 400px;
 }
 
-main .section.width-600 > div {
+main .section.width-s > div {
     max-width: 600px;
+}
+
+main .section.width-m > div {
+    max-width: 830px;
 }
 
 /* section metadata - backgrounds */
@@ -680,26 +684,26 @@ main .section.small-vertical-margins {
     padding-top: 32px;
 }
 
-.copd-resources main .default-content-wrapper,
-.getting-started main .default-content-wrapper {
+.copd-resources main div:not(.isi) .default-content-wrapper,
+.getting-started main div:not(.isi) .default-content-wrapper {
     line-height: 1.2em;
     font-size: 1.4rem;
 }
 
-.copd-resources main .default-content-wrapper h2,
-.getting-started main .default-content-wrapper h2 {
+.copd-resources main div:not(.isi) .default-content-wrapper h2,
+.getting-started main div:not(.isi) .default-content-wrapper h2 {
     font-size: 2rem;
 }
 
-.copd-resources main .default-content-wrapper strong {
+.copd-resources main div:not(.isi) .default-content-wrapper strong {
     font-weight: 400;
 }
 
-.copd-resources main .default-content-wrapper li {
+.copd-resources main div:not(.isi) .default-content-wrapper li {
     margin-bottom: 15px;
 }
 
-.copd-resources main .button-container a::after {
+.copd-resources main div:not(.isi) .button-container a::after {
     content: "";
     display: inline-block;
     width: 20px;
@@ -745,7 +749,7 @@ main .section.small-vertical-margins {
         font-size: 32px;
     }
 
-    .copd-resources main .default-content-wrapper h2 {
+    .copd-resources main div:not(.isi) .default-content-wrapper h2 {
         font-size: 3.2rem;
     }
 
@@ -783,20 +787,20 @@ main .section.small-vertical-margins {
     }
 }
 
-.getting-started main .default-content-wrapper ul {
+.getting-started main div:not(.isi) .default-content-wrapper ul {
     margin: 0;
     padding: 10px;
 }
 
-.getting-started main .default-content-wrapper li {
+.getting-started main div:not(.isi) .default-content-wrapper li {
     padding-bottom: 10px;
 }
 
-.getting-started main .default-content-wrapper p {
+.getting-started main div:not(.isi) .default-content-wrapper p {
     margin: 0 0 10px;
 }
 
-.getting-started main .default-content-wrapper img {
+.getting-started main div:not(.isi) .default-content-wrapper img {
     transform: scale(0.6);
 }
 
@@ -817,7 +821,7 @@ main .section[data-background] picture.section-background-img img {
     object-fit: cover;
 }
 
-.getting-started main .default-content-wrapper p > strong:first-child:last-child {
+.getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
     font-size: 1.7rem;
     color: var(--link-color);
 }
@@ -830,31 +834,26 @@ main .section.centered p:has(picture:first-child:last-child) {
     background-color: var(--background-grey-4);
 }
 
-.getting-started main .default-content-wrapper .button-container {
+.getting-started main div:not(.isi) .default-content-wrapper .button-container {
     max-width: 180px;
     margin: 25px auto 30px;
     padding-bottom: 25px;
     border-bottom: 1px solid var(--color-grey-5);
 }
 
-.getting-started main .default-content-wrapper .button-container a {
+.getting-started main div:not(.isi) .default-content-wrapper .button-container a {
     margin: auto;
     font-size: 1.3rem;
 }
 
 @media (min-width: 900px) {
-    .getting-started main .default-content-wrapper {
-        max-width: 830px;
-        margin: auto;
-    }
-
-    .getting-started main .default-content-wrapper h2 {
+    .getting-started main div:not(.isi) .default-content-wrapper h2 {
         max-width: 650px;
         margin: 50px auto;
         font-size: 3.2rem;
     }
 
-    .getting-started main .default-content-wrapper img {
+    .getting-started main div:not(.isi) .default-content-wrapper img {
         transform: scale(1);
     }
 
@@ -893,7 +892,7 @@ main .section.centered p:has(picture:first-child:last-child) {
         top: 37px;
     }
 
-    .getting-started main .default-content-wrapper .button-container {
+    .getting-started main div:not(.isi) .default-content-wrapper .button-container {
         max-width: 250px;
     }
 
