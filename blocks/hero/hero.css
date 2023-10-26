@@ -63,6 +63,8 @@ main .hero.home .btn-scroll img {
 
 main .hero h1 {
   font-size: var(--heading-font-size-xxl);
+  margin: 0;
+  line-height: 1;
 }
 
 main .hero.home h1,
@@ -180,7 +182,7 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
   }
 
   main .hero:not(.home) > div:nth-of-type(n+2) {
-    max-width: 1200px;
+    max-width: var(--page-max-width);
     margin-left: auto;
     margin-right: auto;
   }
