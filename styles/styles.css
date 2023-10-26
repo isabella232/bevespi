@@ -665,6 +665,7 @@ main .section.small-vertical-margins {
     .copd-treatment .columns .button-container {
         position: unset;
         width: unset;
+        margin-top: 20px;
     }
 
     .copd-treatment .columns .button-container a {
