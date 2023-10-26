@@ -716,19 +716,24 @@ main .section.small-vertical-margins {
 
 .section.copd-treatment-goals {
     margin: 0 16px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid var(--color-grey-5);
+    border-bottom: 1px solid var(--color-grey-5);
 }
 
 @media (min-width: 900px) {
     .section.copd-treatment-intro > .default-content-wrapper,
     .section.copd-treatment-goals > .default-content-wrapper,
     .section.copd-treatment-options > .default-content-wrapper {
-        color: #282828;
         width: fit-content;
         margin: auto;
         justify-content: center;
         font-size: 1.6rem;
+    }
+
+    .copd-causes-container .default-content-wrapper p,
+    .copd-causes-container .default-content-wrapper h2,
+    {
+        text-align: center;
     }
 
     .copd-resources main .section:not(.isi) .default-content-wrapper {
@@ -762,13 +767,18 @@ main .section.small-vertical-margins {
     }
 
     .section.copd-treatment-goals {
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
+        border-top: 1px solid var(--color-grey-5);
+        border-bottom: 1px solid var(--color-grey-5);
     }
 
-    .section.copd-treatment-intro > .default-content-wrapper p,
-    .section.copd-treatment-goals > .default-content-wrapper p,
-    .section.copd-treatment-options > .default-content-wrapper p {
+    .section.copd-treatment-intro > .default-content-wrapper > *,
+    .section.copd-treatment-goals > .default-content-wrapper > *,
+    .section.copd-treatment-options > .default-content-wrapper > * {
         text-align: center;
+    }
+
+
+    .section.copd-treatment-goals > .default-content-wrapper ul{
+        text-align: left;
     }
 }
