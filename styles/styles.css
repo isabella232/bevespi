@@ -277,24 +277,6 @@ main pre {
     white-space: pre;
 }
 
-a:not(.button):any-link {
-    display: inline-block;
-    color: var(--link-color);
-    text-decoration: none;
-    font-weight: var(--link-font-weight);
-}
-
-a:not(.button):hover {
-    text-decoration: none;
-    color: var(--link-hover-color);
-    font-weight: var(--link-font-weight-hover);
-}
-
-.default-content-wrapper a:not(.button):any-link {
-    color: var(--text-pink);
-    font-weight: var(--link-font-weight);
-}
-
 /* buttons */
 .copd-resources main .button-container {
     border-top: 1px solid var(--highlight-background-color);
@@ -404,6 +386,24 @@ a.button.secondary::after, button.secondary::after {
     background-size: contain;
     background-repeat: no-repeat;
     vertical-align: middle;
+}
+
+a:not(.button):any-link {
+    display: inline-block;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: var(--link-font-weight);
+}
+
+a:not(.button):hover {
+    text-decoration: none;
+    color: var(--link-hover-color);
+    font-weight: var(--link-font-weight-hover);
+}
+
+.default-content-wrapper a:not(.button):any-link {
+    color: var(--text-pink);
+    font-weight: var(--link-font-weight);
 }
 
 main input {
