@@ -894,7 +894,7 @@ main .section.centered p:has(picture:first-child:last-child) {
 
     .getting-started main .section.inhaler img:first-of-type {
         position: absolute;
-        right: 311px;
+        right: calc(50% - 380px);
         top: 37px;
     }
 
