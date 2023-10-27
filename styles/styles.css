@@ -1010,6 +1010,10 @@ main .section.centered p:has(picture:first-child:last-child) {
     row-gap: 30px;
 }
 
+.what-is-copd div.boxes.block > div {
+    padding: 25px 20px;
+}
+
 .what-is-copd .video-embed {
     margin: auto;
     padding: 12px;
@@ -1041,7 +1045,7 @@ main .section.centered p:has(picture:first-child:last-child) {
     }
 
     .what-is-copd {
-        font-size: unset;
+        font-size: var(--body-font-size-m);
     }
 
     .what-is-copd div.boxes.block > div h2
@@ -1066,6 +1070,10 @@ main .section.centered p:has(picture:first-child:last-child) {
 
     .what-is-copd .boxes {
         max-width: 830px;
+    }
+
+    .what-is-copd div.boxes.block > div {
+        padding: 30px 35px;
     }
 
     .what-is-copd-infographic {
