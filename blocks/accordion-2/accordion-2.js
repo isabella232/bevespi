@@ -13,10 +13,13 @@ export default async function decorate(block) {
       pImg.append(span);
     });
 
+    const buttonsMobile = document.createElement('div');
+    buttonsMobile.classList.add('buttons', 'mobile');
+    buttonsMobile.innerHTML = '<span class="button-more">+</span><span class="button-less">-</span>';
     const buttons = document.createElement('div');
-    buttons.classList.add('buttons');
+    buttons.classList.add('buttons', 'desktop');
     buttons.innerHTML = '<span class="button-more">More +</span><span class="button-less">Less -</span>';
-    row.querySelector('div').append(buttons);
+    row.querySelector('div').append(buttonsMobile, buttons);
 
     [...row.querySelectorAll('.buttons > span')].forEach((button) => {
       button.addEventListener('click', () => {

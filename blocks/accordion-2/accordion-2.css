@@ -22,11 +22,20 @@ main .section div.accordion-2-wrapper {
 
 .accordion-2 .buttons {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   right: 10px;
   color: var(--text-pink);
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.accordion-2 .buttons.desktop {
+  visibility: hidden;
+}
+
+.accordion-2 .buttons.mobile > span {
+  font-size: 30px;
+  color: #e81b75 !important;
 }
 
 .accordion-2 .button-more,
@@ -168,5 +177,13 @@ main .section div.accordion-2-wrapper {
   .accordion-2 > div > div.active > p.p-first {
     height: unset;
     overflow: unset;
+  }
+
+  .accordion-2 .buttons.desktop {
+    visibility: visible;
+  }
+
+  .accordion-2 .buttons.mobile {
+    visibility: hidden;
   }
 }
