@@ -446,18 +446,17 @@ function decorateAnchors(section) {
     },
   ];
 
-  knownAnchors.forEach((knownAnchor) => section.querySelectorAll(`p`)
-      .forEach((paragraph) => {
-        if (paragraph.innerText.includes(`[${knownAnchor.id}]`)) {
-          const anchorContainer = document.createElement('a');
-          paragraph.parentElement.classList.add(`${knownAnchor.id}-wrapper`);
-          anchorContainer.setAttribute('role', 'button');
-          anchorContainer.classList.add(knownAnchor.id);
-          anchorContainer.addEventListener('click', knownAnchor.action);
-          paragraph.replaceWith(anchorContainer);
-        }
-      })
-    );
+  knownAnchors.forEach((knownAnchor) => section.querySelectorAll('p')
+    .forEach((paragraph) => {
+      if (paragraph.innerText.includes(`[${knownAnchor.id}]`)) {
+        const anchorContainer = document.createElement('a');
+        paragraph.parentElement.classList.add(`${knownAnchor.id}-wrapper`);
+        anchorContainer.setAttribute('role', 'button');
+        anchorContainer.classList.add(knownAnchor.id);
+        anchorContainer.addEventListener('click', knownAnchor.action);
+        paragraph.replaceWith(anchorContainer);
+      }
+    }));
 }
 
 /**
