@@ -437,6 +437,7 @@ function decorateAnchors(section) {
   const knownAnchors = [
     {
       id: 'back-to-top',
+      name: 'Back to top',
       action: () => {
         window.scrollTo({
           top: 0,
@@ -452,6 +453,7 @@ function decorateAnchors(section) {
         const anchorContainer = document.createElement('a');
         paragraph.parentElement.classList.add(`${knownAnchor.id}-wrapper`);
         anchorContainer.setAttribute('role', 'button');
+        anchorContainer.setAttribute('aria-label', knownAnchor.name);
         anchorContainer.classList.add(knownAnchor.id);
         anchorContainer.addEventListener('click', knownAnchor.action);
         paragraph.replaceWith(anchorContainer);
