@@ -795,6 +795,9 @@ main .section:not(.isi) .default-content-wrapper {
 }
 
 @media (min-width: 900px) {
+    main div:not(.isi) .default-content-wrapper h2 {
+        font-size: 3.2rem;
+    }
     .section.copd-treatment-intro > .default-content-wrapper,
     .section.copd-treatment-goals > .default-content-wrapper,
     .section.copd-treatment-options > .default-content-wrapper {
@@ -808,10 +811,6 @@ main .section:not(.isi) .default-content-wrapper {
     .copd-causes-container .default-content-wrapper h2,
     .section.accordion-1-container .default-content-wrapper h2 {
         text-align: center;
-    }
-
-    main div:not(.isi) .default-content-wrapper h2 {
-        font-size: 3.2rem;
     }
 
     .copd-resources main .section:not(.isi) .default-content-wrapper {
