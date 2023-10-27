@@ -13,6 +13,13 @@ main .section div.highlight-1-wrapper {
   padding: 30px 12px;
 }
 
+@media (min-width: 900px) {
+  .highlight-1 {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+
 .highlight-1 h2 {
   font-size: var(--heading-font-size-l);
   margin: 0;
