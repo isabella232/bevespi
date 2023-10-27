@@ -804,14 +804,14 @@ main .section:not(.isi) .default-content-wrapper {
         font-size: 1.6rem;
     }
 
-    main div:not(.isi) .default-content-wrapper h2 {
-        font-size: 3.2rem;
-    }
-
     .copd-causes-container .default-content-wrapper p,
     .copd-causes-container .default-content-wrapper h2,
     .section.accordion-1-container .default-content-wrapper h2 {
         text-align: center;
+    }
+
+    main div:not(.isi) .default-content-wrapper h2 {
+        font-size: 3.2rem;
     }
 
     .copd-resources main .section:not(.isi) .default-content-wrapper {
