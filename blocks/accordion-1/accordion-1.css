@@ -52,13 +52,21 @@ main .section div.accordion-1-wrapper {
   padding: 12px;
   max-width: var(--page-max-width);
   margin: auto;
-}
-
-.accordion-row > div {
   display: grid;
   grid-template-columns: 67px auto;
   grid-auto-rows: auto;
   gap: 0;
+}
+
+.accordion-row > div > span {
+  display: inline-block;
+  flex: 0 0 40px;
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: url('../../icons/icon_accrdn-arr-dwn.png') no-repeat;
+  background-size: cover;
+  cursor: pointer;
 }
 
 .accordion-row > div > span:first-child {
@@ -94,17 +102,6 @@ main .section div.accordion-1-wrapper {
 
 .accordion-row:nth-of-type(even) {
   background-color: var(--background-grey-4);
-}
-
-.accordion-row > div > span {
-  display: inline-block;
-  flex: 0 0 40px;
-  content: "";
-  width: 40px;
-  height: 40px;
-  background: url('../../icons/icon_accrdn-arr-dwn.png') no-repeat;
-  background-size: cover;
-  cursor: pointer;
 }
 
 .accordion-row.active > div > span {
