@@ -129,9 +129,8 @@ main .section[data-background] > div.tabs-wrapper {
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid #dedede;
-    padding-top: -55px;
     position: absolute;
-    top: 50px;
+    top: 36px;
     left: 47%;
   }
 
