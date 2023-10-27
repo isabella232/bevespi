@@ -794,6 +794,7 @@ main .section.small-vertical-margins {
     top: 16px;
     left: 6px;
     font-size: var(--body-font-size-xxxs);
+    font-weight: var(--link-font-weight-hover);
 }
 
 .section > .default-content-wrapper.back-to-top-wrapper > .back-to-top:hover::after {
