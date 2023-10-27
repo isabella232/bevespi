@@ -278,6 +278,10 @@ main pre {
     white-space: pre;
 }
 
+main img {
+    max-width: 100%;
+}
+
 .columns-row img,
 .default-content-wrapper img {
     transform: scale(0.8);
@@ -452,10 +456,6 @@ main blockquote p::before {
 main blockquote p::after {
     content: "”";
     line-height: 0;
-}
-
-main img {
-    max-width: 100%;
 }
 
 .icon {
@@ -737,6 +737,10 @@ main .section.small-vertical-margins {
     }
 }
 
+main .section.hero-container + .section {
+    padding-top: 32px;
+}
+
 /* copd-resources theme */
 .copd-resources main .section.hero-container + .section {
     padding-top: 32px;
@@ -774,6 +778,10 @@ main div:not(.isi) .default-content-wrapper h2 {
     font-size: 1.4rem;
 }
 
+main .section:not(.isi) .default-content-wrapper {
+    font-size: var(--body-font-size-s);
+}
+
 .copd-resources main div:not(.isi) .default-content-wrapper,
 .getting-started main div:not(.isi) .default-content-wrapper {
     line-height: 1.2em;
@@ -796,6 +804,10 @@ main div:not(.isi) .default-content-wrapper h2 {
         font-size: 1.6rem;
     }
 
+    main div:not(.isi) .default-content-wrapper h2 {
+        font-size: 3.2rem;
+    }
+
     .copd-causes-container .default-content-wrapper p,
     .copd-causes-container .default-content-wrapper h2,
     .section.accordion-1-container .default-content-wrapper h2 {
@@ -805,10 +817,6 @@ main div:not(.isi) .default-content-wrapper h2 {
     .copd-resources main .section:not(.isi) .default-content-wrapper {
         width: 750px;
         margin: auto;
-    }
-
-    main div:not(.isi) .default-content-wrapper h2 {
-        font-size: 3.2rem;
     }
 
     .section.copd-treatment-intro {
@@ -964,13 +972,5 @@ main .section.centered p:has(picture:first-child:last-child) {
         max-width: 400px;
         margin: auto;
     }
-}
-
-main .section.hero-container + .section {
-    padding-top: 32px;
-}
-
-main .section:not(.isi) .default-content-wrapper {
-    font-size: var(--body-font-size-s);
 }
 

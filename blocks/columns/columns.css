@@ -196,11 +196,6 @@
     flex-basis: 67%;
   }
 
-  .columns-75-25 .columns-col.columns-img-col,
-  .columns-75-25 .columns-col:not(.columns-img-col):nth-of-type(n+2) {
-    flex-basis: 25%;
-  }
-
   .columns-75-25 .columns-col:not(.columns-img-col) {
     flex-basis: 75%;
   }
@@ -211,6 +206,11 @@
 
   .columns-80-20 .columns-col:not(.columns-img-col) {
     flex-basis: 80%;
+  }
+
+  .columns-75-25 .columns-col.columns-img-col,
+  .columns-75-25 .columns-col:not(.columns-img-col):nth-of-type(n+2) {
+    flex-basis: 25%;
   }
 
   .home .columns .button-container {
