@@ -7,17 +7,21 @@ main .section.fragment-container.important-saferty-information h2 {
 
 main .section.fragment-container.important-safety-information ul {
     padding-inline-start: 12px;
-    padding: 4px 0 11px 12px;
+    padding: 0 0 5px 12px;
+    margin: 16px 0;
 }
 
 main .section.fragment-container ul li {
     margin: 8px 0;
 }
 
+main .section.fragment-container.important-safety-information p {
+    margin-bottom: 18px;
+}
+
 main .section.fragment-container.important-safety-information ul li,
 main .section.fragment-container.important-safety-information p {
     font-size: var(--body-font-size-s-isi-fragment);
-    margin-bottom: 18px;
 }
 
 main .section.fragment-container > div {
@@ -25,7 +29,7 @@ main .section.fragment-container > div {
 }
 
 main .section.fragment-container {
-    padding: 0 12px 40px;
+    padding: 30px 12px 40px;
 }
 
 main .section.fragment-container.important-safety-information > div a {
