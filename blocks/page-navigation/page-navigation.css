@@ -21,6 +21,10 @@ main .section div.page-navigation-wrapper {
   padding: 21px 0;
 }
 
+.block.page-navigation ul li a {
+  transform: translateY(-3px);
+}
+
 .block.page-navigation a:any-link {
   font-size: var(--body-font-size-xs);
   font-weight: var(--font-weight-regular);
@@ -46,10 +50,6 @@ main .section div.page-navigation-wrapper {
   margin: 0;
 }
 
-.block.page-navigation ul li a {
-  transform: translateY(-3px);
-}
-
 .block.page-navigation ul li:nth-of-type(n+2) {
   border-left: 2px solid var(--color-blue-2);
 }
@@ -58,8 +58,13 @@ main .section div.page-navigation-wrapper {
   .block.page-navigation {
     height: 48px;
   }
+
   .block.page-navigation nav > div {
     padding-top: 11px;
+  }
+
+  .block.page-navigation ul li a {
+    transform: translateY(2px);
   }
 
   .block.page-navigation a:any-link {
@@ -68,9 +73,5 @@ main .section div.page-navigation-wrapper {
 
   .block.page-navigation ul li {
     height: 18px;
-  }
-
-  .block.page-navigation ul li a {
-    transform: translateY(2px);
   }
 }
