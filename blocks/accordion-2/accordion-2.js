@@ -8,7 +8,7 @@ export default async function decorate(block) {
       pImg.classList.add('p-img');
       const span = document.createElement('span');
       span.innerHTML = pImg.innerHTML;
-      pImg.innerHTML = "";
+      pImg.innerHTML = '';
       pImg.prepend(span.querySelector('picture'));
       pImg.append(span);
     });
