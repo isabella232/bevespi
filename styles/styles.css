@@ -25,6 +25,7 @@
     --color-white: #fff;
     --color-grey-5: #ccc;
     --color-grey-6: #b3b7c9;
+    --color-grey-7: #e9ebec;
     --background-color: var(--color-white);
     --text-orange: #8F440A;
     --text-orange-light: #f58321;
@@ -238,8 +239,8 @@ h6 {
 }
 
 p, dl, ol, ul, pre, blockquote {
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 p {
