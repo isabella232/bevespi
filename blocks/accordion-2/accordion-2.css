@@ -96,6 +96,7 @@ main .section div.accordion-2-wrapper {
   grid-column: 2;
   grid-row: 1;
   align-self: center;
+  padding-right: 25px;
 }
 
 .accordion-2 > div > div > *:nth-child(n+3) {
