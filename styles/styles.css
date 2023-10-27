@@ -288,7 +288,7 @@ main img {
 .default-content-wrapper img {
     transform: scale(0.8);
   }
-  
+
   @media (min-width: 900px) {
     .columns-row img,
     .default-content-wrapper img {
@@ -636,6 +636,10 @@ main .section.isi h2 {
     margin-bottom: 20px;
 }
 
+main div:not(.isi) .default-content-wrapper h2 {
+    font-size: 2rem;
+}
+
 .what-is-copd div.boxes.block > div h2
 {
     font-size: var(--body-font-size-xl);
@@ -756,10 +760,6 @@ main .section.hero-container + .section {
 /* copd-resources theme */
 .copd-resources main .section.hero-container + .section {
     padding-top: 32px;
-}
-
-main div:not(.isi) .default-content-wrapper h2 {
-    font-size: 2rem;
 }
 
 .copd-resources main div:not(.isi) .default-content-wrapper strong {
