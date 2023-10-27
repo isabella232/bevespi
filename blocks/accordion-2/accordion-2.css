@@ -99,17 +99,15 @@ main .section div.accordion-2-wrapper {
 }
 
 .accordion-2 > div > div > .p-img {
-  display: grid;
+  display: flex;
+  flex: 1;
+  gap: 20px;
   grid-template-columns: 100px auto;
   align-items: center;
 }
 
 .accordion-2 > div > div > .p-img picture {
-  grid-column: 1;
-}
-
-.accordion-2 > div > div > .p-img span {
-  grid-column: 2;
+  flex: 0 0 100px;
 }
 
 .accordion-2 > div > div > p.p-img-first img {
@@ -117,11 +115,11 @@ main .section div.accordion-2-wrapper {
 }
 
 .accordion-2 > div > div > p:not(.p-img-first) {
-  display: none;
+  visibility: hidden;
 }
 
 .accordion-2 > div > div.active > p {
-  display: block;
+  visibility: visible;
 }
 
 @media (min-width: 900px) {
