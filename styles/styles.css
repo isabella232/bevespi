@@ -278,6 +278,18 @@ main pre {
     white-space: pre;
 }
 
+.columns-row img,
+.default-content-wrapper img {
+    transform: scale(0.8);
+  }
+  
+  @media (min-width: 900px) {
+    .columns-row img,
+    .default-content-wrapper img {
+      transform: scale(1);
+    }
+  }
+
 /* buttons */
 a:not(.button):any-link {
     display: inline-block;
@@ -292,11 +304,6 @@ a:not(.button):hover {
     font-weight: var(--link-font-weight-hover);
 }
 
-.copd-resources main .button-container {
-    border-top: 1px solid var(--highlight-background-color);
-    border-bottom: 1px solid var(--highlight-background-color);
-}
-
 .copd-treatment .button-container a {
     border: unset;
     background-color: unset;
@@ -309,8 +316,13 @@ a:not(.button):hover {
     border: 0;
     font-size: var(--body-font-size-s);
     text-transform: none;
-    padding: 30px 39px 30px 25px;
-    margin: 0 auto;
+    padding: 10px 39px 10px 25px;
+}
+
+@media (min-width: 900px) {
+    .copd-resources main .button-container a {
+        margin: 0 auto;
+    }
 }
 
 .copd-treatment .columns .button-container {
@@ -458,7 +470,7 @@ main img {
 }
 
 main .section, .section .reset-spacing {
-    padding: 64px 16px;
+    padding: 20px 16px;
 }
 
 main .section.no-space-bottom {
@@ -476,13 +488,20 @@ main .section.grey {
     background-size: cover;
 }
 
+main .section.buttons {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: 1px solid var(--color-grey-5);
+    border-bottom: 1px solid var(--color-grey-5);
+}
+
 .home .columns-row img {
     transform: scale(0.67);
 }
 
 @media (min-width: 900px) {
     main .section, .section .reset-spacing {
-        padding: 64px 32px;
+        padding: 30px 32px;
     }
 
     main .section:nth-last-of-type(2) {
@@ -607,12 +626,18 @@ main .section.isi h2 {
     font-size: var(--heading-font-size-s);
     font-weight: 500;
     color: var(--text-orange);
+    margin-bottom: 20px;
 }
 
 @media (min-width: 900px) {
     main .section.isi h2 {
         font-size: var(--heading-font-size-ml);
     }
+}
+
+main div:not(.isi) li {
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 main .section.isi ul {
@@ -717,8 +742,7 @@ main .section.small-vertical-margins {
     padding-top: 32px;
 }
 
-.copd-resources main div:not(.isi) .default-content-wrapper h2,
-.getting-started main div:not(.isi) .default-content-wrapper h2 {
+main div:not(.isi) .default-content-wrapper h2 {
     font-size: 2rem;
 }
 
@@ -730,14 +754,18 @@ main .section.small-vertical-margins {
     margin-bottom: 15px;
 }
 
-.copd-resources main div:not(.isi) .button-container a::after {
+.copd-resources main .button-container a::after {
     content: "";
     display: inline-block;
     width: 20px;
     height: 20px;
     background: url("/icons/icon_pink-arrow-right-md.png") no-repeat;
     background-size: contain;
-    margin-left: 30px;
+    margin-left: 15px;
+}
+
+.copd-resources main .section.isi .button-container a::after {
+    display: none;
 }
 
 .section.copd-treatment-intro > .default-content-wrapper,
@@ -769,7 +797,8 @@ main .section.small-vertical-margins {
     }
 
     .copd-causes-container .default-content-wrapper p,
-    .copd-causes-container .default-content-wrapper h2 {
+    .copd-causes-container .default-content-wrapper h2,
+    .section.accordion-1-container .default-content-wrapper h2 {
         text-align: center;
     }
 
@@ -778,11 +807,7 @@ main .section.small-vertical-margins {
         margin: auto;
     }
 
-    .section.copd-treatment-intro h2 {
-        font-size: 32px;
-    }
-
-    .copd-resources main div:not(.isi) .default-content-wrapper h2 {
+    main div:not(.isi) .default-content-wrapper h2 {
         font-size: 3.2rem;
     }
 
@@ -939,5 +964,13 @@ main .section.centered p:has(picture:first-child:last-child) {
         max-width: 400px;
         margin: auto;
     }
+}
+
+main .section.hero-container + .section {
+    padding-top: 32px;
+}
+
+main .section:not(.isi) .default-content-wrapper {
+    font-size: var(--body-font-size-s);
 }
 
