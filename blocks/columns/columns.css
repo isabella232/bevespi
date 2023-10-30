@@ -116,7 +116,7 @@ main .section.columns-container {
 }
 
 .home .columns .button-container {
-  max-width: 290px;
+  max-width: 300px;
   margin-top: 55px;
 }
 
@@ -128,21 +128,25 @@ main .section.columns-container {
   border: 0;
   text-transform: unset;
   color: var(--text-color);
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-s);
   font-weight: 400;
   padding: 0;
   line-height: 1.7rem;
+  font-style: italic;
+  display: grid;
+  grid-auto-flow: column;
 }
 
 .home .columns .button-container .icon {
   width: 55px;
   height: 55px;
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 .home .columns .button-container .icon img {
   width: 55px;
   height: auto;
+  transform: unset;
 }
 
 .home .columns .button-container a:hover {
@@ -224,6 +228,10 @@ main .section.columns-container {
   .home .columns .button-container {
     max-width: 350px;
   }
+
+  .home .columns .button-container a {
+    font-size: var(--body-font-size-m);
+  }
   
   .home .columns .button-container .icon {
     width: 87px;
@@ -232,8 +240,7 @@ main .section.columns-container {
   }
   
   .home .columns .button-container .icon img {
-    width: 87px;
-    height: 87px;
+    transform: scale(1.5);
   }
 }
 

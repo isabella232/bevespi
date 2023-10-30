@@ -1124,3 +1124,7 @@ main .section.centered p:has(picture:first-child:last-child) {
     }
 }
 
+.home .columns-row > div {
+    padding-bottom: 50px;
+}
+
