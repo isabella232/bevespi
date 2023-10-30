@@ -533,6 +533,11 @@ main .section.buttons {
         height: 35px;
     }
 
+    a.button.secondary:any-link, button.secondary {
+        font-size: var(--body-font-size-s);
+        font-weight: var(--font-weight-bold);
+    }
+
     a.button.secondary::after, button.secondary::after {
         width: 24px;
         height: 28px;
