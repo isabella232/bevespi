@@ -16,7 +16,7 @@ main .section.columns-container {
 }
 
 .columns h2 {
-  margin: 25px 0 0;
+  margin: 25px 0;
   line-height: 1;
   max-width: 500px;
   text-transform: uppercase;
