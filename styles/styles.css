@@ -1115,3 +1115,12 @@ main .section.centered p:has(picture:first-child:last-child) {
     }
 }
 
+@media (min-width: 900px) {
+    .home main .columns-row:nth-of-type(2) > div > div:nth-of-type(1) {
+        flex-basis: 40%;
+    }
+    .home main .columns-row:nth-of-type(2) > div > div:nth-of-type(2) {
+        flex-basis: 60%;
+    }
+}
+
