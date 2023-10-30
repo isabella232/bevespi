@@ -172,7 +172,7 @@ main .section.columns-container {
 
   .columns-row > div {
     flex-direction: row;
-    max-width: var(--page-max-width);
+    max-width: calc(var(--page-max-width) + 30px);
     margin: auto;
     padding: 70px 0 30px;
   }
