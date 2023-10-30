@@ -540,7 +540,10 @@ main .section.buttons {
     }
 }
 
-/* section metadata - highlight */
+.home .columns-row > div {
+    padding-bottom: 50px;
+}
+
 main .section.highlight {
     background-color: var(--highlight-background-color);
 }
@@ -1123,8 +1126,3 @@ main .section.centered p:has(picture:first-child:last-child) {
         flex-basis: 60%;
     }
 }
-
-.home .columns-row > div {
-    padding-bottom: 50px;
-}
-
