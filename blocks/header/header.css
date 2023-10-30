@@ -180,7 +180,7 @@ header .expanded .nav-bottom {
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 2;
+  z-index: 5;
 }
 
 header .nav-top li:first-of-type {
