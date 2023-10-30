@@ -894,6 +894,10 @@ main .section:not(.isi) .default-content-wrapper {
         font-size: 3.2rem;
     }
 
+    .copd-symptoms-page .default-content-wrapper {
+        text-align: center;
+    }
+
     .section.copd-treatment-intro > .default-content-wrapper,
     .section.copd-treatment-goals > .default-content-wrapper,
     .section.copd-treatment-options > .default-content-wrapper {
@@ -944,10 +948,6 @@ main .section:not(.isi) .default-content-wrapper {
 
     .section.copd-treatment-goals > .default-content-wrapper ul{
         text-align: left;
-    }
-
-    .copd-symptoms-page .default-content-wrapper {
-        text-align: center;
     }
 
     .copd-symptoms-page .default-content-wrapper strong{
@@ -1025,6 +1025,12 @@ main .section.centered p:has(picture:first-child:last-child) {
     border-bottom: 1px solid var(--color-grey-5);
 }
 
+.copd-symptoms-page div.default-content-wrapper a:any-link {
+    text-decoration: none;
+    color: var(--cta-color);
+    font-weight: 400;
+}
+
 .getting-started main div:not(.isi) .default-content-wrapper .button-container a {
     margin: auto;
     font-size: 1.3rem;
@@ -1051,12 +1057,6 @@ main .section.centered p:has(picture:first-child:last-child) {
     margin: auto;
     padding: 12px;
     max-width: 645px;
-}
-
-.copd-symptoms-page div.default-content-wrapper a:any-link {
-    text-decoration: none;
-    color: var(--cta-color);
-    font-weight: 400;
 }
 
 @media (min-width: 900px) {
