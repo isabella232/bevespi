@@ -1053,6 +1053,12 @@ main .section.centered p:has(picture:first-child:last-child) {
     max-width: 645px;
 }
 
+.copd-symptoms-page div.default-content-wrapper a:any-link {
+    text-decoration: none;
+    color: var(--cta-color);
+    font-weight: 400;
+}
+
 @media (min-width: 900px) {
     .what-is-copd h2
     {

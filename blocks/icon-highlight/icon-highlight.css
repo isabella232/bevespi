@@ -11,7 +11,7 @@
 }
 
 .icon-highlight.block h2{
-    font-size: 3.2rem;
+    font-size: var(--body-font-size-l);
     text-align: center;
     margin: 0 64px;
 }
@@ -39,7 +39,8 @@
 
 
 .icon-highlight.block .icon-highlight-hr-bottom {
-    margin: 50px 0 64px;
+    margin: 32px 5px;
+    border-top: 1px solid #ccc;
 }
 
 .icon-highlight.block .default-content-wrapper {
