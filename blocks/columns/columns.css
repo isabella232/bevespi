@@ -2,6 +2,11 @@
   padding-top: 0;
 }
 
+main .section.columns-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .home .section.hero-container + .section.columns-container .columns-row:first-of-type {
   padding-top: 35px;
 }
