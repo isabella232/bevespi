@@ -1148,3 +1148,22 @@ main .section.centered p:has(picture:first-child:last-child) {
         transform: translateY(-22px);
     }
 }
+
+h1 > br,
+h2 > br {
+    content:"";
+}
+
+h1 > br::after,
+h2 > br::after {
+    content: " ";
+}
+
+@media (min-width: 900px) {
+    h1 > br,
+    h1 > br::after,
+    h2 > br,
+    h2 > br::after {
+        content: unset;
+    }
+}
