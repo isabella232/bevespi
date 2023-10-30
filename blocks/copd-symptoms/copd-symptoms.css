@@ -1,0 +1,103 @@
+.block.copd-symptoms {
+    background: unset;
+    padding: 14px;
+    margin: auto;
+    display: grid;
+    gap: 0;
+    align-items: end;
+    justify-content: center;
+    max-width: 1000px;
+    grid-template-rows: auto;
+}
+
+.block.copd-symptoms.block {
+    padding: 0;
+}
+
+.block.copd-symptoms > div {
+    display: grid;
+    grid-template-columns: fit-content(100%) 1fr;
+}
+
+.block.copd-symptoms > div > div:first-child {
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.block.copd-symptoms > div:not(:last-child) > div:nth-child(2) {
+    padding-bottom: 15px;
+    border-bottom: 3px solid rgb(246 246 246);
+}
+
+.block.copd-symptoms > div > div:first-child img {
+    width: 50px;
+    height: 50px;
+}
+
+/* .block.copd-symptoms > div > div:nth-child(2) { */
+
+/* } */
+
+.block.copd-symptoms > div > div:nth-child(2) h2 {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* .block.copd-symptoms > div > div:nth-child(2) em { */
+
+/*    font-size: 1.4rem; */
+
+/* } */
+
+.block.copd-symptoms > div > div:nth-child(2) p {
+    font-size: 1.4rem;
+    display: block;
+    margin: 0;
+}
+
+@media (min-width: 900px) {
+    .block.copd-symptoms > div {
+        display: table;
+    }
+
+    .block.copd-symptoms > div > div{
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 20px 0;
+    }
+
+    .block.copd-symptoms > div > div:first-child {
+        width: 92px;
+        border-bottom: 3px solid transparent;
+    }
+
+    .block.copd-symptoms > div > div:first-child img {
+        height: 72px;
+        width: 72px;
+    }
+
+    .block.copd-symptoms > div > div:nth-child(2) {
+        width: 100%;
+        text-align: left;
+        padding-top: 8px;
+        padding-right: 10px;
+    }
+
+    .block.copd-symptoms > div > div:nth-child(2) h2 {
+        display: inline;
+        font-weight: 400;
+        font-size: 2.4rem;
+    }
+
+    .block.copd-symptoms > div > div:nth-child(2) p {
+        display: inline;
+        font-weight: 400;
+        font-size: var(--body-font-size-l);
+    }
+}

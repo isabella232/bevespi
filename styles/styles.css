@@ -945,6 +945,19 @@ main .section:not(.isi) .default-content-wrapper {
     .section.copd-treatment-goals > .default-content-wrapper ul{
         text-align: left;
     }
+
+    .copd-symptoms-page .default-content-wrapper {
+        text-align: center;
+    }
+
+    .copd-symptoms-page .default-content-wrapper strong{
+        font-weight: bold;
+    }
+
+    .copd-symptoms-page .copd-symptoms.block {
+        max-width: 755px;
+        margin: auto;
+    }
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper ul {
@@ -1138,6 +1151,16 @@ main .section.centered p:has(picture:first-child:last-child) {
     .getting-started main div:not(.isi) .default-content-wrapper ul {
         text-align: left;
         max-width: 400px;
+        margin: auto;
+    }
+
+    .copd-symptoms-page div.default-content-wrapper {
+        font-size: var(--body-font-size-m)!important;
+        max-width: 770px;
+        margin-bottom: 30px;
+    }
+
+    .copd-symptoms-page .icon-highlight {
         margin: auto;
     }
 }
