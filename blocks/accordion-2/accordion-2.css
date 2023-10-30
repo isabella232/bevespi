@@ -22,7 +22,7 @@ main .section div.accordion-2-wrapper {
 
 .accordion-2 .buttons {
   position: absolute;
-  bottom: 20px;
+  top: 20px;
   right: 10px;
   color: var(--text-pink);
   font-weight: 500;
@@ -33,7 +33,7 @@ main .section div.accordion-2-wrapper {
   visibility: hidden;
 }
 
-.accordion-2 .buttons.mobile > span {
+.accordion-2 .buttons.mobile {
   font-size: 30px;
   color: #e81b75 !important;
 }
@@ -96,6 +96,7 @@ main .section div.accordion-2-wrapper {
   grid-column: 2;
   grid-row: 1;
   align-self: center;
+  padding-right: 25px;
 }
 
 .accordion-2 > div > div > *:nth-child(n+3) {
@@ -104,19 +105,19 @@ main .section div.accordion-2-wrapper {
 }
 
 .accordion-2 p:nth-of-type(n+2) {
-  margin: 10px 50px 0 0;
+  margin: 10px 20px 0 0;
 }
 
 .accordion-2 > div > div > .p-img {
   display: flex;
   flex: 1;
-  gap: 20px;
+  gap: 10px;
   grid-template-columns: 100px auto;
   align-items: center;
 }
 
 .accordion-2 > div > div > .p-img picture {
-  flex: 0 0 100px;
+  flex: 0 0 80px;
 }
 
 .accordion-2 > div > div > p.p-img-first img {
@@ -168,7 +169,7 @@ main .section div.accordion-2-wrapper {
   }
 
   .accordion-2 > div > div > p.p-first {
-    display: block;
+    visibility: visible;
     height: 35px;
     overflow: hidden;
     grid-row: 2;
