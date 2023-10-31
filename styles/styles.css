@@ -575,10 +575,6 @@ main .section.accordion-2-container.video-container {
     padding-top: 40px;
 }
 
-main .section.accordion-2-container.video-container h2 {
-    font-size: var(--heading-font-size-xxl);
-}
-
 main .section.width-m > div,
 main .section.width-s > div,
 main .section.width-xs > div {
@@ -681,6 +677,10 @@ main .section.isi h2 {
 
 main div:not(.isi) .default-content-wrapper h2 {
     font-size: 2rem;
+}
+
+main .section.accordion-2-container.video-container h2 {
+    font-size: var(--heading-font-size-xxl);
 }
 
 .what-is-copd div.boxes.block > div h2
