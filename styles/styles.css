@@ -1026,8 +1026,6 @@ main .section.centered p:has(picture:first-child:last-child) {
 }
 
 .copd-symptoms-page div.default-content-wrapper a:any-link {
-    text-decoration: none;
-    color: var(--cta-color);
     font-weight: 400;
 }
 
