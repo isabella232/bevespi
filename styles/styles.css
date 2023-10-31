@@ -567,6 +567,14 @@ main .section.highlight {
     background-color: var(--highlight-background-color);
 }
 
+main .section.highlight-1-container.highlight-2-container {
+    padding-bottom: 0;
+}
+
+main .section.accordion-2-container.video-container {
+    padding-top: 40px;
+}
+
 main .section.width-m > div,
 main .section.width-s > div,
 main .section.width-xs > div {
@@ -602,6 +610,15 @@ main .section[data-background] > div {
     main .section[data-background] > div {
         padding-left: 32px;
         padding-right: 32px;
+    }
+
+    main .section.accordion-2-container.video-container h2 {
+        font-size: 4.5rem;
+        margin-top: 0;
+    }
+
+    main .section.accordion-2-container.video-container p {
+        font-size: var(--body-font-size-m);
     }
 }
 
@@ -664,6 +681,10 @@ main .section.isi h2 {
 
 main div:not(.isi) .default-content-wrapper h2 {
     font-size: 2rem;
+}
+
+main .section.accordion-2-container.video-container h2 {
+    font-size: var(--heading-font-size-xxl);
 }
 
 .what-is-copd div.boxes.block > div h2
