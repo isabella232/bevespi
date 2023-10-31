@@ -201,12 +201,12 @@ body.appear {
 }
 
 main {
-    transform: translateY(11px);
+    margin-top: 12px;
 }
 
 @media (min-width: 900px) {
     main {
-        transform: unset;
+        margin-top: 0;
     }
 }
 
