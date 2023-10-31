@@ -7,7 +7,6 @@ import { loadScript, getEnvType } from './scripts.js';
 sampleRUM('cwv');
 
 // add more delayed functionality here
-
 /**
  * Tealium Tags
 * */
@@ -97,7 +96,7 @@ async function loadTagData() {
         a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
       })();
     `;
-  document.head.prepend(scriptTag1, scriptTag2);
+  document.body.prepend(scriptTag1, scriptTag2);
 }
 
 async function loadTagScript() {
