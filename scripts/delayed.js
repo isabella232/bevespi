@@ -100,16 +100,12 @@ async function loadTagData() {
 }
 
 async function loadTagScript() {
-  // const gaId = 'G-Q7JCVTBTKM';
-  loadScript(`https://tags.tiqcdn.com/utag/astrazeneca/us-bevespi/prod/utag.sync.js`, () => {
+  loadScript('https://tags.tiqcdn.com/utag/astrazeneca/us-bevespi/prod/utag.sync.js', () => {
     // eslint-disable-next-line
     loadTagData();
-    // window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', gaId); ga('send', 'pageview'); ga('create', gaId, 'auto');
   });
 }
 
-
 if (getEnvType() === 'live') {
-  // await loadTagData();
   await loadTagScript();
 }
