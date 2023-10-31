@@ -914,6 +914,11 @@ main .section:not(.isi) .default-content-wrapper {
     color: var(--background-grey-5);
 }
 
+main .section.zero-space-bottom {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 @media (min-width: 900px) {
     .copd-causes-container .default-content-wrapper h2 {
         text-align: center;
@@ -939,6 +944,10 @@ main .section:not(.isi) .default-content-wrapper {
     .copd-causes-container .default-content-wrapper p,
     .section.accordion-1-container .default-content-wrapper h2 {
         text-align: center;
+    }
+
+    .faq .section.accordion-1-container .default-content-wrapper h2 {
+        margin-top: 0;
     }
 
     .copd-resources main .section:not(.isi) .default-content-wrapper {
