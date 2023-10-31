@@ -6,7 +6,7 @@
     gap: 0;
     align-items: end;
     justify-content: center;
-    max-width: 1000px;
+    max-width: var(--page-max-width);
     grid-template-rows: 75px;
     row-gap: 15px;
 }
@@ -30,7 +30,7 @@
 
 .block.copd-symptoms > div:not(:last-child) > div:nth-child(2) {
     padding-bottom: 15px;
-    border-bottom: 3px solid rgb(246 246 246);
+    border-bottom: 3px solid var(--background-grey-4);
 }
 
 .block.copd-symptoms > div > div:first-child img {
@@ -38,22 +38,12 @@
     height: 50px;
 }
 
-/* .block.copd-symptoms > div > div:nth-child(2) { */
-
-/* } */
-
 .block.copd-symptoms > div > div:nth-child(2) h2 {
     display: inline-block;
     font-size: 1.7rem;
     font-weight: 400;
     margin: 0;
 }
-
-/* .block.copd-symptoms > div > div:nth-child(2) em { */
-
-/*    font-size: 1.4rem; */
-
-/* } */
 
 .block.copd-symptoms > div > div:nth-child(2) p {
     font-size: 1.4rem;
@@ -65,7 +55,7 @@
     .block.copd-symptoms {
         display: grid;
         grid-template-rows: auto;
-        row-gap: 15px;
+        row-gap: 11px;
     }
 
     .block.copd-symptoms > div {
@@ -76,7 +66,7 @@
         height: 100%;
         display: table-cell;
         vertical-align: middle;
-        padding: 20px 0;
+        padding-bottom: 15px;
     }
 
     .block.copd-symptoms > div > div:first-child {
