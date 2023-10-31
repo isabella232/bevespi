@@ -114,6 +114,7 @@ main .section[data-background] > div.tabs-wrapper {
     text-align: center;
     display: inline-block;
     font-size: 1.6rem;
+    min-height: 50px;
   }
 
   .block.tabs .tab-controls button[aria-selected="true"], .block.tabs .tab-controls button:hover {
@@ -130,7 +131,7 @@ main .section[data-background] > div.tabs-wrapper {
     border-right: 10px solid transparent;
     border-top: 10px solid #dedede;
     position: absolute;
-    top: 36px;
+    bottom: -10px;
     left: 47%;
   }
 
