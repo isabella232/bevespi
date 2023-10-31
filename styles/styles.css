@@ -998,15 +998,6 @@ main .section[data-background] picture.section-background-img img {
     }
 }
 
-.copd-stages-page div.boxes.block div p{
-    margin-top: 2px;
-    height: unset;
-    font-size: var(--body-font-size-xs);
-    line-height: 12px;
-    font-weight: 500;
-    color: var(--color-blue-2);
-}
-
 main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
 }
@@ -1047,46 +1038,6 @@ main .section.centered p:has(picture:first-child:last-child) {
     margin: auto;
     padding: 12px;
     max-width: 645px;
-}
-
-.copd-stages-page div.boxes.block {
-    margin: 32px 0;
-    row-gap: 5px;
-}
-
-.copd-stages-page div.boxes.block div h2 {
-    margin: 0;
-    font-size: 1.4rem;
-    line-height: 15px;
-    font-weight: 500;
-}
-
-h1 > br,
-h2 > br {
-    content:"";
-}
-
-.copd-stages-page div.boxes.block div p br{
-    display: none;
-}
-
-.copd-stages-page div.boxes.block > div{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    background: #f6f6f6;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 15px 0;
-}
-
-.copd-stages-page div.copd-stages.block {
-    margin: 0 32px;
-    padding-bottom: 20px;
-    border-bottom: 3px solid rgb(246 246 246);
 }
 
 @media (min-width: 900px) {
@@ -1233,6 +1184,16 @@ h2 > br {
         padding-top: 8px;
         padding-bottom: 8px;
     }
+
+    .copd-symptoms-page div.default-content-wrapper {
+        font-size: var(--body-font-size-m)!important;
+        max-width: 770px;
+        margin-bottom: 30px;
+    }
+
+    .copd-symptoms-page .icon-highlight {
+        margin: auto;
+    }
 }
 
 @media (min-width: 900px) {
@@ -1265,6 +1226,11 @@ h2 > br {
         margin-left: 0;
         font-size: var(--body-font-size-m);
     }
+}
+
+h1 > br,
+h2 > br {
+    content:"";
 }
 
 h1 > br::after,
