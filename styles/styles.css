@@ -971,6 +971,15 @@ main .section[data-background] picture.section-background-img img {
     }
 }
 
+.copd-stages-page div.boxes.block div p{
+    margin-top: 2px;
+    height: unset;
+    font-size: var(--body-font-size-xs);
+    line-height: 12px;
+    font-weight: 500;
+    color: var(--color-blue-2);
+}
+
 main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
 }
@@ -1013,19 +1022,23 @@ main .section.centered p:has(picture:first-child:last-child) {
     max-width: 645px;
 }
 
-.copd-stages-page div.boxes-wrapper .boxes.block div h2{
+.copd-stages-page div.boxes.block {
+    margin: 32px 0;
+    row-gap: 5px;
+}
+
+.copd-stages-page div.boxes.block div h2 {
     margin: 0;
     font-size: 1.4rem;
-    line-height: 14px;
+    line-height: 15px;
     font-weight: 500;
 }
 
-.copd-stages-page div.boxes-wrapper .boxes.block div sub{
-    font-size: var(--body-font-size-m);
-    font-weight: 500;
+.copd-stages-page div.boxes.block div p br{
+    display: none;
 }
 
-.copd-stages-page div.boxes-wrapper .boxes.block div{
+.copd-stages-page div.boxes.block > div{
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -1035,7 +1048,13 @@ main .section.centered p:has(picture:first-child:last-child) {
     background: #f6f6f6;
     margin-right: auto;
     margin-left: auto;
-    padding: 6px 0;
+    padding: 15px 0;
+}
+
+.copd-stages-page div.copd-stages.block {
+    margin: 0 32px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid rgb(246 246 246);
 }
 
 @media (min-width: 900px) {
@@ -1166,14 +1185,21 @@ main .section.centered p:has(picture:first-child:last-child) {
         font-weight: 500;
     }
 
-    .copd-stages-page div.boxes-wrapper .boxes.block div sub{
+    .copd-stages-page div.boxes-wrapper .boxes.block div p{
+        margin-top: 6px;
         font-size: var(--body-font-size-m);
         font-weight: 500;
     }
 
-    .copd-stages-page div.copd-stages.block {
-        max-width: 750px;
-        margin: auto;
+    .copd-stages-page div.copd-stages.block > div {
+        height: 72px;
+        margin-top: 0;
+        padding: 0 48px;
+    }
+
+    .copd-stages-page div.copd-stages.block > div > div {
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 }
 
