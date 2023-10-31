@@ -1,6 +1,5 @@
 main .search-results {
     padding: 0;
-    margin-bottom: 80px;
     font: var(--body-font-size-m) var(--body-font-family);
 }
 
@@ -38,6 +37,11 @@ main .paginationitems {
     margin: 32px 0;
 }
 
+main .paginationitems .nav-arrow img {
+    width: 10px;
+    height: 12px;
+}
+
 main .paginationitems > li {
     float: left;
     margin-right: 16px;
@@ -50,7 +54,7 @@ main .search-results li:focus {
 }
 
 main .paginationitems > li.active-page {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 main .paginationitems > li:not(.active-page) {
