@@ -200,6 +200,16 @@ body.appear {
     display: block;
 }
 
+main {
+    margin-top: 12px;
+}
+
+@media (min-width: 900px) {
+    main {
+        margin-top: 0;
+    }
+}
+
 header {
     height: var(--nav-height);
 }
@@ -246,6 +256,10 @@ p, dl, ol, ul, pre, blockquote {
 
 p {
     line-height: 1.2;
+}
+
+ul {
+    padding-inline-start: 13px;
 }
 
 hr {
@@ -758,9 +772,14 @@ main .section.hero-container + .section {
     padding-top: 32px;
 }
 
-/* copd-resources theme */
 .copd-resources main .section.hero-container + .section {
     padding-top: 32px;
+}
+
+@media (min-width: 900px) {
+    .copd-resources main .section.hero-container + .section {
+        padding-top: 0;
+    }
 }
 
 .copd-resources main div:not(.isi) .default-content-wrapper strong {
