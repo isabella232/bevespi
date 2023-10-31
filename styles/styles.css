@@ -1012,15 +1012,19 @@ main .section.centered {
     text-align: center;
 }
 
-.breathing-room main .section.tabs-container div:first-child p:not(:last-of-type) {
-    font-size: 1.3rem;
-    letter-spacing: 1px;
+main .section.centered p:has(picture:first-child:last-child) {
+    text-align: center;
 }
 
 .breathing-room main .section.tabs-container div:first-child p:last-of-type {
     font-size: 1.3rem;
     padding: 0 30px;
     margin: 0;
+}
+
+.breathing-room main .section.tabs-container div:first-child p:not(:last-of-type) {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
 }
 
 .breathing-room main .section.tabs-container div:first-child p:nth-of-type(2) {
@@ -1039,14 +1043,14 @@ main .section.centered {
 }
 
 @media (min-width: 900px) {
-    .breathing-room main .section.tabs-container div:first-child p:not(:last-of-type),
-    .breathing-room main .section.tabs-container div:first-child p:last-of-type {
-        font-size: 2.1rem;
-    }
-
     .breathing-room main .section div:first-child p:last-of-type {
         padding: 40px 0 20px;
         max-width: unset;
+    }
+
+    .breathing-room main .section.tabs-container div:first-child p:not(:last-of-type),
+    .breathing-room main .section.tabs-container div:first-child p:last-of-type {
+        font-size: 2.1rem;
     }
 
     main .section[data-background] picture.section-background-img img {
@@ -1056,10 +1060,6 @@ main .section.centered {
     .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
         font-size: 2rem;
     }
-}
-
-main .section.centered p:has(picture:first-child:last-child) {
-    text-align: center;
 }
 
 .getting-started main .section.grey {
