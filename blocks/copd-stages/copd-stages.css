@@ -7,7 +7,7 @@
     align-items: end;
     justify-content: center;
     max-width: 1000px;
-    grid-template-rows: 75px;
+    grid-template-rows: auto;
     row-gap: 15px;
 }
 
@@ -28,7 +28,7 @@
     align-items: center;
 }
 
-.block.copd-stages > div:not(:last-child) > div:nth-child(2) {
+.block.copd-stages > div > div:nth-child(2) {
     padding-bottom: 15px;
     border-bottom: 3px solid rgb(246 246 246);
 }
