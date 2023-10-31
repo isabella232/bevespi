@@ -258,6 +258,10 @@ p {
     line-height: 1.2;
 }
 
+ul {
+    padding-inline-start: 13px;
+}
+
 hr {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
