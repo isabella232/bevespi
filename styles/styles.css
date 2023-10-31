@@ -200,6 +200,16 @@ body.appear {
     display: block;
 }
 
+main {
+    transform: translateY(11px);
+}
+
+@media (min-width: 900px) {
+    main {
+        transform: unset;
+    }
+}
+
 header {
     height: var(--nav-height);
 }

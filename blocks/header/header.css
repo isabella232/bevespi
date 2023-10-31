@@ -253,10 +253,10 @@ header .nav-middle > div > div > div div:nth-of-type(3) {
   text-align: right;
   margin-left: auto;
   background-image: url('/icons/icon-explore-hamburger.png');
-  background-position: 16px 5px;
+  background-position: 21px 6px;
   background-repeat: no-repeat;
-  background-size: 25px 21px;
-  padding: 10px;
+  background-size: 17px 13px;
+  padding: 8px 14px 8px 4px;
   cursor: pointer;
 }
 
