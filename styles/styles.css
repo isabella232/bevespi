@@ -1037,13 +1037,32 @@ main .section.centered p:has(picture:first-child:last-child) {
     margin-top: 0;
 }
 
+.breathing-room main .section.vertical-align-middle div {
+    display: flex;
+    align-items: center;
+}
+
+.breathing-room main .section.information-contact div p {
+    font-size: 1.3rem;
+}
+
+.breathing-room main .section.information-contact div p picture img {
+    min-width: 50px;
+}
+
 .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
     font-size: 1.7rem;
     color: var(--link-color);
 }
 
+@media (min-width: 600px) {
+    .breathing-room main .section.information-contact div p {
+        font-size: 1.4rem;
+    }
+}
+
 @media (min-width: 900px) {
-    .breathing-room main .section div:first-child p:last-of-type {
+    .breathing-room main .section.tabs-container div:first-child p:last-of-type {
         padding: 40px 0 20px;
         max-width: unset;
     }
@@ -1051,6 +1070,10 @@ main .section.centered p:has(picture:first-child:last-child) {
     .breathing-room main .section.tabs-container div:first-child p:not(:last-of-type),
     .breathing-room main .section.tabs-container div:first-child p:last-of-type {
         font-size: 2.1rem;
+    }
+
+    .breathing-room main .section.information-contact div p {
+        font-size: var(--body-font-size-xl);
     }
 
     main .section[data-background] picture.section-background-img img {
