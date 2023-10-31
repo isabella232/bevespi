@@ -11,7 +11,6 @@ main .hero-container {
 main .hero {
   position: relative;
   padding: 50px 0 10px;
-  min-height: 71px;
   z-index: 2;
 }
 
@@ -64,7 +63,7 @@ main .hero.home .btn-scroll img {
 
 main .hero h1 {
   font-size: var(--heading-font-size-xxl);
-  margin: 0;
+  margin: 0 0 77px 0;
   line-height: 1;
 }
 
@@ -146,14 +145,6 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
 }
 
 @media (min-width: 900px) {
-  main .hero {
-    min-height: 174px;
-  }
-  
-  main .hero.arrow-bottom {
-    min-height: 204px;
-  }
-
   main .hero.home {
     padding: 104px 15px 40px 0;
   }
