@@ -1,6 +1,16 @@
+main .section.hero-container + .section.search-results-container {
+    padding-top: 70px;
+}
+
 main .search-results {
     padding: 0;
-    font: var(--body-font-size-m) var(--body-font-family);
+    font-size: var(--body-font-size-s);
+}
+
+@media (min-width:900px) {
+    main .search-results {
+        font-size: var(--body-font-size-m);
+    }
 }
 
 main .search-results strong {
@@ -12,8 +22,7 @@ main .search-results .search-result-pagename {
 }
 
 main .search-results .search-result-pagename a {
-    font-size: var(--body-font-size-l);
-    font-weight: inherit;
+    font-weight: 500;
     text-decoration: none;
     color: inherit;
 }
@@ -91,7 +100,7 @@ main #search-button {
 
 @media (min-width: 900px) {
     main #search-button {
-        width: 190px;
+        width: 250px;
         height: 54px;
         border-left: 2px solid var(--cta-color);
     }
@@ -121,4 +130,32 @@ main #search-button::after {
 
 main #search-button span {
     display: none;
+}
+
+@media (min-width: 900px) {
+    main #search-button span {
+        color: var(--cta-color);
+        font-size: 1.6rem;
+        font-weight: 400;
+        display: block;
+        margin-left: 40px;
+    }
+
+    main #search-button::after {
+        display: none;
+    }
+}
+
+.title-container {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
+
+@media (min-width: 900px) {
+    .title-container {
+        border: 0;
+        margin-bottom: 10px;
+    }
 }
