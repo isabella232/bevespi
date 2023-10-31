@@ -106,7 +106,6 @@ async function loadTagScript() {
   });
 }
 
-alert(getEnvType());
 if (getEnvType() === 'live') {
   await loadTagScript();
 }
