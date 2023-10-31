@@ -27,6 +27,25 @@ async function loadFonts() {
 }
 
 /**
+ * load a script by adding to page head
+ * @param {string} url the script src url
+ * @param {function} callback a funciton to callback after loading
+ */
+export function loadScript(url, callback) {
+  const head = document.querySelector('head');
+  let script = head.querySelector(`script[src="${url}"]`);
+  if (!script) {
+    script = document.createElement('script');
+    script.src = url;
+    script.async = true;
+    head.append(script);
+    script.onload = callback;
+    return script;
+  }
+  return script;
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
