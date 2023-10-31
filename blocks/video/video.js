@@ -11,14 +11,15 @@ export default function decorate(block) {
   tagDiv.style.height = '370px';
   block.append(tagDiv);
 
-  loadScript(`https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/52784152/partner_id/432521`, () => {
+  loadScript('https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/52784152/partner_id/432521', () => {
+    // eslint-disable-next-line
     kWidget.embed({
-      'targetId': `kaltura_player_${playerID}`,
-      'wid': '_432521',
-      'uiconf_id': 52784152,
-      'flashvars': {},
-      'cache_st': playerID,
-      'entry_id': entryID
-      });
+      targetId: `kaltura_player_${playerID}`,
+      wid: '_432521',
+      uiconf_id: 52784152,
+      flashvars: {},
+      cache_st: playerID,
+      entry_id: entryID,
     });
+  });
 }
