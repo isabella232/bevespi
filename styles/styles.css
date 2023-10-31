@@ -200,6 +200,16 @@ body.appear {
     display: block;
 }
 
+main {
+    margin-top: 12px;
+}
+
+@media (min-width: 900px) {
+    main {
+        margin-top: 0;
+    }
+}
+
 header {
     height: var(--nav-height);
 }
@@ -246,6 +256,10 @@ p, dl, ol, ul, pre, blockquote {
 
 p {
     line-height: 1.2;
+}
+
+ul {
+    padding-inline-start: 13px;
 }
 
 hr {
@@ -533,6 +547,11 @@ main .section.buttons {
         height: 35px;
     }
 
+    a.button.secondary:any-link, button.secondary {
+        font-size: var(--body-font-size-s);
+        font-weight: var(--font-weight-bold);
+    }
+
     a.button.secondary::after, button.secondary::after {
         width: 24px;
         height: 28px;
@@ -540,7 +559,10 @@ main .section.buttons {
     }
 }
 
-/* section metadata - highlight */
+.home .columns-row > div {
+    padding-bottom: 50px;
+}
+
 main .section.highlight {
     background-color: var(--highlight-background-color);
 }
@@ -750,9 +772,14 @@ main .section.hero-container + .section {
     padding-top: 32px;
 }
 
-/* copd-resources theme */
 .copd-resources main .section.hero-container + .section {
     padding-top: 32px;
+}
+
+@media (min-width: 900px) {
+    .copd-resources main .section.hero-container + .section {
+        padding-top: 0;
+    }
 }
 
 .copd-resources main div:not(.isi) .default-content-wrapper strong {
@@ -1203,3 +1230,53 @@ main .section.centered p:has(picture:first-child:last-child) {
     }
 }
 
+@media (min-width: 900px) {
+    .home main .columns-row:nth-of-type(2) > div > div:nth-of-type(1) {
+        flex-basis: 40%;
+    }
+
+    .home main .columns-row:nth-of-type(2) > div > div:nth-of-type(2) {
+        flex-basis: 60%;
+    }
+
+    .home main .columns h2 {
+        max-width: 500px;
+    }
+
+    .columns.inhaler-x-ray .columns-row:first-of-type .columns-col:nth-of-type(1) {
+        flex-basis: 60%;
+    }
+
+    .columns.inhaler-x-ray .columns-row:first-of-type .columns-col:nth-of-type(2) {
+        flex-basis: 40%;
+    }
+
+    .columns.inhaler-x-ray .columns-row:first-of-type .columns-col:nth-of-type(2) svg {
+        transform: translateY(-22px);
+    }
+
+    .side-effects main .section.hero-container + .section .default-content-wrapper:first-of-type * {
+        max-width: 870px;
+        margin-left: 0;
+        font-size: var(--body-font-size-m);
+    }
+}
+
+h1 > br,
+h2 > br {
+    content:"";
+}
+
+h1 > br::after,
+h2 > br::after {
+    content: " ";
+}
+
+@media (min-width: 900px) {
+    h1 > br,
+    h1 > br::after,
+    h2 > br,
+    h2 > br::after {
+        content: unset;
+    }
+}
