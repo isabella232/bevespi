@@ -1,27 +1,12 @@
 // eslint-disable-next-line import/no-cycle
 import { sampleRUM } from './aem.js';
-import { loadScript } from './scripts.js';
+// eslint-disable-next-line import/no-cycle
+import { loadScript, getEnvType } from './scripts.js';
 
 // Core Web Vitals RUM collection
 sampleRUM('cwv');
 
 // add more delayed functionality here
-
-/*
-  * Returns the environment type based on the hostname.
-*/
-function getEnvType(hostname = window.location.hostname) {
-  const fqdnToEnvType = {
-    'bevespi.com': 'live',
-    'www.bevespi.com': 'live',
-    'franklin.bevespi.com': 'live',
-    'main--bevespi--hlxsites.hlx.page': 'preview',
-    'main--bevespi--hlxsites.hlx.live': 'live',
-    'analytics--bevespi--hlxsites.hlx.page': 'preview',
-    'analytics--bevespi--hlxsites.hlx.live': 'live',
-  };
-  return fqdnToEnvType[hostname] || 'dev';
-}
 
 /**
  * Tealium Tags
