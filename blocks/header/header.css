@@ -261,13 +261,22 @@ header .nav-middle > div > div > div div:nth-of-type(3) {
 }
 
 header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
-  z-index: 3;
+  z-index: 10;
   background-image: url('/icons/icon_close-x.png');
   background-size: 15px 15px;
   background-position: 47px 7px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(3) .close {
+  display: none;
+}
+
+header .expanded .nav-middle > div > div > div div:nth-of-type(3) .close {
+  display: block;
+  color: var(--background-color);
+}
+
+header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
   display: none;
 }
 
@@ -387,8 +396,14 @@ header .nav-middle > div > div > div div:nth-of-type(3) .close {
     background-image: url('/icons/blue-close-icon.png');
   }
 
+  header .nav-middle > div > div > div div:nth-of-type(3) .close,
   header .expanded .nav-middle > div > div > div div:nth-of-type(3) .close {
     color: var(--text-color);
+    display: none;
+  }
+
+  header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
+    display: block;
   }
 
   header .expanded .nav-bottom {
