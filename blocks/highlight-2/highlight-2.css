@@ -41,7 +41,7 @@ main .section div.highlight-2-wrapper {
 @media (min-width: 900px) {
   .highlight-2 {
     font-size: var(--body-font-size-m);
-    padding: 28px 0 19px;
+    padding: 25px 0 20px;
   }
 
   .highlight-2 ul {
@@ -51,7 +51,7 @@ main .section div.highlight-2-wrapper {
 
   .highlight-2 ul li {
     padding: 8px 25px;
-    margin: 0;
+    margin: 0 !important;
   }
 
   .highlight-2 ul li:not(:first-of-type) {
