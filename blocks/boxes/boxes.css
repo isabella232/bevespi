@@ -10,16 +10,34 @@
     display: grid;
     grid-template-rows: auto;
     row-gap: 20px;
+    font-size: var(--body-font-size-s);
+}
+
+@media (min-width: 900px) {
+    .boxes.block {
+        font-size: var(--body-font-size-m);
+    }
+}
+
+.boxes.block ul {
+    margin: 20px 0 20px 50px;
+    padding: 0;
 }
 
 .boxes.block > div h2 {
     margin-top: unset;
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 2rem;
+}
+
+@media (min-width: 900px) {
+    .boxes.block > div h2 {
+        font-size: 32px;
+    }
 }
 
 .boxes.block > div {
-    padding: 40px 40px 32px;
+    padding: 30px 35px;
     background: var(--background-grey-5);
 }
 
@@ -40,4 +58,8 @@
     border: unset;
     text-transform: unset;
     font-weight: 400;
+}
+
+.boxes.block a.button::after {
+    display: none;
 }
