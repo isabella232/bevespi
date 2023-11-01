@@ -10,10 +10,14 @@ export default async function decorate(block) {
     [...nav.querySelectorAll('a')].forEach((link) => {
       if (new URL(link).pathname === window.location.pathname) {
         link.classList.add('current');
-        var observer = new IntersectionObserver((entries, observer) => {
+        let scrolled = false;
+        const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             const div = link.closest('ul').parentElement;
-            div.scrollTo({ left: (link.offsetLeft - div.offsetLeft - 15), behavior: 'smooth' });
+            if(!scrolled) {
+              div.scrollTo({ left: (link.offsetLeft - div.offsetLeft - 15), behavior: 'smooth' });
+              scrolled = true;
+            }
           });
         });
         observer.observe(link);
