@@ -264,11 +264,15 @@ header .nav-middle > div > div > div div:nth-of-type(3) {
   cursor: pointer;
 }
 
+header .nav-middle > div > div > div div:nth-of-type(3) span.close {
+  font-size: var(--body-font-size-s);
+}
+
 header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
   z-index: 10;
   background-image: url('/icons/icon_close-x.png');
   background-size: 15px 15px;
-  background-position: 47px 7px;
+  background-position: 34px 5px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(3) .close {
