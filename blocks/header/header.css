@@ -105,7 +105,13 @@ header .nav-middle img {
 }
 
 header .nav-middle ul {
-  padding-inline-start: 15px;
+  padding-inline-start: 9px;
+}
+
+@media (min-width: 900px) {
+  header .nav-middle ul {
+    padding-inline-start: 15px;
+  }
 }
 
 header .nav-bottom {
@@ -197,19 +203,32 @@ header .nav-middle > div > div > div {
 
 header .nav-middle > div > div > div div:nth-of-type(1) {
   position: relative;
-  top: 19px;
+  top: 38px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) {
   font-weight: 500;
   position: relative;
-  top: 28px;
+  top: 34px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p {
   display: inline-block;
   position: absolute;
-  top: -35px;
+  top: -85px;
+}
+
+header .nav-middle > div > div > div div:nth-of-type(2) p,
+header .nav-middle > div > div > div div:nth-of-type(2) p a {
+  font-weight: 400;
+}
+
+@media (min-width: 900px) {
+  header .nav-middle > div > div > div div:nth-of-type(2) p,
+  header .nav-middle > div > div > div div:nth-of-type(2) p a {
+  font-weight: 500;
+  color: var(--text-color);
+}
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(-n+2) {
@@ -217,11 +236,12 @@ header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(-n+2) {
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(3) {
-  right: 72px;
+  /* right: 72px; */
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(4) {
-  right: 14px;
+  /* right: 14px; */
+  left: 100px;
 }
 
 @media (max-width: 350px) {
