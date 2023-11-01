@@ -102,6 +102,35 @@
                 height: 26px;
                 margin-left: 16px;
             }
+
+            main.error .section.hero-container {
+                padding-top: 0;
+                padding-left: 0;
+                padding-right: 0;
+                }
+
+            main.error .section.hero-container > div {
+                max-width: unset;
+                }
+
+            main.error .hero.block {
+                position: relative;
+                background-image: url('./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=750&amp;format=png&amp;optimize=medium');
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 285px;
+                }
+
+            main.error .hero.block > div:nth-of-type(2) {
+                position: absolute;
+                top: 50px;
+                left: calc(50% - 500px);
+            }
+
+            main.error .hero.block + .section {
+                max-width: 1002px;
+                margin: auto;
+            }
         }
     </style>
     <link rel="stylesheet" href="/blocks/hero/hero.css">
