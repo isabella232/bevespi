@@ -693,6 +693,10 @@ main .section.accordion-2-container.video-container h2 {
     font-size: var(--heading-font-size-xxl);
 }
 
+.what-is-copd div.boxes.block > div h2 {
+    font-size: var(--body-font-size-xl);
+}
+
 main .section.accordion-2-container.video-container .accordion-2 h2 {
     font-size: 1.4rem;
 }
@@ -701,11 +705,6 @@ main .section.accordion-2-container.video-container .accordion-2 h2 {
     main .section.accordion-2-container.video-container .accordion-2 h2 {
         font-size: 1.8rem;
     }
-}
-
-.what-is-copd div.boxes.block > div h2
-{
-    font-size: var(--body-font-size-xl);
 }
 
 @media (min-width: 900px) {
