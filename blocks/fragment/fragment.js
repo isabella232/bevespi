@@ -67,7 +67,7 @@ function scrollToInformationBlock() {
   }
 }
 
-function renderStickyFragmentInformationBlock(block) {
+export function renderStickyFragmentInformationBlock(block) {
   const stickyInformationBlock = document.createElement('div');
   stickyInformationBlock.classList.add('sticky-fragment-block');
   stickyInformationBlock.classList.add('fixed-section');

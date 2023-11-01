@@ -2,55 +2,122 @@
 <html>
 
 <head>
-  <title>Page not found</title>
-  <script type="text/javascript">
-    window.isErrorPage = true;
-    window.errorCode = '404';
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Page not found">
-  <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
-  <script type="module">
-    import { sampleRUM } from '/scripts/aem.js';
+    <title>Page not found</title>
+    <script type="text/javascript">
+      window.isErrorPage = true;
+      window.errorCode = '404';
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Page not found">
+    <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
+    <script type="module">
+      import { sampleRUM, loadScript } from '/scripts/aem.js';
+      import { loadFragment, renderStickyFragmentInformationBlock } from '/blocks/fragment/fragment.js';
 
-    window.addEventListener('load', () => {
-      sampleRUM('404', { source: document.referrer, target: window.location.href });
-    });
-  </script>
-  <link rel="stylesheet" href="/styles/styles.css">
-  <style>
-    main.error {
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      align-items: center;
-    }
+      window.addEventListener('load', async () => {
+        sampleRUM('404', {
+          source: document.referrer,
+          target: window.location.href
+        });
+        const fragmentSection = (await loadFragment('/fragments/important-safety-information')).querySelector('.section');
+        const stickyFragmentBlock = document.createRange().createContextualFragment(
+          `<div class="sticky-fragment-block fixed-section"><div class="sticky-fragment-header"><div class="sticky-fragment-header-container"><h2 id="important-safety-information">IMPORTANT SAFETY INFORMATION</h2><a role="button" aria-label="Scroll" class="sticky-fragment-scroll-button"></a></div></div><div class="sticky-framgent-content"><ul><li>BEVESPI AEROSPHERE combines an anticholinergic, glycopyrrolate, and a long-acting beta<sub>2</sub>-adrenergic agonist (LABA) medicine, formoterol fumarate. LABA medicines, such as formoterol, when used alone can increase the risk of serious asthma-related events, including hospitalizations and death from asthma problems. When an inhaled corticosteroid (ICS) and LABA are used together, this risk is not significantly increased</li></ul></div></div>`
+        );
+        renderStickyFragmentInformationBlock(stickyFragmentBlock);
+        const isiFragmentTarget = document.querySelector('main.error .isi-fragment');
+        isiFragmentTarget.innerHTML = fragmentSection.innerHTML;
+        isiFragmentTarget.appendChild(stickyFragmentBlock);
+      });
+    </script>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <style>
+        main.error {
+            min-height: calc(100vh - var(--nav-height));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    main.error .error-number {
-      width: 100%;
-    }
+        main.error > div.section {
+            width: 100%;
+        }
 
-    main.error .error-number text {
-      font-family: var(--fixed-font-family);
-    }
-  </style>
-  <link rel="stylesheet" href="/styles/lazy-styles.css">
+        main.error .default-content-wrapper {
+            padding: 12px;
+        }
+
+        main.error div.hero > div:last-child {
+            width: 100%!important;
+        }
+
+        main.error div.hero {
+            height: 230px;
+        }
+
+        main.error div.hero h1 {
+            margin: 12px;
+            text-transform: uppercase;
+        }
+
+        main.error .error-details {
+            font-size: 16px;
+        }
+
+        main.error .error-number text {
+            font-family: var(--fixed-font-family);
+        }
+
+        /*main.error .hero.block {*/
+        /*    */
+        /*}*/
+    </style>
+    <link rel="stylesheet" href="/blocks/hero/hero.css">
+    <link rel="stylesheet" href="/styles/lazy-styles.css">
 </head>
 
 <body>
-  <header></header>
-  <main class="error">
+<header></header>
+<main class="error">
+    <div class="section hero-container" data-section-status="loaded" style="">
+        <div class="hero-wrapper">
+            <div class="hero block" data-block-name="hero" data-block-status="loaded">
+            <div>
+                <div>
+                    <p>
+                        <picture>
+                            <source type="image/webp" srcset="./media_1250d32f5adf55644f527478d15659488fd060a3c.png?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
+                            <source type="image/webp" srcset="./media_1250d32f5adf55644f527478d15659488fd060a3c.png?width=750&amp;format=webply&amp;optimize=medium">
+                            <source type="image/png" srcset="./media_1250d32f5adf55644f527478d15659488fd060a3c.png?width=2000&amp;format=png&amp;optimize=medium" media="(min-width: 600px)">
+                            <img loading="eager" alt="" src="./media_1250d32f5adf55644f527478d15659488fd060a3c.png?width=750&amp;format=png&amp;optimize=medium" width="1600" height="298">
+                        </picture>
+                    </p>
+                    <p>
+                        <picture>
+                            <source type="image/webp" srcset="./media_1f0b615cd64c799c3fd8d50dfad93c26f97b5e7b1.png?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
+                            <source type="image/webp" srcset="./media_1f0b615cd64c799c3fd8d50dfad93c26f97b5e7b1.png?width=750&amp;format=webply&amp;optimize=medium">
+                            <source type="image/png" srcset="./media_1f0b615cd64c799c3fd8d50dfad93c26f97b5e7b1.png?width=2000&amp;format=png&amp;optimize=medium" media="(min-width: 600px)">
+                            <img loading="lazy" alt="" src="./media_1f0b615cd64c799c3fd8d50dfad93c26f97b5e7b1.png?width=750&amp;format=png&amp;optimize=medium" width="647" height="365">
+                        </picture>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h1 id="about-copd" class="error-description">Page not found</h1>
+                </div>
+            </div>
+        </div></div></div>
     <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
-      <p>The page you are looking for does not exist. We are sorry for the inconvenience.</p>
-      <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Back to Home Page</a>
-      </p>
+        <p class="error-details"><strong>The page you are looking for does not exist. We are sorry for the
+            inconvenience.</strong></p>
+        <p class="button-container">
+            <a href="/" class="button cta error-button-home">Back to Home Page</a>
+        </p>
     </div>
-  </main>
-  <footer></footer>
+    <div class="section isi-fragment fragment-container important-safety-information isi">
+    </div>
+</main>
+<footer></footer>
 </body>
 
 </html>
