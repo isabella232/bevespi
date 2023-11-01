@@ -859,6 +859,10 @@ main .section.hero-container + .section {
     text-align: left;
 }
 
+.what-is-copd span.icon-separator hr {
+    width: 82%;
+}
+
 .section.copd-treatment-intro > .default-content-wrapper,
 .section.copd-treatment-goals > .default-content-wrapper,
 .section.copd-treatment-options > .default-content-wrapper{
