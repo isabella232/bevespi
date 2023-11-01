@@ -2,55 +2,155 @@
 <html>
 
 <head>
-  <title>Page not found</title>
-  <script type="text/javascript">
-    window.isErrorPage = true;
-    window.errorCode = '404';
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Page not found">
-  <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
-  <script type="module">
-    import { sampleRUM } from '/scripts/aem.js';
+    <title>Page not found</title>
+    <script type="text/javascript">
+      window.isErrorPage = true;
+      window.errorCode = '404';
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Page not found">
+    <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
+    <script type="module">
+      import { sampleRUM } from '/scripts/aem.js';
+      import { loadFragment, renderStickyFragmentInformationBlock, onScroll } from '/blocks/fragment/fragment.js';
 
-    window.addEventListener('load', () => {
-      sampleRUM('404', { source: document.referrer, target: window.location.href });
-    });
-  </script>
-  <link rel="stylesheet" href="/styles/styles.css">
-  <style>
-    main.error {
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      align-items: center;
-    }
+      window.addEventListener('load', async () => {
+        sampleRUM('404', {
+          source: document.referrer,
+          target: window.location.href
+        });
+        const fragmentSection = (await loadFragment('/fragments/important-safety-information')).querySelector('.section');
+        renderStickyFragmentInformationBlock(fragmentSection);
+        const isiFragmentTarget = document.querySelector('main.error .isi-fragment');
+        isiFragmentTarget.innerHTML = fragmentSection.innerHTML;
+        onScroll();
+      });
+    </script>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/blocks/fragment/fragment.css">
+    <style>
+        main.error {
+            min-height: calc(100vh - var(--nav-height));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    main.error .error-number {
-      width: 100%;
-    }
+        main.error > div.section {
+            width: 100%;
+        }
 
-    main.error .error-number text {
-      font-family: var(--fixed-font-family);
-    }
-  </style>
-  <link rel="stylesheet" href="/styles/lazy-styles.css">
+        main.error .default-content-wrapper {
+            padding: 12px;
+        }
+
+        main.error div.hero > div:last-child {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        main.error div.hero.block {
+            height: 176px;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        main.error .button.cta {
+            padding: 0 15px;
+        }
+
+        main.error div.hero h1 {
+            margin: 12px;
+            text-transform: uppercase;
+        }
+
+        main.error .error-details {
+            font-size: 16px;
+        }
+
+        main.error .error-number text {
+            font-family: var(--fixed-font-family);
+        }
+
+        main.error .section > .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 900px) {
+            main.error div.hero.block {
+                margin-top: -12px;
+                height: 305px;
+            }
+
+            main.error .section > .button-container {
+                margin-top: 32px;
+                display: unset;
+                justify-content: unset;
+            }
+
+            main.error .button.cta {
+                padding: 5px 35px;
+            }
+
+            main.error .button.cta::after {
+                width: 26px;
+                height: 26px;
+                margin-left: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="/blocks/hero/hero.css">
+    <link rel="stylesheet" href="/styles/lazy-styles.css">
 </head>
 
 <body>
-  <header></header>
-  <main class="error">
+<header></header>
+<main class="error">
+    <div class="section hero-container" data-section-status="loaded" style="">
+        <div class="hero-wrapper">
+            <div class="hero block" data-block-name="hero" data-block-status="loaded">
+                <div>
+                    <div>
+                        <p>
+                            <picture>
+                                <source type="image/webp" srcset="./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
+                                <source type="image/webp" srcset="./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=750&amp;format=webply&amp;optimize=medium">
+                                <source type="image/png" srcset="./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=2000&amp;format=png&amp;optimize=medium" media="(min-width: 600px)">
+                                <img loading="eager" alt="" src="./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=750&amp;format=png&amp;optimize=medium" width="1600" height="224">
+                            </picture>
+                        </p>
+                        <p>
+                            <picture>
+                                <source type="image/webp" srcset="./media_1890344f342f189a3645a513964c93372237e40fd.jpeg?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
+                                <source type="image/webp" srcset="./media_1890344f342f189a3645a513964c93372237e40fd.jpeg?width=750&amp;format=webply&amp;optimize=medium">
+                                <source type="image/jpeg" srcset="./media_1890344f342f189a3645a513964c93372237e40fd.jpeg?width=2000&amp;format=jpeg&amp;optimize=medium" media="(min-width: 600px)">
+                                <img loading="lazy" alt="" src="./media_1890344f342f189a3645a513964c93372237e40fd.jpeg?width=750&amp;format=jpeg&amp;optimize=medium" width="1000" height="334">
+                            </picture>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h1 id="contact-us">Page not found</h1>
+                    </div>
+                </div>
+            </div>
     <div class="section">
-      <svg viewBox="1 0 38 18" class="error-number">
-        <text x="0" y="17">404</text>
-      </svg>
-      <h2 class="error-message">Page Not Found</h2>
-      <p>The page you are looking for does not exist. We are sorry for the inconvenience.</p>
-      <p class="button-container">
-        <a href="/" class="button secondary error-button-home">Back to Home Page</a>
-      </p>
+        <p class="error-details"><strong>The page you are looking for does not exist. We are sorry for the
+            inconvenience.</strong></p>
+        <p class="button-container">
+            <a href="/" class="button cta error-button-home">Back to Home Page</a>
+        </p>
     </div>
-  </main>
-  <footer></footer>
+    <div class="section isi-fragment fragment-container important-safety-information isi">
+    </div>
+</main>
+<footer></footer>
 </body>
 
 </html>
