@@ -12,7 +12,7 @@
     <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
     <script type="module">
       import { sampleRUM, loadScript } from '/scripts/aem.js';
-      import { loadFragment, renderStickyFragmentInformationBlock } from '/blocks/fragment/fragment.js';
+      import decorateFragment, { loadFragment, renderStickyFragmentInformationBlock } from '/blocks/fragment/fragment.js';
 
       window.addEventListener('load', async () => {
         sampleRUM('404', {
@@ -23,9 +23,9 @@
         const stickyFragmentBlock = document.createRange().createContextualFragment(
           `<div class="sticky-fragment-block fixed-section"><div class="sticky-fragment-header"><div class="sticky-fragment-header-container"><h2 id="important-safety-information">IMPORTANT SAFETY INFORMATION</h2><a role="button" aria-label="Scroll" class="sticky-fragment-scroll-button"></a></div></div><div class="sticky-framgent-content"><ul><li>BEVESPI AEROSPHERE combines an anticholinergic, glycopyrrolate, and a long-acting beta<sub>2</sub>-adrenergic agonist (LABA) medicine, formoterol fumarate. LABA medicines, such as formoterol, when used alone can increase the risk of serious asthma-related events, including hospitalizations and death from asthma problems. When an inhaled corticosteroid (ICS) and LABA are used together, this risk is not significantly increased</li></ul></div></div>`
         );
-        renderStickyFragmentInformationBlock(stickyFragmentBlock);
         const isiFragmentTarget = document.querySelector('main.error .isi-fragment');
         isiFragmentTarget.innerHTML = fragmentSection.innerHTML;
+        await decorateFragment(stickyFragmentBlock);
         isiFragmentTarget.appendChild(stickyFragmentBlock);
       });
     </script>
