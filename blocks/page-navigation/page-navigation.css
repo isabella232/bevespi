@@ -21,7 +21,7 @@ main .section div.page-navigation-wrapper {
   max-width: var(--page-max-width);
   margin: auto;
   padding: 21px 0;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .block.page-navigation ul li a {
