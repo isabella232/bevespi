@@ -1,0 +1,112 @@
+.block.copd-stages {
+    padding: 14px;
+    display: grid;
+    gap: 0;
+    align-items: end;
+    justify-content: center;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+}
+
+.block.copd-stages > div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 75px auto;
+}
+
+.block.copd-stages > div:last-child {
+    border-bottom: 3px solid var(--color-grey-8);
+}
+
+.block.copd-stages > div > div:first-child {
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.block.copd-stages > div > div:nth-child(2) {
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--color-grey-8);
+}
+
+.block.copd-stages > div > div:first-child img {
+    width: 50px;
+    height: 50px;
+}
+
+.block.copd-stages > div > div:nth-child(2) h2 {
+    display: inline-block;
+    font-size: 1.7rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.block.copd-stages > div > div:nth-child(2) p {
+    font-size: 1.4rem;
+    display: block;
+    margin: 0;
+}
+
+.block.copd-stages > div:last-child > div:nth-child(2) {
+    border-bottom: unset;
+}
+
+@media (min-width: 900px) {
+    .block.copd-stages {
+        display: grid;
+        grid-template-rows: auto;
+        row-gap: 15px;
+    }
+
+    .block.copd-stages > div {
+        display: table;
+    }
+
+    .block.copd-stages > div > div{
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 20px 0;
+    }
+
+    .block.copd-stages > div:last-child {
+        border-bottom: unset;
+    }
+
+    .block.copd-stages > div > div:first-child {
+        width: 92px;
+        border-bottom: 3px solid transparent;
+    }
+
+    .block.copd-stages > div > div:first-child img {
+        height: 72px;
+        width: 72px;
+    }
+
+    .block.copd-stages > div > div:nth-child(2) {
+        width: 100%;
+        text-align: left;
+        padding-top: 8px;
+        padding-right: 10px;
+    }
+
+    .block.copd-stages > div:last-child > div:nth-child(2) {
+        border-bottom: 3px solid var(--color-grey-8);
+    }
+
+    .block.copd-stages > div > div:nth-child(2) h2 {
+        display: inline;
+        font-weight: 400;
+        font-size: 2.4rem;
+        margin-bottom: unset;
+    }
+
+    .block.copd-stages > div > div:nth-child(2) p {
+        display: inline;
+        font-weight: 400;
+        font-size: var(--body-font-size-l);
+    }
+}
