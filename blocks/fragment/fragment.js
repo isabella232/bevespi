@@ -27,7 +27,7 @@ export async function loadFragment(path) {
   return null;
 }
 
-function onScroll() {
+export function onScroll() {
   const importantSafetyInformationSections = document.getElementsByClassName(
     'important-safety-information',
   );
