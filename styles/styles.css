@@ -1173,11 +1173,6 @@ main .section.centered p:has(picture:first-child:last-child) {
     font-weight: 500;
 }
 
-h1 > br,
-h2 > br {
-    content:"";
-}
-
 .copd-stages-page div.boxes.block div p br{
     display: none;
 }
@@ -1385,6 +1380,11 @@ h2 > br {
         margin-left: 0;
         font-size: var(--body-font-size-m);
     }
+}
+
+h1 > br,
+h2 > br {
+    content:"";
 }
 
 h1 > br::after,
