@@ -881,6 +881,10 @@ main .section.hero-container + .section {
     margin-bottom: 28px;
 }
 
+.what-is-copd .what-is-copd-infographic .columns-row > div {
+    padding-top: 10px;
+}
+
 main .section:not(.isi) .default-content-wrapper {
     font-size: var(--body-font-size-s);
 }
