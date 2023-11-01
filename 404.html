@@ -11,9 +11,9 @@
     <meta property="og:title" content="Page not found">
     <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
     <script type="module">
-      import { sampleRUM, loadScript } from '/scripts/aem.js';
-      import decorateFragment, { loadFragment, renderStickyFragmentInformationBlock, onScroll } from '/blocks/fragment/fragment.js';
-      
+      import { sampleRUM } from '/scripts/aem.js';
+      import { loadFragment, renderStickyFragmentInformationBlock, onScroll } from '/blocks/fragment/fragment.js';
+
       window.addEventListener('load', async () => {
         sampleRUM('404', {
           source: document.referrer,
@@ -45,11 +45,22 @@
         }
 
         main.error div.hero > div:last-child {
-            width: 100%!important;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
         }
 
-        main.error div.hero {
-            height: 230px;
+        main.error div.hero.block {
+            height: 176px;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        main.error .button.cta {
+            padding: 0 15px;
         }
 
         main.error div.hero h1 {
@@ -65,9 +76,33 @@
             font-family: var(--fixed-font-family);
         }
 
-        /*main.error .hero.block {*/
-        /*    */
-        /*}*/
+        main.error .section > .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 900px) {
+            main.error div.hero.block {
+                margin-top: -12px;
+                height: 305px;
+            }
+
+            main.error .section > .button-container {
+                margin-top: 32px;
+                display: unset;
+                justify-content: unset;
+            }
+
+            main.error .button.cta {
+                padding: 5px 35px;
+            }
+
+            main.error .button.cta::after {
+                width: 26px;
+                height: 26px;
+                margin-left: 16px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="/blocks/hero/hero.css">
     <link rel="stylesheet" href="/styles/lazy-styles.css">
@@ -79,32 +114,32 @@
     <div class="section hero-container" data-section-status="loaded" style="">
         <div class="hero-wrapper">
             <div class="hero block" data-block-name="hero" data-block-status="loaded">
-            <div>
                 <div>
-                    <p>
-                        <picture>
-                            <source type="image/webp" srcset="./media_1250d32f5adf55644f527478d15659488fd060a3c.png?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
-                            <source type="image/webp" srcset="./media_1250d32f5adf55644f527478d15659488fd060a3c.png?width=750&amp;format=webply&amp;optimize=medium">
-                            <source type="image/png" srcset="./media_1250d32f5adf55644f527478d15659488fd060a3c.png?width=2000&amp;format=png&amp;optimize=medium" media="(min-width: 600px)">
-                            <img loading="eager" alt="" src="./media_1250d32f5adf55644f527478d15659488fd060a3c.png?width=750&amp;format=png&amp;optimize=medium" width="1600" height="298">
-                        </picture>
-                    </p>
-                    <p>
-                        <picture>
-                            <source type="image/webp" srcset="./media_1f0b615cd64c799c3fd8d50dfad93c26f97b5e7b1.png?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
-                            <source type="image/webp" srcset="./media_1f0b615cd64c799c3fd8d50dfad93c26f97b5e7b1.png?width=750&amp;format=webply&amp;optimize=medium">
-                            <source type="image/png" srcset="./media_1f0b615cd64c799c3fd8d50dfad93c26f97b5e7b1.png?width=2000&amp;format=png&amp;optimize=medium" media="(min-width: 600px)">
-                            <img loading="lazy" alt="" src="./media_1f0b615cd64c799c3fd8d50dfad93c26f97b5e7b1.png?width=750&amp;format=png&amp;optimize=medium" width="647" height="365">
-                        </picture>
-                    </p>
+                    <div>
+                        <p>
+                            <picture>
+                                <source type="image/webp" srcset="./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
+                                <source type="image/webp" srcset="./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=750&amp;format=webply&amp;optimize=medium">
+                                <source type="image/png" srcset="./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=2000&amp;format=png&amp;optimize=medium" media="(min-width: 600px)">
+                                <img loading="eager" alt="" src="./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=750&amp;format=png&amp;optimize=medium" width="1600" height="224">
+                            </picture>
+                        </p>
+                        <p>
+                            <picture>
+                                <source type="image/webp" srcset="./media_1890344f342f189a3645a513964c93372237e40fd.jpeg?width=2000&amp;format=webply&amp;optimize=medium" media="(min-width: 600px)">
+                                <source type="image/webp" srcset="./media_1890344f342f189a3645a513964c93372237e40fd.jpeg?width=750&amp;format=webply&amp;optimize=medium">
+                                <source type="image/jpeg" srcset="./media_1890344f342f189a3645a513964c93372237e40fd.jpeg?width=2000&amp;format=jpeg&amp;optimize=medium" media="(min-width: 600px)">
+                                <img loading="lazy" alt="" src="./media_1890344f342f189a3645a513964c93372237e40fd.jpeg?width=750&amp;format=jpeg&amp;optimize=medium" width="1000" height="334">
+                            </picture>
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h1 id="contact-us">Page not found</h1>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div>
-                    <h1 id="about-copd" class="error-description">Page not found</h1>
-                </div>
-            </div>
-        </div></div></div>
     <div class="section">
         <p class="error-details"><strong>The page you are looking for does not exist. We are sorry for the
             inconvenience.</strong></p>
