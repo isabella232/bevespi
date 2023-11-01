@@ -563,6 +563,12 @@ main .section.buttons {
     padding-bottom: 50px;
 }
 
+@media (min-width: 900px) {
+    .home .columns-row > div {
+        padding-bottom: 80px;
+    } 
+}
+
 main .section.highlight {
     background-color: var(--highlight-background-color);
 }
