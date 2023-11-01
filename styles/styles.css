@@ -1354,4 +1354,8 @@ h2 > br::after {
     .home .columns-container:nth-of-type(2) .columns-row:first-of-type .columns-col:first-of-type {
         flex: 0 0 560px;
     }
+
+    .copd-treatment .columns-container:nth-of-type(2) .columns-wrapper:first-of-type .columns-row:first-of-type .columns-col:nth-of-type(2) p:nth-of-type(2) {
+        font-size: 1.6rem;
+    }
 }
