@@ -645,10 +645,6 @@ main .section.small-heading h1 {
         font-size: 1.9rem;
     }
 
-    main .section.centered {
-        text-align: center;
-    }
-
     main .section.centered a.button:any-link {
         margin: auto;
     }
@@ -689,10 +685,6 @@ main div:not(.isi) .default-content-wrapper h2 {
 
 main .section.accordion-2-container.video-container h2 {
     font-size: var(--heading-font-size-xxl);
-}
-
-main div:not(.isi) .default-content-wrapper h2 {
-    font-size: 2rem;
 }
 
 .what-is-copd div.boxes.block > div h2
