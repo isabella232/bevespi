@@ -1066,7 +1066,7 @@ main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
 }
 
-.breathing-room main .section.tabs-container div:first-child p:last-of-type {
+.breathing-room main .section.tabs-container > div:first-child p:last-of-type {
     font-size: 1.3rem;
     padding: 0 30px;
     margin: 0;
