@@ -1343,3 +1343,9 @@ h2 > br::after {
 .about-copd .section.isi {
     padding-top: 0;
 }
+
+@media (min-width: 900px) {
+    .home .columns-container:nth-of-type(2) .columns-row:first-of-type .columns-col:first-of-type {
+        flex: 0 0 560px;
+    }
+}
