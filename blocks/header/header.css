@@ -235,9 +235,6 @@ header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(-n+2) {
   display: none;
 }
 
-header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(3) {
-}
-
 header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(4) {
   left: 100px;
 }
