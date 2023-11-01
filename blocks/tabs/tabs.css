@@ -156,7 +156,7 @@ main .section[data-background] > div.tabs-wrapper {
     border-right: 2px solid var(--color-purple-med);
   }
 
-  .section.tabs-container .default-content-wrapper:first-of-type p {
+  .section.tiles-container .default-content-wrapper:first-of-type p {
     display: none;
   }
 }
