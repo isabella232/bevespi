@@ -1,4 +1,5 @@
 import { getMetadata, decorateIcons } from '../../scripts/aem.js';
+import { decorateExternalLinks } from '../../scripts/scripts.js';
 
 /**
  * decorates the header, mainly the nav
@@ -56,6 +57,7 @@ export default async function decorate(block) {
     brandImgLink.appendChild(brandImg);
 
     decorateIcons(nav);
+    decorateExternalLinks(nav);
     const navWrapper = document.createElement('div');
     navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
