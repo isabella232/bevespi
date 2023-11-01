@@ -611,11 +611,11 @@ main .section[data-background] > div {
         padding-left: 32px;
         padding-right: 32px;
     }
-}
 
-main .section.accordion-2-container.video-container h2 {
-    font-size: 4.5rem;
-    margin-top: 0;
+    main .section.accordion-2-container.video-container h2 {
+        font-size: 4.5rem;
+        margin-top: 0;
+    }
 }
 
 main .section.accordion-2-container.video-container p {
@@ -1062,6 +1062,15 @@ main .section.centered {
     font-size: 1.3rem;
 }
 
+.copd-stages-page div.boxes.block div p{
+    margin-top: 2px;
+    height: unset;
+    font-size: var(--body-font-size-xs);
+    line-height: 12px;
+    font-weight: 500;
+    color: var(--color-blue-2);
+}
+
 main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
 }
@@ -1124,19 +1133,6 @@ main .section.centered p:has(picture:first-child:last-child) {
     .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
         font-size: 2rem;
     }
-}
-
-.copd-stages-page div.boxes.block div p{
-    margin-top: 2px;
-    height: unset;
-    font-size: var(--body-font-size-xs);
-    line-height: 12px;
-    font-weight: 500;
-    color: var(--color-blue-2);
-}
-
-main .section.centered p:has(picture:first-child:last-child) {
-    text-align: center;
 }
 
 .getting-started main .section.grey {
