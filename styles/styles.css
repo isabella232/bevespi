@@ -563,6 +563,12 @@ main .section.buttons {
     padding-bottom: 50px;
 }
 
+@media (min-width: 900px) {
+    .home .columns-row > div {
+        padding-bottom: 80px;
+    } 
+}
+
 main .section.highlight {
     background-color: var(--highlight-background-color);
 }
@@ -687,9 +693,18 @@ main .section.accordion-2-container.video-container h2 {
     font-size: var(--heading-font-size-xxl);
 }
 
-.what-is-copd div.boxes.block > div h2
-{
+.what-is-copd div.boxes.block > div h2 {
     font-size: var(--body-font-size-xl);
+}
+
+main .section.accordion-2-container.video-container .accordion-2 h2 {
+    font-size: 1.4rem;
+}
+
+@media (min-width: 900px) {
+    main .section.accordion-2-container.video-container .accordion-2 h2 {
+        font-size: 1.8rem;
+    }
 }
 
 @media (min-width: 900px) {
@@ -1056,6 +1071,10 @@ main .section[data-background] picture.section-background-img img {
 
 main .section.centered {
     text-align: center;
+}
+
+main .section.centered .accordion-2 {
+    text-align: unset;
 }
 
 .breathing-room main .section.information-contact div p {
@@ -1429,4 +1448,14 @@ h2 > br::after {
 
 .about-copd .section.isi {
     padding-top: 0;
+}
+
+@media (min-width: 900px) {
+    .home .columns-container:nth-of-type(2) .columns-row:first-of-type .columns-col:first-of-type {
+        flex: 0 0 560px;
+    }
+
+    .copd-treatment .columns-container:nth-of-type(2) .columns-wrapper:first-of-type .columns-row:first-of-type .columns-col:nth-of-type(2) p:nth-of-type(2) {
+        font-size: 1.6rem;
+    }
 }
