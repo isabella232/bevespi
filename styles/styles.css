@@ -811,6 +811,11 @@ main .section.hero-container + .section {
     }
 }
 
+.section.copd-treatment-goals > .default-content-wrapper li{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .copd-resources main div:not(.isi) .default-content-wrapper strong {
     font-weight: 400;
 }
@@ -998,11 +1003,6 @@ main .section:not(.isi) .default-content-wrapper {
         max-width: 755px;
         margin: auto;
     }
-}
-
-.section.copd-treatment-goals > .default-content-wrapper li{
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper ul {
