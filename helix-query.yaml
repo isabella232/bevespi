@@ -18,7 +18,7 @@ indices:
         select: head > meta[property="og:description"]
         value: attribute(el, "content")
       content:
-        select: body > main > div > div:not(.fragment)
+        select: body > main > div:not(.isi)
         value: textContent(el)
       robots:
         select: head > meta[name="robots"]
