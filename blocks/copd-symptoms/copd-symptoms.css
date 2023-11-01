@@ -30,7 +30,7 @@
 
 .block.copd-symptoms > div:not(:last-child) > div:nth-child(2) {
     padding-bottom: 15px;
-    border-bottom: 3px solid var(--background-grey-4);
+    border-bottom: 2px solid var(--background-grey-4);
 }
 
 .block.copd-symptoms > div > div:first-child img {

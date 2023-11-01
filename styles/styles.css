@@ -979,10 +979,6 @@ main .section:not(.isi) .default-content-wrapper {
         text-align: left;
     }
 
-    .copd-symptoms-page .default-content-wrapper strong{
-        font-weight: bold;
-    }
-
     .copd-symptoms-page .copd-symptoms.block {
         max-width: 755px;
         margin: auto;
@@ -1255,6 +1251,10 @@ main .section.centered p:has(picture:first-child:last-child) {
         margin-bottom: 30px;
     }
 
+    .copd-symptoms-page > div.default-content-wrapper:first-of-type {
+        max-width: unset;
+    }
+
     .copd-symptoms-page .icon-highlight {
         margin: auto;
     }
@@ -1309,4 +1309,8 @@ h2 > br::after {
     h2 > br::after {
         content: unset;
     }
+}
+
+.about-copd .section.isi {
+    padding-top: 0;
 }
