@@ -1240,6 +1240,10 @@ main .section.centered p:has(picture:first-child:last-child) {
         max-width: 635px;
     }
 
+    .what-is-copd > .default-content-wrapper:nth-last-of-type(2) {
+        max-width: 800px;
+    }
+
     .what-is-copd .boxes {
         max-width: 830px;
     }
