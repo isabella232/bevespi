@@ -97,6 +97,7 @@ main .hero.home h2 {
 
 main .hero.home h1 {
   font-size: var(--heading-font-size-xxl-home);
+  margin-bottom: 0;
 }
 
 main .hero.home h2 {
@@ -104,14 +105,9 @@ main .hero.home h2 {
 }
 
 main .hero.home p {
-  font-size: var(--body-font-size-xxs);
-}
-
-main .hero.home h1,
-main .hero.home h2,
-main .hero.home p {
   margin-top: 0;
   margin-bottom: 6px;
+  font-size: var(--body-font-size-xxs);
 }
 
 main .hero.home p:first-of-type {
@@ -147,7 +143,7 @@ main .hero > div:nth-of-type(n+2) {
 main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
   flex-basis: 136px;
   margin-left: auto;
-  transform: translateY(-25px);
+  transform: translateY(-63px);
 }
 
 main .hero > div:nth-of-type(n+2) div:nth-of-type(n+3) {
@@ -159,7 +155,7 @@ main .hero > div:nth-of-type(n+2) >div:first-of-type:last-of-type {
 }
 
 main .hero > div:nth-of-type(n+2) div:nth-of-type(1):not(:last-of-type) {
-  flex-basis: 42%;
+  flex-basis: 44%;
 }
 
 main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > picture {
@@ -177,6 +173,8 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
 
   main .hero.home h2 {
     font-size: var(--body-font-size-m);
+    margin-bottom: 10px;
+    margin-top: 0;
   }
 
   main .hero.home p {

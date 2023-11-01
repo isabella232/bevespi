@@ -46,6 +46,10 @@
   font-weight: 500;
 }
 
+.next.block a:any-link {
+  text-transform: unset;
+}
+
 .next.block a span {
   display: inline-block;
 }
@@ -88,7 +92,7 @@
   .next-small {
     font-size: var(--body-font-size-l);
     padding-left: 15px;
-    width: 185px;
+    width: 215px;
   }
 
   .next-icon {
