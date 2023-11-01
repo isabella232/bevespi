@@ -12,9 +12,9 @@ export default async function decorate(block) {
         link.classList.add('current');
         let scrolled = false;
         const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
+          entries.forEach(() => {
             const div = link.closest('ul').parentElement;
-            if(!scrolled) {
+            if (!scrolled) {
               div.scrollTo({ left: (link.offsetLeft - div.offsetLeft - 15), behavior: 'smooth' });
               scrolled = true;
             }
