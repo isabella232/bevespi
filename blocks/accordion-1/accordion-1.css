@@ -2,6 +2,10 @@ main .section.accordion-1-container {
   padding: 0;
 }
 
+.faq main .section.accordion-1-container {
+  padding-top: 15px;
+}
+
 main .section div.accordion-1-wrapper {
   max-width: unset;
 }

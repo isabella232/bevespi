@@ -66,7 +66,7 @@ export function getEnvType(hostname = window.location.hostname) {
 */
 export function decorateExternalLinks(container) {
   container.querySelectorAll('a').forEach((a) => {
-    if (!a.getAttribute('href').startsWith('/')) a.setAttribute('target', '_blank');
+    if (!a.getAttribute('href')?.startsWith('/')) a.setAttribute('target', '_blank');
   });
 }
 

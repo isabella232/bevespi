@@ -782,6 +782,11 @@ main .section.hero-container + .section {
     }
 }
 
+.section.copd-treatment-goals > .default-content-wrapper li{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .copd-resources main div:not(.isi) .default-content-wrapper strong {
     font-weight: 400;
 }
@@ -818,6 +823,12 @@ main .section.hero-container + .section {
 
 main .section:not(.isi) .default-content-wrapper {
     font-size: var(--body-font-size-s);
+}
+
+@media (min-width: 900px) {
+    main .section:not(.isi) .default-content-wrapper {
+        font-size: var(--body-font-size-m);
+    } 
 }
 
 .copd-resources main div:not(.isi) .default-content-wrapper,
@@ -885,6 +896,11 @@ main .section:not(.isi) .default-content-wrapper {
     color: var(--background-grey-5);
 }
 
+main .section.zero-space-bottom {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
 @media (min-width: 900px) {
     .copd-causes-container .default-content-wrapper h2 {
         text-align: center;
@@ -907,9 +923,22 @@ main .section:not(.isi) .default-content-wrapper {
         font-size: 1.6rem;
     }
 
+    .section.copd-treatment-intro > .default-content-wrapper {
+        width: 755;
+    }
+
+    .section.copd-treatment-intro > .default-content-wrapper strong {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
     .copd-causes-container .default-content-wrapper p,
     .section.accordion-1-container .default-content-wrapper h2 {
         text-align: center;
+    }
+
+    .faq .section.accordion-1-container .default-content-wrapper h2 {
+        margin-top: 0;
     }
 
     .copd-resources main .section:not(.isi) .default-content-wrapper {
@@ -920,14 +949,14 @@ main .section:not(.isi) .default-content-wrapper {
     .section.copd-treatment-intro {
         margin: auto;
         max-width: 755px;
-        padding: 48px 32px;
+        padding: 35px 32px;
     }
 
     .section.copd-treatment-goals,
     .section.copd-treatment-options {
         margin: auto;
         max-width: 600px;
-        padding: 48px 32px;
+        padding: 38px 32px;
     }
 
     .section.copd-treatment-options > .default-content-wrapper p {
@@ -948,10 +977,6 @@ main .section:not(.isi) .default-content-wrapper {
 
     .section.copd-treatment-goals > .default-content-wrapper ul{
         text-align: left;
-    }
-
-    .copd-symptoms-page .default-content-wrapper strong{
-        font-weight: bold;
     }
 
     .copd-symptoms-page .copd-symptoms.block {
@@ -1256,6 +1281,10 @@ h2 > br {
         margin-bottom: 30px;
     }
 
+    .copd-symptoms-page > div.default-content-wrapper:first-of-type {
+        max-width: unset;
+    }
+
     .copd-symptoms-page .icon-highlight {
         margin: auto;
     }
@@ -1305,4 +1334,8 @@ h2 > br::after {
     h2 > br::after {
         content: unset;
     }
+}
+
+.about-copd .section.isi {
+    padding-top: 0;
 }
