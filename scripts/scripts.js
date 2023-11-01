@@ -61,6 +61,15 @@ export function getEnvType(hostname = window.location.hostname) {
   return fqdnToEnvType[hostname] || 'dev';
 }
 
+/*
+  * Decorates external links
+*/
+export function decorateExternalLinks(container) {
+  container.querySelectorAll('a').forEach((a) => {
+    if (!a.getAttribute('href').startsWith('/')) a.setAttribute('target', '_blank');
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -119,6 +128,7 @@ export function decorateMain(main) {
   decorateSections(main);
   addSectionBackgroundImages(main);
   decorateBlocks(main);
+  decorateExternalLinks(main);
 }
 
 /**
