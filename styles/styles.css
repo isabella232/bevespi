@@ -684,6 +684,10 @@ main .section.isi h2 {
     margin-bottom: 20px;
 }
 
+main div:not(.isi) .default-content-wrapper h2 {
+    font-size: 2rem;
+}
+
 main .section.accordion-2-container.video-container h2 {
     font-size: var(--heading-font-size-xxl);
 }
