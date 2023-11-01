@@ -566,7 +566,7 @@ main .section.buttons {
 @media (min-width: 900px) {
     .home .columns-row > div {
         padding-bottom: 80px;
-    } 
+    }
 }
 
 main .section.highlight {
@@ -695,6 +695,13 @@ main .section.accordion-2-container.video-container h2 {
 
 .what-is-copd div.boxes.block > div h2 {
     font-size: var(--body-font-size-xl);
+}
+
+.copd-stages-page div.boxes.block div h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 15px;
+    font-weight: 500;
 }
 
 main .section.accordion-2-container.video-container .accordion-2 h2 {
@@ -1204,13 +1211,6 @@ main .section.centered p:has(picture:first-child:last-child) {
 .copd-stages-page div.boxes.block {
     margin: 32px 0;
     row-gap: 5px;
-}
-
-.copd-stages-page div.boxes.block div h2 {
-    margin: 0;
-    font-size: 1.4rem;
-    line-height: 15px;
-    font-weight: 500;
 }
 
 h1 > br,
