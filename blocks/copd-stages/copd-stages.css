@@ -1,23 +1,18 @@
 .block.copd-stages {
-    background: unset;
     padding: 14px;
-    margin: auto;
     display: grid;
     gap: 0;
     align-items: end;
     justify-content: center;
-    max-width: 1000px;
     grid-template-rows: auto;
+    grid-template-columns: 1fr;
     row-gap: 15px;
 }
 
-.block.copd-stages.block {
-    padding: 0;
-}
-
 .block.copd-stages > div {
+    width: 100%;
     display: grid;
-    grid-template-columns: 75px 1fr;
+    grid-template-columns: 75px auto;
 }
 
 .block.copd-stages > div > div:first-child {

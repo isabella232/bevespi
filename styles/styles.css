@@ -166,16 +166,16 @@
 }
 
 @media (min-width: 900px) {
-  :root {
-    --heading-font-size-xxl-home: 5rem;
-    --heading-font-size-xxl: 4.5rem;
-    --heading-font-size-xl: 4.5rem;
-    --heading-font-size-l: 2.2rem;
-    --heading-font-size-m: 1.7rem;
-    --heading-font-size-s: 1.6rem;
-    --heading-font-size-xs: 1.6rem;
-    --nav-height: 172px;
-  }
+    :root {
+        --heading-font-size-xxl-home: 5rem;
+        --heading-font-size-xxl: 4.5rem;
+        --heading-font-size-xl: 4.5rem;
+        --heading-font-size-l: 2.2rem;
+        --heading-font-size-m: 1.7rem;
+        --heading-font-size-s: 1.6rem;
+        --heading-font-size-xs: 1.6rem;
+        --nav-height: 172px;
+    }
 }
 
 html {
@@ -301,14 +301,14 @@ main img {
 .columns-row img,
 .default-content-wrapper img {
     transform: scale(0.8);
-  }
+}
 
-  @media (min-width: 900px) {
+@media (min-width: 900px) {
     .columns-row img,
     .default-content-wrapper img {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
+}
 
 /* buttons */
 a:not(.button):any-link {
@@ -567,14 +567,6 @@ main .section.highlight {
     background-color: var(--highlight-background-color);
 }
 
-main .section.highlight-1-container.highlight-2-container {
-    padding-bottom: 0;
-}
-
-main .section.accordion-2-container.video-container {
-    padding-top: 40px;
-}
-
 main .section.width-m > div,
 main .section.width-s > div,
 main .section.width-xs > div {
@@ -611,15 +603,6 @@ main .section[data-background] > div {
         padding-left: 32px;
         padding-right: 32px;
     }
-
-    main .section.accordion-2-container.video-container h2 {
-        font-size: 4.5rem;
-        margin-top: 0;
-    }
-
-    main .section.accordion-2-container.video-container p {
-        font-size: var(--body-font-size-m);
-    }
 }
 
 /* section metadata - text align and color */
@@ -636,13 +619,9 @@ main .section.small-heading h1 {
     text-transform: uppercase;
 }
 
-.breathing-room main .section.small-heading h1 {
-    font-size: var(--heading-font-size-m);
-}
-
 @media (min-width: 900px) {
-    .breathing-room main .section.small-heading h1 {
-        font-size: 1.9rem;
+    main .section.centered {
+        text-align: center;
     }
 
     main .section.centered a.button:any-link {
@@ -681,10 +660,6 @@ main .section.isi h2 {
 
 main div:not(.isi) .default-content-wrapper h2 {
     font-size: 2rem;
-}
-
-main .section.accordion-2-container.video-container h2 {
-    font-size: var(--heading-font-size-xxl);
 }
 
 .what-is-copd div.boxes.block > div h2
@@ -790,10 +765,6 @@ main .section.small-vertical-margins {
 
     .copd-treatment .columns .button-container a {
         margin-top: 6px;
-    }
-
-    .breathing-room main .section span.icon-separator hr {
-        display: none;
     }
 }
 
@@ -1029,73 +1000,12 @@ main .section[data-background] picture.section-background-img img {
     object-fit: cover;
 }
 
-main .section.centered {
-    text-align: center;
-}
-
-.breathing-room main .section.information-contact div p {
-    font-size: 1.3rem;
-}
-
-main .section.centered p:has(picture:first-child:last-child) {
-    text-align: center;
-}
-
-.breathing-room main .section.tabs-container div:first-child p:last-of-type {
-    font-size: 1.3rem;
-    padding: 0 30px;
-    margin: 0;
-}
-
-.breathing-room main .section.tabs-container div:first-child p:not(:last-of-type) {
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-}
-
-.breathing-room main .section.tabs-container div:first-child p:nth-of-type(2) {
-    font-weight: var(--font-weight-bold);
-    padding: 0 35px 8px;
-    margin-bottom: 0;
-}
-
-.breathing-room main .section.tabs-container div:first-child p:not(:first-of-type) {
-    margin-top: 0;
-}
-
-.breathing-room main .section.information-contact div p picture img {
-    min-width: 50px;
-}
-
 .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
     font-size: 1.7rem;
     color: var(--link-color);
 }
 
-@media (min-width: 600px) {
-    .breathing-room main .section.information-contact div p {
-        font-size: 1.4rem;
-    }
-}
-
 @media (min-width: 900px) {
-    .breathing-room main .section.information-contact div p {
-        font-size: var(--body-font-size-xl);
-    }
-
-    .breathing-room main .section.tabs-container div:first-child p:last-of-type {
-        padding: 40px 0 20px;
-        max-width: unset;
-    }
-
-    .breathing-room main .section.tabs-container div:first-child p:not(:last-of-type),
-    .breathing-room main .section.tabs-container div:first-child p:last-of-type {
-        font-size: 2.1rem;
-    }
-
-    main .section[data-background] picture.section-background-img img {
-        height: unset;
-    }
-
     .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
         font-size: 2rem;
     }
@@ -1156,11 +1066,6 @@ main .section.centered p:has(picture:first-child:last-child) {
     max-width: 645px;
 }
 
-.breathing-room main .section.vertical-align-middle > div {
-    display: flex;
-    align-items: center;
-}
-
 .copd-stages-page div.boxes.block {
     margin: 32px 0;
     row-gap: 5px;
@@ -1171,6 +1076,11 @@ main .section.centered p:has(picture:first-child:last-child) {
     font-size: 1.4rem;
     line-height: 15px;
     font-weight: 500;
+}
+
+h1 > br,
+h2 > br {
+    content:"";
 }
 
 .copd-stages-page div.boxes.block div p br{
@@ -1191,8 +1101,9 @@ main .section.centered p:has(picture:first-child:last-child) {
 }
 
 .copd-stages-page div.copd-stages.block {
+    margin: auto;
     max-width: 750px;
-    padding-bottom: 20px;
+    padding: 0 0 20px;
 }
 
 @media (min-width: 900px) {
@@ -1380,11 +1291,6 @@ main .section.centered p:has(picture:first-child:last-child) {
         margin-left: 0;
         font-size: var(--body-font-size-m);
     }
-}
-
-h1 > br,
-h2 > br {
-    content:"";
 }
 
 h1 > br::after,
