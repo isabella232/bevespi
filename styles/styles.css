@@ -613,6 +613,14 @@ main .section[data-background] > div {
     }
 }
 
+main .section.accordion-2-container.video-container h2 {
+    font-size: 4.5rem;
+    margin-top: 0;
+}
+
+main .section.accordion-2-container.video-container p {
+    font-size: var(--body-font-size-m);
+}
 
 main .section.accordion-2-container.video-container h2 {
     font-size: 4.5rem;
