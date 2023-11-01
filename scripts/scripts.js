@@ -45,6 +45,31 @@ export function loadScript(url, callback) {
   return script;
 }
 
+/*
+  * Returns the environment type based on the hostname.
+*/
+export function getEnvType(hostname = window.location.hostname) {
+  const fqdnToEnvType = {
+    'bevespi.com': 'live',
+    'www.bevespi.com': 'live',
+    'franklin.bevespi.com': 'live',
+    'main--bevespi--hlxsites.hlx.page': 'preview',
+    'main--bevespi--hlxsites.hlx.live': 'live',
+    'analytics--bevespi--hlxsites.hlx.page': 'preview',
+    'analytics--bevespi--hlxsites.hlx.live': 'live',
+  };
+  return fqdnToEnvType[hostname] || 'dev';
+}
+
+/*
+  * Decorates external links
+*/
+export function decorateExternalLinks(container) {
+  container.querySelectorAll('a').forEach((a) => {
+    if (!a.getAttribute('href')?.startsWith('/')) a.setAttribute('target', '_blank');
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -103,6 +128,7 @@ export function decorateMain(main) {
   decorateSections(main);
   addSectionBackgroundImages(main);
   decorateBlocks(main);
+  decorateExternalLinks(main);
 }
 
 /**

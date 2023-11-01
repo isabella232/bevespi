@@ -35,7 +35,7 @@ main .section div.accordion-2-wrapper {
 
 .accordion-2 .buttons.mobile {
   font-size: 30px;
-  color: #e81b75 !important;
+  color: var(--cta-color);
 }
 
 .accordion-2 .button-more,
@@ -71,7 +71,7 @@ main .section div.accordion-2-wrapper {
 .accordion-2 > div > div {
   position: relative;
   height: 55px;
-  max-width: var(--page-max-width);
+  max-width: 835px;
   margin: 13px;
   border: 2px solid var(--color-grey-6);
   padding: 10px;
