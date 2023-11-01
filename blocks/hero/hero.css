@@ -105,12 +105,9 @@ main .hero.home h2 {
 }
 
 main .hero.home p {
-  font-size: var(--body-font-size-xxs);
-}
-
-main .hero.home p {
   margin-top: 0;
   margin-bottom: 6px;
+  font-size: var(--body-font-size-xxs);
 }
 
 main .hero.home p:first-of-type {
