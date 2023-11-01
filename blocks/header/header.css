@@ -61,6 +61,10 @@ header .nav-top .search input:focus {
   outline: 4px solid var(--background-grey-3);
 }
 
+header .nav-top .search input:focus::placeholder {
+  color: transparent;
+}
+
 header .nav-top .search button {
   height: 40px;
   width: 40px;
