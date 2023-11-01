@@ -27,6 +27,7 @@
     --color-grey-5: #ccc;
     --color-grey-6: #b3b7c9;
     --color-grey-7: #e9ebec;
+    --color-grey-8: #fff6f6;
     --background-color: var(--color-white);
     --text-orange: #8F440A;
     --text-orange-light: #f58321;
@@ -166,16 +167,16 @@
 }
 
 @media (min-width: 900px) {
-  :root {
-    --heading-font-size-xxl-home: 5rem;
-    --heading-font-size-xxl: 4.5rem;
-    --heading-font-size-xl: 4.5rem;
-    --heading-font-size-l: 2.2rem;
-    --heading-font-size-m: 1.7rem;
-    --heading-font-size-s: 1.6rem;
-    --heading-font-size-xs: 1.6rem;
-    --nav-height: 172px;
-  }
+    :root {
+        --heading-font-size-xxl-home: 5rem;
+        --heading-font-size-xxl: 4.5rem;
+        --heading-font-size-xl: 4.5rem;
+        --heading-font-size-l: 2.2rem;
+        --heading-font-size-m: 1.7rem;
+        --heading-font-size-s: 1.6rem;
+        --heading-font-size-xs: 1.6rem;
+        --nav-height: 172px;
+    }
 }
 
 html {
@@ -301,14 +302,14 @@ main img {
 .columns-row img,
 .default-content-wrapper img {
     transform: scale(0.8);
-  }
+}
 
-  @media (min-width: 900px) {
+@media (min-width: 900px) {
     .columns-row img,
     .default-content-wrapper img {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
+}
 
 /* buttons */
 a:not(.button):any-link {
@@ -566,7 +567,7 @@ main .section.buttons {
 @media (min-width: 900px) {
     .home .columns-row > div {
         padding-bottom: 80px;
-    } 
+    }
 }
 
 main .section.highlight {
@@ -695,6 +696,13 @@ main .section.accordion-2-container.video-container h2 {
 
 .what-is-copd div.boxes.block > div h2 {
     font-size: var(--body-font-size-xl);
+}
+
+.copd-stages-page div.boxes.block div h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 15px;
+    font-weight: 500;
 }
 
 main .section.accordion-2-container.video-container .accordion-2 h2 {
@@ -872,7 +880,7 @@ main .section:not(.isi) .default-content-wrapper {
 @media (min-width: 900px) {
     main .section:not(.isi) .default-content-wrapper {
         font-size: var(--body-font-size-m);
-    } 
+    }
 }
 
 .copd-resources main div:not(.isi) .default-content-wrapper,
@@ -1081,6 +1089,15 @@ main .section.centered .accordion-2 {
     font-size: 1.3rem;
 }
 
+.copd-stages-page div.boxes.block div p{
+    margin-top: 2px;
+    height: unset;
+    font-size: var(--body-font-size-xs);
+    line-height: 12px;
+    font-weight: 500;
+    color: var(--color-blue-2);
+}
+
 main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
 }
@@ -1192,6 +1209,39 @@ main .section.centered p:has(picture:first-child:last-child) {
     align-items: center;
 }
 
+.copd-stages-page div.boxes.block {
+    margin: 32px 0;
+    row-gap: 5px;
+}
+
+h1 > br,
+h2 > br {
+    content:"";
+}
+
+.copd-stages-page div.boxes.block div p br{
+    display: none;
+}
+
+.copd-stages-page div.boxes.block > div{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background: #f6f6f6;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px 0;
+}
+
+.copd-stages-page div.copd-stages.block {
+    margin: auto;
+    max-width: 750px;
+    padding: 0 0 20px;
+}
+
 @media (min-width: 900px) {
     .what-is-copd h2
     {
@@ -1287,10 +1337,53 @@ main .section.centered p:has(picture:first-child:last-child) {
         max-width: 250px;
     }
 
+    .copd-stages-page div.default-content-wrapper ul{
+        text-align: left;
+        font-size: var(--body-font-size-m);
+    }
+
     .getting-started main div:not(.isi) .default-content-wrapper ul {
         text-align: left;
         max-width: 400px;
         margin: auto;
+    }
+
+    .copd-stages-page div.default-content-wrapper {
+        text-align: center;
+        max-width: 750px;
+    }
+
+    .copd-stages-page div.default-content-wrapper p{
+        font-size: var(--body-font-size-m);
+    }
+
+    .copd-stages-page div.boxes-wrapper .boxes.block {
+        max-width: 850px;
+        row-gap: 10px;
+        margin: 40px auto 20px;
+    }
+
+    .copd-stages-page div.boxes-wrapper .boxes.block div h2{
+        margin: 0;
+        font-size: 2.3rem;
+        line-height: 23px;
+        font-weight: 500;
+    }
+
+    .copd-stages-page div.boxes-wrapper .boxes.block div p{
+        margin-top: 6px;
+        font-size: var(--body-font-size-m);
+        font-weight: 500;
+    }
+
+    .copd-stages-page div.copd-stages.block > div {
+        height: 72px;
+        margin-top: 0;
+    }
+
+    .copd-stages-page div.copd-stages.block > div > div {
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 
     .copd-symptoms-page div.default-content-wrapper {
@@ -1338,11 +1431,6 @@ main .section.centered p:has(picture:first-child:last-child) {
         margin-left: 0;
         font-size: var(--body-font-size-m);
     }
-}
-
-h1 > br,
-h2 > br {
-    content:"";
 }
 
 h1 > br::after,
