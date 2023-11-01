@@ -1,4 +1,5 @@
 import { readBlockConfig, decorateIcons } from '../../scripts/aem.js';
+import { decorateExternalLinks } from '../../scripts/scripts.js';
 
 /**
  * loads and decorates the footer
@@ -20,6 +21,7 @@ export default async function decorate(block) {
     footer.innerHTML = html;
 
     decorateIcons(footer);
+    decorateExternalLinks(footer);
     block.append(footer);
   }
 }
