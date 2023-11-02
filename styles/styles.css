@@ -532,6 +532,10 @@ main .section.buttons {
     .home .columns-row:nth-of-type(2) img {
         transform: scale(1) translateY(-30px);
     }
+
+    .home .columns-row:nth-of-type(4) img {
+        transform: scale(1) translate(-63px, 26px);
+    }
 }
 
 @media (min-width: 900px) {
