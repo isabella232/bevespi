@@ -1152,7 +1152,8 @@ main .section.centered p:has(picture:first-child:last-child) {
     min-width: 50px;
 }
 
-.section.what-is-copd > div:first-of-type > p:nth-of-type(2) em strong {
+.section.what-is-copd > div:first-of-type > p:nth-of-type(2) em strong,
+.faq main .section.accordion-1-container:nth-of-type(3) .accordion-row:first-of-type > div > p:first-of-type strong {
     margin-right: -5px;
 }
 
