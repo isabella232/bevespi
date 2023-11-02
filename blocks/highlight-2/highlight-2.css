@@ -20,7 +20,7 @@ main .section div.highlight-2-wrapper {
   border-right: 22px solid transparent;
   border-top: 20px solid var(--link-color);
   position: relative;
-  bottom: -73px;
+  bottom: -56px;
   left: calc(50% - 35px);
 }
 
