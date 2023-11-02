@@ -1566,4 +1566,13 @@ h2 > br::after {
     .copd-resources main .hero.block h1 {
         margin: 1px 0 113px;
     }
+
+    .copd-resources main .default-content-wrapper ul {
+        padding-left: 45px;
+    }
+
+    .contact-us main .section.hero-container + .section {
+        padding-top: 55px;
+        padding-bottom: 0;
+    }
 }
