@@ -60,7 +60,7 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
 
 main .section.fragment-container.important-safety-information .sticky-fragment-block.fixed-section {
     opacity: 1;
-    z-index: 3;
+    z-index: 10;
 }
 
 @media (min-width: 900px) {
