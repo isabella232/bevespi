@@ -1093,6 +1093,10 @@ main .section[data-background] picture.section-background-img {
     overflow: hidden;
 }
 
+.breathing-room main .section[data-background] picture.section-background-img {
+    background-color: #5B3876;
+}
+
 main .section[data-background] picture.section-background-img img {
     width: 100%;
     height: 100%;
