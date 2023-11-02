@@ -920,6 +920,7 @@ main .section:not(.isi) .default-content-wrapper {
     content: "";
     min-height: 30px;
     position: relative;
+    max-width: 830px;
 }
 
 .section > .default-content-wrapper.back-to-top-wrapper > .back-to-top {
