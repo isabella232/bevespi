@@ -20,6 +20,12 @@ export default async function decorate(block) {
     const footer = document.createElement('div');
     footer.innerHTML = html;
 
+    const logo = footer.querySelector('div > p > picture');
+    const a = document.createElement('a');
+    a.href = 'https://www.astrazeneca-us.com/';
+    logo?.parentElement?.append(a);
+    a?.append(logo);
+
     decorateIcons(footer);
     decorateExternalLinks(footer);
     block.append(footer);

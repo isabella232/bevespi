@@ -730,6 +730,10 @@ main .section.isi ul {
     padding: 4px 0 11px 20px;
 }
 
+main .section.isi ul li ul {
+    padding: 0 0 0 20px;
+}
+
 main .section.isi li {
     margin: 8px 0;
 }
