@@ -1152,6 +1152,10 @@ main .section.centered p:has(picture:first-child:last-child) {
     min-width: 50px;
 }
 
+.section.what-is-copd > div:first-of-type > p:nth-of-type(2) em strong {
+    margin-right: -5px;
+}
+
 .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
     font-size: 1.7rem;
     color: var(--link-color);
@@ -1522,6 +1526,11 @@ h2 > br::after {
 }
 
 @media (min-width: 900px) {
+    .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container,
+    .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
+        margin: 0;
+    }
+  
     .taking-bevespi-aerosphere main .section:nth-of-type(2) .columns-row:first-of-type {
         padding-bottom: 0;
     }
