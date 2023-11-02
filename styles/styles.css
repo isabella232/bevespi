@@ -1161,6 +1161,10 @@ main .section.centered p:has(picture:first-child:last-child) {
     color: var(--link-color);
 }
 
+.faq main .section.accordion-1-container:nth-of-type(3) .accordion-row:first-of-type > div > p:first-of-type strong {
+    margin-right: -5px;
+}
+
 @media (min-width: 600px) {
     .breathing-room main .section.information-contact div p {
         font-size: 1.4rem;
