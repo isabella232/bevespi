@@ -1123,6 +1123,11 @@ main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
 }
 
+.getting-started main div:not(.isi) .default-content-wrapper .button-container + p {
+    border-top: 1px solid var(--color-grey-5);
+    padding-top: 43px;
+}
+
 .breathing-room main .section.tabs-container > div:first-child p:last-of-type {
     font-size: 1.3rem;
     padding: 0 30px;
@@ -1197,8 +1202,7 @@ main .section.centered p:has(picture:first-child:last-child) {
 
 .getting-started main div:not(.isi) .default-content-wrapper .button-container {
     margin: 25px auto 30px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid var(--color-grey-5);
+    padding-bottom: 15px;
 }
 
 .copd-symptoms-page div.default-content-wrapper a:any-link {
@@ -1368,7 +1372,7 @@ h2 > br {
     .getting-started main .section.inhaler img:first-of-type {
         position: absolute;
         right: calc(50% - 380px);
-        top: 37px;
+        top: 1px;
     }
 
     .getting-started main div:not(.isi) .default-content-wrapper .button-container {
@@ -1554,5 +1558,17 @@ h2 > br::after {
         padding-top: 15px;
         padding-bottom: 15px;
         margin: 35px 0;
+    }
+  
+    .getting-started main .hero.block picture {
+        top: unset;
+    }
+
+    .getting-started main .hero.block h1 {
+        margin: 30px 0 113px;
+    }
+
+    .copd-resources main .hero.block h1 {
+        margin: 1px 0 113px;
     }
 }
