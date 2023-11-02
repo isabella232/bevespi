@@ -856,10 +856,6 @@ main .section.hero-container + .section {
     margin-bottom: 5px;
 }
 
-.copd-resources main div:not(.isi) .default-content-wrapper strong {
-    font-weight: 400;
-}
-
 .copd-resources main div:not(.isi) .default-content-wrapper li {
     margin-bottom: 15px;
 }
@@ -1549,5 +1545,14 @@ h2 > br::after {
 
     .taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:first-of-type {
         text-align: center;
+    }
+
+    .copd-resources main .section.related-links-container .default-content-wrapper .button-container {
+        border: 1px solid #ccc;
+        border-left: 0;
+        border-right: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin: 35px 0;
     }
 }
