@@ -1519,3 +1519,14 @@ h2 > br::after {
 .home .section:nth-of-type(2) .columns-row:nth-of-type(4) p.button-container {
     max-width: 325px;
 }
+
+@media (min-width: 900px) {
+    .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container,
+    .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
+        margin: 0;
+    }
+}
+
+.section.what-is-copd > div:first-of-type > p:nth-of-type(2) em strong {
+    margin-right: -5px;
+}
