@@ -80,7 +80,7 @@ main .hero h1 {
 @media (min-width: 900px) {
   .search main .hero h1,
   .contact-us main .hero h1 {
-    margin: 94px 0;
+    margin: 74px 0;
   }
 
   .about-copd main .hero h1 {
