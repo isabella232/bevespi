@@ -1565,8 +1565,11 @@ h2 > br::after {
         text-align: center;
     }
   
-    .getting-started main .hero.block picture {
-        top: unset;
+    @media (min-width: 1400px) {
+        .copd-resources main .hero.block picture,
+        .getting-started main .hero.block picture {
+            top: unset;
+        }
     }
 
     .getting-started main .hero.block h1 {
