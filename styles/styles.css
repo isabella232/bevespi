@@ -528,6 +528,10 @@ main .section.buttons {
     .home .columns-row img {
         transform: scale(1);
     }
+
+    .home .columns-row:nth-of-type(2) img {
+        transform: scale(1) translateY(-30px);
+    }
 }
 
 @media (min-width: 900px) {
@@ -567,6 +571,10 @@ main .section.buttons {
 @media (min-width: 900px) {
     .home .columns-row > div {
         padding-bottom: 80px;
+    }
+
+    .home .columns-row:nth-of-type(2) > div {
+        padding-bottom: 30px;
     }
 }
 
@@ -1501,4 +1509,9 @@ h2 > br::after {
     .hero.block.bevespi-side-effects-downarrow::after {
         background-image: url('../images/side-effect-section-2-downarrow.png');
     }
+}
+
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container,
+.home .section:nth-of-type(2) .columns-row:nth-of-type(4) p.button-container {
+    max-width: 325px;
 }
