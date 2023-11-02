@@ -531,7 +531,7 @@ main .section.buttons {
     }
 
     .home .columns-row:nth-of-type(2) img {
-        transform: scale(1) translateY(-30px);
+        transform: scale(1) translate(-105px, -30px);
     }
 
     .home .columns-row:nth-of-type(4) img {
@@ -920,6 +920,7 @@ main .section:not(.isi) .default-content-wrapper {
     content: "";
     min-height: 30px;
     position: relative;
+    max-width: 830px;
 }
 
 .section > .default-content-wrapper.back-to-top-wrapper > .back-to-top {
