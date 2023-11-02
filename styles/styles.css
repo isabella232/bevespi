@@ -1127,6 +1127,11 @@ main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
 }
 
+.getting-started main div:not(.isi) .default-content-wrapper .button-container + p {
+    border-top: 1px solid var(--color-grey-5);
+    padding-top: 43px;
+}
+
 .breathing-room main .section.tabs-container > div:first-child p:last-of-type {
     font-size: 1.3rem;
     padding: 0 30px;
@@ -1198,11 +1203,6 @@ main .section.centered p:has(picture:first-child:last-child) {
 .getting-started main div:not(.isi) .default-content-wrapper .button-container {
     margin: 25px auto 30px;
     padding-bottom: 15px;
-}
-
-.getting-started main div:not(.isi) .default-content-wrapper .button-container + p {
-    border-top: 1px solid var(--color-grey-5);
-    padding-top: 43px;
 }
 
 .copd-symptoms-page div.default-content-wrapper a:any-link {
