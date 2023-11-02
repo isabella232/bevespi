@@ -203,6 +203,7 @@ body.appear {
 
 main {
     margin-top: 12px;
+    overflow-x: hidden;
 }
 
 @media (min-width: 900px) {
@@ -1518,4 +1519,22 @@ h2 > br::after {
 .home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container,
 .home .section:nth-of-type(2) .columns-row:nth-of-type(4) p.button-container {
     max-width: 325px;
+}
+
+@media (min-width: 900px) {
+    .taking-bevespi-aerosphere main .section:nth-of-type(2) .columns-row:first-of-type {
+        padding-bottom: 0;
+    }
+
+    .taking-bevespi-aerosphere main .section.highlight-1-container {
+        margin-top: -53px;
+    }
+
+    .taking-bevespi-aerosphere main .section.highlight-1-container > div:first-of-type > p:first-of-type {
+        transform: translateY(-20px);
+    }
+
+    .taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:first-of-type {
+        text-align: center;
+    }
 }
