@@ -1507,6 +1507,7 @@ h2 > br::after {
         font-size: 1.6rem;
     }
 
+    .hero.block.contact-us-downarrow::after,
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after,
     .hero.block.bevespi-side-effects-downarrow::after {
         display: block;
@@ -1518,6 +1519,10 @@ h2 > br::after {
         position: relative;
         left: calc(50% - 22px);
         bottom: -29px;
+    }
+
+    .hero.block.contact-us-downarrow::after {
+        background-image: url('../images/sitemap-section-2-downarrow.png');
     }
 
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after {
@@ -1565,8 +1570,11 @@ h2 > br::after {
         text-align: center;
     }
   
-    .getting-started main .hero.block picture {
-        top: unset;
+    @media (min-width: 1400px) {
+        .copd-resources main .hero.block picture,
+        .getting-started main .hero.block picture {
+            top: unset;
+        }
     }
 
     .getting-started main .hero.block h1 {
