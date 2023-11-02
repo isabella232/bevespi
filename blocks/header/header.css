@@ -49,7 +49,7 @@ header .nav-top .search input {
   border: none;
   outline: 4px solid var(--background-grey-2);
   height: 39px;
-  padding-left: 18px;
+  padding-left: 8px;
   margin-top: -3px;
   max-width: 155px;
   font-size: 1.3rem;
@@ -351,8 +351,7 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
     flex-basis: 30%;
     display: flex;
     align-items: center;
-    padding-left: 0;
-    padding-right: 24px;
+    padding: 30px 24px 18px 0;
   }
 
   header .nav-middle > div > div > div div:nth-of-type(2) {

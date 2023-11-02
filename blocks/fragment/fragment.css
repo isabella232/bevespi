@@ -7,8 +7,12 @@ main .section.fragment-container.important-saferty-information h2 {
 
 main .section.fragment-container.important-safety-information ul {
     padding-inline-start: 12px;
-    padding: 0 0 5px 12px;
+    padding: 0 0 5px 20px;
     margin: 16px 0;
+}
+
+main .section.fragment-container.important-safety-information ul li ul {
+    margin: 5px 0;
 }
 
 main .section.fragment-container ul li {
@@ -56,7 +60,7 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
 
 main .section.fragment-container.important-safety-information .sticky-fragment-block.fixed-section {
     opacity: 1;
-    z-index: 1;
+    z-index: 3;
 }
 
 @media (min-width: 900px) {
