@@ -1530,6 +1530,15 @@ h2 > br::after {
 }
 
 @media (min-width: 900px) {
+    .copd-resources main .section.related-links-container .default-content-wrapper .button-container {
+        border: 1px solid #ccc;
+        border-left: 0;
+        border-right: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin: 35px 0;
+    }
+
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container,
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
         margin: 0;
@@ -1549,15 +1558,6 @@ h2 > br::after {
 
     .taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:first-of-type {
         text-align: center;
-    }
-
-    .copd-resources main .section.related-links-container .default-content-wrapper .button-container {
-        border: 1px solid #ccc;
-        border-left: 0;
-        border-right: 0;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        margin: 35px 0;
     }
   
     .getting-started main .hero.block picture {
