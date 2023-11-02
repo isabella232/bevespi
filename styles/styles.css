@@ -1151,6 +1151,10 @@ main .section.centered p:has(picture:first-child:last-child) {
     min-width: 50px;
 }
 
+.section.what-is-copd > div:first-of-type > p:nth-of-type(2) em strong {
+    margin-right: -5px;
+}
+
 .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
     font-size: 1.7rem;
     color: var(--link-color);
@@ -1525,8 +1529,4 @@ h2 > br::after {
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
         margin: 0;
     }
-}
-
-.section.what-is-copd > div:first-of-type > p:nth-of-type(2) em strong {
-    margin-right: -5px;
 }
