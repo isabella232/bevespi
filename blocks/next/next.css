@@ -36,6 +36,7 @@
   border: 0;
   background-color: unset;
   padding: 0;
+  padding-top: 11px;
 }
 
 .next.block a::after {
