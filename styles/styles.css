@@ -591,8 +591,9 @@ main .section.highlight-1-container.highlight-2-container {
     padding-bottom: 0;
 }
 
-main .section.accordion-2-container.video-container {
+.taking-bevespi-aerosphere main .section.accordion-2-container.video-container {
     padding-top: 40px;
+    padding-bottom: 0;
 }
 
 main .section.width-m > div,
@@ -1509,7 +1510,8 @@ h2 > br::after {
 
     .hero.block.contact-us-downarrow::after,
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after,
-    .hero.block.bevespi-side-effects-downarrow::after {
+    .hero.block.bevespi-side-effects-downarrow::after,
+    .taking-bevespi-aerosphere main .section.accordion-2-container::after {
         display: block;
         content: " ";
         width: 43px;
@@ -1531,6 +1533,11 @@ h2 > br::after {
 
     .hero.block.bevespi-side-effects-downarrow::after {
         background-image: url('../images/side-effect-section-2-downarrow.png');
+    }
+
+    .taking-bevespi-aerosphere main .section.accordion-2-container::after {
+        background-image: url('../images/how-section-4-down-arrow-grey.png');
+        transform: translateY(-9px);
     }
 }
 
@@ -1568,6 +1575,15 @@ h2 > br::after {
 
     .taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:first-of-type {
         text-align: center;
+    }
+
+    .taking-bevespi-aerosphere .accordion-2-wrapper + .columns-wrapper .columns-row:first-of-type > div:first-of-type {
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+
+    .taking-bevespi-aerosphere .accordion-2-container + .columns-container .columns-row:first-child > div:first-child {
+        padding-top: 48px;
     }
   
     @media (min-width: 1400px) {
