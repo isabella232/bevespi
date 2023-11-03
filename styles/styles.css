@@ -591,8 +591,9 @@ main .section.highlight-1-container.highlight-2-container {
     padding-bottom: 0;
 }
 
-main .section.accordion-2-container.video-container {
+.taking-bevespi-aerosphere main .section.accordion-2-container.video-container {
     padding-top: 40px;
+    padding-bottom: 0;
 }
 
 main .section.width-m > div,
@@ -1297,6 +1298,19 @@ h2 > br {
         font-size: 3.2rem;
     }
 
+    .getting-started main .hero-container + .section .default-content-wrapper > h2:first-of-type {
+        margin-top: 0;
+        margin-bottom: 22px;
+    }
+
+    #understanding-copdemphysema--chronic-bronchitis {
+        margin-bottom: 37px;
+    }
+
+    #rescue-maintenance-and-controller-inhalerswhats-the-difference {
+        font-size: 2.9rem;
+    }
+
     .what-is-copd .what-is-copd-infographic .columns-row img{
         max-width: unset;
         max-height: unset;
@@ -1507,8 +1521,10 @@ h2 > br::after {
         font-size: 1.6rem;
     }
 
+    .hero.block.contact-us-downarrow::after,
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after,
-    .hero.block.bevespi-side-effects-downarrow::after {
+    .hero.block.bevespi-side-effects-downarrow::after,
+    .taking-bevespi-aerosphere main .section.accordion-2-container::after {
         display: block;
         content: " ";
         width: 43px;
@@ -1520,12 +1536,21 @@ h2 > br::after {
         bottom: -29px;
     }
 
+    .hero.block.contact-us-downarrow::after {
+        background-image: url('../images/sitemap-section-2-downarrow.png');
+    }
+
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after {
         background-image: url('../images/bg_hero-taking_2.png');
     }
 
     .hero.block.bevespi-side-effects-downarrow::after {
         background-image: url('../images/side-effect-section-2-downarrow.png');
+    }
+
+    .taking-bevespi-aerosphere main .section.accordion-2-container::after {
+        background-image: url('../images/how-section-4-down-arrow-grey.png');
+        transform: translateY(-9px);
     }
 }
 
@@ -1564,9 +1589,29 @@ h2 > br::after {
     .taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:first-of-type {
         text-align: center;
     }
+
+    .taking-bevespi-aerosphere .accordion-2-wrapper + .columns-wrapper .columns-row:first-of-type > div:first-of-type {
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+
+    .taking-bevespi-aerosphere .accordion-2-container + .columns-container .columns-row:first-child > div:first-child {
+        padding-top: 48px;
+    }
+
+    .side-effects main .next.block .next-small {
+        width: 121px;
+    }
+
+    .taking-bevespi-aerosphere main .next.block .next-small {
+        width: 115px;
+    }
   
-    .getting-started main .hero.block picture {
-        top: unset;
+    @media (min-width: 1400px) {
+        .copd-resources main .hero.block picture,
+        .getting-started main .hero.block picture {
+            top: unset;
+        }
     }
 
     .getting-started main .hero.block h1 {
