@@ -842,6 +842,12 @@ main .section.hero-container + .section {
     padding-top: 32px;
 }
 
+.getting-started main .section:nth-of-type(6) {
+    background-image: url('../images/bg-section-2.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 .copd-resources main .section.hero-container + .section {
     padding-top: 32px;
 }
@@ -1315,6 +1321,7 @@ h2 > br {
         margin-bottom: 22px;
     }
 
+    /* stylelint-disable-next-line */
     #understanding-copdemphysema--chronic-bronchitis {
         margin-bottom: 37px;
     }
@@ -1630,12 +1637,6 @@ h2 > br::after {
         padding-top: 55px;
         padding-bottom: 0;
     }
-}
-
-.getting-started main .section:nth-of-type(6) {
-    background-image: url('../images/bg-section-2.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
 }
 
 .getting-started main .section.hero-container + .section {
