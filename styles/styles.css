@@ -1598,6 +1598,14 @@ h2 > br::after {
     .taking-bevespi-aerosphere .accordion-2-container + .columns-container .columns-row:first-child > div:first-child {
         padding-top: 48px;
     }
+
+    .side-effects main .next.block .next-small {
+        width: 121px;
+    }
+
+    .taking-bevespi-aerosphere main .next.block .next-small {
+        width: 115px;
+    }
   
     @media (min-width: 1400px) {
         .copd-resources main .hero.block picture,
