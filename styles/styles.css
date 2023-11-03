@@ -1298,6 +1298,17 @@ h2 > br {
         font-size: 3.2rem;
     }
 
+    .what-is-copd div.boxes.block > div h2 {
+        font-size: 3.2rem;
+    }
+
+    .copd-stages-page div.boxes-wrapper .boxes.block div h2{
+        margin: 0;
+        font-size: 2.3rem;
+        line-height: 23px;
+        font-weight: 500;
+    }
+
     .getting-started main .hero-container + .section .default-content-wrapper > h2:first-of-type {
         margin-top: 0;
         margin-bottom: 22px;
@@ -1321,11 +1332,6 @@ h2 > br {
 
     .what-is-copd {
         font-size: var(--body-font-size-m);
-    }
-
-    .what-is-copd div.boxes.block > div h2
-    {
-        font-size: 3.2rem;
     }
 
     .getting-started main div:not(.isi) .default-content-wrapper img {
@@ -1422,13 +1428,6 @@ h2 > br {
         max-width: 850px;
         row-gap: 10px;
         margin: 40px auto 20px;
-    }
-
-    .copd-stages-page div.boxes-wrapper .boxes.block div h2{
-        margin: 0;
-        font-size: 2.3rem;
-        line-height: 23px;
-        font-weight: 500;
     }
 
     .copd-stages-page div.boxes-wrapper .boxes.block div p{
