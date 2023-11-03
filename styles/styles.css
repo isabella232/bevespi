@@ -1631,3 +1631,15 @@ h2 > br::after {
         padding-bottom: 0;
     }
 }
+
+.getting-started main .section.hero-container + .section {
+    background-image: url('../images/bg-section-2.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 180px;
+    padding-bottom: 673px;
+}
+
+.getting-started main .section.hero-container + .section + .section {
+    margin-top: -673px;
+}
