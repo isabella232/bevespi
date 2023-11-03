@@ -1298,6 +1298,19 @@ h2 > br {
         font-size: 3.2rem;
     }
 
+    .getting-started main .hero-container + .section .default-content-wrapper > h2:first-of-type {
+        margin-top: 0;
+        margin-bottom: 22px;
+    }
+
+    #understanding-copdemphysema--chronic-bronchitis {
+        margin-bottom: 37px;
+    }
+
+    #rescue-maintenance-and-controller-inhalerswhats-the-difference {
+        font-size: 2.9rem;
+    }
+
     .what-is-copd .what-is-copd-infographic .columns-row img{
         max-width: unset;
         max-height: unset;
