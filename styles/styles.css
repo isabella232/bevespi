@@ -1520,6 +1520,15 @@ h2 > br::after {
 }
 
 @media (min-width: 900px) {
+    .taking-bevespi-aerosphere .columns-col:first-of-type {
+        padding-left: 15px;
+        padding-right: 65px;
+    }
+
+    .taking-bevespi-aerosphere .columns-col:first-of-type > p{
+        margin-bottom: 20px;
+    }
+
     .home .columns-container:nth-of-type(2) .columns-row:first-of-type .columns-col:first-of-type {
         flex: 0 0 560px;
     }
@@ -1580,7 +1589,7 @@ h2 > br::after {
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
         margin: 0;
     }
-  
+
     .taking-bevespi-aerosphere main .section:nth-of-type(2) .columns-row:first-of-type {
         padding-bottom: 0;
     }
@@ -1613,7 +1622,7 @@ h2 > br::after {
     .taking-bevespi-aerosphere main .next.block .next-small {
         width: 115px;
     }
-  
+
     @media (min-width: 1400px) {
         .copd-resources main .hero.block picture,
         .getting-started main .hero.block picture {
