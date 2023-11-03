@@ -12,7 +12,7 @@
     <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
     <script type="module">
       import { sampleRUM } from '/scripts/aem.js';
-      import { loadFragment, renderStickyFragmentInformationBlock, onScroll } from '/blocks/fragment/fragment.js';
+      import { loadFragment, renderStickyFragmentInformationBlock, onScroll, scrollToInformationBlock } from '/blocks/fragment/fragment.js';
 
       window.addEventListener('load', async () => {
         sampleRUM('404', {
@@ -24,6 +24,7 @@
         const isiFragmentTarget = document.querySelector('main.error .isi-fragment');
         isiFragmentTarget.innerHTML = fragmentSection.innerHTML;
         onScroll();
+        document.querySelector('.sticky-fragment-scroll-button').addEventListener('click', scrollToInformationBlock);
       });
     </script>
     <link rel="stylesheet" href="/styles/styles.css">

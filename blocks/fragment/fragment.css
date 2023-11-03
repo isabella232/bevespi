@@ -139,6 +139,10 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     border-radius: 50%;
 }
 
+main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button:hover {
+    cursor: pointer;
+}
+
 main .section.fragment-container.important-safety-information .sticky-fragment-block .sticky-fragment-header .sticky-fragment-scroll-button::before {
     content: "";
     width: 2.4px;
