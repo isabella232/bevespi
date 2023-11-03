@@ -1204,6 +1204,7 @@ main .section.centered p:has(picture:first-child:last-child) {
 
 .getting-started main .section.grey {
     background-color: var(--background-grey-4);
+    background-image: none;
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper .button-container {
@@ -1629,6 +1630,12 @@ h2 > br::after {
         padding-top: 55px;
         padding-bottom: 0;
     }
+}
+
+.getting-started main .section:nth-of-type(6) {
+    background-image: url('../images/bg-section-2.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .getting-started main .section.hero-container + .section {
