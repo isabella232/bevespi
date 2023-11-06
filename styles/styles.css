@@ -1650,3 +1650,54 @@ h2 > br::after {
 .getting-started main .section.hero-container + .section + .section {
     margin-top: -673px;
 }
+
+.sitemap main ul {
+    list-style: none;
+    max-width: 578px;
+    margin: 30px auto;
+}
+
+.sitemap main ul li {
+    font-size: 2.3rem;
+}
+
+.sitemap main div > ul > li > ul,
+.sitemap main div > ul > li:last-of-type {
+    border: 1px solid #172660;
+}
+
+.sitemap main div > ul > li > ul {
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    padding-top: 20px;
+}
+
+.sitemap main div > ul > li:last-of-type {
+    border-left: 0;
+    border-right: 0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.sitemap main ul li ul li {
+    font-size: 1.5rem;
+}
+
+.sitemap main ul li ul li {
+    font-size: 1.2rem;
+}
+
+@media (min-width: 900px) {
+    .sitemap main ul li {
+        font-size: 2.8rem;
+    }
+    
+    .sitemap main ul li ul li {
+        font-size: 2rem;
+    }
+    
+    .sitemap main ul li ul li {
+        font-size: 1.6rem;
+    }
+}
