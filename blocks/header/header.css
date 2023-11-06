@@ -50,6 +50,7 @@ header .nav-top .search input {
   outline: 4px solid var(--background-grey-2);
   height: 39px;
   padding-left: 8px;
+  padding-top: 4px;
   margin-top: -3px;
   max-width: 155px;
   font-size: 1.3rem;
