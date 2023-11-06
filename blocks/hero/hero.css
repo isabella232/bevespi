@@ -73,7 +73,9 @@ main .hero h1 {
 
 .search main .hero h1,
 .contact-us main .hero h1,
-.about-copd main .hero h1 {
+.about-copd main .hero h1,
+.side-effects main .hero h1,
+.taking-bevespi-aerosphere main .hero h1 {
   margin: 20px 0 60px;
 }
 
