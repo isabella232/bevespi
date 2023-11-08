@@ -116,8 +116,6 @@ main .section.columns-container {
 
 .home .columns .button-container {
   max-width: 300px;
-  margin-top: 55px;
-  margin-left: 15px;
 }
 
 .home .columns h2 + .button-container {
@@ -225,6 +223,11 @@ main .section.columns-container {
     flex-basis: 25%;
   }
 
+  .home .columns .button-container {
+    margin-left: 15px;
+    margin-top: 55px;
+  }
+
   .home .columns .button-container a {
     font-size: var(--body-font-size-m);
     display: grid;
@@ -253,10 +256,6 @@ circle.transition {
 
 .section.hero-container + .section.columns-container div.columns-wrapper:first-of-type div.columns-row:first-of-type > div .columns-col h2 {
   margin-top: 0;
-}
-
-.section.hero-container + .section.columns-container div.columns-wrapper:first-of-type div.columns-row:first-of-type > div .columns-col .button-container {
-  margin-top: 10px;
 }
 
 .section.hero-container + .section.columns-container div.columns-wrapper:first-of-type div.columns-row:first-of-type > div .columns-col .button-container a {

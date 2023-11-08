@@ -597,7 +597,11 @@ main .section.buttons {
     .home .columns-row > div {
         padding-bottom: 80px;
     }
-
+    
+    .home .columns-row > div .columns-img-col {
+        max-height: unset;
+    }
+    
     .home .columns-row > div .columns-img-col > picture > img {
         transform-origin: unset;
     }
