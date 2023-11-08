@@ -1594,6 +1594,14 @@ h2 > br::after {
     max-width: 325px;
 }
 
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container {
+    margin-top: 10px;
+}
+
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) h2 {
+    margin-bottom: 0;
+}
+
 @media (min-width: 900px) {
     .copd-resources main .section.related-links-container .default-content-wrapper .button-container {
         border: 1px solid #ccc;
