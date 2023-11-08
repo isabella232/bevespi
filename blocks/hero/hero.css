@@ -217,6 +217,10 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
     width: unset;
   }
 
+  main .hero > div:nth-of-type(n+2) div:first-of-type {
+    max-width: unset;
+  }
+
   main .hero > div:nth-of-type(n+2) div:nth-of-type(1):not(:last-of-type) {
     flex-basis: 44%;
   }
@@ -238,9 +242,5 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
 
   main .hero.home .btn-scroll a {
     font-size: var(--body-font-size-m);
-  }
-
-  main .hero > div:nth-of-type(n+2) div:first-of-type {
-    max-width: unset;
   }
 }
