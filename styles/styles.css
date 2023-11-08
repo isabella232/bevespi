@@ -592,7 +592,7 @@ main .section.buttons {
     }
     
     .home .columns-row > div .columns-img-col {
-        max-height: unset;
+        max-height: unset !important;
     }
     
     .home .columns-row > div .columns-img-col > picture > img {
