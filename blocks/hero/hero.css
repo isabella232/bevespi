@@ -142,6 +142,10 @@ main .hero > div:nth-of-type(n+2) {
   display: flex;
 }
 
+main .hero > div:nth-of-type(n+2) div:first-of-type {
+  max-width: 270px;
+}
+
 main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
   margin-left: auto;
   position: absolute;
@@ -234,5 +238,9 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
 
   main .hero.home .btn-scroll a {
     font-size: var(--body-font-size-m);
+  }
+
+  main .hero > div:nth-of-type(n+2) div:first-of-type {
+    max-width: unset;
   }
 }
