@@ -251,6 +251,18 @@ circle.transition {
   padding-top: 35px;
 }
 
+.section.hero-container + .section.columns-container div.columns-wrapper:first-of-type div.columns-row:first-of-type > div .columns-col h2 {
+  margin-top: 0;
+}
+
+.section.hero-container + .section.columns-container div.columns-wrapper:first-of-type div.columns-row:first-of-type > div .columns-col .button-container {
+  margin-top: 10px;
+}
+
+.section.hero-container + .section.columns-container div.columns-wrapper:first-of-type div.columns-row:first-of-type > div .columns-col .button-container a {
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
 .columns.centered {
   text-align: center;
 }
