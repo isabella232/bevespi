@@ -526,7 +526,7 @@ main .section.buttons {
 }
 
 .home .columns-row img {
-    transform: scale(0.67);
+    transform: scale(0.57);
 }
 
 @media (min-width: 900px) {
@@ -585,9 +585,21 @@ main .section.buttons {
     padding-bottom: 50px;
 }
 
+.home .columns-row > div .columns-img-col {
+    max-height: 190px;
+}
+
+.home .columns-row > div .columns-img-col > picture > img {
+    transform-origin: top;
+}
+
 @media (min-width: 900px) {
     .home .columns-row > div {
         padding-bottom: 80px;
+    }
+
+    .home .columns-row > div .columns-img-col > picture > img {
+        transform-origin: unset;
     }
 
     .home .columns-row:nth-of-type(2) > div {
