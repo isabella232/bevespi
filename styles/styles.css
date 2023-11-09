@@ -799,6 +799,20 @@ main .section.small-vertical-margins {
     }
 }
 
+@media(max-width: 900px) {
+    .copd-treatment main .hero {
+        padding: 0;
+    }
+    
+    .copd-treatment main .hero div:first-of-type > div p {
+        margin: 0;
+    }
+    
+    main .hero > div:nth-of-type(n+2) > div h1 {
+        margin: 50px 0;
+    }
+}
+
 .copd-treatment .columns-row {
     position: relative;
     padding-bottom: 125px;
@@ -1531,6 +1545,26 @@ h2 > br::after {
     padding-top: 0;
 }
 
+.hero.block.contact-us-downarrow::after,
+.hero.block.how-to-use-bevespi-inhaler-downarrow::after,
+.hero.block.bevespi-side-effects-downarrow::after,
+.taking-bevespi-aerosphere main .section.accordion-2-container::after,
+.hero.block.copd-treatment-downarrow::after {
+    display: block;
+    content: " ";
+    width: 43px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 43px 20px;
+    position: relative;
+    left: calc(50% - 22px);
+    bottom: -20px;
+}
+
+.hero.block.copd-treatment-downarrow::after {
+    background-image: url('../images/how-section-2-downarrow-mobile.png');
+}
+
 @media (min-width: 900px) {
     .taking-bevespi-aerosphere .columns-col:first-of-type {
         padding-left: 15px;
@@ -1553,14 +1587,6 @@ h2 > br::after {
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after,
     .hero.block.bevespi-side-effects-downarrow::after,
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
-        display: block;
-        content: " ";
-        width: 43px;
-        height: 20px;
-        background-repeat: no-repeat;
-        background-size: 43px 20px;
-        position: relative;
-        left: calc(50% - 22px);
         bottom: -29px;
     }
 
@@ -1579,6 +1605,10 @@ h2 > br::after {
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
         background-image: url('../images/how-section-4-down-arrow-grey.png');
         transform: translateY(-9px);
+    }
+
+    .hero.block.copd-treatment-downarrow::after {
+        display: none;
     }
 }
 
