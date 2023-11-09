@@ -405,6 +405,16 @@ a.button:any-link, button {
     margin-top: 14px;
 }
 
+.taking-bevespi-aerosphere a.button:any-link {
+    font-size: 1.1rem;
+}
+
+@media(min-width: 900px) {
+    .taking-bevespi-aerosphere a.button:any-link {
+        font-size: 1.7rem;
+    }
+}
+
 a.button:any-link::after, button::after {
     content: "";
     width: 17px;
