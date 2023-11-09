@@ -1582,6 +1582,14 @@ h2 > br::after {
     background-image: url('../images/how-section-2-downarrow-mobile.png');
 }
 
+.hero.block.how-to-use-bevespi-inhaler-downarrow::after {
+    background-image: url('../icons/bg_hero-taking-mobile_2.png');
+}
+
+.hero.block.how-to-use-bevespi-inhaler-downarrow::after {
+    bottom: -29px;
+}
+
 @media (min-width: 900px) {
     .taking-bevespi-aerosphere .columns-col:first-of-type {
         padding-left: 15px;
@@ -1601,7 +1609,6 @@ h2 > br::after {
     }
 
     .hero.block.contact-us-downarrow::after,
-    .hero.block.how-to-use-bevespi-inhaler-downarrow::after,
     .hero.block.bevespi-side-effects-downarrow::after,
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
         bottom: -29px;
