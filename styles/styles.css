@@ -1606,6 +1606,10 @@ h2 > br::after {
     bottom: -29px;
 }
 
+.taking-bevespi-aerosphere main .section.accordion-2-container::after {
+    background-image: url('../images/how-section-4-down-arrow-grey.png');
+}
+
 @media (min-width: 900px) {
     .taking-bevespi-aerosphere .columns-col:first-of-type {
         padding-left: 15px;
@@ -1643,7 +1647,6 @@ h2 > br::after {
     }
 
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
-        background-image: url('../images/how-section-4-down-arrow-grey.png');
         transform: translateY(-9px);
     }
 
