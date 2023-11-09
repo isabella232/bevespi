@@ -78,7 +78,7 @@
     --heading-font-size-xs: 1.4rem;
 
     /* nav height */
-    --nav-height: 143px;
+    --nav-height: 190px;
 
     /* page max width */
     --page-max-width: 1002px;
@@ -164,6 +164,18 @@
     descent-override: 17.37%;
     line-gap-override: 17.37%;
     size-adjust: 95%;
+}
+
+@media (min-width: 300px) {
+    :root {
+        --nav-height: 153px;
+    }
+}
+
+@media (min-width: 600px) {
+    :root {
+        --nav-height: 143px;
+    }
 }
 
 @media (min-width: 900px) {
@@ -1575,6 +1587,14 @@ h2 > br::after {
     max-width: 325px;
 }
 
+div.section:nth-of-type(2) {
+    padding-bottom: 0;
+}
+
+.contact-us main h2#important-safety-information {
+    margin-top: 0;
+}
+
 @media (min-width: 900px) {
     .copd-resources main .section.related-links-container .default-content-wrapper .button-container {
         border: 1px solid #ccc;
@@ -1635,7 +1655,7 @@ h2 > br::after {
     }
 
     .copd-resources main .hero.block h1 {
-        margin: 1px 0 113px;
+        margin: 30px 0 83px;
     }
 
     .copd-resources main .default-content-wrapper ul {
