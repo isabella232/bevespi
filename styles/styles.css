@@ -424,6 +424,7 @@ a.button:hover, a.button:focus, button:hover, button:focus {
 
 .taking-bevespi-aerosphere a.button:any-link {
     font-size: 1.1rem;
+    margin: 14px auto;
 }
 
 @media(min-width: 900px) {
