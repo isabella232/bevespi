@@ -345,17 +345,6 @@ a:not(.button):hover {
     padding: 10px 39px 10px 25px;
 }
 
-@media (min-width: 900px) {
-    .copd-resources main .button-container a {
-        margin: 0 auto;
-    }
-
-    .copd-treatment .button-container {
-        padding-right: unset;
-        padding-bottom: 30px;
-    }
-}
-
 .copd-treatment .columns .button-container {
     border-top: 1px solid var(--color-grey-5);
     position: absolute;
@@ -365,6 +354,17 @@ a:not(.button):hover {
     margin: 0 12px;
     padding-top: 30px;
     padding-right: 100px;
+}
+
+@media (min-width: 900px) {
+    .copd-resources main .button-container a {
+        margin: 0 auto;
+    }
+
+    .copd-treatment .columns .button-container {
+        padding-right: unset;
+        padding-bottom: 30px;
+    }
 }
 
 .copd-treatment .columns .button-container a {
