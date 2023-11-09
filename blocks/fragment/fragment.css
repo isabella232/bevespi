@@ -28,6 +28,10 @@ main .section.fragment-container.important-safety-information p {
     font-size: var(--body-font-size-s-isi-fragment);
 }
 
+main .section.fragment-container.important-safety-information p a {
+    display: inline;
+}
+
 main .section.fragment-container > div {
     max-width: var(--page-max-width);
 }
