@@ -11,7 +11,7 @@
 }
 
 .video.block .video-player {
-  width: 90%;
+  width: 95%;
 }
 
 .video.block .video-placeholder-wrapper {
@@ -22,7 +22,7 @@
 }
 
 .video.block .video-placeholder-wrapper .video-placeholder {
-  width: 90%;
+  width: 95%;
   background-color: black;
   height: 100%;
   position: relative;
