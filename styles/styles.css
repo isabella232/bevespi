@@ -1610,6 +1610,10 @@ h2 > br::after {
     background-image: url('../images/how-section-4-down-arrow-grey.png');
 }
 
+.taking-bevespi-aerosphere main .section.columns-container .columns-row .columns-col h2 {
+    margin-top: 0;
+}
+
 @media (min-width: 900px) {
     .taking-bevespi-aerosphere .columns-col:first-of-type {
         padding-left: 15px;
