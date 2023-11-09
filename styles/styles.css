@@ -1584,9 +1584,6 @@ h2 > br::after {
 
 .hero.block.how-to-use-bevespi-inhaler-downarrow::after {
     background-image: url('../icons/bg_hero-taking-mobile_2.png');
-}
-
-.hero.block.how-to-use-bevespi-inhaler-downarrow::after {
     bottom: -29px;
 }
 

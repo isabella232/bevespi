@@ -5,9 +5,6 @@ main .section.highlight-1-container {
 
 main .section.highlight-1-container > div:first-of-type > p {
   padding-left: 12px;
-}
-
-main .section.highlight-1-container > div:first-of-type > p {
   margin-bottom: 40px;
 }
 
