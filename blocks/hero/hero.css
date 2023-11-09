@@ -142,10 +142,19 @@ main .hero > div:nth-of-type(n+2) {
   display: flex;
 }
 
+main .hero > div:nth-of-type(n+2) div:first-of-type {
+  max-width: 270px;
+}
+
 main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
-  flex-basis: 136px;
   margin-left: auto;
-  transform: translateY(-63px);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p {
+  width: 136px;
 }
 
 main .hero > div:nth-of-type(n+2) div:nth-of-type(n+3) {
@@ -154,10 +163,6 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(n+3) {
 
 main .hero > div:nth-of-type(n+2) >div:first-of-type:last-of-type {
   max-width: 67%;
-}
-
-main .hero > div:nth-of-type(n+2) div:nth-of-type(1):not(:last-of-type) {
-  flex-basis: 44%;
 }
 
 main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > picture {
@@ -205,6 +210,19 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
   main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
     flex-basis: 340px;
     transform: translateY(15px);
+    position: initial;
+  }
+
+  main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p {
+    width: unset;
+  }
+
+  main .hero > div:nth-of-type(n+2) div:first-of-type {
+    max-width: unset;
+  }
+
+  main .hero > div:nth-of-type(n+2) div:nth-of-type(1):not(:last-of-type) {
+    flex-basis: 44%;
   }
 
   main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > picture {

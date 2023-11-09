@@ -78,7 +78,7 @@
     --heading-font-size-xs: 1.4rem;
 
     /* nav height */
-    --nav-height: 143px;
+    --nav-height: 190px;
 
     /* page max width */
     --page-max-width: 1002px;
@@ -164,6 +164,18 @@
     descent-override: 17.37%;
     line-gap-override: 17.37%;
     size-adjust: 95%;
+}
+
+@media (min-width: 300px) {
+    :root {
+        --nav-height: 153px;
+    }
+}
+
+@media (min-width: 600px) {
+    :root {
+        --nav-height: 143px;
+    }
 }
 
 @media (min-width: 900px) {
