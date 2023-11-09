@@ -1532,6 +1532,15 @@ h2 > br::after {
 }
 
 @media (min-width: 900px) {
+    .taking-bevespi-aerosphere .columns-col:first-of-type {
+        padding-left: 15px;
+        padding-right: 65px;
+    }
+
+    .taking-bevespi-aerosphere .columns-col:first-of-type > p{
+        margin-bottom: 20px;
+    }
+
     .home .columns-container:nth-of-type(2) .columns-row:first-of-type .columns-col:first-of-type {
         flex: 0 0 560px;
     }
