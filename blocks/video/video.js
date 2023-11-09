@@ -26,5 +26,5 @@ export default function decorate(block) {
       entry_id: entryID,
     });
   });
-  }, 3000);
+  }, 4000);
 }
