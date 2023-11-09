@@ -4,7 +4,7 @@ let playerID = '';
 let entryID = '';
 
 function getTagDivId() {
-  return `kaltura_player_${playerID}`
+  return `kaltura_player_${playerID}`;
 }
 
 function removeVideoPlaceholder(block) {
