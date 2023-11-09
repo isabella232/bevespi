@@ -526,7 +526,7 @@ main .section.buttons {
 }
 
 .home .columns-row img {
-    transform: scale(0.67);
+    transform: scale(0.57);
 }
 
 @media (min-width: 900px) {
@@ -585,9 +585,18 @@ main .section.buttons {
     padding-bottom: 50px;
 }
 
+
 @media (min-width: 900px) {
     .home .columns-row > div {
         padding-bottom: 80px;
+    }
+    
+    .home .columns-row > div .columns-img-col {
+        max-height: unset !important;
+    }
+    
+    .home .columns-row > div .columns-img-col > picture > img {
+        transform-origin: unset;
     }
 
     .home .columns-row:nth-of-type(2) > div {
@@ -833,6 +842,10 @@ main .section.small-vertical-margins {
 
 .copd-treatment .columns-60-40 .columns-img-col {
     order: 3;
+}
+
+.home .columns-row > div .columns-img-col {
+    max-height: 190px;
 }
 
 @media (min-width: 900px) {
@@ -1109,6 +1122,10 @@ main .section.zero-space-bottom {
     aspect-ratio: unset;
     max-width: 401px;
     max-height: 194px;
+}
+
+.home .columns-row > div .columns-img-col > picture > img {
+    transform-origin: top;
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper img {
@@ -1615,6 +1632,14 @@ h2 > br::after {
 .home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container,
 .home .section:nth-of-type(2) .columns-row:nth-of-type(4) p.button-container {
     max-width: 325px;
+}
+
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container {
+    margin-top: 10px;
+}
+
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) h2 {
+    margin-bottom: 0;
 }
 
 div.section:nth-of-type(2) {
