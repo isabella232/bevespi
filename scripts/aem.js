@@ -608,11 +608,13 @@ async function loadBlock(block) {
       const decorationComplete = new Promise((resolve) => {
         (async () => {
           try {
-            const mod = await import(
-              `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`
-            );
-            if (mod.default) {
-              await mod.default(block);
+            if (!block.classList.contains('video')) {
+              const mod = await import(
+                `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`
+              );
+              if (mod.default) {
+                await mod.default(block);
+              }
             }
           } catch (error) {
             // eslint-disable-next-line no-console
@@ -625,6 +627,17 @@ async function loadBlock(block) {
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(`failed to load block ${blockName}`, error);
+    }
+
+    if (block.classList.contains('video')) {
+      loadScript('https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/52784152/partner_id/432521').then(async () => {
+        const mod = await import(
+          `${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.js`
+        );
+        if (mod.default) {
+          await mod.default(block);
+        }
+      });
     }
     block.dataset.blockStatus = 'loaded';
   }
