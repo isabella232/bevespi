@@ -818,7 +818,7 @@ main .section.small-vertical-margins {
     }
     
     main .hero > div:nth-of-type(n+2) > div h1 {
-        margin: 50px 0;
+        margin: 30px 0 50px;
     }
 }
 
