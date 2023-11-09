@@ -526,7 +526,7 @@ main .section.buttons {
 }
 
 .home .columns-row img {
-    transform: scale(0.67);
+    transform: scale(0.57);
 }
 
 @media (min-width: 900px) {
@@ -585,9 +585,18 @@ main .section.buttons {
     padding-bottom: 50px;
 }
 
+
 @media (min-width: 900px) {
     .home .columns-row > div {
         padding-bottom: 80px;
+    }
+    
+    .home .columns-row > div .columns-img-col {
+        max-height: unset !important;
+    }
+    
+    .home .columns-row > div .columns-img-col > picture > img {
+        transform-origin: unset;
     }
 
     .home .columns-row:nth-of-type(2) > div {
@@ -799,6 +808,20 @@ main .section.small-vertical-margins {
     }
 }
 
+@media(max-width: 900px) {
+    .copd-treatment main .hero {
+        padding: 0;
+    }
+    
+    .copd-treatment main .hero div:first-of-type > div p {
+        margin: 0;
+    }
+    
+    main .hero > div:nth-of-type(n+2) > div h1 {
+        margin: 50px 0;
+    }
+}
+
 .copd-treatment .columns-row {
     position: relative;
     padding-bottom: 125px;
@@ -819,6 +842,10 @@ main .section.small-vertical-margins {
 
 .copd-treatment .columns-60-40 .columns-img-col {
     order: 3;
+}
+
+.home .columns-row > div .columns-img-col {
+    max-height: 190px;
 }
 
 @media (min-width: 900px) {
@@ -1095,6 +1122,10 @@ main .section.zero-space-bottom {
     aspect-ratio: unset;
     max-width: 401px;
     max-height: 194px;
+}
+
+.home .columns-row > div .columns-img-col > picture > img {
+    transform-origin: top;
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper img {
@@ -1531,7 +1562,36 @@ h2 > br::after {
     padding-top: 0;
 }
 
+.hero.block.contact-us-downarrow::after,
+.hero.block.how-to-use-bevespi-inhaler-downarrow::after,
+.hero.block.bevespi-side-effects-downarrow::after,
+.taking-bevespi-aerosphere main .section.accordion-2-container::after,
+.hero.block.copd-treatment-downarrow::after {
+    display: block;
+    content: " ";
+    width: 43px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 43px 20px;
+    position: relative;
+    left: calc(50% - 22px);
+    bottom: -20px;
+}
+
+.hero.block.copd-treatment-downarrow::after {
+    background-image: url('../images/how-section-2-downarrow-mobile.png');
+}
+
 @media (min-width: 900px) {
+    .taking-bevespi-aerosphere .columns-col:first-of-type {
+        padding-left: 15px;
+        padding-right: 65px;
+    }
+
+    .taking-bevespi-aerosphere .columns-col:first-of-type > p{
+        margin-bottom: 20px;
+    }
+
     .home .columns-container:nth-of-type(2) .columns-row:first-of-type .columns-col:first-of-type {
         flex: 0 0 560px;
     }
@@ -1544,14 +1604,6 @@ h2 > br::after {
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after,
     .hero.block.bevespi-side-effects-downarrow::after,
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
-        display: block;
-        content: " ";
-        width: 43px;
-        height: 20px;
-        background-repeat: no-repeat;
-        background-size: 43px 20px;
-        position: relative;
-        left: calc(50% - 22px);
         bottom: -29px;
     }
 
@@ -1571,11 +1623,31 @@ h2 > br::after {
         background-image: url('../images/how-section-4-down-arrow-grey.png');
         transform: translateY(-9px);
     }
+
+    .hero.block.copd-treatment-downarrow::after {
+        display: none;
+    }
 }
 
 .home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container,
 .home .section:nth-of-type(2) .columns-row:nth-of-type(4) p.button-container {
     max-width: 325px;
+}
+
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container {
+    margin-top: 10px;
+}
+
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) h2 {
+    margin-bottom: 0;
+}
+
+div.section:nth-of-type(2) {
+    padding-bottom: 0;
+}
+
+.contact-us main h2#important-safety-information {
+    margin-top: 0;
 }
 
 @media (min-width: 900px) {
@@ -1592,7 +1664,7 @@ h2 > br::after {
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
         margin: 0;
     }
-  
+
     .taking-bevespi-aerosphere main .section:nth-of-type(2) .columns-row:first-of-type {
         padding-bottom: 0;
     }
@@ -1625,7 +1697,7 @@ h2 > br::after {
     .taking-bevespi-aerosphere main .next.block .next-small {
         width: 115px;
     }
-  
+
     @media (min-width: 1400px) {
         .copd-resources main .hero.block picture,
         .getting-started main .hero.block picture {
