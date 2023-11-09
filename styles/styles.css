@@ -1179,6 +1179,11 @@ main .section.centered p:has(picture:first-child:last-child) {
     padding-top: 43px;
 }
 
+.about-copd main .section.what-is-copd > div:nth-of-type(3) > p,
+.about-copd main .section.what-is-copd > div:nth-of-type(5) > p {
+    text-align: center;
+}
+
 .breathing-room main .section.tabs-container > div:first-child p:last-of-type {
     font-size: 1.3rem;
     padding: 0 30px;
