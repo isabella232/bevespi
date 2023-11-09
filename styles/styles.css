@@ -338,10 +338,15 @@ a:not(.button):hover {
     font-weight: var(--link-font-weight-hover);
 }
 
+.copd-treatment .button-container {
+    padding-right: 100px;
+}
+
 .copd-treatment .button-container a {
     border: unset;
     background-color: unset;
     font-size: var(--body-font-size-s);
+    font-weight: 500;
     padding: 0;
     text-transform: unset;
 }
@@ -357,6 +362,11 @@ a:not(.button):hover {
     .copd-resources main .button-container a {
         margin: 0 auto;
     }
+
+    .copd-treatment .button-container {
+        padding-right: unset;
+        padding-bottom: 30px;
+    }
 }
 
 .copd-treatment .columns .button-container {
@@ -366,22 +376,27 @@ a:not(.button):hover {
     left: 0;
     right: 0;
     margin: 0 12px;
+    padding-top: 30px;
 }
 
 .copd-treatment .columns .button-container a {
-    margin-top: 30px;
+    display: unset;
+    margin: unset;
+    font-weight: 500;
+    padding: 0;
+    border-radius: unset;
+    font-size: var(--body-font-size-s);
 }
 
-.copd-treatment .button-container a::after {
-    content: "";
+.copd-treatment .columns .button-container a::after {
+    content: '';
     width: 20px;
     height: 20px;
     background-image: url('/icons/icon_pink-arrow-right-md.png');
     background-size: 100%;
     background-repeat: no-repeat;
-    display: block;
-    margin-left: auto;
-    transform: translate(10px, -2px);
+    display: inline-block;
+    position: relative;
 }
 
 a.button:any-link, button {
