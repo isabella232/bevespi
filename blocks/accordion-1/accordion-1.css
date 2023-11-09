@@ -130,4 +130,5 @@ main .section div.accordion-1-wrapper {
   background: url('../../icons/icon_pink-arrow-right-md.png') no-repeat;
   background-size: cover;
   margin-left: 10px;
+  transform: translateX(0);
 }

@@ -23,6 +23,7 @@ export default async function decorate(block) {
     const logo = footer.querySelector('div > p > picture');
     const a = document.createElement('a');
     a.href = 'https://www.astrazeneca-us.com/';
+    a.setAttribute('aria-label', 'Home');
     logo?.parentElement?.append(a);
     a?.append(logo);
 

@@ -78,7 +78,7 @@
     --heading-font-size-xs: 1.4rem;
 
     /* nav height */
-    --nav-height: 143px;
+    --nav-height: 190px;
 
     /* page max width */
     --page-max-width: 1002px;
@@ -164,6 +164,18 @@
     descent-override: 17.37%;
     line-gap-override: 17.37%;
     size-adjust: 95%;
+}
+
+@media (min-width: 300px) {
+    :root {
+        --nav-height: 153px;
+    }
+}
+
+@media (min-width: 600px) {
+    :root {
+        --nav-height: 143px;
+    }
 }
 
 @media (min-width: 900px) {
@@ -531,7 +543,7 @@ main .section.buttons {
     }
 
     .home .columns-row:nth-of-type(2) img {
-        transform: scale(1) translateY(-30px);
+        transform: scale(1) translate(-105px, -30px);
     }
 
     .home .columns-row:nth-of-type(4) img {
@@ -591,8 +603,9 @@ main .section.highlight-1-container.highlight-2-container {
     padding-bottom: 0;
 }
 
-main .section.accordion-2-container.video-container {
+.taking-bevespi-aerosphere main .section.accordion-2-container.video-container {
     padding-top: 40px;
+    padding-bottom: 0;
 }
 
 main .section.width-m > div,
@@ -841,6 +854,12 @@ main .section.hero-container + .section {
     padding-top: 32px;
 }
 
+.getting-started main .section:nth-of-type(6) {
+    background-image: url('../images/bg-section-2.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 .copd-resources main .section.hero-container + .section {
     padding-top: 32px;
 }
@@ -854,10 +873,6 @@ main .section.hero-container + .section {
 .section.copd-treatment-goals > .default-content-wrapper li{
     margin-top: 5px;
     margin-bottom: 5px;
-}
-
-.copd-resources main div:not(.isi) .default-content-wrapper strong {
-    font-weight: 400;
 }
 
 .copd-resources main div:not(.isi) .default-content-wrapper li {
@@ -924,6 +939,7 @@ main .section:not(.isi) .default-content-wrapper {
     content: "";
     min-height: 30px;
     position: relative;
+    max-width: 830px;
 }
 
 .section > .default-content-wrapper.back-to-top-wrapper > .back-to-top {
@@ -1096,6 +1112,10 @@ main .section[data-background] picture.section-background-img {
     overflow: hidden;
 }
 
+.breathing-room main .section[data-background] picture.section-background-img {
+    background-color: #5B3876;
+}
+
 main .section[data-background] picture.section-background-img img {
     width: 100%;
     height: 100%;
@@ -1125,6 +1145,11 @@ main .section.centered .accordion-2 {
 
 main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
+}
+
+.getting-started main div:not(.isi) .default-content-wrapper .button-container + p {
+    border-top: 1px solid var(--color-grey-5);
+    padding-top: 43px;
 }
 
 .breathing-room main .section.tabs-container > div:first-child p:last-of-type {
@@ -1161,6 +1186,10 @@ main .section.centered p:has(picture:first-child:last-child) {
     color: var(--link-color);
 }
 
+.faq main .section.accordion-1-container:nth-of-type(3) .accordion-row:first-of-type > div > p:first-of-type strong {
+    margin-right: -5px;
+}
+
 @media (min-width: 600px) {
     .breathing-room main .section.information-contact div p {
         font-size: 1.4rem;
@@ -1193,12 +1222,12 @@ main .section.centered p:has(picture:first-child:last-child) {
 
 .getting-started main .section.grey {
     background-color: var(--background-grey-4);
+    background-image: none;
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper .button-container {
     margin: 25px auto 30px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid var(--color-grey-5);
+    padding-bottom: 15px;
 }
 
 .copd-symptoms-page div.default-content-wrapper a:any-link {
@@ -1288,6 +1317,31 @@ h2 > br {
         font-size: 3.2rem;
     }
 
+    .what-is-copd div.boxes.block > div h2 {
+        font-size: 3.2rem;
+    }
+
+    .copd-stages-page div.boxes-wrapper .boxes.block div h2{
+        margin: 0;
+        font-size: 2.3rem;
+        line-height: 23px;
+        font-weight: 500;
+    }
+
+    .getting-started main .hero-container + .section .default-content-wrapper > h2:first-of-type {
+        margin-top: 0;
+        margin-bottom: 22px;
+    }
+
+    /* stylelint-disable-next-line */
+    #understanding-copdemphysema--chronic-bronchitis {
+        margin-bottom: 37px;
+    }
+
+    #rescue-maintenance-and-controller-inhalerswhats-the-difference {
+        font-size: 2.9rem;
+    }
+
     .what-is-copd .what-is-copd-infographic .columns-row img{
         max-width: unset;
         max-height: unset;
@@ -1298,11 +1352,6 @@ h2 > br {
 
     .what-is-copd {
         font-size: var(--body-font-size-m);
-    }
-
-    .what-is-copd div.boxes.block > div h2
-    {
-        font-size: 3.2rem;
     }
 
     .getting-started main div:not(.isi) .default-content-wrapper img {
@@ -1368,7 +1417,7 @@ h2 > br {
     .getting-started main .section.inhaler img:first-of-type {
         position: absolute;
         right: calc(50% - 380px);
-        top: 37px;
+        top: 1px;
     }
 
     .getting-started main div:not(.isi) .default-content-wrapper .button-container {
@@ -1399,13 +1448,6 @@ h2 > br {
         max-width: 850px;
         row-gap: 10px;
         margin: 40px auto 20px;
-    }
-
-    .copd-stages-page div.boxes-wrapper .boxes.block div h2{
-        margin: 0;
-        font-size: 2.3rem;
-        line-height: 23px;
-        font-weight: 500;
     }
 
     .copd-stages-page div.boxes-wrapper .boxes.block div p{
@@ -1498,8 +1540,10 @@ h2 > br::after {
         font-size: 1.6rem;
     }
 
+    .hero.block.contact-us-downarrow::after,
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after,
-    .hero.block.bevespi-side-effects-downarrow::after {
+    .hero.block.bevespi-side-effects-downarrow::after,
+    .taking-bevespi-aerosphere main .section.accordion-2-container::after {
         display: block;
         content: " ";
         width: 43px;
@@ -1511,12 +1555,21 @@ h2 > br::after {
         bottom: -29px;
     }
 
+    .hero.block.contact-us-downarrow::after {
+        background-image: url('../images/sitemap-section-2-downarrow.png');
+    }
+
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after {
         background-image: url('../images/bg_hero-taking_2.png');
     }
 
     .hero.block.bevespi-side-effects-downarrow::after {
         background-image: url('../images/side-effect-section-2-downarrow.png');
+    }
+
+    .taking-bevespi-aerosphere main .section.accordion-2-container::after {
+        background-image: url('../images/how-section-4-down-arrow-grey.png');
+        transform: translateY(-9px);
     }
 }
 
@@ -1526,6 +1579,15 @@ h2 > br::after {
 }
 
 @media (min-width: 900px) {
+    .copd-resources main .section.related-links-container .default-content-wrapper .button-container {
+        border: 1px solid #ccc;
+        border-left: 0;
+        border-right: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin: 35px 0;
+    }
+
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container,
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
         margin: 0;
@@ -1546,4 +1608,57 @@ h2 > br::after {
     .taking-bevespi-aerosphere main .section.video-container > div.default-content-wrapper:first-of-type {
         text-align: center;
     }
+
+    .taking-bevespi-aerosphere .accordion-2-wrapper + .columns-wrapper .columns-row:first-of-type > div:first-of-type {
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+
+    .taking-bevespi-aerosphere .accordion-2-container + .columns-container .columns-row:first-child > div:first-child {
+        padding-top: 48px;
+    }
+
+    .side-effects main .next.block .next-small {
+        width: 121px;
+    }
+
+    .taking-bevespi-aerosphere main .next.block .next-small {
+        width: 115px;
+    }
+  
+    @media (min-width: 1400px) {
+        .copd-resources main .hero.block picture,
+        .getting-started main .hero.block picture {
+            top: unset;
+        }
+    }
+
+    .getting-started main .hero.block h1 {
+        margin: 30px 0 113px;
+    }
+
+    .copd-resources main .hero.block h1 {
+        margin: 30px 0 83px;
+    }
+
+    .copd-resources main .default-content-wrapper ul {
+        padding-left: 45px;
+    }
+
+    .contact-us main .section.hero-container + .section {
+        padding-top: 55px;
+        padding-bottom: 0;
+    }
+}
+
+.getting-started main .section.hero-container + .section {
+    background-image: url('../images/bg-section-2.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 180px;
+    padding-bottom: 673px;
+}
+
+.getting-started main .section.hero-container + .section + .section {
+    margin-top: -673px;
 }

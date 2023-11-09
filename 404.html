@@ -12,7 +12,7 @@
     <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
     <script type="module">
       import { sampleRUM } from '/scripts/aem.js';
-      import { loadFragment, renderStickyFragmentInformationBlock, onScroll } from '/blocks/fragment/fragment.js';
+      import { loadFragment, renderStickyFragmentInformationBlock, onScroll, scrollToInformationBlock } from '/blocks/fragment/fragment.js';
 
       window.addEventListener('load', async () => {
         sampleRUM('404', {
@@ -24,6 +24,7 @@
         const isiFragmentTarget = document.querySelector('main.error .isi-fragment');
         isiFragmentTarget.innerHTML = fragmentSection.innerHTML;
         onScroll();
+        document.querySelector('.sticky-fragment-scroll-button').addEventListener('click', scrollToInformationBlock);
       });
     </script>
     <link rel="stylesheet" href="/styles/styles.css">
@@ -66,6 +67,7 @@
         main.error div.hero h1 {
             margin: 12px;
             text-transform: uppercase;
+            transform: translateY(-60px);
         }
 
         main.error .error-details {
@@ -114,9 +116,10 @@
 
             main.error .hero.block {
                 position: relative;
-                background-image: url('./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=750&amp;format=png&amp;optimize=medium');
+                background-image: url('./media_116bd7a66fd73360235d97aa6de5e8129f1d72a10.png?width=1920&amp;format=png&amp;optimize=medium');
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-position: 50%;
                 height: 285px;
                 }
 
