@@ -317,10 +317,6 @@ main img {
     transform: scale(0.8);
 }
 
-.taking-bevespi-aerosphere .columns-row img {
-    transform: scale(1);
-}
-
 @media (min-width: 900px) {
     .columns-row img,
     .default-content-wrapper img {
@@ -405,16 +401,6 @@ a.button:any-link, button {
     margin-top: 14px;
 }
 
-.taking-bevespi-aerosphere a.button:any-link {
-    font-size: 1.1rem;
-}
-
-@media(min-width: 900px) {
-    .taking-bevespi-aerosphere a.button:any-link {
-        font-size: 1.7rem;
-    }
-}
-
 a.button:any-link::after, button::after {
     content: "";
     width: 17px;
@@ -428,6 +414,16 @@ a.button:any-link::after, button::after {
 
 a.button:hover, a.button:focus, button:hover, button:focus {
     cursor: pointer;
+}
+
+.taking-bevespi-aerosphere a.button:any-link {
+    font-size: 1.1rem;
+}
+
+@media(min-width: 900px) {
+    .taking-bevespi-aerosphere a.button:any-link {
+        font-size: 1.7rem;
+    }
 }
 
 button:disabled, button:disabled:hover {
@@ -513,6 +509,10 @@ main blockquote p::after {
     width: 100%;
 }
 
+.taking-bevespi-aerosphere .columns-row img {
+    transform: scale(1);
+}
+
 main .section, .section .reset-spacing {
     padding: 20px 16px;
 }
@@ -593,6 +593,10 @@ main .section.buttons {
         height: 28px;
         margin-left: 10px;
     }
+}
+
+.columns-row > div > div {
+    align-self: center;
 }
 
 .home .columns-row > div {
@@ -767,10 +771,6 @@ main .section.accordion-2-container.video-container h2 {
 main .section.accordion-2-container.video-container .accordion-2 h2 {
     font-size: 1.4rem;
     padding-left: 20px;
-}
-
-.columns-row > div > div {
-    align-self: center;
 }
 
 @media (min-width: 900px) {
@@ -1621,6 +1621,10 @@ h2 > br::after {
     background-image: url('../images/how-section-4-down-arrow-grey.png');
 }
 
+.home .section:nth-of-type(2) .columns-row:nth-of-type(2) h2 {
+    margin-bottom: 0;
+}
+
 .taking-bevespi-aerosphere main .section.columns-container .columns-row .columns-col h2 {
     margin-top: 0;
 }
@@ -1677,10 +1681,6 @@ h2 > br::after {
 
 .home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container {
     margin-top: 10px;
-}
-
-.home .section:nth-of-type(2) .columns-row:nth-of-type(2) h2 {
-    margin-bottom: 0;
 }
 
 div.section:nth-of-type(2) {
