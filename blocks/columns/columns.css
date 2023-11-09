@@ -42,6 +42,16 @@ main .section.columns-container {
   transform: translate(20px, 15px);
 }
 
+@media (max-width: 900px) {
+  .copd-treatment .columns:not(.inhaler-x-ray).columns-80-20 img {
+    transform: translate(0, 15px);
+  }
+  
+  .copd-treatment .columns:not(.inhaler-x-ray) .columns-row:first-of-type .columns-col:last-of-type {
+    padding-left: 0;
+  } 
+}
+
 .columns-col {
   --col-padding: 15px;
 
