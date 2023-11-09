@@ -1608,6 +1608,14 @@ h2 > br::after {
     max-width: 325px;
 }
 
+div.section:nth-of-type(2) {
+    padding-bottom: 0;
+}
+
+.contact-us main h2#important-safety-information {
+    margin-top: 0;
+}
+
 @media (min-width: 900px) {
     .copd-resources main .section.related-links-container .default-content-wrapper .button-container {
         border: 1px solid #ccc;
@@ -1622,7 +1630,7 @@ h2 > br::after {
     .side-effects main .section.accordion-1-container + .section > div.default-content-wrapper:first-of-type .button-container a {
         margin: 0;
     }
-  
+
     .taking-bevespi-aerosphere main .section:nth-of-type(2) .columns-row:first-of-type {
         padding-bottom: 0;
     }
@@ -1655,7 +1663,7 @@ h2 > br::after {
     .taking-bevespi-aerosphere main .next.block .next-small {
         width: 115px;
     }
-  
+
     @media (min-width: 1400px) {
         .copd-resources main .hero.block picture,
         .getting-started main .hero.block picture {
