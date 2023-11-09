@@ -13,18 +13,15 @@ export default function decorate(block) {
 
   window.setTimeout(() => {
     loadScript('https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/52784152/partner_id/432521', () => {
-
-    // eslint-disable-next-line
-    kWidget.embed({
-      targetId: tagDivId,
-      wid: '_432521',
-      uiconf_id: 52784152,
-      flashvars: {
-        autoPlay: true,
-      },
-      cache_st: playerID,
-      entry_id: entryID,
+      // eslint-disable-next-line
+      kWidget.embed({
+        targetId: tagDivId,
+        wid: '_432521',
+        uiconf_id: 52784152,
+        flashvars: {},
+        cache_st: playerID,
+        entry_id: entryID,
+      });
     });
-  });
   }, 4000);
 }
