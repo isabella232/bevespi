@@ -857,6 +857,11 @@ main .section.small-vertical-margins {
     main .hero > div:nth-of-type(n+2) > div h1 {
         margin: 30px 0 50px;
     }
+
+    .copd-resources main .hero > div:nth-of-type(n+2) > div h1 {
+        margin: 10px 0 70px;
+        max-width: 150px;
+    }
 }
 
 .copd-treatment .columns-row {
@@ -971,12 +976,6 @@ main .section.hero-container + .section {
     .copd-resources main .section.hero-container + .section > div > p.button-container {
         padding: 20px 25px 20px 39px;
     }
-
-    .copd-resources main .section.hero-container + .section > div > p.button-container a::after {
-        margin: 0 0 0 15px;
-        width: 20px;
-        height: 20px;
-    }
 }
 
 .section.copd-treatment-goals > .default-content-wrapper li{
@@ -1003,6 +1002,14 @@ main .section.hero-container + .section {
     margin-top: 10px;
     width: 30px;
     height: 30px;
+}
+
+@media (min-width: 600px) {
+    .copd-resources main .section.hero-container + .section > div > p.button-container a::after {
+        margin: 0 0 0 15px;
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .what-is-copd .default-content-wrapper {
