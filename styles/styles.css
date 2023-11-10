@@ -1816,3 +1816,9 @@ div.section:nth-of-type(2) {
 .getting-started main .section.hero-container + .section + .section {
     margin-top: -673px;
 }
+
+@media (max-width: 900px) {
+    h1#about-copd {
+        max-width: 150px;
+    }
+}
