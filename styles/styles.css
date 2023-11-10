@@ -1378,15 +1378,6 @@ main .section.centered p:has(picture:first-child:last-child) {
     padding-bottom: 15px;
 }
 
-.copd-symptoms-page div.default-content-wrapper a:any-link {
-    font-weight: 400;
-}
-
-.getting-started main div:not(.isi) .default-content-wrapper .button-container a {
-    margin: auto;
-    font-size: 1.3rem;
-}
-
 .what-is-copd {
     font-size: var(--body-font-size-s);
 }
