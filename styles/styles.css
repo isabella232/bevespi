@@ -918,6 +918,12 @@ main .section.hero-container + .section {
     padding-top: 32px;
 }
 
+@media (max-width: 900px) {
+    .faq main .section.hero-container + .section {
+        padding-top: 15px;
+    }
+}
+
 .getting-started main .section:nth-of-type(6) {
     background-image: url('../images/bg-section-2.png');
     background-repeat: no-repeat;
