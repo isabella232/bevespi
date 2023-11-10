@@ -1140,11 +1140,12 @@ main .section.zero-space-bottom {
 
 .getting-started main div:not(.isi) .default-content-wrapper ul {
     margin: 0;
-    padding: 10px;
+    padding:  0 10px 10px;
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper li {
     padding-bottom: 10px;
+    margin: 0;
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper p {
@@ -1162,6 +1163,7 @@ main .section.zero-space-bottom {
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper img {
+    transform-origin: top;
     transform: scale(0.6);
 }
 
@@ -1207,17 +1209,14 @@ main .section.centered .accordion-2 {
     color: var(--color-blue-2);
 }
 
-main .section.centered p:has(picture:first-child:last-child) {
-    text-align: center;
-}
-
 .getting-started main div:not(.isi) .default-content-wrapper .button-container + p {
     border-top: 1px solid var(--color-grey-5);
     padding-top: 43px;
 }
 
 .about-copd main .section.what-is-copd > div:nth-of-type(3) > p,
-.about-copd main .section.what-is-copd > div:nth-of-type(5) > p {
+.about-copd main .section.what-is-copd > div:nth-of-type(5) > p,
+main .section.centered p:has(picture:first-child:last-child) {
     text-align: center;
 }
 
@@ -1242,6 +1241,14 @@ main .section.centered p:has(picture:first-child:last-child) {
     margin-top: 0;
 }
 
+.getting-started main .section p:has(picture:first-child:last-child):first-of-type {
+    max-height: 80px;
+}
+
+.getting-started main .section.inhaler p:has(picture:first-child:last-child):first-of-type {
+    max-height: 140px;
+}
+
 .breathing-room main .section.information-contact div p picture img {
     min-width: 50px;
 }
@@ -1262,6 +1269,18 @@ main .section.centered p:has(picture:first-child:last-child) {
 @media (min-width: 600px) {
     .breathing-room main .section.information-contact div p {
         font-size: 1.4rem;
+    }
+
+    .getting-started main div:not(.isi) .default-content-wrapper img {
+        transform: scale(0.8);
+    }
+
+    .getting-started main .section p:has(picture:first-child:last-child):first-of-type {
+        max-height: 100px;
+    }
+
+    .getting-started main .section.inhaler p:has(picture:first-child:last-child):first-of-type {
+        max-height: 180px;
     }
 }
 
@@ -1287,6 +1306,14 @@ main .section.centered p:has(picture:first-child:last-child) {
     .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
         font-size: 2rem;
     }
+
+    .getting-started main .section p:has(picture:first-child:last-child):first-of-type {
+        max-height: unset;
+    }
+    
+    .getting-started main .section.inhaler p:has(picture:first-child:last-child):first-of-type {
+        max-height: unset;
+    }
 }
 
 .getting-started main .section.grey {
@@ -1307,7 +1334,6 @@ main .section.centered p:has(picture:first-child:last-child) {
     margin: auto;
     font-size: 1.3rem;
 }
-
 
 .what-is-copd {
     font-size: var(--body-font-size-s);
@@ -1424,6 +1450,7 @@ h2 > br {
     }
 
     .getting-started main div:not(.isi) .default-content-wrapper img {
+        transform-origin: unset;
         transform: scale(1);
     }
 
@@ -1790,4 +1817,10 @@ div.section:nth-of-type(2) {
 
 .getting-started main .section.hero-container + .section + .section {
     margin-top: -673px;
+}
+
+@media (max-width: 900px) {
+    h1#about-copd {
+        max-width: 150px;
+    }
 }
