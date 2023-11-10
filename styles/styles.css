@@ -992,6 +992,13 @@ main .section.hero-container + .section {
     display: none;
 }
 
+.copd-resources main .section.buttons > div > p.button-container > a::after {
+    margin-right: 15px;
+    margin-top: 10px;
+    background-size: contain;
+    width: 35px;
+}
+
 .copd-resources main .section.hero-container + .section > div > p.button-container a::after {
     margin-left: 0;
     margin-right: 15px;
