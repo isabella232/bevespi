@@ -119,6 +119,10 @@ main .section.columns-container {
   order: 0;
 }
 
+.taking-bevespi-aerosphere .columns-row .columns-img-col {
+  order: 2;
+}
+
 @media (max-width: 900px) {
   .home .columns-row:last-of-type .columns-img-col {
     order: 2;
