@@ -930,13 +930,52 @@ main .section.hero-container + .section {
     background-size: 100% 100%;
 }
 
+.copd-symptoms-page div.default-content-wrapper a:any-link {
+    font-weight: 400;
+}
+
+.getting-started main div:not(.isi) .default-content-wrapper .button-container a {
+    margin: auto;
+    font-size: 1.3rem;
+}
+
 .copd-resources main .section.hero-container + .section {
-    padding-top: 32px;
+    padding-top: 0;
+}
+
+.copd-resources main .section.hero-container + .section > div > h2 {
+    margin-bottom: 40px;
+}
+
+.copd-resources main .section.hero-container + .section > div > p.button-container {
+    padding: 30px 25px 30px 39px;
+    margin: 35px 0;
+    border-top: 1px solid var(--highlight-background-color);
+    border-bottom: 1px solid var(--highlight-background-color);
+}
+
+.copd-resources main .section.hero-container + .section > div > p.button-container a {
+    margin: 0;
+}
+
+.copd-resources main .section.hero-container + .section > div > p.button-container > em {
+    display: flex;
+    justify-content: center;
 }
 
 @media (min-width: 900px) {
     .copd-resources main .section.hero-container + .section {
         padding-top: 0;
+    }
+
+    .copd-resources main .section.hero-container + .section > div > p.button-container {
+        padding: 20px 25px 20px 39px;
+    }
+
+    .copd-resources main .section.hero-container + .section > div > p.button-container a::after {
+        margin: 0 0 0 15px;
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -951,6 +990,14 @@ main .section.hero-container + .section {
 
 .copd-resources main .section.isi .button-container a::after {
     display: none;
+}
+
+.copd-resources main .section.hero-container + .section > div > p.button-container a::after {
+    margin-left: 0;
+    margin-right: 15px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
 }
 
 .what-is-copd .default-content-wrapper {
@@ -1293,16 +1340,6 @@ main .section.centered p:has(picture:first-child:last-child) {
     margin: 25px auto 30px;
     padding-bottom: 15px;
 }
-
-.copd-symptoms-page div.default-content-wrapper a:any-link {
-    font-weight: 400;
-}
-
-.getting-started main div:not(.isi) .default-content-wrapper .button-container a {
-    margin: auto;
-    font-size: 1.3rem;
-}
-
 
 .what-is-copd {
     font-size: var(--body-font-size-s);
