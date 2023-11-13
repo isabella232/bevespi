@@ -1754,10 +1754,6 @@ h2 > br::after {
         background-image: url('../images/bg_hero-taking_2.png');
     }
 
-    .hero.block.bevespi-side-effects-downarrow::after {
-        /*background-image: url('../images/side-effect-section-2-downarrow.png');*/
-    }
-
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
         transform: translateY(-9px);
     }
