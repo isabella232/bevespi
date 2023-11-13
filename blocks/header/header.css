@@ -258,13 +258,13 @@ header .nav-middle > div > div > div div:nth-of-type(1) {
 header .nav-middle > div > div > div div:nth-of-type(2) {
   font-weight: 500;
   position: relative;
-  top: 34px;
+  top: 5px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p {
   display: inline-block;
   position: absolute;
-  top: -35px;
+  top: 37px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p,
