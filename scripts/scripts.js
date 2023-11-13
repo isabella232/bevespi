@@ -37,7 +37,7 @@ export function loadScript(url, callback) {
   if (!script) {
     script = document.createElement('script');
     script.src = url;
-    script.async = true;
+    script.defer = true;
     head.append(script);
     script.onload = callback;
     return script;
@@ -66,7 +66,9 @@ export function getEnvType(hostname = window.location.hostname) {
 */
 export function decorateExternalLinks(container) {
   container.querySelectorAll('a').forEach((a) => {
-    if (!a.getAttribute('href')?.startsWith('/')) a.setAttribute('target', '_blank');
+    const isPdfLink = a.getAttribute('href')?.includes('.pdf');
+    const isExternalLink = !a.getAttribute('href')?.startsWith('/');
+    if (isExternalLink || isPdfLink) a.setAttribute('target', '_blank');
   });
 }
 
