@@ -1703,6 +1703,7 @@ h2 > br::after {
 .hero.block.bevespi-side-effects-downarrow::after,
 .hero.block.bevespi-faqs-downarrow::after,
 .taking-bevespi-aerosphere main .section.accordion-2-container::after,
+.copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after,
 .hero.block.copd-treatment-downarrow::after {
     display: block;
     content: " ";
@@ -1715,6 +1716,17 @@ h2 > br::after {
     bottom: -20px;
 }
 
+.copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after {
+    bottom: -145px;
+    z-index: 2;
+}
+
+@media (min-width: 900px) {
+    .copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after {
+        display: none;
+    }
+}
+
 .hero.block.copd-treatment-downarrow::after {
     background-image: url('../images/how-section-2-downarrow-mobile.png');
 }
@@ -1724,6 +1736,7 @@ h2 > br::after {
     bottom: -29px;
 }
 
+.copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after,
 .taking-bevespi-aerosphere main .section.accordion-2-container::after {
     background-image: url('../images/how-section-4-down-arrow-grey.png');
 }
