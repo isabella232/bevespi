@@ -46,7 +46,10 @@ export default async function decorate(block) {
     const explore = nav.querySelector('.nav-middle > div > div > div > div:nth-of-type(3)');
     if (explore) {
       explore.innerHTML = "<span class='explore'>Explore</span><span class='close'>Close</span>";
-      explore.addEventListener('click', () => { nav.classList.toggle('expanded'); });
+      explore.addEventListener('click', () => {
+        nav.classList.toggle('expanded');
+        document.body.classList.toggle('nav-expanded');
+      });
     }
 
     const brandImg = nav.querySelector('.nav-middle picture');
