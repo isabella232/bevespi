@@ -90,10 +90,9 @@ main .section div.accordion-2-wrapper {
   grid-column: 1;
   grid-row: 1;
   align-self: center;
-  padding: 0;
 }
 
-main .section.accordion-2-container.video-container p.p-img-first {
+main .section.accordion-2-container.video-container .accordion-2 > div > div > p.p-img-first {
   padding: 0;
 }
 
