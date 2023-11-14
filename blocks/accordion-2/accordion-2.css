@@ -92,6 +92,10 @@ main .section div.accordion-2-wrapper {
   align-self: center;
 }
 
+main .section.accordion-2-container.video-container .accordion-2 > div > div > p.p-img-first {
+  padding: 0;
+}
+
 .accordion-2 > div > div > h2 {
   grid-column: 2;
   grid-row: 1;

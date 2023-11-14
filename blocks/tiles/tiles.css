@@ -10,7 +10,7 @@
   box-sizing: border-box;
   text-align: left;
 
-  --tile-height: 172px;
+  --tile-height: 300px;
   --grid-gap: 5px;
 }
 

@@ -23,6 +23,11 @@ main .section div.highlight-1-wrapper {
     padding-top: 18px;
     padding-bottom: 18px;
   }
+
+  main .section.highlight-1-container > div:first-of-type > p {
+    padding-left: 0;
+    margin-bottom: 40px;
+  }
 }
 
 .highlight-1 h2 {

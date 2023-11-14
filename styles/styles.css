@@ -276,6 +276,10 @@ ul {
     padding-inline-start: 13px;
 }
 
+.copd-resources ul {
+    padding-inline-start: 45px;
+}
+
 hr {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -422,13 +426,13 @@ a.button:hover, a.button:focus, button:hover, button:focus {
     cursor: pointer;
 }
 
-.taking-bevespi-aerosphere a.button:any-link {
+.taking-bevespi-aerosphere main .section .columns-wrapper a.button:any-link {
     font-size: 1.1rem;
     margin: 14px auto;
 }
 
 @media(min-width: 900px) {
-    .taking-bevespi-aerosphere a.button:any-link {
+    .taking-bevespi-aerosphere main .section .columns-wrapper a.button:any-link {
         font-size: 1.7rem;
     }
 }
@@ -602,12 +606,12 @@ main .section.buttons {
     }
 }
 
-.columns-row > div > div {
-    align-self: center;
-}
-
 .home .columns-row > div {
     padding-bottom: 50px;
+}
+
+.taking-bevespi-aerosphere .columns-row > div > div {
+    align-self: center;
 }
 
 
@@ -1250,6 +1254,16 @@ main .section.centered {
     text-align: center;
 }
 
+.getting-started main .section.centered {
+    text-align: left;
+}
+
+@media (min-width: 900px) {
+    .getting-started main .section.centered {
+        text-align: center;
+    }
+}
+
 main .section.centered .accordion-2 {
     text-align: unset;
 }
@@ -1877,7 +1891,7 @@ div.section:nth-of-type(2) {
 }
 
 .getting-started main .section.hero-container + .section + .section {
-    margin-top: -673px;
+    margin-top: -650px;
 }
 
 .sitemap main .section:nth-of-type(2) ul {
