@@ -850,6 +850,10 @@ main .section.small-vertical-margins {
         padding: 0;
     }
 
+    .side-effects main .hero {
+        padding: 0;
+    }
+
     .copd-treatment main .hero div:first-of-type > div p {
         margin: 0;
     }
@@ -1369,7 +1373,7 @@ main .section.centered p:has(picture:first-child:last-child) {
     .getting-started main .section p:has(picture:first-child:last-child):first-of-type {
         max-height: unset;
     }
-    
+
     .getting-started main .section.inhaler p:has(picture:first-child:last-child):first-of-type {
         max-height: unset;
     }
@@ -1714,6 +1718,10 @@ h2 > br::after {
     margin-top: 0;
 }
 
+.hero.block.bevespi-side-effects-downarrow::after {
+    background-image: url('../images/side-effect-section-2-downarrow.png');
+}
+
 @media (min-width: 900px) {
     .taking-bevespi-aerosphere .columns-col:first-of-type {
         padding-left: 15px;
@@ -1744,10 +1752,6 @@ h2 > br::after {
 
     .hero.block.how-to-use-bevespi-inhaler-downarrow::after {
         background-image: url('../images/bg_hero-taking_2.png');
-    }
-
-    .hero.block.bevespi-side-effects-downarrow::after {
-        background-image: url('../images/side-effect-section-2-downarrow.png');
     }
 
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
