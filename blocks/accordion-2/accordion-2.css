@@ -90,6 +90,7 @@ main .section div.accordion-2-wrapper {
   grid-column: 1;
   grid-row: 1;
   align-self: center;
+  padding: 0 !important;
 }
 
 .accordion-2 > div > div > h2 {
