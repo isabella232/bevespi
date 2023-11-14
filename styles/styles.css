@@ -606,12 +606,12 @@ main .section.buttons {
     }
 }
 
-.taking-bevespi-aerosphere .columns-row > div > div {
-    align-self: center;
-}
-
 .home .columns-row > div {
     padding-bottom: 50px;
+}
+
+.taking-bevespi-aerosphere .columns-row > div > div {
+    align-self: center;
 }
 
 
