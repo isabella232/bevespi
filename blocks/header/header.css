@@ -534,3 +534,9 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
     padding: 0;
   }
 }
+
+@media (max-width: 899px) {
+  body.nav-expanded {
+    overflow-y: hidden;
+  }
+}
