@@ -1693,6 +1693,7 @@ h2 > br::after {
 .hero.block.contact-us-downarrow::after,
 .hero.block.how-to-use-bevespi-inhaler-downarrow::after,
 .hero.block.bevespi-side-effects-downarrow::after,
+.hero.block.bevespi-faqs-downarrow::after,
 .taking-bevespi-aerosphere main .section.accordion-2-container::after,
 .hero.block.copd-treatment-downarrow::after {
     display: block;
@@ -1731,10 +1732,19 @@ h2 > br::after {
     background-image: url('../images/side-effect-section-2-downarrow.png');
 }
 
+.hero.block.bevespi-faqs-downarrow::after {
+    background-image: url('../images/bg_hero_faqs_down-arrow_mobile.png');
+    bottom: -29px;
+}
+
 @media (min-width: 900px) {
     .taking-bevespi-aerosphere .columns-col:first-of-type {
         padding-left: 15px;
         padding-right: 65px;
+    }
+
+    .hero.block.bevespi-faqs-downarrow::after {
+        background-image: url('../images/bg_hero_faqs_down-arrow.png');
     }
 
     .taking-bevespi-aerosphere .columns-col:first-of-type > p{
@@ -1751,6 +1761,7 @@ h2 > br::after {
 
     .hero.block.contact-us-downarrow::after,
     .hero.block.bevespi-side-effects-downarrow::after,
+    .hero.block.bevespi-faqs-downarrow::after,
     .taking-bevespi-aerosphere main .section.accordion-2-container::after {
         bottom: -29px;
     }
@@ -1847,7 +1858,8 @@ div.section:nth-of-type(2) {
 
     @media (min-width: 1400px) {
         .copd-resources main .hero.block picture,
-        .getting-started main .hero.block picture {
+        .getting-started main .hero.block picture,
+        .faqs main .hero.block picture {
             top: unset;
         }
     }
@@ -1945,13 +1957,13 @@ div.section:nth-of-type(2) {
     .sitemap main .section:nth-of-type(2) ul > li {
         font-size: 2.8rem;
     }
-    
+
     .sitemap main .section:nth-of-type(2) ul > li > ul > li {
         font-size: 2rem;
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    
+
     .sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li {
         font-size: 1.6rem;
     }
