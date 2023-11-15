@@ -46,7 +46,7 @@
 }
 
 .boxes.block > div a {
-    color: #e81b75;
+    color: var(--cta-color);
     text-decoration: none;
     line-height: unset;
     height: unset;
