@@ -328,7 +328,7 @@ main img {
     }
 }
 
-a[x-apple-data-detectors] {
+a[href^="tel"] {
     color: var(--text-color) !important;
 }
 
