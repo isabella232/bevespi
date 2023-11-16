@@ -34,6 +34,14 @@ header .nav-top li {
   line-height: 16px;
 }
 
+header .nav-bottom li {
+  list-style-type: none;
+  border-bottom: 2px solid var(--color-blue-1);
+  padding: 15px 0 15px 15px;
+  line-height: 1;
+  display: flex;
+}
+
 header .nav-top li:nth-of-type(n+2)::before {
   content: "\2022";
   position: relative;
@@ -218,14 +226,6 @@ header .nav-bottom ul {
   }
 }
 
-header .nav-bottom li {
-  list-style-type: none;
-  border-bottom: 2px solid var(--color-blue-1);
-  padding: 15px 0 15px 15px;
-  line-height: 1;
-  display: flex;
-}
-
 header .nav-bottom li::after {
   content: "";
   width: 19px;
@@ -365,7 +365,7 @@ header .nav-middle > div > div > div div:nth-of-type(3) {
 }
 
 @media (max-width: 899px) {
-  header .nav-middle > div > div > div div:nth-of-type(3) {
+  header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
     padding-right: 0;
   }
 }
