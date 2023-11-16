@@ -288,7 +288,7 @@ header .nav-middle > div > div > div div:nth-of-type(2) p {
 
 @supports (-webkit-touch-callout: none) {
   header .nav-middle > div > div > div div:nth-of-type(2) p {
-    top: 50px;
+    top: 52px;
   }
 }
 
