@@ -118,6 +118,12 @@ header .nav-middle {
   position: relative;
 }
 
+@media (max-width: 899px) {
+  header .nav-middle {
+    padding: 0 8px;
+  }
+}
+
 header .nav-middle .expand-top {
   width: 23px;
   height: 12px;
@@ -190,6 +196,12 @@ header .nav-bottom ul {
   transform: translateY(50px);
 }
 
+@media (max-width: 899px) {
+  header .nav-bottom ul {
+    margin-top: 25px;
+  }
+}
+
 header .nav-bottom li {
   list-style-type: none;
   border-bottom: 2px solid var(--color-blue-1);
@@ -200,7 +212,7 @@ header .nav-bottom li {
 
 header .nav-bottom li::after {
   content: "";
-  width: 18px;
+  width: 19px;
   height: 16px;
   background-image: url('/icons/icon_pink-arrow-right-md.png');
   background-size: 16px 16px;
@@ -334,6 +346,12 @@ header .nav-middle > div > div > div div:nth-of-type(3) {
   background-size: 17px 13px;
   padding: 8px 14px 8px 4px;
   cursor: pointer;
+}
+
+@media (max-width: 899px) {
+  header .nav-middle > div > div > div div:nth-of-type(3) {
+    padding-right: 0;
+  }
 }
 
 header .nav-middle > div > div > div div:nth-of-type(3) span.close {
