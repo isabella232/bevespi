@@ -36,7 +36,7 @@
     --text-color-grey-1: #585858;
     --color-blue-1: #273670;
     --color-blue-2: #17265F;
-    --cta-color: #e81b75;
+    --cta-color: #820D40;
     --color-green: #91d8ca;
     --color-gray: #dedede;
     --color-purple: #3c3463;
@@ -876,6 +876,10 @@ main .section.small-vertical-margins {
 
     .copd-treatment main .hero div:first-of-type > div p {
         margin: 0;
+    }
+
+    .contact-us main .hero div:first-of-type > div p {
+        margin: -18px 0;
     }
 
     main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
@@ -1719,6 +1723,7 @@ h2 > br::after {
 .hero.block.bevespi-side-effects-downarrow::after,
 .hero.block.bevespi-faqs-downarrow::after,
 .taking-bevespi-aerosphere main .section.accordion-2-container::after,
+.copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after,
 .hero.block.copd-treatment-downarrow::after {
     display: block;
     content: " ";
@@ -1731,6 +1736,22 @@ h2 > br::after {
     bottom: -20px;
 }
 
+.hero.block.contact-us-downarrow::after {
+    background-image: url('../images/sitemap-section-2-downarrow-mobile.png');
+    bottom: -30px;
+}
+
+.copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after {
+    bottom: -145px;
+    z-index: 2;
+}
+
+@media (min-width: 900px) {
+    .copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after {
+        display: none;
+    }
+}
+
 .hero.block.copd-treatment-downarrow::after {
     background-image: url('../images/how-section-2-downarrow-mobile.png');
 }
@@ -1740,6 +1761,7 @@ h2 > br::after {
     bottom: -29px;
 }
 
+.copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after,
 .taking-bevespi-aerosphere main .section.accordion-2-container::after {
     background-image: url('../images/how-section-4-down-arrow-grey.png');
 }
