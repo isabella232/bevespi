@@ -65,6 +65,7 @@ header .nav-top .search input {
   font-size: 1.3rem;
   color: var(--text-color-grey-1);
   -webkit-appearance: none;
+  border-radius: 0;
 }
 
 header .expanded .nav-top .search input {
