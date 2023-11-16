@@ -283,13 +283,7 @@ header .nav-middle > div > div > div div:nth-of-type(2) {
 header .nav-middle > div > div > div div:nth-of-type(2) p {
   display: inline-block;
   position: absolute;
-  top: 37px;
-}
-
-@supports (-webkit-touch-callout: none) {
-  header .nav-middle > div > div > div div:nth-of-type(2) p {
-    top: 52px;
-  }
+  top: 52px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p,
