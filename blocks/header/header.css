@@ -38,6 +38,23 @@ header .nav-top li:nth-of-type(n+2)::before {
   content: "\2022";
   position: relative;
   left: -8px;
+  top: 2px;
+  font-size: 1.4rem;
+}
+
+header .nav-top li:nth-of-type(n+2) {
+  position: relative;
+  bottom: 2px;
+}
+
+@media (min-width: 900px) {
+  header .nav-top li:nth-of-type(n+2)::before {
+    top: 1px;
+  }
+
+  header .nav-top li:nth-of-type(n+2) {
+    bottom: 1px;
+  }
 }
 
 header .nav-top .search {
