@@ -88,7 +88,7 @@ header .nav-top .search input:focus::placeholder {
 }
 
 header .nav-top .search button {
-  height: 45px;
+  height: 40px;
   width: 40px;
   background: url('/icons/icon_grey-arr-right.png') no-repeat center;
   background-size: 17px 17px;
@@ -98,6 +98,12 @@ header .nav-top .search button {
   margin: 0 0 0 -4px;
   padding: 0;
   border: none;
+}
+
+@supports (-webkit-touch-callout: none) {
+  header .nav-top .search button {
+    height: 43px;
+  }
 }
 
 header .expanded .nav-top .search button::after {
