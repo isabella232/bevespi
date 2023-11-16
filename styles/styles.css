@@ -2045,6 +2045,6 @@ div.section:nth-of-type(2) {
     }
 
     .columns.inhaler-x-ray .columns-row:first-of-type .columns-col:nth-of-type(2) circle {
-        transform:scale(0.8, 0.8);
+        transform:scale(0.8, 0.8) translate(-5px, 50px);
     }
 }
