@@ -2034,3 +2034,17 @@ div.section:nth-of-type(2) {
         max-width: 150px;
     }
 }
+
+@media (max-width: 899px) {
+    .columns.inhaler-x-ray .columns-row:first-of-type .columns-col:nth-of-type(2) {
+        align-self: center;
+    }
+
+    .columns.inhaler-x-ray .columns-row:first-of-type .columns-col:nth-of-type(2) image {
+        width: 200px;
+    }
+
+    .columns.inhaler-x-ray .columns-row:first-of-type .columns-col:nth-of-type(2) circle {
+        transform:scale(0.8, 0.8);
+    }
+}
