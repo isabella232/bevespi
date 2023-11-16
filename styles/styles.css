@@ -1734,7 +1734,8 @@ h2 > br::after {
 .hero.block.bevespi-faqs-downarrow::after,
 .taking-bevespi-aerosphere main .section.accordion-2-container::after,
 .copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after,
-.hero.block.copd-treatment-downarrow::after {
+.hero.block.copd-treatment-downarrow::after,
+.hero.about-copd-downarrow::after {
     display: block;
     content: " ";
     width: 43px;
@@ -1791,6 +1792,14 @@ h2 > br::after {
 .hero.block.bevespi-faqs-downarrow::after {
     background-image: url('../images/bg_hero_faqs_down-arrow_mobile.png');
     bottom: -29px;
+}
+
+@media (max-width: 899px) {
+    .hero.about-copd-downarrow::after {
+        background-image: url('../images/about-copd-downarrow.png');
+        background-size: 32px 12px;
+        bottom: -29px;
+    }
 }
 
 .faq .accordion-1 .button {
