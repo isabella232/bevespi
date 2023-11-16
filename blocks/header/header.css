@@ -102,7 +102,7 @@ header .nav-top .search button {
 
 @supports (-webkit-touch-callout: none) {
   header .nav-top .search button {
-    height: 42px;
+    height: 43px;
   }
 }
 
