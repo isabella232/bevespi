@@ -1732,6 +1732,11 @@ h2 > br::after {
     bottom: -20px;
 }
 
+.hero.block.contact-us-downarrow::after {
+    background-image: url('../images/sitemap-section-2-downarrow-mobile.png');
+    bottom: -30px;
+}
+
 .copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after {
     bottom: -145px;
     z-index: 2;
