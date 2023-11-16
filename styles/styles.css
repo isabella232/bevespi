@@ -878,6 +878,10 @@ main .section.small-vertical-margins {
         margin: 0;
     }
 
+    .contact-us main .hero div:first-of-type > div p {
+        margin: -18px 0;
+    }
+
     main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
         margin: 30px 0 50px;
     }
@@ -1730,6 +1734,11 @@ h2 > br::after {
     position: relative;
     left: calc(50% - 22px);
     bottom: -20px;
+}
+
+.hero.block.contact-us-downarrow::after {
+    background-image: url('../images/sitemap-section-2-downarrow-mobile.png');
+    bottom: -30px;
 }
 
 .copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after {
