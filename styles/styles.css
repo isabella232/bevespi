@@ -756,6 +756,10 @@ main .section.green-accent .default-content-wrapper em {
     font-weight: 500;
 }
 
+main .section.green-accent .default-content-wrapper em a[href^="tel"] {
+    color: var(--color-green) !important;
+}
+
 main .section.green-accent .default-content-wrapper em u {
     font-family: var(--gotham-light-font-family);
     color: var(--color-white);
