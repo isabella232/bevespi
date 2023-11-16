@@ -98,6 +98,7 @@ header .nav-top .search button {
   margin: 0 0 0 -4px;
   padding: 0;
   border: none;
+  border: 10px solid red;
 }
 
 header .expanded .nav-top .search button::after {
