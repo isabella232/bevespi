@@ -329,7 +329,7 @@ main img {
 }
 
 a[href^="tel"] {
-    color: var(--text-color) !important;
+    color: var(--text-color);
 }
 
 /* buttons */
