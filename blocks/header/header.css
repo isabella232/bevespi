@@ -286,6 +286,12 @@ header .nav-middle > div > div > div div:nth-of-type(2) p {
   top: 37px;
 }
 
+@supports (-webkit-touch-callout: none) {
+  header .nav-middle > div > div > div div:nth-of-type(2) p {
+    top: 50px;
+  }
+}
+
 header .nav-middle > div > div > div div:nth-of-type(2) p,
 header .nav-middle > div > div > div div:nth-of-type(2) p a {
   font-weight: 400;
