@@ -567,6 +567,13 @@ main blockquote p::after {
     transform: scale(0.6);
 }
 
+@media (max-width: 899px) {
+    .taking-bevespi-aerosphere .section.hero-container + .section .columns-row:first-of-type .columns-img-col {
+        height: 250px;
+        margin-top: -40px;
+    }
+}
+
 @media (min-width: 900px) {
     .taking-bevespi-aerosphere .columns-row img {
         transform: scale(1);
