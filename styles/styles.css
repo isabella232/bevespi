@@ -1802,6 +1802,18 @@ h2 > br::after {
     }
 }
 
+@media (max-width: 460px) {
+    main .hero.about-copd-downarrow > div:first-of-type picture {
+        bottom: -17px;
+    }
+}
+
+@media (max-width: 420px) {
+    main .hero.about-copd-downarrow > div:first-of-type picture {
+        bottom: -19px;
+    }
+}
+
 .faq .accordion-1 .button {
     border: 1px solid transparent;
 }
