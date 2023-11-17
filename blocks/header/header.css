@@ -6,7 +6,7 @@ header .nav-top {
   background-color: var(--background-grey-1);
 }
 
-header .expanded .nav-top {
+header .nav-top.expanded {
   height: unset;
 }
 
@@ -158,6 +158,12 @@ header .nav-middle .expand-top {
   position: absolute;
   left: 50%;
   top: 0;
+}
+
+header .nav-middle .expand-top.expanded {
+  background-image: url('/icons/mobile-collapse-top-nav.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 header .nav-middle img {
