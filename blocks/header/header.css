@@ -107,6 +107,13 @@ header .expanded .nav-top .search input:focus {
   outline: unset;
 }
 
+header .expanded .nav-top .search input::placeholder {
+  font-size: 1.7rem;
+  color: black;
+  position: relative;
+  top: 5px;
+}
+
 header .nav-top .search input:focus::placeholder {
   color: transparent;
 }
