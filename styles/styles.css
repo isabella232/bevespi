@@ -543,7 +543,7 @@ main blockquote p::after {
 }
 
 .taking-bevespi-aerosphere .columns-row img {
-    transform: scale(0.75);
+    transform: scale(0.6);
 }
 
 @media (min-width: 900px) {
