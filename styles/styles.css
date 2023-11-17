@@ -467,10 +467,31 @@ a.button.secondary:any-link {
     font-size: 1.4rem;
 }
 
+main .section.white-text h1 {
+    color: white;
+}
+
+main .section.small-heading h1 {
+    font-size: 1.9rem;
+    text-transform: uppercase;
+}
+
+.breathing-room main .section.small-heading h1 {
+    font-size: var(--heading-font-size-m);
+}
+
+.side-effects main div.hero > div:nth-of-type(n+2) > div h1 {
+    margin: 50px 0 30px;
+}
+
 @media (min-width: 900px) {
     .side-effects main .section a.button.secondary:any-link {
         font-size: 1.6rem;
         font-weight: var(--font-weight-regular);
+    }
+
+    .side-effects main div.hero > div:nth-of-type(n+2) > div h1 {
+        margin: 30px 0 50px;
     }
 }
 
@@ -729,19 +750,6 @@ main .section.accordion-2-container.video-container p {
 /* section metadata - text align and color */
 main .section.white-text {
     color: white;
-}
-
-main .section.white-text h1 {
-    color: white;
-}
-
-main .section.small-heading h1 {
-    font-size: 1.9rem;
-    text-transform: uppercase;
-}
-
-.breathing-room main .section.small-heading h1 {
-    font-size: var(--heading-font-size-m);
 }
 
 @media (min-width: 900px) {
@@ -1740,7 +1748,8 @@ h2 > br::after {
 .hero.block.bevespi-faqs-downarrow::after,
 .taking-bevespi-aerosphere main .section.accordion-2-container::after,
 .copd-treatment .columns.rows-grey-white > div.columns-row:nth-child(odd)::after,
-.hero.block.copd-treatment-downarrow::after {
+.hero.block.copd-treatment-downarrow::after,
+.hero.about-copd-downarrow::after {
     display: block;
     content: " ";
     width: 43px;
@@ -1797,6 +1806,26 @@ h2 > br::after {
 .hero.block.bevespi-faqs-downarrow::after {
     background-image: url('../images/bg_hero_faqs_down-arrow_mobile.png');
     bottom: -29px;
+}
+
+@media (max-width: 899px) {
+    .hero.about-copd-downarrow::after {
+        background-image: url('../images/about-copd-downarrow.png');
+        background-size: 32px 12px;
+        bottom: -29px;
+    }
+}
+
+@media (max-width: 460px) {
+    main .hero.about-copd-downarrow > div:first-of-type picture {
+        bottom: -17px;
+    }
+}
+
+@media (max-width: 420px) {
+    main .hero.about-copd-downarrow > div:first-of-type picture {
+        bottom: -19px;
+    }
 }
 
 .faq .accordion-1 .button {
