@@ -564,7 +564,20 @@ main blockquote p::after {
 }
 
 .taking-bevespi-aerosphere .columns-row img {
-    transform: scale(1);
+    transform: scale(0.6);
+}
+
+@media (max-width: 899px) {
+    .taking-bevespi-aerosphere .section.hero-container + .section .columns-row:first-of-type .columns-img-col {
+        height: 250px;
+        margin-top: -40px;
+    }
+}
+
+@media (min-width: 900px) {
+    .taking-bevespi-aerosphere .columns-row img {
+        transform: scale(1);
+    }
 }
 
 main .section, .section .reset-spacing {
@@ -2075,5 +2088,9 @@ div.section:nth-of-type(2) {
 @media (max-width: 900px) {
     h1#about-copd {
         max-width: 150px;
+    }
+    
+    main .section.accordion-2-container.video-container .columns.font-s p {
+        font-size: var(--body-font-size-s);
     }
 }
