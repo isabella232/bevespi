@@ -97,6 +97,7 @@ header .expanded .nav-top .search input {
   outline: unset;
   margin-top: 0;
   padding-top: 0;
+  border-right: 5px solid var(--background-grey-2);
 }
 
 header .nav-top .search input:focus {
