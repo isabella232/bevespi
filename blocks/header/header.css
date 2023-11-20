@@ -121,6 +121,14 @@ header .expanded .nav-top .search input::placeholder {
   top: 3px;
 }
 
+@media (min-width: 900px) {
+  header .expanded .nav-top .search input::placeholder {
+    font-size: unset;
+    color: grey;
+    top: unset;
+  }
+}
+
 header .nav-top .search input:focus::placeholder {
   color: transparent;
 }
@@ -187,6 +195,14 @@ header .nav-middle img {
 
 header .nav-middle ul {
   padding-inline-start: 9px;
+}
+
+header .nav-middle > div > div > div {
+  position: relative;
+}
+
+header .expanded .nav-top > div {
+  flex-direction: row-reverse;
 }
 
 @media (min-width: 900px) {
@@ -296,14 +312,6 @@ header .expanded .nav-bottom {
 
 header .nav-top li:first-of-type {
   padding-left: 0;
-}
-
-header .nav-middle > div > div > div {
-  position: relative;
-}
-
-header .expanded .nav-top > div {
-  flex-direction: row-reverse;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(1) {
