@@ -2024,6 +2024,11 @@ div.section:nth-of-type(2) {
     font-size: 2.3rem;
 }
 
+.getting-started main div:not(.isi) .default-content-wrapper ul {
+    margin: 0;
+    padding:  0 10px 10px;
+}
+
 .sitemap main .section:nth-of-type(2) div > ul > li > ul,
 .sitemap main .section:nth-of-type(2) div > ul > li:last-of-type {
     border: 1px solid #172660;
@@ -2074,11 +2079,6 @@ div.section:nth-of-type(2) {
     transform: translateX(-25px);
     color: var(--link-color);
     margin-top: 20px;
-}
-
-.getting-started main div:not(.isi) .default-content-wrapper ul {
-    margin: 0;
-    padding:  0 10px 10px;
 }
 
 .sitemap main .section:nth-of-type(2) div > ul > li > ul {
