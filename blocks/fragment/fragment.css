@@ -67,6 +67,12 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     z-index: 10;
 }
 
+@media (min-width: 600px) {
+    main .section.fragment-container.important-safety-information .sticky-fragment-block {
+        bottom: 0;
+    }
+}
+
 @media (min-width: 900px) {
     main .section.fragment-container.important-safety-information h2 {
         font-size: var(--heading-font-size-ml);
@@ -75,10 +81,6 @@ main .section.fragment-container.important-safety-information .sticky-fragment-b
     main .section.fragment-container.important-safety-information ul li,
     main .section.fragment-container.important-safety-information p {
         font-size: var(--body-font-size-m-isi-fragment);
-    }
-
-    main .section.fragment-container.important-safety-information .sticky-fragment-block {
-        bottom: 0;
     }
 }
 
