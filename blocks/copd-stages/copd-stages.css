@@ -23,9 +23,24 @@
     margin-right: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
+
+.block.copd-stages > div > div:first-child > picture {
+    margin-top: 17px;
+}
+
+@media (min-width: 900px) {
+    .block.copd-stages > div > div:first-child {
+        justify-content: center;
+    }
+
+    .block.copd-stages > div > div:first-child > picture {
+        margin-top: 0;
+    }
+}
+
+
 
 .block.copd-stages > div > div:nth-child(2) {
     padding-bottom: 20px;
