@@ -1059,9 +1059,11 @@ main .section.hero-container + .section {
     margin-bottom: 5px;
 }
 
-.sitemap main .section:nth-of-type(2) li {
-    margin-top: 20px;
-    margin-bottom: 20px;
+@media (min-width: 900px) {
+    .sitemap main .section:nth-of-type(2) li {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 .copd-resources main div:not(.isi) .default-content-wrapper li {
