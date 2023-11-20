@@ -97,11 +97,13 @@ header .expanded .nav-top .search input {
   outline: unset;
   margin-top: 0;
   padding-top: 0;
+  border-right: 5px solid var(--background-grey-2);
 }
 
 header .nav-top .search input:focus {
   background-color: var(--background-grey-3);
   outline: 4px solid var(--background-grey-3);
+  border-right: 5px solid white;
 }
 
 header .expanded .nav-top .search input:focus {
@@ -545,7 +547,12 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
 
   header .expanded .nav-bottom {
     top: 172px;
-    height: unset;
+    height: 285px;
+    padding-top: 10px;
+  }
+
+  .faq header .expanded .nav-bottom {
+    height: 295px;
   }
 
   header .nav-bottom br {
@@ -566,6 +573,12 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
     flex-flow: column wrap;
   }
 
+  @media (min-width: 900px) {
+    header .nav-bottom ul {
+      margin: 32px 0 23px;
+    }
+  }
+
   header .nav-bottom ul li {
     width: 312.8px;
     height: 38px;
@@ -573,6 +586,7 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
 
   header .nav-bottom ul li:nth-of-type(n+4) {
     width: 280.8px;
+    padding-left: 45px;
   }
 
   header .nav-bottom li::after {
