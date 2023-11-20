@@ -104,10 +104,8 @@ header .nav-top .search input:focus {
   outline: 4px solid var(--background-grey-3);
 }
 
-@media (min-width: 900px) {
-  header .nav-top .search input:focus {
-    border-right: 5px solid white;
-  }
+header .nav-top .search input:focus {
+  border-right: 5px solid white;
 }
 
 header .expanded .nav-top .search input:focus {
