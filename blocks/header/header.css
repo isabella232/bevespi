@@ -97,11 +97,13 @@ header .expanded .nav-top .search input {
   outline: unset;
   margin-top: 0;
   padding-top: 0;
+  border-right: 5px solid var(--background-grey-2);
 }
 
 header .nav-top .search input:focus {
   background-color: var(--background-grey-3);
   outline: 4px solid var(--background-grey-3);
+  border-right: 5px solid white;
 }
 
 header .expanded .nav-top .search input:focus {
