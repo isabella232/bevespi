@@ -563,10 +563,6 @@ main blockquote p::after {
     width: 100%;
 }
 
-.taking-bevespi-aerosphere .columns-row img {
-    transform: scale(0.6);
-}
-
 @media (max-width: 899px) {
     .taking-bevespi-aerosphere .section.hero-container + .section .columns-row:first-of-type .columns-img-col {
         height: 250px;
@@ -1393,6 +1389,10 @@ main .section.centered p:has(picture:first-child:last-child) {
     margin-right: -5px;
 }
 
+.taking-bevespi-aerosphere .section:not(.video-container.accordion-2-container) .columns-row img {
+    transform: scale(0.6);
+}
+
 .getting-started main div:not(.isi) .default-content-wrapper p > strong:first-child:last-child {
     font-size: 1.7rem;
     color: var(--link-color);
@@ -1519,6 +1519,14 @@ h2 > br {
     margin-right: auto;
     margin-left: auto;
     padding: 15px 0;
+}
+
+.taking-bevespi-aerosphere .section.video-container.accordion-2-container .columns-row img {
+    transform: unset;
+}
+
+.taking-bevespi-aerosphere .section.video-container.accordion-2-container .columns-wrapper .columns .columns-row > div {
+    padding-top: 15px;
 }
 
 .copd-stages-page div.copd-stages.block {
