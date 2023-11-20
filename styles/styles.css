@@ -930,6 +930,14 @@ main .section.small-vertical-margins {
     .copd-treatment main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
         margin: 40px 0 30px;
     }
+
+    .getting-started main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
+        margin-top: 0;
+    }
+
+    .sitemap main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
+        margin-top: 0;
+    }
 }
 
 .copd-treatment .columns-row {
@@ -1049,6 +1057,13 @@ main .section.hero-container + .section {
 .section.copd-treatment-goals > .default-content-wrapper li{
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+@media (min-width: 900px) {
+    .sitemap main .section:nth-of-type(2) li {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 .copd-resources main div:not(.isi) .default-content-wrapper li {
@@ -2036,22 +2051,8 @@ div.section:nth-of-type(2) {
     margin: 30px auto;
 }
 
-.sitemap main .section:nth-of-type(2) ul > li {
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li {
     font-size: 2.3rem;
-}
-
-.sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li {
-    font-size: 1.2rem;
-}
-
-.sitemap main .section:nth-of-type(2) ul > li > ul > li:nth-of-type(6) > ul > li > a:any-link {
-    border-bottom: 1px solid #ccc;
-    padding-left: 24px;
-    width: 215px;
-    padding-bottom: 15px;
-    transform: translateX(-25px);
-    color: var(--link-color);
-    margin-top: 20px;
 }
 
 .getting-started main div:not(.isi) .default-content-wrapper ul {
@@ -2064,6 +2065,53 @@ div.section:nth-of-type(2) {
     border: 1px solid #172660;
 }
 
+.sitemap main .section:nth-of-type(2) div > ul > li:last-of-type {
+    border-left: 0;
+    border-right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li {
+    font-size: 1.5rem;
+}
+
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li > ul > li {
+    font-size: 1.2rem;
+}
+
+@media (min-width: 900px) {
+    .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li {
+        font-size: 2.8rem;
+    }
+    
+    .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li {
+        font-size: 2rem;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li > ul > li {
+        font-size: 1.6rem;
+    }
+
+    .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li:nth-of-type(2) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-top: 50px;
+    }
+}
+
+.sitemap main .section:nth-of-type(2) ul > li > ul > li:nth-of-type(6) > ul > li > a:any-link {
+    border-bottom: 1px solid #ccc;
+    padding-left: 24px;
+    width: 215px;
+    padding-bottom: 15px;
+    transform: translateX(-25px);
+    color: var(--link-color);
+    margin-top: 20px;
+}
+
 .sitemap main .section:nth-of-type(2) div > ul > li > ul {
     border-bottom: 0;
     border-left: 0;
@@ -2071,13 +2119,6 @@ div.section:nth-of-type(2) {
     padding-top: 20px;
     margin-top: 20px;
     margin-bottom: -18px;
-}
-
-.sitemap main .section:nth-of-type(2) div > ul > li:last-of-type {
-    border-left: 0;
-    border-right: 0;
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
 .sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li > ul {
@@ -2089,26 +2130,23 @@ div.section:nth-of-type(2) {
     margin-bottom: 23px;
 }
 
-@media (min-width: 900px) {
-    .sitemap main .section:nth-of-type(2) ul > li {
-        font-size: 2.8rem;
-    }
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(4) > ul::before {
+    content:"";
+    height: 2px;
+    width: 200px;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    transform: translate(-28px, -10px);
+}
 
-    .sitemap main .section:nth-of-type(2) ul > li > ul > li {
-        font-size: 2rem;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(4) > ul {
+    margin-bottom: 0;
+}
 
-    .sitemap main .section:nth-of-type(2) ul > li > ul > li > ul > li {
-        font-size: 1.6rem;
-    }
-
-    .sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li:nth-of-type(2) {
-        padding-top: 30px;
-        padding-bottom: 30px;
-        margin-top: 50px;
-    }
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(6) > ul,
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(6) > ul > li:nth-of-type(2),
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(6) > ul > li:nth-of-type(2) a {
+    margin-top: 0;
 }
 
 .sitemap main .section:nth-of-type(2) .section.hero-container + .section {
