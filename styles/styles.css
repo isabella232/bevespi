@@ -892,6 +892,11 @@ main .section.small-vertical-margins {
     }
 }
 
+.getting-started main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
+    margin: 29px 0 90px;
+    font-size: 2.5rem;
+}
+
 @media(max-width: 900px) {
     .copd-treatment main .hero {
         padding: 0;
@@ -907,6 +912,10 @@ main .section.small-vertical-margins {
 
     .contact-us main .hero div:first-of-type > div p {
         margin: -18px 0;
+    }
+
+    .getting-started main .hero:not(.home) {
+        padding-top: 0;
     }
 
     main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
@@ -1322,7 +1331,7 @@ main .section.centered {
     text-align: left;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 600px) {
     .getting-started main .section.centered {
         text-align: center;
     }
@@ -1481,6 +1490,10 @@ main .section.centered p:has(picture:first-child:last-child) {
 
 .what-is-copd div.boxes.block > div {
     padding: 25px 20px;
+}
+
+.getting-started main .hero > div:nth-of-type(n+2) {
+    margin-left: 12px;
 }
 
 .what-is-copd .video-embed {
@@ -1924,6 +1937,13 @@ div.section:nth-of-type(2) {
     margin-bottom: 50px;
 }
 
+@media (min-width: 600px) {
+    .getting-started main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
+        margin: 80px 0 159px;
+        font-size: 4.5rem;
+    }
+}
+
 @media (min-width: 900px) {
     .copd-resources main .section.related-links-container .default-content-wrapper .button-container {
         border: 1px solid #ccc;
@@ -1976,10 +1996,6 @@ div.section:nth-of-type(2) {
         width: 115px;
     }
 
-    .getting-started main .hero.block h1 {
-        margin: 30px 0 113px;
-    }
-
     .copd-resources main .hero.block h1 {
         margin: 30px 0 83px;
     }
@@ -1991,6 +2007,12 @@ div.section:nth-of-type(2) {
     .contact-us main .section.hero-container + .section {
         padding-top: 55px;
         padding-bottom: 0;
+    }
+
+    .getting-started main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
+        margin: 29px 0 90px;
+        font-size: var(--heading-font-size-xxl);
+        max-width: unset;
     }
 }
 
@@ -2008,6 +2030,13 @@ div.section:nth-of-type(2) {
     background-size: 100% 100%;
     background-position: 0 180px;
     padding-bottom: 673px;
+    padding-top: 0;
+}
+
+@media (min-width: 900px) {
+    .getting-started main .section.hero-container + .section {
+        padding-top: 30px;
+    }
 }
 
 .getting-started main .section.hero-container + .section + .section {
