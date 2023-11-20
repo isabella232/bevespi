@@ -1050,6 +1050,11 @@ main .section.hero-container + .section {
     margin-bottom: 5px;
 }
 
+.sitemap main .section:nth-of-type(2) li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .copd-resources main div:not(.isi) .default-content-wrapper li {
     margin-bottom: 15px;
 }
@@ -2009,11 +2014,6 @@ div.section:nth-of-type(2) {
     margin-top: -650px;
 }
 
-.sitemap main .section:nth-of-type(2) li {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
 .sitemap main .section:nth-of-type(2) ul {
     list-style: none;
     max-width: 578px;
@@ -2064,25 +2064,6 @@ div.section:nth-of-type(2) {
     margin-top: 20px;
 }
 
-.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(4) > ul::before {
-    content:"";
-    height: 2px;
-    width: 200px;
-    border-bottom: 1px solid #ccc;
-    display: block;
-    transform: translate(-28px, -10px);
-}
-
-.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(4) > ul {
-    margin-bottom: 0;
-}
-
-.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(6) > ul,
-.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(6) > ul > li:nth-of-type(2),
-.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(6) > ul > li:nth-of-type(2) a {
-    margin-top: 0;
-}
-
 .getting-started main div:not(.isi) .default-content-wrapper ul {
     margin: 0;
     padding:  0 10px 10px;
@@ -2116,6 +2097,25 @@ div.section:nth-of-type(2) {
 .sitemap main .section:nth-of-type(2) ul > li > ul > li:nth-of-type(6) > ul > li > ul {
     margin-top: 15px;
     margin-bottom: 23px;
+}
+
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(4) > ul::before {
+    content:"";
+    height: 2px;
+    width: 200px;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    transform: translate(-28px, -10px);
+}
+
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(4) > ul {
+    margin-bottom: 0;
+}
+
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(6) > ul,
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(6) > ul > li:nth-of-type(2),
+.sitemap main .section:nth-of-type(2) .default-content-wrapper > ul > li > ul > li:nth-of-type(6) > ul > li:nth-of-type(2) a {
+    margin-top: 0;
 }
 
 .sitemap main .section:nth-of-type(2) .section.hero-container + .section {
