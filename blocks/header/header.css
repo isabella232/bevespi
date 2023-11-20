@@ -102,9 +102,6 @@ header .expanded .nav-top .search input {
 header .nav-top .search input:focus {
   background-color: var(--background-grey-3);
   outline: 4px solid var(--background-grey-3);
-}
-
-header .nav-top .search input:focus {
   border-right: 5px solid white;
 }
 
