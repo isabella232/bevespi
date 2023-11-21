@@ -318,6 +318,10 @@ header .nav-bottom img {
   transform: translateY(-6px);
 }
 
+header .expanded {
+  position: relative;
+}
+
 header .expanded .nav-bottom {
   display: block;
   background-color: var(--background-blue-1);
@@ -332,6 +336,10 @@ header .expanded .nav-bottom {
 
 header .nav-top li:first-of-type {
   padding-left: 0;
+}
+
+header .expanded .nav-bottom > div {
+  height: 100%;
 }
 
 header .nav-bottom > div > div:nth-of-type(2) {
