@@ -63,6 +63,7 @@ export default async function decorate(block) {
     <button type="submit">Go</button>
     </form>`;
     nav.querySelector('.nav-top > div').append(search);
+    nav.querySelector('.nav-bottom > div').append(search.cloneNode(true));
 
     const explore = nav.querySelector('.nav-middle > div > div > div > div:nth-of-type(3)');
     if (explore) {
@@ -71,6 +72,12 @@ export default async function decorate(block) {
         nav.classList.toggle('expanded');
         document.body.classList.toggle('nav-expanded');
       });
+      const mobileExplore = explore.cloneNode(true);
+      mobileExplore.addEventListener('click', () => {
+        nav.classList.toggle('expanded');
+        document.body.classList.toggle('nav-expanded');
+      });
+      nav.querySelector('.nav-bottom > div').append(mobileExplore);
     }
 
     const brandImg = nav.querySelector('.nav-middle picture');

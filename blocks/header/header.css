@@ -15,7 +15,8 @@ header .nav-top > div {
   display: flex;
 }
 
-header .expanded .nav-top > div .search form {
+header .expanded .nav-top > div .search form,
+header .expanded .nav-bottom > div .search form {
   display: flex;
   padding-top: 20px;
 }
@@ -64,6 +65,10 @@ header .nav-top li:nth-of-type(n+2) {
   header .nav-top li:nth-of-type(n+2) {
     bottom: 1px;
   }
+
+  header .expanded .nav-bottom > div > div:nth-of-type(2) {
+    display: none;
+  }
 }
 
 header .nav-top .search {
@@ -72,16 +77,21 @@ header .nav-top .search {
 }
 
 header .expanded .nav-top .search {
-  display: block;
-  z-index: 12;
-  flex: 1;
-}
-
-header .nav-top .search label {
   display: none;
 }
 
-header .nav-top .search input {
+header .expanded .nav-bottom .search {
+  position: absolute;
+  top: 0;
+}
+
+header .nav-top .search label,
+header .nav-bottom .search label {
+  display: none;
+}
+
+header .nav-top .search input,
+header .nav-bottom .search input {
   background-color: var(--background-grey-2);
   outline: 4px solid var(--background-grey-2);
   border: none;
@@ -94,23 +104,26 @@ header .nav-top .search input {
   border-right: 5px solid var(--background-grey-2);
 }
 
-header .expanded .nav-top .search input {
+header .expanded .nav-top .search input,
+header .expanded .nav-bottom .search input {
   outline: unset;
   margin-top: 0;
   padding-top: 0;
 }
 
-header .nav-top .search input:focus {
+header .nav-top .search input:focus,
+header .nav-bottom .search input:focus {
   background-color: var(--background-grey-3);
   outline: 4px solid var(--background-grey-3);
   border-right: 5px solid white;
 }
 
-header .expanded .nav-top .search input:focus {
+header .expanded .nav-top .search input:focus,
+header .expanded .nav-bottom .search input:focus {
   outline: unset;
 }
 
-header .expanded .nav-top .search input::placeholder {
+header .expanded .nav-bottom .search input::placeholder {
   font-size: 1.7rem;
   color: var(--text-color);
   position: relative;
@@ -125,11 +138,13 @@ header .expanded .nav-top .search input::placeholder {
   }
 }
 
-header .nav-top .search input:focus::placeholder {
+header .nav-top .search input:focus::placeholder,
+header .nav-bottom .search input:focus::placeholder {
   color: transparent;
 }
 
-header .nav-top .search button {
+header .nav-top .search button,
+header .nav-bottom .search button {
   height: 40px;
   width: 40px;
   background: url('/icons/icon_grey-arr-right.png') no-repeat center;
@@ -143,13 +158,16 @@ header .nav-top .search button {
 }
 
 @supports (-webkit-touch-callout: none) {
-  header .nav-top .search button {
+  header .nav-top .search button,
+  header .nav-bottom .search button {
     height: 43px;
   }
 }
 
 header .nav-top .search button::after,
-header .expanded .nav-top .search button::after {
+header .nav-bottom .search button::after,
+header .expanded .nav-top .search button::after,
+header .expanded .nav-bottom .search button::after {
   display: none;
 }
 
@@ -221,6 +239,7 @@ header .expanded .nav-top > div {
 
   header .expanded .nav-top .search {
     flex: unset;
+    display: block;
   }
 
   header .expanded .nav-top .search input {
@@ -308,10 +327,38 @@ header .expanded .nav-bottom {
   width: 100%;
   height: 100vh;
   z-index: 11;
+  overflow: auto;
 }
 
 header .nav-top li:first-of-type {
   padding-left: 0;
+}
+
+header .nav-bottom > div > div:nth-of-type(2) {
+  display: block;
+}
+
+header .nav-bottom > div > div:nth-of-type(2),
+header .nav-middle > div > div > div div:nth-of-type(3) {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  width: 100px;
+  border-radius: 0 0 12px 12px;
+  height: 12px;
+  border-left: 2px solid var(--color-blue-2);
+  border-bottom: 2px solid var(--color-blue-2);
+  border-right: 2px solid var(--color-blue-2);
+  font-size: var(--body-font-size-xs);
+  text-transform: uppercase;
+  text-align: right;
+  margin-left: auto;
+  background-image: url('/icons/icon-explore-hamburger.png');
+  background-position: 21px 6px;
+  background-repeat: no-repeat;
+  background-size: 17px 13px;
+  padding: 8px 14px 8px 4px;
+  cursor: pointer;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(1) {
@@ -370,36 +417,36 @@ header .nav-middle > div > div > div div:nth-of-type(2) p a::after {
   margin-left: 5px;
 }
 
-header .nav-middle > div > div > div div:nth-of-type(3) {
-  position: absolute;
-  top: 0;
-  right: 12px;
-  width: 100px;
-  border-radius: 0 0 12px 12px;
-  height: 12px;
-  border-left: 2px solid var(--color-blue-2);
-  border-bottom: 2px solid var(--color-blue-2);
-  border-right: 2px solid var(--color-blue-2);
-  font-size: var(--body-font-size-xs);
-  text-transform: uppercase;
-  text-align: right;
-  margin-left: auto;
-  background-image: url('/icons/icon-explore-hamburger.png');
-  background-position: 21px 6px;
-  background-repeat: no-repeat;
-  background-size: 17px 13px;
-  padding: 8px 14px 8px 4px;
-  cursor: pointer;
-}
-
-@media (max-width: 899px) {
-  header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
-    padding-right: 0;
-  }
+header .expanded .nav-bottom > div > div > span.close {
+  display: block;
+  color: var(--background-color);
+  font-size: var(--body-font-size-s);
 }
 
 header .nav-middle > div > div > div div:nth-of-type(3) span.close {
   font-size: var(--body-font-size-s);
+  display: none;
+}
+
+@media (max-width: 899px) {
+  header .expanded .nav-bottom > div > div:nth-of-type(2),
+  header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
+    padding-right: 0;
+  }
+
+  header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
+    display: none;
+  }
+}
+
+header .expanded .nav-bottom > div > div:nth-of-type(2) {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  z-index: 12;
+  background-image: url('/icons/icon_close-x.png');
+  background-size: 15px 15px;
+  background-position: 34px 5px;
 }
 
 header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
@@ -410,16 +457,8 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) {
   top: -40px;
 }
 
-header .nav-middle > div > div > div div:nth-of-type(3) .close {
-  display: none;
-}
-
-header .expanded .nav-middle > div > div > div div:nth-of-type(3) .close {
-  display: block;
-  color: var(--background-color);
-}
-
-header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
+header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore,
+header .expanded .nav-bottom > div > div:nth-of-type(2) span.explore {
   display: none;
 }
 
@@ -487,6 +526,10 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
     margin: 0;
   }
 
+  header .nav-bottom .search {
+    display: none;
+  }
+
   header .nav-bottom ul li a {
     padding-right: 20px;
     width: 70%;
@@ -527,6 +570,7 @@ header .expanded .nav-middle > div > div > div div:nth-of-type(3) .explore {
     font-size: 2.2rem;
     margin-left: auto;
     padding: 18px 21px 16px 3px;
+    display: unset;
   }
 
   header .nav-middle > div > div > div div:nth-of-type(3),
