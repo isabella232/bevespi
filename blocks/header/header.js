@@ -36,7 +36,7 @@ export default async function decorate(block) {
                 beforeBrElement.appendChild(br.previousSibling);
                 const afterBrElement = document.createElement('span');
                 afterBrElement.appendChild(br.nextSibling);
-                link.innerHTML = "";
+                link.innerHTML = '';
                 link.appendChild(beforeBrElement);
                 link.appendChild(afterBrElement);
               }
