@@ -268,7 +268,7 @@ header .nav-bottom a:any-link {
 }
 
 header .nav-bottom ul {
-  padding: 0;
+  padding: 0 0 80px;
   transform: translateY(50px);
 }
 
@@ -625,14 +625,9 @@ header .expanded .nav-bottom > div > div:nth-of-type(2) span.explore {
     height: 210px;
     align-content: start;
     font-size: var(--body-font-size-l);
-    margin: 32px 20px 23px;
+    margin: 32px 0 23px;
     flex-flow: column wrap;
-  }
-
-  @media (min-width: 900px) {
-    header .nav-bottom ul {
-      margin: 32px 0 23px;
-    }
+    padding: 0;
   }
 
   header .nav-bottom ul li {
