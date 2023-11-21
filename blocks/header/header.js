@@ -25,6 +25,24 @@ export default async function decorate(block) {
       if (section) {
         section.classList.add(`nav-${c}`);
         section.innerHTML = `<div>${section.innerHTML}</div>`;
+
+        if (c === 'bottom') {
+          const links = section.querySelectorAll(':scope a');
+          if (links.length > 0) {
+            links.forEach((link) => {
+              const br = link.querySelector('br');
+              if (br) {
+                const beforeBrElement = document.createElement('span');
+                beforeBrElement.appendChild(br.previousSibling);
+                const afterBrElement = document.createElement('span');
+                afterBrElement.appendChild(br.nextSibling);
+                link.innerHTML = "";
+                link.appendChild(beforeBrElement);
+                link.appendChild(afterBrElement);
+              }
+            });
+          }
+        }
       }
     });
 

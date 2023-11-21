@@ -280,12 +280,15 @@ header .nav-bottom li a:hover {
   font-weight: bold;
 }
 
-header .nav-bottom br {
-  content: " ";
+header .nav-bottom li a > span:nth-child(2) {
+  padding-left: 0.3rem;
 }
 
-header .nav-bottom br::after {
-  content: " ";
+@media (min-width: 900px) {
+  header .nav-bottom li a > span:nth-child(2) {
+    padding-left: 0;
+    display: block;
+  }
 }
 
 header .nav-bottom img {
