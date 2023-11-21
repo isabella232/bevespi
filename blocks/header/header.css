@@ -91,13 +91,13 @@ header .nav-top .search input {
   font-size: 1.3rem;
   color: var(--text-color-grey-1);
   border-radius: 0;
+  border-right: 5px solid var(--background-grey-2);
 }
 
 header .expanded .nav-top .search input {
   outline: unset;
   margin-top: 0;
   padding-top: 0;
-  border-right: 5px solid var(--background-grey-2);
 }
 
 header .nav-top .search input:focus {
@@ -112,7 +112,7 @@ header .expanded .nav-top .search input:focus {
 
 header .expanded .nav-top .search input::placeholder {
   font-size: 1.7rem;
-  color: black;
+  color: var(--text-color);
   position: relative;
   top: 3px;
 }
@@ -120,7 +120,7 @@ header .expanded .nav-top .search input::placeholder {
 @media (min-width: 900px) {
   header .expanded .nav-top .search input::placeholder {
     font-size: unset;
-    color: grey;
+    color: var(--color-grey-4);
     top: unset;
   }
 }
@@ -148,6 +148,7 @@ header .nav-top .search button {
   }
 }
 
+header .nav-top .search button::after,
 header .expanded .nav-top .search button::after {
   display: none;
 }
