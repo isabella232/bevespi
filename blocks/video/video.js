@@ -12,12 +12,12 @@ export default function decorate(block) {
   block.append(tagDiv);
 
   window.setTimeout(() => {
-    loadScript('https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/52784152/partner_id/432521', () => {
+    loadScript('https://cdnapisec.kaltura.com/p/432521/sp/43252100/embedIframeJs/uiconf_id/30355282/partner_id/432521', () => {
       // eslint-disable-next-line
       kWidget.embed({
         targetId: tagDivId,
         wid: '_432521',
-        uiconf_id: 52784152,
+        uiconf_id: 30355282,
         flashvars: {},
         cache_st: playerID,
         entry_id: entryID,
