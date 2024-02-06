@@ -1,5 +1,5 @@
 import { readBlockConfig, decorateIcons } from '../../scripts/aem.js';
-import { decorateExternalLinks } from '../../scripts/scripts.js';
+import { decorateExternalLinks, wrapHyphenatedWords } from '../../scripts/scripts.js';
 
 /**
  * loads and decorates the footer
@@ -26,6 +26,8 @@ export default async function decorate(block) {
     a.setAttribute('aria-label', 'Home');
     logo?.parentElement?.append(a);
     a?.append(logo);
+
+    [...footer.querySelectorAll('p')].forEach(wrapHyphenatedWords);
 
     decorateIcons(footer);
     decorateExternalLinks(footer);
