@@ -14,7 +14,7 @@ main .hero {
   z-index: 2;
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1800px) {
   .side-effects main .hero {
     padding: 120px 0 50px;
   }
