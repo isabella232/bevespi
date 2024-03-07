@@ -214,6 +214,11 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
     margin-left: auto;
     margin-right: auto;
   }
+  
+  .copd-resources main .hero:not(.home) > div:nth-of-type(n+2),
+  .getting-started main .hero:not(.home) > div:nth-of-type(n+2) {
+    min-height: 288px;
+  }
 
   main .hero > div:nth-of-type(n+2) div:nth-of-type(2) {
     flex-basis: 340px;
