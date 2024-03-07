@@ -371,19 +371,21 @@ header .nav-middle > div > div > div div:nth-of-type(3) {
 
 header .nav-middle > div > div > div div:nth-of-type(1) {
   position: relative;
-  top: 12px;
+  top: 37px;
+  left: 4px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) {
   font-weight: 500;
   position: relative;
-  top: 5px;
+  top: 32px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p {
   display: inline-block;
   position: absolute;
-  top: 52px;
+  top: -80px;
+  left: 4px;
 }
 
 header .nav-middle > div > div > div div:nth-of-type(2) p,
@@ -407,10 +409,18 @@ header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(4) {
   left: 100px;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 300px) {
+  header .nav-middle > div > div > div div:nth-of-type(1) {
+    top: 46px;
+  }
+
+  header .nav-middle > div > div > div div:nth-of-type(2) {
+    top: 35px;
+  }
+  
   header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(3),
   header .nav-middle > div > div > div div:nth-of-type(2) p:nth-of-type(4) {
-    display: none;
+    top: -70px;
   }
 }
 
@@ -529,7 +539,7 @@ header .expanded .nav-bottom > div > div:nth-of-type(2) span.explore {
 
   header .nav-middle > div > div > div div:nth-of-type(2) p {
     position: unset;
-    width: 30%;
+    width: 32%;
     padding: 0 26px 0 15px;
     margin: 0;
   }
@@ -654,7 +664,7 @@ header .expanded .nav-bottom > div > div:nth-of-type(2) span.explore {
   }
 
   header .nav-middle > div > div > div div:nth-of-type(2) ul {
-    width: 80%;
+    width: 85%;
   }
 }
 
