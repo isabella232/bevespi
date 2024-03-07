@@ -179,7 +179,7 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
 
 @media (min-width: 900px) {
   main .hero.home {
-    padding: 104px 15px 40px 0;
+    padding: 95px 15px 60px 0;
   }
 
   main .hero.home h1 {
@@ -250,5 +250,24 @@ main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:nth-of-type(n+2) > pictur
 
   main .hero.home .btn-scroll a {
     font-size: var(--body-font-size-m);
+  }
+}
+
+@media (min-width: 1200px) {
+  main .hero.home h1 {
+    padding-right: 90px;
+  }
+
+  main .hero.home p:last-of-type {
+    padding-right: 60px;
+    margin-bottom: 0;
+  }
+
+  main .hero.home h2:last-of-type {
+    padding-right: 60px;
+  }
+
+  main .hero > div:nth-of-type(n+2) div:nth-of-type(2) p:last-of-type {
+    width: 100%;
   }
 }
