@@ -42,6 +42,17 @@ main .hero img {
   height: 100%;
 }
 
+.getting-started main .hero img,
+.copd-resources main .hero img {
+  object-fit: fill;
+}
+
+@media (min-width: 900px) {
+  .getting-started main .hero img,
+  .copd-resources main .hero img {
+    object-fit: cover;
+  }
+}
 
 main .hero.home .btn-scroll {
   position: absolute;
@@ -141,6 +152,11 @@ main .hero > div:first-of-type p > picture {
 
 main .hero > div:first-of-type p:last-of-type > picture {
   display: block;
+}
+
+.getting-started .hero > div:first-of-type p:last-of-type > picture,
+.copd-resources .hero > div:first-of-type p:last-of-type > picture {
+  height: 100%;
 }
 
 main .hero > div:nth-of-type(n+2) {
