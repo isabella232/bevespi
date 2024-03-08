@@ -969,6 +969,12 @@ main .section.small-vertical-margins {
     }
 }
 
+@media (min-width: 900px) {
+    .sitemap main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
+        margin: 27px 0 57px;
+    }
+}
+
 .copd-treatment .columns-row {
     position: relative;
     padding-bottom: 125px;
