@@ -1976,7 +1976,7 @@ div.section:nth-of-type(2) {
 
 @media (min-width: 600px) {
     .getting-started main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
-        margin: 120px 0 120px;
+        margin: 120px 0;
         font-size: 4.5rem;
     }
 }
