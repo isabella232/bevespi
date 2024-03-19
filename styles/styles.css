@@ -958,8 +958,8 @@ main .section.small-vertical-margins {
     }
 
     .copd-resources main .hero > div:nth-of-type(n+2) > div h1 {
-        margin: 10px 0 70px;
-        max-width: 150px;
+        margin: 0 0 70px;
+        max-width: 200px;
     }
 
     .copd-treatment main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
@@ -1065,6 +1065,10 @@ main .section.hero-container + .section {
 .getting-started main div:not(.isi) .default-content-wrapper .button-container a {
     margin: auto;
     font-size: 1.3rem;
+}
+
+.copd-resources main .section .hero{
+    padding-top: 45px;
 }
 
 .copd-resources main .section.hero-container + .section {
