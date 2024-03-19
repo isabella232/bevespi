@@ -859,7 +859,7 @@ main .section.accordion-2-container.video-container h2 {
 
 main .section.accordion-2-container.video-container .accordion-2 h2 {
     font-size: 1.4rem;
-    padding-left: 20px;
+    padding-left: 0;
 }
 
 @media (min-width: 900px) {
@@ -1067,7 +1067,7 @@ main .section.hero-container + .section {
     font-size: 1.3rem;
 }
 
-.copd-resources main .section .hero{
+.copd-resources main .section .hero {
     padding-top: 45px;
 }
 
