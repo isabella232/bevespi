@@ -2225,25 +2225,19 @@ div.section:nth-of-type(2) {
 }
 
 .copd-treatment main .section.columns-container .columns-wrapper:nth-of-type(2) .inhaler-x-ray .columns-row:nth-of-type(1) {
-    max-height: 830px;
+    max-height: calc(800px - 50vw/3);
     position: relative;
 }
 
 @media (min-width: 300px) {
     .copd-treatment main .section.columns-container .columns-wrapper:nth-of-type(2) .inhaler-x-ray .columns-row:nth-of-type(1) {
-        max-height: 730px;
+        max-height: calc(800px - 100vw/2.8);
     }
 }
 
 @media (min-width: 400px) {
     .copd-treatment main .section.columns-container .columns-wrapper:nth-of-type(2) .inhaler-x-ray .columns-row:nth-of-type(1) {
-        max-height: 630px;
-    }
-}
-
-@media (min-width: 600px) {
-    .copd-treatment main .section.columns-container .columns-wrapper:nth-of-type(2) .inhaler-x-ray .columns-row:nth-of-type(1) {
-        max-height: 500px;
+        max-height: calc(750px - 100vw/2.9);
     }
 }
 
