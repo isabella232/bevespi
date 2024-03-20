@@ -450,6 +450,20 @@ a.button:hover, a.button:focus, button:hover, button:focus {
     }
 }
 
+.taking-bevespi-aerosphere .next.block a > span:nth-child(2) {
+    width: 80px;
+}
+
+@media (min-width: 900px) {
+    .copd-treatment .next.block a > span:nth-child(2) {
+        width: 220px;
+    }
+
+    .taking-bevespi-aerosphere .next.block a > span:nth-child(2) {
+        width: 110px;
+    }
+}
+
 button:disabled, button:disabled:hover {
     background-color: var(--overlay-background-color);
     cursor: unset;
