@@ -14,13 +14,13 @@ main .section div.page-navigation-wrapper {
   background-image: url('../../images/about-copd-hori_nav-arrows.jpg');
   background-size: 100% 100%;
   background-color: var(--background-grey-4);
-  height: 60px;
+  height: 55px;
 }
 
 .block.page-navigation nav > div {
   max-width: var(--page-max-width);
   margin: auto;
-  padding: 21px 0;
+  padding: 22px 0;
   overflow: auto;
 }
 
@@ -85,7 +85,8 @@ main .section div.page-navigation-wrapper {
   }
 
   .block.page-navigation nav > div {
-    padding-top: 11px;
+    padding-top: 5px;
+    padding-bottom: 25px;
   }
 
   .block.page-navigation ul li a {
