@@ -420,6 +420,7 @@ a.button:any-link, button {
     padding: 0 20px;
     height: 30px;
     margin-top: 14px;
+    -webkit-tap-highlight-color: #00000000;
 }
 
 a.button:any-link::after, button::after {
