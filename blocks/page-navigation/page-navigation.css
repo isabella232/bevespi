@@ -24,6 +24,15 @@ main .section div.page-navigation-wrapper {
   overflow: auto;
 }
 
+.about-copd .block.page-navigation nav > div {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.about-copd .block.page-navigation nav > div::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
 .block.page-navigation ul li a {
   transform: translateY(-3px);
 }
