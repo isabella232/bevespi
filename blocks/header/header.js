@@ -51,6 +51,7 @@ export default async function decorate(block) {
     expandTop.addEventListener('click', () => {
       nav.querySelector('.nav-top').classList.toggle('expanded');
       nav.querySelector('.expand-top').classList.toggle('expanded');
+      block.parentElement.classList.toggle('nav-expanded');
     });
     nav.querySelector('.nav-middle').appendChild(expandTop);
 
@@ -71,11 +72,13 @@ export default async function decorate(block) {
       explore.addEventListener('click', () => {
         nav.classList.toggle('expanded');
         document.body.classList.toggle('nav-expanded');
+        console.log('NAv expanded explore');
       });
       const mobileExplore = explore.cloneNode(true);
       mobileExplore.addEventListener('click', () => {
         nav.classList.toggle('expanded');
         document.body.classList.toggle('nav-expanded');
+        console.log('NAv expanded mobile explore');
       });
       nav.querySelector('.nav-bottom > div').append(mobileExplore);
     }

@@ -6,6 +6,7 @@ header .nav-top {
   background-color: var(--background-grey-1);
 }
 
+header.nav-expanded, 
 header .expanded .nav-top,
 header .nav-top.expanded {
   height: unset;
@@ -489,6 +490,12 @@ header .expanded .nav-bottom > div > div:nth-of-type(2) span.explore {
   display: none;
 }
 
+@media (min-width: 485px) {
+  header .nav-middle .expand-top {
+    display: none;
+  }
+}
+
 @media (min-width: 900px) {
   header .nav-top {
     height: 40px;
@@ -512,10 +519,6 @@ header .expanded .nav-bottom > div > div:nth-of-type(2) span.explore {
     height: 132px;
     font-size: var(--body-font-size-xxs);
     overflow: hidden;
-  }
-
-  header .nav-middle .expand-top {
-    display: none;
   }
 
   header nav > div > div {
