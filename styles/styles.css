@@ -420,6 +420,7 @@ a.button:any-link, button {
     padding: 0 20px;
     height: 30px;
     margin-top: 14px;
+    -webkit-tap-highlight-color: #0000;
 }
 
 a.button:any-link::after, button::after {
@@ -447,6 +448,20 @@ a.button:hover, a.button:focus, button:hover, button:focus {
 @media(min-width: 900px) {
     .taking-bevespi-aerosphere main .section .columns-wrapper a.button:any-link {
         font-size: 1.7rem;
+    }
+}
+
+.taking-bevespi-aerosphere .next.block a > span:nth-child(2) {
+    width: 80px;
+}
+
+@media (min-width: 900px) {
+    .copd-treatment .next.block a > span:nth-child(2) {
+        width: 220px;
+    }
+
+    .taking-bevespi-aerosphere .next.block a > span:nth-child(2) {
+        width: 110px;
     }
 }
 
@@ -859,7 +874,7 @@ main .section.accordion-2-container.video-container h2 {
 
 main .section.accordion-2-container.video-container .accordion-2 h2 {
     font-size: 1.4rem;
-    padding-left: 20px;
+    padding-left: 0;
 }
 
 @media (min-width: 900px) {
@@ -958,8 +973,8 @@ main .section.small-vertical-margins {
     }
 
     .copd-resources main .hero > div:nth-of-type(n+2) > div h1 {
-        margin: 10px 0 70px;
-        max-width: 150px;
+        margin: 0 0 70px;
+        max-width: 200px;
     }
 
     .copd-treatment main .hero:not(.home) > div:nth-of-type(n+2) > div h1 {
@@ -1065,6 +1080,10 @@ main .section.hero-container + .section {
 .getting-started main div:not(.isi) .default-content-wrapper .button-container a {
     margin: auto;
     font-size: 1.3rem;
+}
+
+.copd-resources main .section .hero {
+    padding-top: 45px;
 }
 
 .copd-resources main .section.hero-container + .section {
@@ -1965,6 +1984,12 @@ h2 > br::after {
     }
 }
 
+@media (min-width: 1800px) {
+    .hero.block.bevespi-side-effects-downarrow::after {
+        bottom: -70px;
+    }
+}
+
 .home .section:nth-of-type(2) .columns-row:nth-of-type(2) p.button-container,
 .home .section:nth-of-type(2) .columns-row:nth-of-type(4) p.button-container {
     max-width: 325px;
@@ -2215,25 +2240,19 @@ div.section:nth-of-type(2) {
 }
 
 .copd-treatment main .section.columns-container .columns-wrapper:nth-of-type(2) .inhaler-x-ray .columns-row:nth-of-type(1) {
-    max-height: 830px;
+    max-height: calc(800px - 50vw/3);
     position: relative;
 }
 
 @media (min-width: 300px) {
     .copd-treatment main .section.columns-container .columns-wrapper:nth-of-type(2) .inhaler-x-ray .columns-row:nth-of-type(1) {
-        max-height: 730px;
+        max-height: calc(800px - 100vw/2.8);
     }
 }
 
 @media (min-width: 400px) {
     .copd-treatment main .section.columns-container .columns-wrapper:nth-of-type(2) .inhaler-x-ray .columns-row:nth-of-type(1) {
-        max-height: 630px;
-    }
-}
-
-@media (min-width: 600px) {
-    .copd-treatment main .section.columns-container .columns-wrapper:nth-of-type(2) .inhaler-x-ray .columns-row:nth-of-type(1) {
-        max-height: 500px;
+        max-height: calc(750px - 100vw/2.9);
     }
 }
 

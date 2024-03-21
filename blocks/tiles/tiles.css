@@ -197,6 +197,10 @@
   cursor: pointer;
 }
 
+.tiles.block button[name="close-modal"]::after {
+  display: none;
+}
+
 @media (min-width: 600px) {
   :root {
     --tile-large-font-size: 2.3rem;
