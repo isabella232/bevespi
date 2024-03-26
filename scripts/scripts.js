@@ -91,6 +91,16 @@ export function decorateExternalLinks(container) {
   });
 }
 
+/*
+  * Decorates anchors to avoid full links hence page reload
+*/
+export function decorateAnchors(container) {
+  [...container.querySelectorAll('a')].forEach((a) => {
+    const anchorId = a.href.split('#')[1];
+    if (anchorId) a.setAttribute('href', `#${anchorId}`);
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -150,6 +160,7 @@ export function decorateMain(main) {
   addSectionBackgroundImages(main);
   decorateBlocks(main);
   decorateExternalLinks(main);
+  decorateAnchors(main);
 }
 
 /**
