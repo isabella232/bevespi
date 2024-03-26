@@ -98,7 +98,7 @@ export function decorateAnchors(container) {
   [...container.querySelectorAll('a')].forEach((a) => {
     const anchorId = a.href.split('#')[1];
     if (anchorId) a.setAttribute('href', `#${anchorId}`);
-  })
+  });
 }
 
 /**
