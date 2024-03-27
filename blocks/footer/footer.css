@@ -55,10 +55,18 @@ footer .footer > div ul > li {
     white-space: nowrap;
 }
 
+footer .footer a > img.privacy-options-icon {
+    width: 23px;
+    height: auto;
+    margin-left: 5px;
+}
+
 @media (min-width: 900px) {
     footer .footer > div > div > ul {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0;
+        column-gap: 18px;
     }
 
     footer .footer > div > div > p {
@@ -80,5 +88,9 @@ footer .footer > div ul > li {
     footer .footer > div > div > p:last-child img {
         width: 141px;
         height: 34px;
+    }
+
+    footer .footer > div > div {
+        max-width: var(--page-max-width)
     }
 }
