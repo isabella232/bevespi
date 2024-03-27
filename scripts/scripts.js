@@ -18,7 +18,7 @@ export function wrapHyphenatedWordsInNode(element) {
   element.childNodes.forEach((node) => {
     if (node.nodeType === Node.TEXT_NODE) {
       const newHtml = node.textContent.split(/\s+/).map((word) => {
-        if (word.includes('-')) {
+        if (word.includes('-') || word.includes('—')) {
           return `<span class="nowrap">${word}</span>`;
         }
         return word;
@@ -91,6 +91,16 @@ export function decorateExternalLinks(container) {
   });
 }
 
+/*
+  * Decorates anchors to avoid full links hence page reload
+*/
+export function decorateAnchors(container) {
+  [...container.querySelectorAll('a')].forEach((a) => {
+    const anchorId = a.href.split('#')[1];
+    if (anchorId) a.setAttribute('href', `#${anchorId}`);
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -150,6 +160,7 @@ export function decorateMain(main) {
   addSectionBackgroundImages(main);
   decorateBlocks(main);
   decorateExternalLinks(main);
+  decorateAnchors(main);
 }
 
 /**
